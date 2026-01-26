@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="b1dde541-5da3-4d9d-a1c9-125efd608f25" name="PreReq">
+  <con:settings>
+    <con:setting id="126a5366-30b2-48a3-94fb-c805ca7a9dfcfileName">PreReq</con:setting>
+    <con:setting id="b1dde541-5da3-4d9d-a1c9-125efd608f25fileName">PreReq</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties>
+    <con:property>
+      <con:name>SLA_FAILED</con:name>
+      <con:value>false</con:value>
+    </con:property>
+  </con:properties>
+  <con:setupScript>// --- Configuration --- 
+def SLA_THRESHOLD = 1000  // milliseconds
+ 
+// --- Iterate Over All Test Steps in the TestSuite ---
+def testSuite = context.testSuite
+def steps = testSuite.getTestCaseList().collect { it.getTestStepList() }.flatten()
+ 
+// Initialize the SLA_FAILED flag
+boolean slaFailed = false
+ 
+steps.each { step ->
+    // Only process HTTP/REST Test Steps and skip untested ones (steps with no response)
+    if (!step.metaClass.respondsTo(step, "getTestRequest") || step.testRequest?.response == null) {
+        log.warn "Step '${step.name}' is not a REST/HTTP Test Step or is untested. Skipping SLA check."
+        return
+    }
+ 
+    def timeTaken = step.testRequest?.response?.timeTaken
+    if (timeTaken != null &amp;&amp; timeTaken > SLA_THRESHOLD) {
+        def message = "SLA Warning: Step '${step.name}' took ${timeTaken}ms (threshold: ${SLA_THRESHOLD}ms)"
+        log.warn(message)
+ 
+        // --- Gather TestRail Properties ---
+        def testCaseId = step.testCase.getPropertyValue("TestCaseID")
+        def runId = testSuite.project.getPropertyValue("RunID")
+        def user = testSuite.project.getPropertyValue("TestRailUserName")
+        def key = testSuite.project.getPropertyValue("TestRailAPIkey")
+        def url = testSuite.project.getPropertyValue("TestRailUrl")
+ 
+        if (!testCaseId || !runId || !user || !key || !url) {
+            log.error("Missing one or more TestRail properties.")
+            return
+        }
+ 
+        def fullUrl = "${url}/add_result_for_case/${runId}/${testCaseId}"
+        def payload = [status_id: 2, comment: message] // status_id: 2 means "Failed"
+ 
+        try {
+            def connection = new URL(fullUrl).openConnection()
+            connection.setRequestMethod("POST")
+            connection.doOutput = true
+            connection.setRequestProperty("Content-Type", "application/json")
+            connection.setRequestProperty("Authorization", "Basic " + "${user}:${key}".bytes.encodeBase64().toString())
+ 
+            def writer = new OutputStreamWriter(connection.outputStream, "UTF-8")
+            writer.write(groovy.json.JsonOutput.toJson(payload))
+            writer.flush()
+            writer.close()
+ 
+            def responseCode = connection.responseCode
+            def responseText = responseCode == 200 ? connection.inputStream.text : connection.errorStream?.text
+ 
+            if (responseCode == 200) {
+                log.info("TestRail updated for ${testCaseId}: ${responseCode}")
+            } else {
+                log.error("TestRail update failed: ${responseCode} | ${responseText}")
+            }
+        } catch (Exception e) {
+            log.error("Exception: ${e.message}")
+        }
+ 
+        // Set the SLA_FAILED flag to true to mark the failure
+        slaFailed = true
+    } else {
+        log.info "SLA met for step '${step.name}': ${timeTaken}ms"
+    }
+}
+ 
+// Store the SLA_FAILED flag in the TestSuite to be used in the teardown
+testSuite.setPropertyValue("SLA_FAILED", slaFailed.toString())
+  log.info (testSuite.setPropertyValue("SLA_FAILED", slaFailed.toString())) </con:setupScript>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="0861e331-fb11-494e-ac83-e2d7a1385fa2">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="3aa32e2e-f8ea-433f-a129-4f5b084a7f93">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="71c53e07-b937-402b-a7c8-a5851119ce4c">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testSuite>

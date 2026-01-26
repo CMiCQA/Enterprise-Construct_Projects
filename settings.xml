@@ -3,7 +3,41 @@
   <con:settings>
     <con:setting id="e8de09f9-3717-451a-bdb9-0176d670a0a1fileName">Project-1-readyapi-project</con:setting>
   </con:settings>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseStatus</con:name>
+    </con:property>
+    <con:property>
+      <con:name>WorkingEnv</con:name>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseComment</con:name>
+    </con:property>
+    <con:property>
+      <con:name>TimeTaken</con:name>
+    </con:property>
+    <con:property>
+      <con:name>RunID</con:name>
+    </con:property>
+    <con:property>
+      <con:name>FailedTestStep</con:name>
+    </con:property>
+    <con:property>
+      <con:name>ProjectID</con:name>
+    </con:property>
+    <con:property>
+      <con:name>TestRailAPIKey</con:name>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUserName</con:name>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUrl</con:name>
+    </con:property>
+  </con:properties>
   <con:wssContainer/>
   <con:databaseConnectionContainer/>
   <con:jmsConnectionContainer/>
@@ -42,6 +76,50 @@
     <con:service type="REST" name="cmic-uac-rest-api">
       <con:endpoint authProfile="raman" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily</con:endpoint>
     </con:service>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseStatus</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>WorkingEnv</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseComment</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TimeTaken</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>RunID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>FailedTestStep</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>ProjectID</con:name>
+      <con:value>46</con:value>
+    </con:property>
+    <con:property>
+      <con:name>TestRailAPIKey</con:name>
+      <con:value>5hw6TPvTZYe1vD4LAI/0-nXyq/Wq3tjhKLgKZXOlS</con:value>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUserName</con:name>
+      <con:value>Ramandeep.Jain@cmic.ca</con:value>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUrl</con:name>
+      <con:value>https://cmic.testrail.io/index.php?/api/v2</con:value>
+    </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>
@@ -49,6 +127,50 @@
     <con:service type="REST" name="cmic-uac-rest-api">
       <con:endpoint authProfile="raman" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily2</con:endpoint>
     </con:service>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseStatus</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>WorkingEnv</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseComment</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TimeTaken</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>RunID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>FailedTestStep</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>ProjectID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailAPIKey</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUserName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUrl</con:name>
+      <con:value/>
+    </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>
@@ -56,6 +178,50 @@
     <con:service type="REST" name="cmic-uac-rest-api">
       <con:endpoint authProfile="QALATEST (Raman)" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qalatestmob.cmicpaas.com/cmicqalatest</con:endpoint>
     </con:service>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseStatus</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>WorkingEnv</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseComment</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TimeTaken</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>RunID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>FailedTestStep</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>ProjectID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailAPIKey</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUserName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUrl</con:name>
+      <con:value/>
+    </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>
@@ -63,6 +229,50 @@
     <con:service type="REST" name="cmic-uac-rest-api">
       <con:endpoint authProfile="raman" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqaprior</con:endpoint>
     </con:service>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseStatus</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>WorkingEnv</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseComment</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TimeTaken</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>RunID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>FailedTestStep</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>ProjectID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailAPIKey</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUserName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUrl</con:name>
+      <con:value/>
+    </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>
@@ -70,6 +280,50 @@
     <con:service type="REST" name="cmic-uac-rest-api">
       <con:endpoint authProfile="NOVA CLOUD" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-api.cmiccloud.com/cmicprod</con:endpoint>
     </con:service>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseStatus</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>WorkingEnv</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseComment</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TimeTaken</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>RunID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>FailedTestStep</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>ProjectID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailAPIKey</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUserName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUrl</con:name>
+      <con:value/>
+    </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>
@@ -77,6 +331,50 @@
     <con:service type="REST" name="cmic-uac-rest-api">
       <con:endpoint authProfile="NOVA CLOUD" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-mobile-test.cmiccloud.com/cmictest</con:endpoint>
     </con:service>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseStatus</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>WorkingEnv</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseComment</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TimeTaken</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>RunID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>FailedTestStep</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>ProjectID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailAPIKey</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUserName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUrl</con:name>
+      <con:value/>
+    </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>
@@ -84,6 +382,50 @@
     <con:service type="REST" name="cmic-uac-rest-api">
       <con:endpoint authProfile="ATLAS CLOUD" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api.cmiccloud.com/cmicprod</con:endpoint>
     </con:service>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseStatus</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>WorkingEnv</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseComment</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TimeTaken</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>RunID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>FailedTestStep</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>ProjectID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailAPIKey</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUserName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUrl</con:name>
+      <con:value/>
+    </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>
@@ -91,6 +433,50 @@
     <con:service type="REST" name="cmic-uac-rest-api">
       <con:endpoint authProfile="ATLAS CLOUD" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api-test.cmiccloud.com/cmictest</con:endpoint>
     </con:service>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseStatus</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>WorkingEnv</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestCaseComment</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TimeTaken</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>RunID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>FailedTestStep</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>ProjectID</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailAPIKey</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUserName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>TestRailUrl</con:name>
+      <con:value/>
+    </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" id="be08017f-ca82-4993-90ae-b5f54f51c5a2" keepSession="false" name="PreRequisite Select Project with UUID" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="52fcec9f-2cc8-4bb3-9cd9-fadc204ca688fileName">PreRequisite-Select-Project-with-UUID</con:setting>
+    <con:setting id="be08017f-ca82-4993-90ae-b5f54f51c5a2fileName">PreRequisite-Select-Project-with-UUID</con:setting>
+  </con:settings>
+  <con:testStep id="78a845b0-ed68-42d4-be9a-5e1a15de3c05" name="Properties" type="properties">
+    <con:settings/>
+    <con:config xsi:type="con:PropertiesStep" saveFirst="true">
+      <con:properties>
+        <con:property>
+          <con:name>ProjectName</con:name>
+          <con:value>RJPROJ01</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep id="88b992c3-c87b-4e25-887d-361169178ef5" name="Groovy Script" type="groovy">
+    <con:settings/>
+    <con:config>
+      <script>import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+import java.net.HttpURLConnection
+import java.net.URL
+import java.text.SimpleDateFormat
+import java.util.Date
+
+// Function to create a new test run in TestRail project and fetch the run ID
+def CreateTestRunInTestRail() {
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+    def activeEnviroment = testRunner.getTestCase().getTestSuite().getProject().getActiveEnvironmentName()
+    log.info('Active environment = ' + activeEnviroment)
+    
+    def projectId = context.expand('${#Project#projectID}')
+    
+    def timestamp = new Date().time
+    def formattedTimestamp = new SimpleDateFormat("yyyy/MMMM/dd_HH:mm").format(new Date(timestamp))
+    def runName = "FLUTTER_${activeEnviroment}_${formattedTimestamp}"
+
+    def postUrl = "${testRailUrl}/add_run/${projectId}"
+
+    try {
+        // Create connection and set up HTTP request
+        def connection = new URL(postUrl).openConnection() as HttpURLConnection
+        connection.requestMethod = 'POST'
+        connection.doOutput = true
+        connection.setRequestProperty("Content-Type", "application/json")
+        connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+        connection.setConnectTimeout(30000)  // Set connection timeout (30 seconds)
+        connection.setReadTimeout(30000)     // Set read timeout (30 seconds)
+
+        // Prepare request body
+        def requestBody = [
+            name       : runName,
+            suite_id   : 2378,  
+            include_all: true
+        ]
+
+        // Send request body
+        def outputStream = connection.outputStream
+        outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+        outputStream.flush()
+
+        // Handle response
+        def responseCode = connection.responseCode
+        def responseMessage = connection.responseMessage
+        log.info("Response code: ${responseCode}")
+        log.info("Response message: ${responseMessage}")
+
+        // Check for success
+        if (responseCode != HttpURLConnection.HTTP_OK) {
+            log.error("Failed to create test run. HTTP code: ${responseCode}")
+            return
+        }
+
+        // Fetch the test run ID
+        def runsEndpoint = "${testRailUrl}/get_runs/${projectId}"
+        def url = new URL(runsEndpoint)
+        connection = url.openConnection() as HttpURLConnection
+        connection.requestMethod = 'GET'
+        connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+        connection.setConnectTimeout(30000)
+        connection.setReadTimeout(30000)
+
+        responseCode = connection.responseCode
+        def responseData = ""
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            responseData = connection.inputStream.text
+        } else {
+            responseData = connection.errorStream.text
+            log.error("Error fetching test runs. HTTP code: ${responseCode}")
+            return
+        }
+        connection.disconnect()
+
+        def runs = new JsonSlurper().parseText(responseData)
+        def targetRunId = null
+        runs.runs.each { run ->
+            if (run.name == runName) {
+                targetRunId = run.id
+                return
+            }
+        }
+
+        if (targetRunId) {
+            log.info("The ID of the test run '${runName}' is: ${targetRunId}")
+            def project = testRunner.testCase.testSuite.project
+            project.setPropertyValue("RunID", "${targetRunId}")
+        } else {
+            log.error("Test run '${runName}' not found.")
+        }
+
+    } catch (Exception e) {
+        log.error("An error occurred while creating or fetching the test run: ${e.message}")
+    }
+}
+
+// Call the function
+CreateTestRunInTestRail()
+
+Thread.sleep(2000)  // Sleep for 2 seconds between major steps (adjust as necessary)
+</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Disable Test Cases" id="c0fd3c5d-1f72-4bd1-8413-e9f397058299" disabled="true">
+    <con:settings/>
+    <con:config>
+      <script>import groovy.json.JsonSlurper
+
+log.info "=== Starting Patch Exclusion by Tag ==="
+
+// Step 0: Get project object
+def project = context?.testCase?.testSuite?.project
+if (!project) {
+    project = com.eviware.soapui.SoapUI.getProjectByName(context.expand('${#Project#Name}'))
+}
+if (!project) {
+    log.error "Project object not found."
+    return
+}
+
+// Step 1: Get ExcludePatches property
+def excludePatchesProp = project.getPropertyValue('ExcludePatches')
+if (!excludePatchesProp) {
+    log.info "ExcludePatches property not defined, skipping Patch exclusion."
+    return
+}
+def excludePatches = excludePatchesProp.split(',').collect { it.trim().toLowerCase() }
+log.info "Excluding patches by tag: ${excludePatches}"
+
+// Step 2: Iterate all TestCases
+def testCasesToRemoveFromTR = []
+
+project.getTestSuiteList().each { suite ->
+    suite.getTestCaseList().each { testCase ->
+        // ✅ Use getTagIds() to retrieve tag names
+        def tags = []
+        if (testCase.hasTags()) {
+            tags = testCase.getTagIds().collect { it.toLowerCase() }
+        }
+
+        // Optional Patch property
+        def patchProp = testCase.getPropertyValue('Patch')?.trim()?.toLowerCase() ?: ""
+
+        // Exclusion condition: patch is in exclude list AND test has that tag
+        def isExcluded = excludePatches.contains(patchProp) &amp;&amp; tags.contains(patchProp)
+        testCase.disabled = isExcluded
+
+        if (isExcluded) {
+            def tcID = testCase.getPropertyValue('TestCaseID')
+            if (tcID) testCasesToRemoveFromTR &lt;&lt; tcID
+        }
+
+        log.info "${suite.name} → ${testCase.name} → ${isExcluded ? 'SKIPPED' : 'ENABLED'} | Patch: ${patchProp} | Tags: ${tags}"
+    }
+}
+
+log.info "✅ Patch exclusion by tag applied."
+
+// Step 3: Optionally remove from TestRail
+if (!testCasesToRemoveFromTR.isEmpty()) {
+    log.info "TestCases to remove from TestRail: ${testCasesToRemoveFromTR}"
+    // Add your TestRail cleanup code here
+}
+</script>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript/>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="0861e331-fb11-494e-ac83-e2d7a1385fa2">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="3aa32e2e-f8ea-433f-a129-4f5b084a7f93">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="71c53e07-b937-402b-a7c8-a5851119ce4c">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>
