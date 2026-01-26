@@ -32,12 +32,15 @@ def CreateTestRunInTestRail() {
     def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
     def activeEnviroment = testRunner.getTestCase().getTestSuite().getProject().getActiveEnvironmentName()
     log.info('Active environment = ' + activeEnviroment)
-    
+     log.info(testRailUrl)
+       log.info(testRailUsername)
+       log.info(testRailApiKey)
+      
     def projectId = context.expand('${#Project#projectID}')
-    
+     log.info(projectId)
     def timestamp = new Date().time
     def formattedTimestamp = new SimpleDateFormat("yyyy/MMMM/dd_HH:mm").format(new Date(timestamp))
-    def runName = "FLUTTER_${activeEnviroment}_${formattedTimestamp}"
+    def runName = "ENTERPRISE_${activeEnviroment}_${formattedTimestamp}"
 
     def postUrl = "${testRailUrl}/add_run/${projectId}"
 
