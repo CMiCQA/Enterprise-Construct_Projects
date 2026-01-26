@@ -158,19 +158,19 @@
     </con:property>
     <con:property>
       <con:name>projectID</con:name>
-      <con:value/>
+      <con:value>46</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailAPIkey</con:name>
-      <con:value/>
+      <con:value>5hw6TPvTZYe1vD4LAI/0-nXyq/Wq3tjhKLgKZXOlS</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailUserName</con:name>
-      <con:value/>
+      <con:value>Ramandeep.Jain@cmic.ca</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailUrl</con:name>
-      <con:value/>
+      <con:value>https://cmic.testrail.io/index.php?/api/v2</con:value>
     </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
@@ -209,19 +209,19 @@
     </con:property>
     <con:property>
       <con:name>projectID</con:name>
-      <con:value/>
+      <con:value>46</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailAPIkey</con:name>
-      <con:value/>
+      <con:value>5hw6TPvTZYe1vD4LAI/0-nXyq/Wq3tjhKLgKZXOlS</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailUserName</con:name>
-      <con:value/>
+      <con:value>Ramandeep.Jain@cmic.ca</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailUrl</con:name>
-      <con:value/>
+      <con:value>https://cmic.testrail.io/index.php?/api/v2</con:value>
     </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
@@ -260,19 +260,19 @@
     </con:property>
     <con:property>
       <con:name>projectID</con:name>
-      <con:value/>
+      <con:value>46</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailAPIkey</con:name>
-      <con:value/>
+      <con:value>5hw6TPvTZYe1vD4LAI/0-nXyq/Wq3tjhKLgKZXOlS</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailUserName</con:name>
-      <con:value/>
+      <con:value>Ramandeep.Jain@cmic.ca</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailUrl</con:name>
-      <con:value/>
+      <con:value>https://cmic.testrail.io/index.php?/api/v2</con:value>
     </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
@@ -311,19 +311,19 @@
     </con:property>
     <con:property>
       <con:name>projectID</con:name>
-      <con:value/>
+      <con:value>46</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailAPIkey</con:name>
-      <con:value/>
+      <con:value>5hw6TPvTZYe1vD4LAI/0-nXyq/Wq3tjhKLgKZXOlS</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailUserName</con:name>
-      <con:value/>
+      <con:value>Ramandeep.Jain@cmic.ca</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailUrl</con:name>
-      <con:value/>
+      <con:value>https://cmic.testrail.io/index.php?/api/v2</con:value>
     </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
@@ -362,19 +362,19 @@
     </con:property>
     <con:property>
       <con:name>projectID</con:name>
-      <con:value/>
+      <con:value>46</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailAPIkey</con:name>
-      <con:value/>
+      <con:value>5hw6TPvTZYe1vD4LAI/0-nXyq/Wq3tjhKLgKZXOlS</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailUserName</con:name>
-      <con:value/>
+      <con:value>Ramandeep.Jain@cmic.ca</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailUrl</con:name>
-      <con:value/>
+      <con:value>https://cmic.testrail.io/index.php?/api/v2</con:value>
     </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
@@ -413,19 +413,19 @@
     </con:property>
     <con:property>
       <con:name>projectID</con:name>
-      <con:value/>
+      <con:value>46</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailAPIkey</con:name>
-      <con:value/>
+      <con:value>5hw6TPvTZYe1vD4LAI/0-nXyq/Wq3tjhKLgKZXOlS</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailUserName</con:name>
-      <con:value/>
+      <con:value>Ramandeep.Jain@cmic.ca</con:value>
     </con:property>
     <con:property>
       <con:name>TestRailUrl</con:name>
-      <con:value/>
+      <con:value>https://cmic.testrail.io/index.php?/api/v2</con:value>
     </con:property>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
