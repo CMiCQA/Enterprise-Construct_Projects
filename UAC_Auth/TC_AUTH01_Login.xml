@@ -205,6 +205,7 @@ postTestResultToTestRail()</con:tearDownScript>
   <con:properties>
     <con:property>
       <con:name>TestCaseID</con:name>
+      <con:value>629423</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

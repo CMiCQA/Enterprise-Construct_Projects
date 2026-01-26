@@ -3,6 +3,7 @@
   <con:settings>
     <con:setting id="e8de09f9-3717-451a-bdb9-0176d670a0a1fileName">Project-1-readyapi-project</con:setting>
   </con:settings>
+  <con:requirements/>
   <con:properties>
     <con:property>
       <con:name>TestCaseID</con:name>
@@ -98,7 +99,7 @@
     </con:property>
     <con:property>
       <con:name>RunID</con:name>
-      <con:value/>
+      <con:value>13411</con:value>
     </con:property>
     <con:property>
       <con:name>FailedTestStep</con:name>
