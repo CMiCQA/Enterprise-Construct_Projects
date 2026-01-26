@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="37f4c0a2-1307-4ce2-ad27-5ca4b9bacdfd" lastUpdated="2026-01-26T12:59:23.336-05:00" name="cmic-uac-rest-api" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
-  <con:settings id="538ba389-7703-4341-97db-301d6f51f63b">
-    <con:setting id="37f4c0a2-1307-4ce2-ad27-5ca4b9bacdfdfileName">cmic-uac-rest-api</con:setting>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="eff1d6ed-1eb0-4c76-bd59-7ae2a4953c5a" name="UAC_Auth">
+  <con:settings id="2fc78d7c-0952-4348-9cba-99b763709e94">
+    <con:setting id="eff1d6ed-1eb0-4c76-bd59-7ae2a4953c5afileName">UAC_Auth</con:setting>
   </con:settings>
-  <con:definitionCache type="TEXT" rootPart="cmic-uac-rest-api.json">
-    <con:part>
-      <con:url>cmic-uac-rest-api.json</con:url>
-      <con:content>{"openapi":"3.1.0","info":{"title":"cmic-uac-rest-api","description":"","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/cmic-uac-rest-api/jersey/v1/login":{"description":"","get":{"description":"","responses":{"default":{"description":"Default response"}}}}}}</con:content>
-      <con:type>https://swagger.io/openapiv3/specification</con:type>
-    </con:part>
-  </con:definitionCache>
-  <con:endpoints/>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
   <con:environmentSpec>
     <con:entry environmentId="48df59ab-9fb8-436f-9c77-264e6f1193e7">
       <con:authProfile>Inherit From Parent</con:authProfile>
@@ -37,4 +32,4 @@
       <con:authProfile>Inherit From Parent</con:authProfile>
     </con:entry>
   </con:environmentSpec>
-</con:interface>
+</con:testSuite>

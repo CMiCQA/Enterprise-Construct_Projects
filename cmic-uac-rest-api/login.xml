@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="login" path="cmic-uac-rest-api/jersey/v1/login" id="f52d62e1-6b47-4cb0-bb58-7226495883e9">
+  <con:settings>
+    <con:setting id="f52d62e1-6b47-4cb0-bb58-7226495883e9fileName">login</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="c558c596-0d89-4bb8-bf36-1cdb6db04ae7" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="b297b346-5cf6-493b-b43d-769779655936" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint xsi:nil="true"/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="48df59ab-9fb8-436f-9c77-264e6f1193e7">
+          <con:authProfile>raman</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="adeb508a-495c-47b8-9884-91be0504cb65">
+          <con:authProfile>raman</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="29115ffe-145f-44e6-a1f7-45b26f33e93e">
+          <con:authProfile>QALATEST (Raman)</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="b5ec2841-29b5-46fd-b5ce-4131d9626d74">
+          <con:authProfile>raman</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="c6f15ecf-b67c-4a3e-b574-685e816480d9">
+          <con:authProfile>NOVA CLOUD</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="3ac2367f-7c3a-4624-9907-a6de4d8e254c">
+          <con:authProfile>NOVA CLOUD</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="7f04ef6b-0932-4c01-a1b5-687ac3090b4f">
+          <con:authProfile>ATLAS CLOUD</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="dc8e31ee-1f6a-4251-a524-b3c213e112b3">
+          <con:authProfile>ATLAS CLOUD</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="48df59ab-9fb8-436f-9c77-264e6f1193e7">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="adeb508a-495c-47b8-9884-91be0504cb65">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="29115ffe-145f-44e6-a1f7-45b26f33e93e">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="b5ec2841-29b5-46fd-b5ce-4131d9626d74">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="c6f15ecf-b67c-4a3e-b574-685e816480d9">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="3ac2367f-7c3a-4624-9907-a6de4d8e254c">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="7f04ef6b-0932-4c01-a1b5-687ac3090b4f">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="dc8e31ee-1f6a-4251-a524-b3c213e112b3">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
+  </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="48df59ab-9fb8-436f-9c77-264e6f1193e7">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="adeb508a-495c-47b8-9884-91be0504cb65">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="29115ffe-145f-44e6-a1f7-45b26f33e93e">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="b5ec2841-29b5-46fd-b5ce-4131d9626d74">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="c6f15ecf-b67c-4a3e-b574-685e816480d9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="3ac2367f-7c3a-4624-9907-a6de4d8e254c">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="7f04ef6b-0932-4c01-a1b5-687ac3090b4f">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="dc8e31ee-1f6a-4251-a524-b3c213e112b3">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:resource>
