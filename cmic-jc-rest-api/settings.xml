@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="85875fc7-7b92-4d18-8d2e-ec534484aa36" lastUpdated="2026-01-26T16:00:53.350-05:00" name="cmic-jc-rest-api" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+  <con:settings id="a24ad7e4-e41f-4eeb-b434-2eacbd2a415b">
+    <con:setting id="85875fc7-7b92-4d18-8d2e-ec534484aa36fileName">cmic-jc-rest-api</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="cmic-jc-rest-api.json">
+    <con:part>
+      <con:url>cmic-jc-rest-api.json</con:url>
+      <con:content>{"openapi":"3.1.0","info":{"title":"cmic-jc-rest-api","description":"","version":"1.0.0"},"servers":[],"paths":{},"components":{"securitySchemes":{"NOVA CLOUD":{"type":"http","scheme":"basic"},"ATLAS CLOUD":{"type":"http","scheme":"basic"},"raman":{"type":"http","scheme":"basic"},"QALATEST (Raman)":{"type":"http","scheme":"basic"}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints/>
+</con:interface>

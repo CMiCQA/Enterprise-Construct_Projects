@@ -3,8 +3,3 @@ cmic-crm-rest-api
 cmic-jc-rest-api
 cmic-lem-rest-api
 cmic-cf-rest-api
-PreReq
-UAC_Auth
-UAC_Azure-Settings
-UAC_Users
-UAC_Templates
