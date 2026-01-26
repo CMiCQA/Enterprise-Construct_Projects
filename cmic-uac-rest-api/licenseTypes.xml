@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="licenseTypes" path="cmic-uac-rest-api/rest/1/licenseTypes" id="8640cc80-f450-4fb0-916f-975ff8147036">
+  <con:settings>
+    <con:setting id="8640cc80-f450-4fb0-916f-975ff8147036fileName">licenseTypes</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:resource name="{id}" path="{id}" id="c9d3d686-4d67-4af4-83a9-1dde68281b77">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>id</con:name>
+        <con:value>id</con:value>
+        <con:style>TEMPLATE</con:style>
+        <con:default>id</con:default>
+      </con:parameter>
+    </con:parameters>
+    <con:method name="Method 1" id="8e0e32f5-3428-43fe-ad58-67c8be7ed56b" method="GET">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="a95e880a-d396-4461-a453-556bc635f846" mediaType="application/json">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:method name="Method 1" id="d19b5bb2-655e-4e40-b6b0-9263fd9432ef" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="a416c467-c1dd-4311-8953-d1b51487f1f3" mediaType="application/json">
+      <con:settings/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

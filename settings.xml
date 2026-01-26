@@ -75,7 +75,7 @@
   </con:eventHandlers>
   <con:environment id="48df59ab-9fb8-436f-9c77-264e6f1193e7" name="QADAILY" index="0">
     <con:service type="REST" name="cmic-uac-rest-api">
-      <con:endpoint authProfile="raman" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily</con:endpoint>
     </con:service>
     <con:property>
       <con:name>TestCaseID</con:name>
@@ -279,7 +279,7 @@
   </con:environment>
   <con:environment id="c6f15ecf-b67c-4a3e-b574-685e816480d9" name="NOVA PROD" index="4">
     <con:service type="REST" name="cmic-uac-rest-api">
-      <con:endpoint authProfile="NOVA CLOUD" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-api.cmiccloud.com/cmicprod</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-api.cmiccloud.com/cmicprod</con:endpoint>
     </con:service>
     <con:property>
       <con:name>TestCaseID</con:name>
@@ -513,7 +513,7 @@
   </con:authRepository>
   <con:environmentSpec>
     <con:entry environmentId="48df59ab-9fb8-436f-9c77-264e6f1193e7">
-      <con:authProfile>No Authorization</con:authProfile>
+      <con:authProfile>raman</con:authProfile>
     </con:entry>
     <con:entry environmentId="adeb508a-495c-47b8-9884-91be0504cb65">
       <con:authProfile>No Authorization</con:authProfile>
@@ -525,7 +525,7 @@
       <con:authProfile>No Authorization</con:authProfile>
     </con:entry>
     <con:entry environmentId="c6f15ecf-b67c-4a3e-b574-685e816480d9">
-      <con:authProfile>No Authorization</con:authProfile>
+      <con:authProfile>NOVA CLOUD</con:authProfile>
     </con:entry>
     <con:entry environmentId="3ac2367f-7c3a-4624-9907-a6de4d8e254c">
       <con:authProfile>No Authorization</con:authProfile>

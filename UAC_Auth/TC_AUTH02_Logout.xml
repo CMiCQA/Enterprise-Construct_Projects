@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="b14d226f-cc0d-4205-b4d2-31e957ca8a44" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_AUTH02_Logout" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="b14d226f-cc0d-4205-b4d2-31e957ca8a44fileName">TC_AUTH02_Logout</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Logout" id="8b15c38b-96ee-4dd0-a47e-bef4d627de66">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/jersey/v1/logout" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Logout" id="a9fd6dd1-aed9-41fe-a620-f7dc77b9a203" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/jersey/v1/logout</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="fcb054c4-21e1-4ad9-8557-97829d727ef9" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="064e513f-73b3-459d-8540-211ff3b3ae68" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="500fa876-bf5c-4432-ba84-96b81968f6e9" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['logged-out']</con:path>
+              <con:element>logged-out</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"logged-out":"true"}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript>import groovy.json.JsonOutput
+import java.net.HttpURLConnection
+import java.net.URL
+
+// --- Access SLA flag from TestSuite ---
+def slaFlag = context.testCase.testSuite.getPropertyValue("SLA_FAILED")
+log.info("TestCase Teardown running. SLA_FAILED = ${slaFlag}")
+ 
+if (slaFlag == "true") {
+    log.info("SLA failed — skipping TestRail result post.")
+    return
+}
+
+// Function to post test result to TestRail
+def postTestResultToTestRail() {
+
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+
+    def projectId = context.expand('${#Project#projectID}')
+    def testRunId = context.expand('${#Project#RunID}')
+
+    def testCaseId = context.expand('${#TestCase#TestCaseID}')
+    def testCaseName = testRunner.testCase.name
+
+    def failedTestSteps = []
+    def result = ""
+    def statusId = 1
+    def comment = ""
+
+    for (r in testRunner.results) {
+        if (r.getStatus().toString() != "PASS") {
+            def stepResult = context.expand('${' + r.testStep.name + '#Response}')
+            failedTestSteps.add(r.testStep.name + (stepResult ? (" - " + stepResult) : ""))
+        }
+    }
+
+    if (!failedTestSteps) {
+        comment = "${testCaseName} has passed successfully"
+    } else {
+        statusId = 5
+        comment = "${testCaseName} has failed on test steps:\n${failedTestSteps.join('\n')}"
+    }
+
+    def postUrl = "${testRailUrl}/add_result_for_case/${testRunId}/${testCaseId}"
+
+    def connection = new URL(postUrl).openConnection() as HttpURLConnection
+    connection.requestMethod = 'POST'
+    connection.doOutput = true
+    connection.setRequestProperty("Content-Type", "application/json")
+    connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+
+    def requestBody = [
+            status_id: statusId,
+            comment: comment
+    ]
+
+    def outputStream = connection.outputStream
+    outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+    outputStream.flush()
+
+    def responseCode = connection.responseCode
+    def responseMessage = connection.responseMessage
+
+    log.info("Response code: ${responseCode}")
+    log.info("Response message: ${responseMessage}")
+}
+
+postTestResultToTestRail()</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value>629425</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

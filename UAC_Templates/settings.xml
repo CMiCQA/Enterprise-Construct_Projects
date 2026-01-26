@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="439c7ca7-b97e-4086-8116-51b6ed94ddf0" name="UAC_Templates">
+  <con:settings id="6bbab1e8-d495-4bd3-9a58-61a65ca30e97">
+    <con:setting id="439c7ca7-b97e-4086-8116-51b6ed94ddf0fileName">UAC_Templates</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

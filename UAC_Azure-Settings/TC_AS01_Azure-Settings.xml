@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="37ef2ee2-19e1-457e-ab9d-1f54e85255b9" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_AS01_Azure Settings" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="37ef2ee2-19e1-457e-ab9d-1f54e85255b9fileName">TC_AS01_Azure-Settings</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Azure Settings" id="cceac360-b80c-4915-a02c-c549ff1ef0a7">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/azureSettings" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Azure Settings" id="3dc99ea9-23de-45df-ad25-de79f15419a5" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/azureSettings</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="0cda889d-20e5-48dd-831b-a352a65f3d44" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Response SLA" id="7bfadb00-8067-4af6-b449-7d99b62cf144">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="c4b261c9-4d76-4250-a42b-343854ce10ce" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['SasAzureTntId']</con:path>
+              <con:element>SasAzureTntId</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>e6228cf6-a777-498f-b358-3f9b0efaba41</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SasAppId']</con:path>
+              <con:element>SasAppId</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>4bccf086-d852-4325-a5c4-7d8b7aa4c5a3</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SasAppSecret']</con:path>
+              <con:element>SasAppSecret</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2844582F54F9170205505E66EADB16DACC5CC80CB67D6544C4DAD1C5B80BDBB9629D96DF310E6BE56D5E2D93971C27EB</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SasSyncFrequency']</con:path>
+              <con:element>SasSyncFrequency</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>5</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SasGraphUrl']</con:path>
+              <con:element>SasGraphUrl</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>https://graph.microsoft.com</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SasSyncGroup']</con:path>
+              <con:element>SasSyncGroup</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>qadaily-sync</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SasLastSyncDate']</con:path>
+              <con:element>SasLastSyncDate</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2026-01-26T14:34:13-05:00</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SasAttributeMapping']</con:path>
+              <con:element>SasAttributeMapping</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>userPrincipalName=orclsamaccountname</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SasVUuid']</con:path>
+              <con:element>SasVUuid</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>186EC9A56C1D0DF5E06327261DAC57BB</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SasOidUidAttribute']</con:path>
+              <con:element>SasOidUidAttribute</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>userPrincipalName</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SasSecUidAttribute']</con:path>
+              <con:element>SasSecUidAttribute</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>employeeId</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "SasAzureTntId" : "e6228cf6-a777-498f-b358-3f9b0efaba41",
+    "SasAppId" : "4bccf086-d852-4325-a5c4-7d8b7aa4c5a3",
+    "SasAppSecret" : "2844582F54F9170205505E66EADB16DACC5CC80CB67D6544C4DAD1C5B80BDBB9629D96DF310E6BE56D5E2D93971C27EB",
+    "SasSyncFrequency" : 5,
+    "SasGraphUrl" : "https://graph.microsoft.com",
+    "SasSyncGroup" : "qadaily-sync",
+    "SasLastSyncDate" : "2026-01-26T14:34:13-05:00",
+    "SasAttributeMapping" : "userPrincipalName=orclsamaccountname",
+    "SasVUuid" : "186EC9A56C1D0DF5E06327261DAC57BB",
+    "SasOidUidAttribute" : "userPrincipalName",
+    "SasSecUidAttribute" : "employeeId",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/azureSettings/186EC9A56C1D0DF5E06327261DAC57BB",
+      "name" : "azureSettings",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/azureSettings/186EC9A56C1D0DF5E06327261DAC57BB",
+      "name" : "azureSettings",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 1,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/azureSettings",
+    "name" : "azureSettings",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Azure Settings by UUID" id="2b28fb7b-1bdb-4b36-98f4-26982599109f">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/azureSettings/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Azure Settings by UUID" id="58401bdf-793e-4a3c-a720-91dd6d04bc2c" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/azureSettings/id</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="54f8feaa-46e3-4425-93bc-c716c013a2f0" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c0f61a3b-1d04-4f59-8c7c-18963db4999f" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="4e20b8fc-aa94-41ae-84ce-f8ae61521626" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['SasAzureTntId']</con:path>
+              <con:element>SasAzureTntId</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>e6228cf6-a777-498f-b358-3f9b0efaba41</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SasAppId']</con:path>
+              <con:element>SasAppId</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>4bccf086-d852-4325-a5c4-7d8b7aa4c5a3</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SasAppSecret']</con:path>
+              <con:element>SasAppSecret</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2844582F54F9170205505E66EADB16DACC5CC80CB67D6544C4DAD1C5B80BDBB9629D96DF310E6BE56D5E2D93971C27EB</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SasSyncFrequency']</con:path>
+              <con:element>SasSyncFrequency</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>5</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SasGraphUrl']</con:path>
+              <con:element>SasGraphUrl</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>https://graph.microsoft.com</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SasSyncGroup']</con:path>
+              <con:element>SasSyncGroup</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>qadaily-sync</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SasLastSyncDate']</con:path>
+              <con:element>SasLastSyncDate</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2026-01-26T14:44:14-05:00</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SasAttributeMapping']</con:path>
+              <con:element>SasAttributeMapping</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>userPrincipalName=orclsamaccountname</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SasVUuid']</con:path>
+              <con:element>SasVUuid</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>186EC9A56C1D0DF5E06327261DAC57BB</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SasOidUidAttribute']</con:path>
+              <con:element>SasOidUidAttribute</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>userPrincipalName</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SasSecUidAttribute']</con:path>
+              <con:element>SasSecUidAttribute</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>employeeId</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "SasAzureTntId" : "e6228cf6-a777-498f-b358-3f9b0efaba41",
+  "SasAppId" : "4bccf086-d852-4325-a5c4-7d8b7aa4c5a3",
+  "SasAppSecret" : "2844582F54F9170205505E66EADB16DACC5CC80CB67D6544C4DAD1C5B80BDBB9629D96DF310E6BE56D5E2D93971C27EB",
+  "SasSyncFrequency" : 5,
+  "SasGraphUrl" : "https://graph.microsoft.com",
+  "SasSyncGroup" : "qadaily-sync",
+  "SasLastSyncDate" : "2026-01-26T14:44:14-05:00",
+  "SasAttributeMapping" : "userPrincipalName=orclsamaccountname",
+  "SasVUuid" : "186EC9A56C1D0DF5E06327261DAC57BB",
+  "SasOidUidAttribute" : "userPrincipalName",
+  "SasSecUidAttribute" : "employeeId",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/azureSettings/186EC9A56C1D0DF5E06327261DAC57BB",
+    "name" : "azureSettings",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/azureSettings/186EC9A56C1D0DF5E06327261DAC57BB",
+    "name" : "azureSettings",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve Azure Settings#Response#$['items'][0]['SasVUuid']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript>import groovy.json.JsonOutput
+import java.net.HttpURLConnection
+import java.net.URL
+
+// --- Access SLA flag from TestSuite ---
+def slaFlag = context.testCase.testSuite.getPropertyValue("SLA_FAILED")
+log.info("TestCase Teardown running. SLA_FAILED = ${slaFlag}")
+ 
+if (slaFlag == "true") {
+    log.info("SLA failed — skipping TestRail result post.")
+    return
+}
+
+// Function to post test result to TestRail
+def postTestResultToTestRail() {
+
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+
+    def projectId = context.expand('${#Project#projectID}')
+    def testRunId = context.expand('${#Project#RunID}')
+
+    def testCaseId = context.expand('${#TestCase#TestCaseID}')
+    def testCaseName = testRunner.testCase.name
+
+    def failedTestSteps = []
+    def result = ""
+    def statusId = 1
+    def comment = ""
+
+    for (r in testRunner.results) {
+        if (r.getStatus().toString() != "PASS") {
+            def stepResult = context.expand('${' + r.testStep.name + '#Response}')
+            failedTestSteps.add(r.testStep.name + (stepResult ? (" - " + stepResult) : ""))
+        }
+    }
+
+    if (!failedTestSteps) {
+        comment = "${testCaseName} has passed successfully"
+    } else {
+        statusId = 5
+        comment = "${testCaseName} has failed on test steps:\n${failedTestSteps.join('\n')}"
+    }
+
+    def postUrl = "${testRailUrl}/add_result_for_case/${testRunId}/${testCaseId}"
+
+    def connection = new URL(postUrl).openConnection() as HttpURLConnection
+    connection.requestMethod = 'POST'
+    connection.doOutput = true
+    connection.setRequestProperty("Content-Type", "application/json")
+    connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+
+    def requestBody = [
+            status_id: statusId,
+            comment: comment
+    ]
+
+    def outputStream = connection.outputStream
+    outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+    outputStream.flush()
+
+    def responseCode = connection.responseCode
+    def responseMessage = connection.responseMessage
+
+    log.info("Response code: ${responseCode}")
+    log.info("Response message: ${responseMessage}")
+}
+
+postTestResultToTestRail()</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value>629430</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="ldapServers" path="cmic-uac-rest-api/rest/1/ldapServers" id="c13856f3-48d0-4fae-b302-a507de1258ef">
+  <con:settings>
+    <con:setting id="c13856f3-48d0-4fae-b302-a507de1258effileName">ldapServers</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:resource name="{id}" path="{id}" id="48bb9c42-ff24-415b-b008-9ce0fa5f3eb0">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>id</con:name>
+        <con:value>id</con:value>
+        <con:style>TEMPLATE</con:style>
+        <con:default>id</con:default>
+      </con:parameter>
+    </con:parameters>
+    <con:method name="Method 1" id="fa49287c-38fe-433b-8d21-756fb4167837" method="GET">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="a8a0be08-2a56-4ad5-8197-d22b61e6e222" mediaType="application/json">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:method name="Method 1" id="763e9a71-0836-47aa-99a0-3244a8f6cc73" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="0f2bf14a-2883-4c5b-b9c0-bbcdf7825a3f" mediaType="application/json">
+      <con:settings/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

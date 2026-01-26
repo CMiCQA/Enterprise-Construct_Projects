@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="azureSettings" path="cmic-uac-rest-api/rest/1/azureSettings" id="2098c4e1-9f9f-4031-827c-cf0feb327794">
+  <con:settings>
+    <con:setting id="2098c4e1-9f9f-4031-827c-cf0feb327794fileName">azureSettings</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:resource name="{id}" path="{id}" id="0c0b7531-d055-41bd-a03c-726c1ed86a27">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>id</con:name>
+        <con:value>id</con:value>
+        <con:style>TEMPLATE</con:style>
+        <con:default>id</con:default>
+      </con:parameter>
+    </con:parameters>
+    <con:method name="Method 1" id="75b04c55-75c2-4f45-95b8-d4883707b081" method="GET">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="58401bdf-793e-4a3c-a720-91dd6d04bc2c" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:method name="Method 1" id="75d6a27c-856c-414d-8cfa-28134f5f64ca" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="3dc99ea9-23de-45df-ad25-de79f15419a5" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

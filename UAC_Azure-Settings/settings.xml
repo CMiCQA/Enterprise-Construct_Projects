@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="36a8d03c-7350-4f56-9d24-e7fdb24131e7" name="UAC_Azure Settings">
+  <con:settings id="b12e9327-d0cf-4bf8-a350-8da5136f8fbd">
+    <con:setting id="36a8d03c-7350-4f56-9d24-e7fdb24131e7fileName">UAC_Azure-Settings</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

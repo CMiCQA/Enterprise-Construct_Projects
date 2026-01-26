@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="newLicenseVersion" path="cmic-uac-rest-api/rest/1/newLicenseVersion" id="f62793b7-002f-437e-9fa6-9bf78c720370">
+  <con:settings>
+    <con:setting id="f62793b7-002f-437e-9fa6-9bf78c720370fileName">newLicenseVersion</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="6956b658-04fa-47e1-a437-9c8b4ac7d700" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="21f07000-cfa0-4467-b00b-98e8b03659d4" mediaType="application/json">
+      <con:settings/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

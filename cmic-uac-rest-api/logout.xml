@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="logout" path="cmic-uac-rest-api/jersey/v1/logout" id="830e2df5-463f-4222-bb27-8befac129f60">
+  <con:settings>
+    <con:setting id="830e2df5-463f-4222-bb27-8befac129f60fileName">logout</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="ebb28dde-44cd-41af-abe8-c2eb66b42ceb" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="a9fd6dd1-aed9-41fe-a620-f7dc77b9a203" mediaType="application/json">
+      <con:settings/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

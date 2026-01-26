@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="a2d1f2e4-0d80-47dd-a796-2b18c90ee508" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_AUTH04_License Types" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="a2d1f2e4-0d80-47dd-a796-2b18c90ee508fileName">TC_AUTH04_License-Types</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve License Types" id="58bd4c97-3e53-42c4-b5be-f0f845079a00">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/licenseTypes" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve License Types" id="a416c467-c1dd-4311-8953-d1b51487f1f3" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f78825e2-be64-40c2-b849-a7717d402025" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="41d72a54-7699-407a-99d2-ba2499128d1d" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="0ed1d9a3-4094-4723-bcce-fb1edc411526" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['LtCode']</con:path>
+              <con:element>LtCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>X</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['LtUserType']</con:path>
+              <con:element>LtUserType</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>P</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['LtName']</con:path>
+              <con:element>LtName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Collaboration</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['LtSumOfLicenses']</con:path>
+              <con:element>LtSumOfLicenses</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>999999</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "LtCode" : "X",
+    "LtUserType" : "P",
+    "LtName" : "Collaboration",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/X",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/X",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "E",
+    "LtUserType" : "C",
+    "LtName" : "Enterprise",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/E",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/E",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "P",
+    "LtUserType" : "C",
+    "LtName" : "Field",
+    "LtSumOfLicenses" : 1999998,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/P",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/P",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "Y",
+    "LtUserType" : "C",
+    "LtName" : "Enterprise and Field",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/Y",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/Y",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "H",
+    "LtUserType" : "C",
+    "LtName" : "HRSS (Self-Service)",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/H",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/H",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "C",
+    "LtUserType" : "C",
+    "LtName" : "CRM",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/C",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/C",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "M",
+    "LtUserType" : "C",
+    "LtName" : "Site Management",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/M",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/M",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "U",
+    "LtUserType" : "B",
+    "LtName" : "Unlimited AI Usage",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/U",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/U",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "L",
+    "LtUserType" : "B",
+    "LtName" : "ECM + Analytics",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/L",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/L",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "V",
+    "LtUserType" : "C",
+    "LtName" : "Prequalification",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/V",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/V",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "T",
+    "LtUserType" : "C",
+    "LtName" : "E-Time",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/T",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/T",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "A",
+    "LtUserType" : "C",
+    "LtName" : "Scheduling",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/A",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/A",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 12,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes",
+    "name" : "licenseTypes",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve License Types with UUID" id="b14632a0-5dc7-4007-9082-5a1c445d9ad6">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/licenseTypes/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve License Types with UUID" id="a95e880a-d396-4461-a453-556bc635f846" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/X</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="044f225b-170a-4ce9-9f4b-4ea9307b760b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ce589bf7-72f2-4d76-a35a-1043506a7ff6" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="a10c6663-26d5-47e9-b46d-4283f1ea9420" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['LtCode']</con:path>
+              <con:element>LtCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve License Types#Response#$['items'][0]['LtCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['LtUserType']</con:path>
+              <con:element>LtUserType</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve License Types#Response#$['items'][0]['LtUserType']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['LtName']</con:path>
+              <con:element>LtName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve License Types#Response#$['items'][0]['LtName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['LtSumOfLicenses']</con:path>
+              <con:element>LtSumOfLicenses</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve License Types#Response#$['items'][0]['LtSumOfLicenses']}</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "LtCode" : "X",
+  "LtUserType" : "P",
+  "LtName" : "Collaboration",
+  "LtSumOfLicenses" : 999999,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/X",
+    "name" : "licenseTypes",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/X",
+    "name" : "licenseTypes",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve License Types#Response#$['items'][0]['LtCode']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript>import groovy.json.JsonOutput
+import java.net.HttpURLConnection
+import java.net.URL
+
+// --- Access SLA flag from TestSuite ---
+def slaFlag = context.testCase.testSuite.getPropertyValue("SLA_FAILED")
+log.info("TestCase Teardown running. SLA_FAILED = ${slaFlag}")
+ 
+if (slaFlag == "true") {
+    log.info("SLA failed — skipping TestRail result post.")
+    return
+}
+
+// Function to post test result to TestRail
+def postTestResultToTestRail() {
+
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+
+    def projectId = context.expand('${#Project#projectID}')
+    def testRunId = context.expand('${#Project#RunID}')
+
+    def testCaseId = context.expand('${#TestCase#TestCaseID}')
+    def testCaseName = testRunner.testCase.name
+
+    def failedTestSteps = []
+    def result = ""
+    def statusId = 1
+    def comment = ""
+
+    for (r in testRunner.results) {
+        if (r.getStatus().toString() != "PASS") {
+            def stepResult = context.expand('${' + r.testStep.name + '#Response}')
+            failedTestSteps.add(r.testStep.name + (stepResult ? (" - " + stepResult) : ""))
+        }
+    }
+
+    if (!failedTestSteps) {
+        comment = "${testCaseName} has passed successfully"
+    } else {
+        statusId = 5
+        comment = "${testCaseName} has failed on test steps:\n${failedTestSteps.join('\n')}"
+    }
+
+    def postUrl = "${testRailUrl}/add_result_for_case/${testRunId}/${testCaseId}"
+
+    def connection = new URL(postUrl).openConnection() as HttpURLConnection
+    connection.requestMethod = 'POST'
+    connection.doOutput = true
+    connection.setRequestProperty("Content-Type", "application/json")
+    connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+
+    def requestBody = [
+            status_id: statusId,
+            comment: comment
+    ]
+
+    def outputStream = connection.outputStream
+    outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+    outputStream.flush()
+
+    def responseCode = connection.responseCode
+    def responseMessage = connection.responseMessage
+
+    log.info("Response code: ${responseCode}")
+    log.info("Response message: ${responseMessage}")
+}
+
+postTestResultToTestRail()</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value>629427</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

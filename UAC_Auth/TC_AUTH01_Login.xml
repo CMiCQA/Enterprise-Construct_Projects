@@ -105,7 +105,7 @@
         <con:parameters/>
         <con:environmentSpec>
           <con:entry environmentId="48df59ab-9fb8-436f-9c77-264e6f1193e7">
-            <con:authProfile>raman</con:authProfile>
+            <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="adeb508a-495c-47b8-9884-91be0504cb65">
             <con:authProfile>raman</con:authProfile>
@@ -117,7 +117,7 @@
             <con:authProfile>raman</con:authProfile>
           </con:entry>
           <con:entry environmentId="c6f15ecf-b67c-4a3e-b574-685e816480d9">
-            <con:authProfile>NOVA CLOUD</con:authProfile>
+            <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="3ac2367f-7c3a-4624-9907-a6de4d8e254c">
             <con:authProfile>NOVA CLOUD</con:authProfile>

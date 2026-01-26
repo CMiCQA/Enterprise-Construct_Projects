@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="privileges" path="cmic-uac-rest-api/jersey/v1/privileges" id="3fbba7f1-c482-4b0a-a4f6-901c6a2a39f1">
+  <con:settings>
+    <con:setting id="3fbba7f1-c482-4b0a-a4f6-901c6a2a39f1fileName">privileges</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="96f04347-0b9e-45c9-b166-6701968b7162" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="8b52da38-816b-4dc3-8271-4fa40bcbb1bc" mediaType="application/json">
+      <con:settings/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

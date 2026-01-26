@@ -1,0 +1,4328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="6445cd58-b9bc-4305-9d57-8dc0d70de872" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP01_Retrieve Enterprise Roles" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="6445cd58-b9bc-4305-9d57-8dc0d70de872fileName">TC_TEMP01_Retrieve-Enterprise-Roles</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Enterprise Roles" id="436e592c-6be1-468a-9f84-faa7d877a2d9">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/enterpriseRoles" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Enterprise Roles" id="9815993d-1b98-45f9-80d5-c97506d0c22a" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="8d356b37-fd3b-4ca1-a71a-7dcd257643a7" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ce1407d5-2f34-4657-ae7c-b30cde85a394" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value=""/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Enterprise Roles by UUID" id="3bc96595-6655-4dc0-87bc-71860668c271">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/enterpriseRoles/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Enterprise Roles by UUID" id="e01b782d-bf8c-4a75-b5a0-e556190af8cd" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/1099TEST</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d75bff77-e112-4488-b7c4-1994b6725488" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="1d8a49bd-9818-4df8-bd5d-c81332601254" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="26a0c701-b9ab-47d2-a72d-caa7dba777b9" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['RoleCode']</con:path>
+              <con:element>RoleCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['RoleName']</con:path>
+              <con:element>RoleName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Enterprise Roles#Response#$['items'][0]['RoleName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "RoleCode" : "1099TEST",
+  "RoleName" : "1099 test",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/1099TEST",
+    "name" : "enterpriseRoles",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/1099TEST",
+    "name" : "enterpriseRoles",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Enterprise Roles by 1000 Limit" id="8f3aec8b-fec7-4d90-89ed-4e33c508ca5a">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/enterpriseRoles" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Enterprise Roles by 1000 Limit" id="9815993d-1b98-45f9-80d5-c97506d0c22a" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a9ecbb29-8541-4311-bb81-e82574e3c3bc" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c6b4d155-8716-4f72-9d56-15aa98bb642f" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="eee96908-fcf9-476b-8bb1-50d3095ad7c9" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['RoleCode']</con:path>
+              <con:element>RoleCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1099TEST</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['RoleName']</con:path>
+              <con:element>RoleName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1099 test</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "RoleCode" : "1099TEST",
+    "RoleName" : "1099 test",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/1099TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/1099TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "12345",
+    "RoleName" : "12345",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/12345",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/12345",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "1ROLE",
+    "RoleName" : "1ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/1ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/1ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "6300",
+    "RoleName" : "6300",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/6300",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/6300",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "AK ROLE",
+    "RoleName" : "AK ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/AK%20ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/AK%20ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "APIROLE",
+    "RoleName" : "APIROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/APIROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/APIROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "APTEST",
+    "RoleName" : "APTEST",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/APTEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/APTEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "AANVIROLE",
+    "RoleName" : "Aanvi's role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/AANVIROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/AANVIROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ABROLE",
+    "RoleName" : "Abhilash's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ABROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ABROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ACCOUNTING",
+    "RoleName" : "Accounting Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ACCOUNTING",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ACCOUNTING",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ADTEST",
+    "RoleName" : "Adam Test Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ADTEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ADTEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ADAMR",
+    "RoleName" : "Adam's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ADAMR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ADAMR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "AKROLE",
+    "RoleName" : "Alex K.'s Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/AKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/AKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ALRINA",
+    "RoleName" : "Alrina's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ALRINA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ALRINA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ANDY",
+    "RoleName" : "Andy's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ANDY",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ANDY",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ANNIE",
+    "RoleName" : "Annie's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ANNIE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ANNIE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ANNV",
+    "RoleName" : "Annvea's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ANNV",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ANNV",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ARADFROLE",
+    "RoleName" : "Anu's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ARADFROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ARADFROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ASHAR",
+    "RoleName" : "Ashar Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ASHAR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ASHAR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "BK_ROLE",
+    "RoleName" : "Baljit's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/BK_ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/BK_ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "CAROLE",
+    "RoleName" : "CA's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CAROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CAROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "CCQ-ROLE",
+    "RoleName" : "CCQ-ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CCQ-ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CCQ-ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "FIELD",
+    "RoleName" : "CMIC Field Only",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/FIELD",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/FIELD",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "CLAROLE",
+    "RoleName" : "Claire's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CLAROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CLAROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "CROLE",
+    "RoleName" : "Claire's second role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "CONOR",
+    "RoleName" : "Conor's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CONOR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CONOR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "FORECAST",
+    "RoleName" : "Contract Forecasting Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/FORECAST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/FORECAST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "DA",
+    "RoleName" : "DA role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "DHRQA",
+    "RoleName" : "DHRQA",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DHRQA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DHRQA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "DHRUV",
+    "RoleName" : "DHRUV'S ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DHRUV",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DHRUV",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "DAVID",
+    "RoleName" : "Davids Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DAVID",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DAVID",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "E-TIME",
+    "RoleName" : "E-time Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/E-TIME",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/E-TIME",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TEST123",
+    "RoleName" : "E2ER1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST123",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST123",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "E2ER2",
+    "RoleName" : "E2ER2 Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/E2ER2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/E2ER2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "EKTA",
+    "RoleName" : "Ekta role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "EKTAP",
+    "RoleName" : "EktaP's role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTAP",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTAP",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "EKTAQA",
+    "RoleName" : "EktaQA's role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTAQA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTAQA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "EKTAU",
+    "RoleName" : "EktaU's role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTAU",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTAU",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "EMMGR",
+    "RoleName" : "Equipment manager",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EMMGR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EMMGR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "FIN_MNGR",
+    "RoleName" : "Finance Manager Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/FIN_MNGR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/FIN_MNGR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "GROLE",
+    "RoleName" : "Gagan's role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "GSROLE",
+    "RoleName" : "Gurinder Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "GURINDER",
+    "RoleName" : "Gurinder U",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GURINDER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GURINDER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "GURJYOT",
+    "RoleName" : "Gurjyot's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GURJYOT",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GURJYOT",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HDROLE",
+    "RoleName" : "HARDIK'S ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HDROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HDROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HDMASTER",
+    "RoleName" : "HD MASTER ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HDMASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HDMASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HFROLE1",
+    "RoleName" : "HFROLE1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HFROLE2",
+    "RoleName" : "HFROLE2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HFROLE3",
+    "RoleName" : "HFROLE3",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HFROLE4",
+    "RoleName" : "HFROLE4",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE4",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE4",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HSROLE",
+    "RoleName" : "HIMJA ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HSTROLE",
+    "RoleName" : "HSTROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HSTROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HSTROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HADEER",
+    "RoleName" : "Hadeer's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HADEER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HADEER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "IHORD",
+    "RoleName" : "Ihor's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/IHORD",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/IHORD",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "IHMASTER",
+    "RoleName" : "Irina's Master Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/IHMASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/IHMASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "JAYROLE",
+    "RoleName" : "JAY ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JAYROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JAYROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "JACOBB",
+    "RoleName" : "Jacob's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JACOBB",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JACOBB",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "JANINEROLE",
+    "RoleName" : "Janine's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JANINEROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JANINEROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "JASPER_EXP",
+    "RoleName" : "Jasper Export Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JASPER_EXP",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JASPER_EXP",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "KEJAL ROLE",
+    "RoleName" : "Kejal's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/KEJAL%20ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/KEJAL%20ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "KIAADFROLE",
+    "RoleName" : "Kiara's ADF Test Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/KIAADFROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/KIAADFROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "LOHITHA",
+    "RoleName" : "Lohitha's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/LOHITHA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/LOHITHA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "LUDMILA",
+    "RoleName" : "Ludmila's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/LUDMILA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/LUDMILA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MDR-ROLE",
+    "RoleName" : "MDR Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR-ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR-ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MDR",
+    "RoleName" : "MDR's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MDR2",
+    "RoleName" : "MDR2's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MDR3",
+    "RoleName" : "MDR3's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MRROLE",
+    "RoleName" : "Madhuri Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MRROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MRROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MARJANRL",
+    "RoleName" : "Marjans Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MARJANRL",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MARJANRL",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MASTER",
+    "RoleName" : "Master Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MELISSAA",
+    "RoleName" : "Melissa Afkar's role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MELISSAA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MELISSAA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MWROLE",
+    "RoleName" : "Melissa's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MWROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MWROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MIKEF",
+    "RoleName" : "Mike Fernandes' Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MIKEF",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MIKEF",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MISTYROLE",
+    "RoleName" : "Misty's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MISTYROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MISTYROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "NJROLE",
+    "RoleName" : "NJROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NJROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NJROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "NK ROLE",
+    "RoleName" : "Neetu Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NK%20ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NK%20ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "NKROLE",
+    "RoleName" : "Neetu's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "PYNEWHIRE",
+    "RoleName" : "New Hire Roles",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PYNEWHIRE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PYNEWHIRE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "NSROLE3",
+    "RoleName" : "Nihar Role 3",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NSROLE3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NSROLE3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "NSROLE",
+    "RoleName" : "Nihar's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ONEM",
+    "RoleName" : "ONE MODULT",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ONEM",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ONEM",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "P1P1",
+    "RoleName" : "P1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/P1P1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/P1P1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "PNROLE",
+    "RoleName" : "Padmanath Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PNROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PNROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "PARAMVIR12",
+    "RoleName" : "Paramvir",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PARAMVIR12",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PARAMVIR12",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "PRANESH",
+    "RoleName" : "Pranesh role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PRANESH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PRANESH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "PRASHANTH",
+    "RoleName" : "Prashanth's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PRASHANTH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PRASHANTH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "R1TEST",
+    "RoleName" : "R1TEST",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/R1TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/R1TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "R2TEST",
+    "RoleName" : "R2Test",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/R2TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/R2TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "R3TEST",
+    "RoleName" : "R3TEST",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/R3TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/R3TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RAJMASTER",
+    "RoleName" : "RAJ12C -Raj Master",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAJMASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAJMASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RAVI3",
+    "RoleName" : "RAVI3 Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAVI3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAVI3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ROLERK",
+    "RoleName" : "RK's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLERK",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLERK",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RLAK",
+    "RoleName" : "ROHINI",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RLAK",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RLAK",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RAC02",
+    "RoleName" : "RUSHIL'S QA ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAC02",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAC02",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RAC01",
+    "RoleName" : "RUSHIL'S ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAC01",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAC01",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RAJNEESH",
+    "RoleName" : "Rajneesh Master Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAJNEESH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAJNEESH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RJROLE",
+    "RoleName" : "Raman Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RJROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RJROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RASTO",
+    "RoleName" : "Rasto's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RASTO",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RASTO",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RAVI",
+    "RoleName" : "Ravi Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAVI",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAVI",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RKROLE",
+    "RoleName" : "Raymond's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RIMAROLE",
+    "RoleName" : "Rima Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RIMAROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RIMAROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ROIHIN",
+    "RoleName" : "Rohini Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROIHIN",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROIHIN",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ROHINI",
+    "RoleName" : "Rohini role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROHINI",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROHINI",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SIMAR",
+    "RoleName" : "Role 14",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SIMAR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SIMAR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "DKROLE",
+    "RoleName" : "Role for dkc company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ROLE1",
+    "RoleName" : "Role1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLE1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLE1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RON",
+    "RoleName" : "Ron's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RON",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RON",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SA",
+    "RoleName" : "SA Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SMROLE",
+    "RoleName" : "SMB company users main role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SMROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SMROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SSCRQL",
+    "RoleName" : "SSCR QA Lstest Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SSCRQL",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SSCRQL",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SKROLE",
+    "RoleName" : "Sangeeth's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SARAH",
+    "RoleName" : "Sarah's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SARAH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SARAH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SIMARS",
+    "RoleName" : "Simar Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SIMARS",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SIMARS",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SSROLE",
+    "RoleName" : "Sweta Sukanya's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "E2ET1",
+    "RoleName" : "TEST12345",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/E2ET1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/E2ET1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TMSHTENTRY",
+    "RoleName" : "TMSHTENTRY CCC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TMSHTENTRY",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TMSHTENTRY",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TTNO",
+    "RoleName" : "TTNO",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TTNO",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TTNO",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TERRYROLE",
+    "RoleName" : "Terry's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TERRYROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TERRYROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TESTROLE",
+    "RoleName" : "Test Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TESTROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TESTROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "PERMISSION",
+    "RoleName" : "Testing PERMISSION Post Patch",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PERMISSION",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PERMISSION",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TRAUSER",
+    "RoleName" : "Training Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TRAUSER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TRAUSER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "VIDYS",
+    "RoleName" : "VIDY",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VIDYS",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VIDYS",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "VADIM",
+    "RoleName" : "Vadim role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VADIM",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VADIM",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "VPROLE",
+    "RoleName" : "Victoria's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VPROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VPROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "VJROLE",
+    "RoleName" : "Vijendar's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VJROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VJROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "VIVECHANA",
+    "RoleName" : "Vivechana Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VIVECHANA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VIVECHANA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "YSHROLE",
+    "RoleName" : "YSHROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/YSHROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/YSHROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ZAR12TEST",
+    "RoleName" : "ZAR12TEST",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZAR12TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZAR12TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ZHENGROLE",
+    "RoleName" : "ZHENGROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZHENGROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZHENGROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ZUBAIR",
+    "RoleName" : "ZUBAIR Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZUBAIR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZUBAIR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ZOHREH",
+    "RoleName" : "Zohreh Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZOHREH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZOHREH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TEST",
+    "RoleName" : "ashar",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "CANVASR",
+    "RoleName" : "canvas testing role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CANVASR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CANVASR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "EFROLE01",
+    "RoleName" : "dEffective Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EFROLE01",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EFROLE01",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "KEERTHI",
+    "RoleName" : "keerthi role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/KEERTHI",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/KEERTHI",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ROLET1",
+    "RoleName" : "test 00548997",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLET1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLET1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ROLET2",
+    "RoleName" : "test 00548997 - R",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLET2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLET2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TEST12345",
+    "RoleName" : "test12345",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST12345",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST12345",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TEST2",
+    "RoleName" : "test2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ZALLAMEH",
+    "RoleName" : "zallameh",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZALLAMEH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZALLAMEH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 140,
+  "hasMore" : false,
+  "limit" : 1000,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles",
+    "name" : "enterpriseRoles",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Enterprise Roles by 1001 Limit" id="03878226-341f-47ba-a504-8306c2788be8">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/enterpriseRoles" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Enterprise Roles by 1001 Limit" id="9815993d-1b98-45f9-80d5-c97506d0c22a" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a9ecbb29-8541-4311-bb81-e82574e3c3bc" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c6b4d155-8716-4f72-9d56-15aa98bb642f" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="d86021ee-7554-4746-ab49-f168b3e549b1" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['javaMessage']</con:path>
+              <con:element>javaMessage</con:element>
+              <con:operatorId>13</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue> Limit exceeded</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"exceptionName":"CMGeneralException","code":"WSD-0000","cmicMessage":"Exception encountered during request processing.","javaMessage":"error: Limit exceeded, maximum is 1000","javaExceptionClassName":"","longDescription":""}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="limit" value="1001"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Enterprise Roles by Limit and offset" id="8326635c-b463-482e-b768-7db9030fcbf6">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/enterpriseRoles" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Enterprise Roles by Limit and offset" id="9815993d-1b98-45f9-80d5-c97506d0c22a" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a9ecbb29-8541-4311-bb81-e82574e3c3bc" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c6b4d155-8716-4f72-9d56-15aa98bb642f" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="eee96908-fcf9-476b-8bb1-50d3095ad7c9" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['RoleCode']</con:path>
+              <con:element>RoleCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1099TEST</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['RoleName']</con:path>
+              <con:element>RoleName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1099 test</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['offset']</con:path>
+              <con:element>offset</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "RoleCode" : "1099TEST",
+    "RoleName" : "1099 test",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/1099TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/1099TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "12345",
+    "RoleName" : "12345",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/12345",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/12345",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "1ROLE",
+    "RoleName" : "1ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/1ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/1ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "6300",
+    "RoleName" : "6300",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/6300",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/6300",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "AK ROLE",
+    "RoleName" : "AK ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/AK%20ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/AK%20ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "APIROLE",
+    "RoleName" : "APIROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/APIROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/APIROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "APTEST",
+    "RoleName" : "APTEST",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/APTEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/APTEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "AANVIROLE",
+    "RoleName" : "Aanvi's role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/AANVIROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/AANVIROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ABROLE",
+    "RoleName" : "Abhilash's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ABROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ABROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ACCOUNTING",
+    "RoleName" : "Accounting Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ACCOUNTING",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ACCOUNTING",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ADTEST",
+    "RoleName" : "Adam Test Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ADTEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ADTEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ADAMR",
+    "RoleName" : "Adam's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ADAMR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ADAMR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "AKROLE",
+    "RoleName" : "Alex K.'s Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/AKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/AKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ALRINA",
+    "RoleName" : "Alrina's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ALRINA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ALRINA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ANDY",
+    "RoleName" : "Andy's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ANDY",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ANDY",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ANNIE",
+    "RoleName" : "Annie's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ANNIE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ANNIE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ANNV",
+    "RoleName" : "Annvea's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ANNV",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ANNV",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ARADFROLE",
+    "RoleName" : "Anu's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ARADFROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ARADFROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ASHAR",
+    "RoleName" : "Ashar Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ASHAR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ASHAR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "BK_ROLE",
+    "RoleName" : "Baljit's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/BK_ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/BK_ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "CAROLE",
+    "RoleName" : "CA's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CAROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CAROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "CCQ-ROLE",
+    "RoleName" : "CCQ-ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CCQ-ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CCQ-ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "FIELD",
+    "RoleName" : "CMIC Field Only",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/FIELD",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/FIELD",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "CLAROLE",
+    "RoleName" : "Claire's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CLAROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CLAROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "CROLE",
+    "RoleName" : "Claire's second role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "CONOR",
+    "RoleName" : "Conor's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CONOR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CONOR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "FORECAST",
+    "RoleName" : "Contract Forecasting Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/FORECAST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/FORECAST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "DA",
+    "RoleName" : "DA role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "DHRQA",
+    "RoleName" : "DHRQA",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DHRQA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DHRQA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "DHRUV",
+    "RoleName" : "DHRUV'S ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DHRUV",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DHRUV",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "DAVID",
+    "RoleName" : "Davids Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DAVID",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DAVID",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "E-TIME",
+    "RoleName" : "E-time Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/E-TIME",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/E-TIME",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TEST123",
+    "RoleName" : "E2ER1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST123",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST123",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "E2ER2",
+    "RoleName" : "E2ER2 Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/E2ER2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/E2ER2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "EKTA",
+    "RoleName" : "Ekta role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "EKTAP",
+    "RoleName" : "EktaP's role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTAP",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTAP",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "EKTAQA",
+    "RoleName" : "EktaQA's role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTAQA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTAQA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "EKTAU",
+    "RoleName" : "EktaU's role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTAU",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EKTAU",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "EMMGR",
+    "RoleName" : "Equipment manager",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EMMGR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EMMGR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "FIN_MNGR",
+    "RoleName" : "Finance Manager Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/FIN_MNGR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/FIN_MNGR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "GROLE",
+    "RoleName" : "Gagan's role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "GSROLE",
+    "RoleName" : "Gurinder Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "GURINDER",
+    "RoleName" : "Gurinder U",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GURINDER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GURINDER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "GURJYOT",
+    "RoleName" : "Gurjyot's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GURJYOT",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/GURJYOT",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HDROLE",
+    "RoleName" : "HARDIK'S ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HDROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HDROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HDMASTER",
+    "RoleName" : "HD MASTER ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HDMASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HDMASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HFROLE1",
+    "RoleName" : "HFROLE1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HFROLE2",
+    "RoleName" : "HFROLE2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HFROLE3",
+    "RoleName" : "HFROLE3",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HFROLE4",
+    "RoleName" : "HFROLE4",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE4",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HFROLE4",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HSROLE",
+    "RoleName" : "HIMJA ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HSTROLE",
+    "RoleName" : "HSTROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HSTROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HSTROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "HADEER",
+    "RoleName" : "Hadeer's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HADEER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/HADEER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "IHORD",
+    "RoleName" : "Ihor's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/IHORD",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/IHORD",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "IHMASTER",
+    "RoleName" : "Irina's Master Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/IHMASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/IHMASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "JAYROLE",
+    "RoleName" : "JAY ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JAYROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JAYROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "JACOBB",
+    "RoleName" : "Jacob's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JACOBB",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JACOBB",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "JANINEROLE",
+    "RoleName" : "Janine's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JANINEROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JANINEROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "JASPER_EXP",
+    "RoleName" : "Jasper Export Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JASPER_EXP",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/JASPER_EXP",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "KEJAL ROLE",
+    "RoleName" : "Kejal's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/KEJAL%20ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/KEJAL%20ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "KIAADFROLE",
+    "RoleName" : "Kiara's ADF Test Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/KIAADFROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/KIAADFROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "LOHITHA",
+    "RoleName" : "Lohitha's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/LOHITHA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/LOHITHA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "LUDMILA",
+    "RoleName" : "Ludmila's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/LUDMILA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/LUDMILA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MDR-ROLE",
+    "RoleName" : "MDR Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR-ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR-ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MDR",
+    "RoleName" : "MDR's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MDR2",
+    "RoleName" : "MDR2's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MDR3",
+    "RoleName" : "MDR3's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MDR3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MRROLE",
+    "RoleName" : "Madhuri Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MRROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MRROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MARJANRL",
+    "RoleName" : "Marjans Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MARJANRL",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MARJANRL",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MASTER",
+    "RoleName" : "Master Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MELISSAA",
+    "RoleName" : "Melissa Afkar's role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MELISSAA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MELISSAA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MWROLE",
+    "RoleName" : "Melissa's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MWROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MWROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MIKEF",
+    "RoleName" : "Mike Fernandes' Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MIKEF",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MIKEF",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "MISTYROLE",
+    "RoleName" : "Misty's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MISTYROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/MISTYROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "NJROLE",
+    "RoleName" : "NJROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NJROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NJROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "NK ROLE",
+    "RoleName" : "Neetu Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NK%20ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NK%20ROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "NKROLE",
+    "RoleName" : "Neetu's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "PYNEWHIRE",
+    "RoleName" : "New Hire Roles",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PYNEWHIRE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PYNEWHIRE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "NSROLE3",
+    "RoleName" : "Nihar Role 3",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NSROLE3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NSROLE3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "NSROLE",
+    "RoleName" : "Nihar's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/NSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ONEM",
+    "RoleName" : "ONE MODULT",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ONEM",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ONEM",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "P1P1",
+    "RoleName" : "P1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/P1P1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/P1P1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "PNROLE",
+    "RoleName" : "Padmanath Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PNROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PNROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "PARAMVIR12",
+    "RoleName" : "Paramvir",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PARAMVIR12",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PARAMVIR12",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "PRANESH",
+    "RoleName" : "Pranesh role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PRANESH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PRANESH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "PRASHANTH",
+    "RoleName" : "Prashanth's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PRASHANTH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PRASHANTH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "R1TEST",
+    "RoleName" : "R1TEST",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/R1TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/R1TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "R2TEST",
+    "RoleName" : "R2Test",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/R2TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/R2TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "R3TEST",
+    "RoleName" : "R3TEST",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/R3TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/R3TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RAJMASTER",
+    "RoleName" : "RAJ12C -Raj Master",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAJMASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAJMASTER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RAVI3",
+    "RoleName" : "RAVI3 Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAVI3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAVI3",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ROLERK",
+    "RoleName" : "RK's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLERK",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLERK",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RLAK",
+    "RoleName" : "ROHINI",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RLAK",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RLAK",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RAC02",
+    "RoleName" : "RUSHIL'S QA ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAC02",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAC02",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RAC01",
+    "RoleName" : "RUSHIL'S ROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAC01",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAC01",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RAJNEESH",
+    "RoleName" : "Rajneesh Master Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAJNEESH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAJNEESH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RJROLE",
+    "RoleName" : "Raman Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RJROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RJROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RASTO",
+    "RoleName" : "Rasto's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RASTO",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RASTO",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RAVI",
+    "RoleName" : "Ravi Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAVI",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RAVI",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RKROLE",
+    "RoleName" : "Raymond's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RIMAROLE",
+    "RoleName" : "Rima Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RIMAROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RIMAROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ROIHIN",
+    "RoleName" : "Rohini Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROIHIN",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROIHIN",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ROHINI",
+    "RoleName" : "Rohini role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROHINI",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROHINI",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SIMAR",
+    "RoleName" : "Role 14",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SIMAR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SIMAR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "DKROLE",
+    "RoleName" : "Role for dkc company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/DKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ROLE1",
+    "RoleName" : "Role1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLE1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLE1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "RON",
+    "RoleName" : "Ron's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RON",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/RON",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SA",
+    "RoleName" : "SA Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SMROLE",
+    "RoleName" : "SMB company users main role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SMROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SMROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SSCRQL",
+    "RoleName" : "SSCR QA Lstest Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SSCRQL",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SSCRQL",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SKROLE",
+    "RoleName" : "Sangeeth's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SKROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SARAH",
+    "RoleName" : "Sarah's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SARAH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SARAH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SIMARS",
+    "RoleName" : "Simar Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SIMARS",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SIMARS",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "SSROLE",
+    "RoleName" : "Sweta Sukanya's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/SSROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "E2ET1",
+    "RoleName" : "TEST12345",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/E2ET1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/E2ET1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TMSHTENTRY",
+    "RoleName" : "TMSHTENTRY CCC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TMSHTENTRY",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TMSHTENTRY",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TTNO",
+    "RoleName" : "TTNO",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TTNO",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TTNO",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TERRYROLE",
+    "RoleName" : "Terry's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TERRYROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TERRYROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TESTROLE",
+    "RoleName" : "Test Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TESTROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TESTROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "PERMISSION",
+    "RoleName" : "Testing PERMISSION Post Patch",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PERMISSION",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/PERMISSION",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TRAUSER",
+    "RoleName" : "Training Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TRAUSER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TRAUSER",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "VIDYS",
+    "RoleName" : "VIDY",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VIDYS",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VIDYS",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "VADIM",
+    "RoleName" : "Vadim role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VADIM",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VADIM",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "VPROLE",
+    "RoleName" : "Victoria's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VPROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VPROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "VJROLE",
+    "RoleName" : "Vijendar's Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VJROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VJROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "VIVECHANA",
+    "RoleName" : "Vivechana Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VIVECHANA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/VIVECHANA",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "YSHROLE",
+    "RoleName" : "YSHROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/YSHROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/YSHROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ZAR12TEST",
+    "RoleName" : "ZAR12TEST",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZAR12TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZAR12TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ZHENGROLE",
+    "RoleName" : "ZHENGROLE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZHENGROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZHENGROLE",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ZUBAIR",
+    "RoleName" : "ZUBAIR Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZUBAIR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZUBAIR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ZOHREH",
+    "RoleName" : "Zohreh Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZOHREH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZOHREH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TEST",
+    "RoleName" : "ashar",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "CANVASR",
+    "RoleName" : "canvas testing role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CANVASR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/CANVASR",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "EFROLE01",
+    "RoleName" : "dEffective Role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EFROLE01",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/EFROLE01",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "KEERTHI",
+    "RoleName" : "keerthi role",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/KEERTHI",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/KEERTHI",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ROLET1",
+    "RoleName" : "test 00548997",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLET1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLET1",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ROLET2",
+    "RoleName" : "test 00548997 - R",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLET2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ROLET2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TEST12345",
+    "RoleName" : "test12345",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST12345",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST12345",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "TEST2",
+    "RoleName" : "test2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/TEST2",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "RoleCode" : "ZALLAMEH",
+    "RoleName" : "zallameh",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZALLAMEH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles/ZALLAMEH",
+      "name" : "enterpriseRoles",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 140,
+  "hasMore" : false,
+  "limit" : 1000,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles",
+    "name" : "enterpriseRoles",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value="1"/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript>import groovy.json.JsonOutput
+import java.net.HttpURLConnection
+import java.net.URL
+
+// --- Access SLA flag from TestSuite ---
+def slaFlag = context.testCase.testSuite.getPropertyValue("SLA_FAILED")
+log.info("TestCase Teardown running. SLA_FAILED = ${slaFlag}")
+ 
+if (slaFlag == "true") {
+    log.info("SLA failed — skipping TestRail result post.")
+    return
+}
+
+// Function to post test result to TestRail
+def postTestResultToTestRail() {
+
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+
+    def projectId = context.expand('${#Project#projectID}')
+    def testRunId = context.expand('${#Project#RunID}')
+
+    def testCaseId = context.expand('${#TestCase#TestCaseID}')
+    def testCaseName = testRunner.testCase.name
+
+    def failedTestSteps = []
+    def result = ""
+    def statusId = 1
+    def comment = ""
+
+    for (r in testRunner.results) {
+        if (r.getStatus().toString() != "PASS") {
+            def stepResult = context.expand('${' + r.testStep.name + '#Response}')
+            failedTestSteps.add(r.testStep.name + (stepResult ? (" - " + stepResult) : ""))
+        }
+    }
+
+    if (!failedTestSteps) {
+        comment = "${testCaseName} has passed successfully"
+    } else {
+        statusId = 5
+        comment = "${testCaseName} has failed on test steps:\n${failedTestSteps.join('\n')}"
+    }
+
+    def postUrl = "${testRailUrl}/add_result_for_case/${testRunId}/${testCaseId}"
+
+    def connection = new URL(postUrl).openConnection() as HttpURLConnection
+    connection.requestMethod = 'POST'
+    connection.doOutput = true
+    connection.setRequestProperty("Content-Type", "application/json")
+    connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+
+    def requestBody = [
+            status_id: statusId,
+            comment: comment
+    ]
+
+    def outputStream = connection.outputStream
+    outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+    outputStream.flush()
+
+    def responseCode = connection.responseCode
+    def responseMessage = connection.responseMessage
+
+    log.info("Response code: ${responseCode}")
+    log.info("Response message: ${responseMessage}")
+}
+
+postTestResultToTestRail()</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value>629432</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>
