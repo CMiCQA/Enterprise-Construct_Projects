@@ -1,0 +1,1666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="303dd31c-9555-4b20-b8ee-2dc10eeccb6a" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP09_Retrieve Job Security Group" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="303dd31c-9555-4b20-b8ee-2dc10eeccb6afileName">TC_TEMP09_Retrieve-Job-Security-Group</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Job Security Group" id="2280d704-f615-4e04-bf7a-bc48c8eca7ff">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/jobSecurityGroup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Job Security Group" id="9230dfb2-c6df-437b-ad27-5e043dc74d50" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5fb91ecf-096e-4099-99a5-581017918147" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="4490e217-1547-430b-ab6c-e2f2a2e5f6ca" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="afc8b98f-546b-47f9-bc10-3a0b2a1fee1a" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['JsgCompCode']</con:path>
+              <con:element>JsgCompCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>101</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JsgCode']</con:path>
+              <con:element>JsgCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ANNIE1</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JsgName']</con:path>
+              <con:element>JsgName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Annie Job Group</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JsgCompName']</con:path>
+              <con:element>JsgCompName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>101</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "JsgCompCode" : "101",
+    "JsgCode" : "ANNIE1",
+    "JsgName" : "Annie Job Group",
+    "JsgCompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000331303100000006414E4E494531",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000331303100000006414E4E494531",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "101",
+    "JsgCode" : "EFSEC01",
+    "JsgName" : "Earl Security Job Group",
+    "JsgCompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000033130310000000745465345433031",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000033130310000000745465345433031",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "101",
+    "JsgCode" : "MASTER",
+    "JsgName" : "Master Job Security Grouop",
+    "JsgCompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003313031000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003313031000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AZC",
+    "JsgCode" : "AZC-SECURE",
+    "JsgName" : "AZC-SECURE",
+    "JsgCompName" : "A Z Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415A430000000A415A432D534543555245",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415A430000000A415A432D534543555245",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ABJ",
+    "JsgCode" : "MASTER",
+    "JsgName" : "MASTER GROUP",
+    "JsgCompName" : "ABJ company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341424A000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341424A000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AD01",
+    "JsgCode" : "ADJS",
+    "JsgName" : "AD01 Job Security Group",
+    "JsgCompName" : "AD01 Anupama Devis",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414430310000000441444A53",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414430310000000441444A53",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ADIUS",
+    "JsgCode" : "ADISCE",
+    "JsgName" : "ADI  JOB SECURITY",
+    "JsgCompName" : "ADI USPAYROLL",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000005414449555300000006414449534345",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000005414449555300000006414449534345",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AHKCO",
+    "JsgCode" : "AHJC",
+    "JsgName" : "AK Job Security",
+    "JsgCompName" : "AHK Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000541484B434F0000000441484A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000541484B434F0000000441484A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AJ-COMP",
+    "JsgCode" : "AJJOBSEC",
+    "JsgName" : "Astha's Job Security Group",
+    "JsgCompName" : "AJ - Astha Jain Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007414A2D434F4D5000000008414A4A4F42534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007414A2D434F4D5000000008414A4A4F42534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "AKJC",
+    "JsgName" : "AKJC",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000004414B4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000004414B4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "AK_SC",
+    "JsgName" : "AK's security group",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000005414B5F5343",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000005414B5F5343",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "NJJC",
+    "JsgName" : "NJJC",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F5250000000044E4A4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F5250000000044E4A4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "TEST",
+    "JsgName" : "test",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F52500000000454455354",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F52500000000454455354",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "VID",
+    "JsgName" : "VID",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000003564944",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000003564944",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKO",
+    "JsgCode" : "MASTER",
+    "JsgName" : "Master Group AKO",
+    "JsgCompName" : "AKO Alexandre Kolevatov LLC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003414B4F000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003414B4F000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ALEC",
+    "JsgCode" : "ALECSEC",
+    "JsgName" : "ALEC SECURITY",
+    "JsgCompName" : "ALEC UAE Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414C454300000007414C4543534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414C454300000007414C4543534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "APITEST",
+    "JsgCode" : "APISEC2",
+    "JsgName" : "API Security",
+    "JsgCompName" : "API TESTING",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007415049544553540000000741504953454332",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007415049544553540000000741504953454332",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "APU",
+    "JsgCode" : "APS",
+    "JsgName" : "Apurva's Security Group",
+    "JsgCompName" : "APURVA SINGH APS",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341505500000003415053",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341505500000003415053",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARC-003",
+    "JsgName" : "Kingston Ferries",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303033",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303033",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARC-004",
+    "JsgName" : "ARC Project for GCS",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303034",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303034",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARC-006",
+    "JsgName" : "ARC Project2 GCS QADaily",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303036",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303036",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARJOBS",
+    "JsgName" : "AR Jobs/Project",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000034152430000000641524A4F4253",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000034152430000000641524A4F4253",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AV",
+    "JsgCode" : "AV",
+    "JsgName" : "AV Security Group",
+    "JsgCompName" : "AV Adam Vesters Co",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000024156000000024156",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000024156000000024156",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AVC",
+    "JsgCode" : "AVC",
+    "JsgName" : "AVC GROUP",
+    "JsgCompName" : "AV Construction Ltd.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341564300000003415643",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341564300000003415643",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AANVICOM",
+    "JsgCode" : "AANVISEC",
+    "JsgName" : "Aanvi's job security",
+    "JsgCompName" : "Aanvi's Home Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000841414E5649434F4D0000000841414E5649534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000841414E5649434F4D0000000841414E5649534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup",
+    "name" : "jobSecurityGroup",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Fetch UUID" id="71f9217f-0549-4fc1-8c34-e2d8b1ba2873">
+    <con:settings/>
+    <con:config>
+      <script>// Get response
+def response = context.expand('${Retrieve Job Security Group#Response}')
+log.info response
+
+def json = new groovy.json.JsonSlurper().parseText(response)
+
+// Take the first href
+def href = json.items[0].links[0].href
+
+// Extract ID (after last '/')
+def id = href.tokenize('/')[-1]
+
+// Store in property for later use
+context.testCase.setPropertyValue("UniqueId", id)
+
+log.info "Extracted ID: " + id</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Job Security Group by UUID" id="a492e1fe-9719-4b9e-8f59-c4730316ddb2">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/jobSecurityGroup/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Job Security Group by UUID" id="0a4ef996-3ff1-4567-ab6e-cb307a1aaedc" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/101</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="aca9cea9-262f-4c8e-994c-66e8c016d13d" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="62d6d692-9c5c-4279-bf8d-2bb4376eb2ba" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="7da1b45d-29dc-4056-a31d-5943962ce486" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['JsgCompCode']</con:path>
+              <con:element>JsgCompCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Security Group#Response#$['items'][0]['JsgCompCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['JsgCode']</con:path>
+              <con:element>JsgCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Security Group#Response#$['items'][0]['JsgCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['JsgName']</con:path>
+              <con:element>JsgName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Security Group#Response#$['items'][0]['JsgName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['JsgCompName']</con:path>
+              <con:element>JsgCompName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Security Group#Response#$['items'][0]['JsgCompName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "JsgCompCode" : "101",
+  "JsgCode" : "ANNIE1",
+  "JsgName" : "Annie Job Group",
+  "JsgCompName" : "101",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000331303100000006414E4E494531",
+    "name" : "jobSecurityGroup",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000331303100000006414E4E494531",
+    "name" : "jobSecurityGroup",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${#TestCase#UniqueId}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Job Security Group by 1000 Limit" id="8c41f2fe-434e-437b-94e6-c11ac754ee35">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/jobSecurityGroup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Job Security Group by 1000 Limit" id="9230dfb2-c6df-437b-ad27-5e043dc74d50" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5fb91ecf-096e-4099-99a5-581017918147" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="4490e217-1547-430b-ab6c-e2f2a2e5f6ca" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="afc8b98f-546b-47f9-bc10-3a0b2a1fee1a" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['JsgCompCode']</con:path>
+              <con:element>JsgCompCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>101</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JsgCode']</con:path>
+              <con:element>JsgCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ANNIE1</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JsgName']</con:path>
+              <con:element>JsgName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Annie Job Group</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JsgCompName']</con:path>
+              <con:element>JsgCompName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>101</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "JsgCompCode" : "101",
+    "JsgCode" : "ANNIE1",
+    "JsgName" : "Annie Job Group",
+    "JsgCompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000331303100000006414E4E494531",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000331303100000006414E4E494531",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "101",
+    "JsgCode" : "EFSEC01",
+    "JsgName" : "Earl Security Job Group",
+    "JsgCompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000033130310000000745465345433031",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000033130310000000745465345433031",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "101",
+    "JsgCode" : "MASTER",
+    "JsgName" : "Master Job Security Grouop",
+    "JsgCompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003313031000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003313031000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AZC",
+    "JsgCode" : "AZC-SECURE",
+    "JsgName" : "AZC-SECURE",
+    "JsgCompName" : "A Z Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415A430000000A415A432D534543555245",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415A430000000A415A432D534543555245",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ABJ",
+    "JsgCode" : "MASTER",
+    "JsgName" : "MASTER GROUP",
+    "JsgCompName" : "ABJ company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341424A000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341424A000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AD01",
+    "JsgCode" : "ADJS",
+    "JsgName" : "AD01 Job Security Group",
+    "JsgCompName" : "AD01 Anupama Devis",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414430310000000441444A53",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414430310000000441444A53",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ADIUS",
+    "JsgCode" : "ADISCE",
+    "JsgName" : "ADI  JOB SECURITY",
+    "JsgCompName" : "ADI USPAYROLL",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000005414449555300000006414449534345",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000005414449555300000006414449534345",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AHKCO",
+    "JsgCode" : "AHJC",
+    "JsgName" : "AK Job Security",
+    "JsgCompName" : "AHK Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000541484B434F0000000441484A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000541484B434F0000000441484A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AJ-COMP",
+    "JsgCode" : "AJJOBSEC",
+    "JsgName" : "Astha's Job Security Group",
+    "JsgCompName" : "AJ - Astha Jain Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007414A2D434F4D5000000008414A4A4F42534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007414A2D434F4D5000000008414A4A4F42534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "AKJC",
+    "JsgName" : "AKJC",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000004414B4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000004414B4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "AK_SC",
+    "JsgName" : "AK's security group",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000005414B5F5343",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000005414B5F5343",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "NJJC",
+    "JsgName" : "NJJC",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F5250000000044E4A4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F5250000000044E4A4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "TEST",
+    "JsgName" : "test",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F52500000000454455354",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F52500000000454455354",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "VID",
+    "JsgName" : "VID",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000003564944",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000003564944",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKO",
+    "JsgCode" : "MASTER",
+    "JsgName" : "Master Group AKO",
+    "JsgCompName" : "AKO Alexandre Kolevatov LLC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003414B4F000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003414B4F000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ALEC",
+    "JsgCode" : "ALECSEC",
+    "JsgName" : "ALEC SECURITY",
+    "JsgCompName" : "ALEC UAE Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414C454300000007414C4543534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414C454300000007414C4543534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "APITEST",
+    "JsgCode" : "APISEC2",
+    "JsgName" : "API Security",
+    "JsgCompName" : "API TESTING",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007415049544553540000000741504953454332",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007415049544553540000000741504953454332",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "APU",
+    "JsgCode" : "APS",
+    "JsgName" : "Apurva's Security Group",
+    "JsgCompName" : "APURVA SINGH APS",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341505500000003415053",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341505500000003415053",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARC-003",
+    "JsgName" : "Kingston Ferries",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303033",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303033",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARC-004",
+    "JsgName" : "ARC Project for GCS",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303034",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303034",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARC-006",
+    "JsgName" : "ARC Project2 GCS QADaily",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303036",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303036",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARJOBS",
+    "JsgName" : "AR Jobs/Project",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000034152430000000641524A4F4253",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000034152430000000641524A4F4253",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AV",
+    "JsgCode" : "AV",
+    "JsgName" : "AV Security Group",
+    "JsgCompName" : "AV Adam Vesters Co",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000024156000000024156",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000024156000000024156",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AVC",
+    "JsgCode" : "AVC",
+    "JsgName" : "AVC GROUP",
+    "JsgCompName" : "AV Construction Ltd.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341564300000003415643",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341564300000003415643",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AANVICOM",
+    "JsgCode" : "AANVISEC",
+    "JsgName" : "Aanvi's job security",
+    "JsgCompName" : "Aanvi's Home Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000841414E5649434F4D0000000841414E5649534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000841414E5649434F4D0000000841414E5649534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup",
+    "name" : "jobSecurityGroup",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Job Security Group by 1001 Limit" id="14ff3202-a7d8-4e97-b191-138db955a7a1">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/jobSecurityGroup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Job Security Group by 1001 Limit" id="9230dfb2-c6df-437b-ad27-5e043dc74d50" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5fb91ecf-096e-4099-99a5-581017918147" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="4490e217-1547-430b-ab6c-e2f2a2e5f6ca" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="e222b16a-d197-454c-84f5-03a9641eeed2" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['javaMessage']</con:path>
+              <con:element>javaMessage</con:element>
+              <con:operatorId>13</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Limit exceeded</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"exceptionName":"CMGeneralException","code":"WSD-0000","cmicMessage":"Exception encountered during request processing.","javaMessage":"error: Limit exceeded, maximum is 1000","javaExceptionClassName":"","longDescription":""}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="limit" value="1001"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Job Security Group by Limit and Offset" id="36f6a437-f1d5-4095-8b1b-94ea77df3f5e">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/jobSecurityGroup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Job Security Group by Limit and Offset" id="9230dfb2-c6df-437b-ad27-5e043dc74d50" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5fb91ecf-096e-4099-99a5-581017918147" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="4490e217-1547-430b-ab6c-e2f2a2e5f6ca" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="afc8b98f-546b-47f9-bc10-3a0b2a1fee1a" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['JsgCompCode']</con:path>
+              <con:element>JsgCompCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>101</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JsgCode']</con:path>
+              <con:element>JsgCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ANNIE1</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JsgName']</con:path>
+              <con:element>JsgName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Annie Job Group</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JsgCompName']</con:path>
+              <con:element>JsgCompName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>101</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['offset']</con:path>
+              <con:element>offset</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "JsgCompCode" : "101",
+    "JsgCode" : "ANNIE1",
+    "JsgName" : "Annie Job Group",
+    "JsgCompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000331303100000006414E4E494531",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000331303100000006414E4E494531",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "101",
+    "JsgCode" : "EFSEC01",
+    "JsgName" : "Earl Security Job Group",
+    "JsgCompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000033130310000000745465345433031",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000033130310000000745465345433031",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "101",
+    "JsgCode" : "MASTER",
+    "JsgName" : "Master Job Security Grouop",
+    "JsgCompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003313031000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003313031000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AZC",
+    "JsgCode" : "AZC-SECURE",
+    "JsgName" : "AZC-SECURE",
+    "JsgCompName" : "A Z Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415A430000000A415A432D534543555245",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415A430000000A415A432D534543555245",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ABJ",
+    "JsgCode" : "MASTER",
+    "JsgName" : "MASTER GROUP",
+    "JsgCompName" : "ABJ company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341424A000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341424A000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AD01",
+    "JsgCode" : "ADJS",
+    "JsgName" : "AD01 Job Security Group",
+    "JsgCompName" : "AD01 Anupama Devis",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414430310000000441444A53",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414430310000000441444A53",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ADIUS",
+    "JsgCode" : "ADISCE",
+    "JsgName" : "ADI  JOB SECURITY",
+    "JsgCompName" : "ADI USPAYROLL",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000005414449555300000006414449534345",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000005414449555300000006414449534345",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AHKCO",
+    "JsgCode" : "AHJC",
+    "JsgName" : "AK Job Security",
+    "JsgCompName" : "AHK Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000541484B434F0000000441484A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000541484B434F0000000441484A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AJ-COMP",
+    "JsgCode" : "AJJOBSEC",
+    "JsgName" : "Astha's Job Security Group",
+    "JsgCompName" : "AJ - Astha Jain Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007414A2D434F4D5000000008414A4A4F42534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007414A2D434F4D5000000008414A4A4F42534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "AKJC",
+    "JsgName" : "AKJC",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000004414B4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000004414B4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "AK_SC",
+    "JsgName" : "AK's security group",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000005414B5F5343",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000005414B5F5343",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "NJJC",
+    "JsgName" : "NJJC",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F5250000000044E4A4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F5250000000044E4A4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "TEST",
+    "JsgName" : "test",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F52500000000454455354",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F52500000000454455354",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "VID",
+    "JsgName" : "VID",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000003564944",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000003564944",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKO",
+    "JsgCode" : "MASTER",
+    "JsgName" : "Master Group AKO",
+    "JsgCompName" : "AKO Alexandre Kolevatov LLC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003414B4F000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003414B4F000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ALEC",
+    "JsgCode" : "ALECSEC",
+    "JsgName" : "ALEC SECURITY",
+    "JsgCompName" : "ALEC UAE Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414C454300000007414C4543534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414C454300000007414C4543534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "APITEST",
+    "JsgCode" : "APISEC2",
+    "JsgName" : "API Security",
+    "JsgCompName" : "API TESTING",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007415049544553540000000741504953454332",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007415049544553540000000741504953454332",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "APU",
+    "JsgCode" : "APS",
+    "JsgName" : "Apurva's Security Group",
+    "JsgCompName" : "APURVA SINGH APS",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341505500000003415053",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341505500000003415053",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARC-003",
+    "JsgName" : "Kingston Ferries",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303033",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303033",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARC-004",
+    "JsgName" : "ARC Project for GCS",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303034",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303034",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARC-006",
+    "JsgName" : "ARC Project2 GCS QADaily",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303036",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303036",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARJOBS",
+    "JsgName" : "AR Jobs/Project",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000034152430000000641524A4F4253",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000034152430000000641524A4F4253",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AV",
+    "JsgCode" : "AV",
+    "JsgName" : "AV Security Group",
+    "JsgCompName" : "AV Adam Vesters Co",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000024156000000024156",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000024156000000024156",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AVC",
+    "JsgCode" : "AVC",
+    "JsgName" : "AVC GROUP",
+    "JsgCompName" : "AV Construction Ltd.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341564300000003415643",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341564300000003415643",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AANVICOM",
+    "JsgCode" : "AANVISEC",
+    "JsgName" : "Aanvi's job security",
+    "JsgCompName" : "Aanvi's Home Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000841414E5649434F4D0000000841414E5649534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000841414E5649434F4D0000000841414E5649534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup",
+    "name" : "jobSecurityGroup",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value="1"/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>UniqueId</con:name>
+      <con:value>00020000000331303100000006414E4E494531</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

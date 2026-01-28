@@ -1,0 +1,1425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="0c0a4b4c-0b8f-4f93-9d59-4aa081a5be54" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP10_Retrieve Payroll Security Group" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="0c0a4b4c-0b8f-4f93-9d59-4aa081a5be54fileName">TC_TEMP10_Retrieve-Payroll-Security-Group</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Payroll Security Group" id="caf382df-89e8-46c3-ba9a-6bd7626c77b7">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/payrollSecurityGroup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Payroll Security Group" id="a9390534-45aa-4d93-aedc-7d6e02617147" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a41743c3-cd2e-44f6-b8d4-eef3e2af90f9" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c3b94610-5e50-4d77-8003-0b85671c5ef0" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="e50efb13-8a57-4579-ac87-93865143b1e6" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['EsgCode']</con:path>
+              <con:element>EsgCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>841</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['EsgName']</con:path>
+              <con:element>EsgName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>841</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "EsgCode" : "841",
+    "EsgName" : "841",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/841",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/841",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ADM",
+    "EsgName" : "ADM Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADM",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADM",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "AK01",
+    "EsgName" : "AK01",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AK01",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AK01",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ALECSEC",
+    "EsgName" : "ALECSEC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ALECSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ALECSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "APISEC",
+    "EsgName" : "API Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/APISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/APISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ARCSG",
+    "EsgName" : "ARC Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ARCSG",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ARCSG",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ASS",
+    "EsgName" : "Adam Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ASS",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ASS",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ADISEC",
+    "EsgName" : "Adi Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "AKPY",
+    "EsgName" : "Ahenk's Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AKPY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AKPY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-AMINAT",
+    "EsgName" : "Aminat's CPE Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-AMINAT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-AMINAT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "BOC",
+    "EsgName" : "BOC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/BOC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/BOC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "HDR",
+    "EsgName" : "CATC SECURITY",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/HDR",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/HDR",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CCC-MASTER",
+    "EsgName" : "CCC Master Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CCC-MASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CCC-MASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-SU",
+    "EsgName" : "CPE SU Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-SU",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-SU",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-RK",
+    "EsgName" : "CPE-Rajjini Kandasamy",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-RK",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-RK",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CERT",
+    "EsgName" : "Certification Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CERT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CERT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ZZMASTER",
+    "EsgName" : "Company ZZ Employees Only",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ZZMASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ZZMASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DB45",
+    "EsgName" : "DB45 PYSEC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DB45",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DB45",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DBTCSEC",
+    "EsgName" : "DBTCSEC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DBTCSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DBTCSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DKPYSECURE",
+    "EsgName" : "DK Payroll security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKPYSECURE",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKPYSECURE",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DKSEC",
+    "EsgName" : "DK Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "EKTAPAY",
+    "EsgName" : "Ekta Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/EKTAPAY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/EKTAPAY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-GH",
+    "EsgName" : "GH Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-GH",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-GH",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "GLPAYROLL",
+    "EsgName" : "GL Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "GLCPAYROLL",
+    "EsgName" : "GLC Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLCPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLCPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup",
+    "name" : "payrollSecurityGroup",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Payroll Security Group by UUID" id="0cb6f02b-598a-4115-822a-ebc6978d4a26">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/payrollSecurityGroup/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Payroll Security Group by UUID" id="c7425807-03cd-48cd-9e73-9029186edbc5" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/841</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="57370b37-e2cd-4bc8-922e-b0cf37ec9648" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="5c30b22a-2c63-4fc4-be05-5f36c75bc281" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="1f257756-a103-4d24-93df-19b556faa52a" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['EsgCode']</con:path>
+              <con:element>EsgCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Payroll Security Group#Response#$['items'][0]['EsgCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['EsgName']</con:path>
+              <con:element>EsgName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Payroll Security Group#Response#$['items'][0]['EsgName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "EsgCode" : "841",
+  "EsgName" : "841",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/841",
+    "name" : "payrollSecurityGroup",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/841",
+    "name" : "payrollSecurityGroup",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve Payroll Security Group#Response#$['items'][0]['EsgCode']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Payroll Security Group by Limit 1000" id="167c5013-0cd4-4f2c-ae2f-b034eb23c822">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/payrollSecurityGroup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Payroll Security Group by Limit 1000" id="a9390534-45aa-4d93-aedc-7d6e02617147" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a41743c3-cd2e-44f6-b8d4-eef3e2af90f9" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c3b94610-5e50-4d77-8003-0b85671c5ef0" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="e50efb13-8a57-4579-ac87-93865143b1e6" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['EsgCode']</con:path>
+              <con:element>EsgCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Payroll Security Group#Response#$['items'][0]['EsgCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['EsgName']</con:path>
+              <con:element>EsgName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Payroll Security Group#Response#$['items'][0]['EsgName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "EsgCode" : "841",
+    "EsgName" : "841",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/841",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/841",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ADM",
+    "EsgName" : "ADM Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADM",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADM",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "AK01",
+    "EsgName" : "AK01",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AK01",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AK01",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ALECSEC",
+    "EsgName" : "ALECSEC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ALECSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ALECSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "APISEC",
+    "EsgName" : "API Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/APISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/APISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ARCSG",
+    "EsgName" : "ARC Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ARCSG",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ARCSG",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ASS",
+    "EsgName" : "Adam Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ASS",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ASS",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ADISEC",
+    "EsgName" : "Adi Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "AKPY",
+    "EsgName" : "Ahenk's Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AKPY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AKPY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-AMINAT",
+    "EsgName" : "Aminat's CPE Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-AMINAT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-AMINAT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "BOC",
+    "EsgName" : "BOC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/BOC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/BOC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "HDR",
+    "EsgName" : "CATC SECURITY",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/HDR",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/HDR",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CCC-MASTER",
+    "EsgName" : "CCC Master Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CCC-MASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CCC-MASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-SU",
+    "EsgName" : "CPE SU Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-SU",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-SU",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-RK",
+    "EsgName" : "CPE-Rajjini Kandasamy",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-RK",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-RK",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CERT",
+    "EsgName" : "Certification Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CERT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CERT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ZZMASTER",
+    "EsgName" : "Company ZZ Employees Only",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ZZMASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ZZMASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DB45",
+    "EsgName" : "DB45 PYSEC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DB45",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DB45",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DBTCSEC",
+    "EsgName" : "DBTCSEC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DBTCSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DBTCSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DKPYSECURE",
+    "EsgName" : "DK Payroll security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKPYSECURE",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKPYSECURE",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DKSEC",
+    "EsgName" : "DK Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "EKTAPAY",
+    "EsgName" : "Ekta Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/EKTAPAY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/EKTAPAY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-GH",
+    "EsgName" : "GH Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-GH",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-GH",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "GLPAYROLL",
+    "EsgName" : "GL Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "GLCPAYROLL",
+    "EsgName" : "GLC Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLCPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLCPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup",
+    "name" : "payrollSecurityGroup",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Payroll Security Group by Limit 1001" id="70d60e87-324b-449b-9b58-c04699f836d5">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/payrollSecurityGroup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Payroll Security Group by Limit 1001" id="a9390534-45aa-4d93-aedc-7d6e02617147" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a41743c3-cd2e-44f6-b8d4-eef3e2af90f9" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c3b94610-5e50-4d77-8003-0b85671c5ef0" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="35f6dca1-b1aa-484a-9cae-908e491de013" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['cmicMessage']</con:path>
+              <con:element>cmicMessage</con:element>
+              <con:operatorId>13</con:operatorId>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue/>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['javaMessage']</con:path>
+              <con:element>javaMessage</con:element>
+              <con:operatorId>13</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Limit exceeded</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"exceptionName":"CMGeneralException","code":"WSD-0000","cmicMessage":"Exception encountered during request processing.","javaMessage":"error: Limit exceeded, maximum is 1000","javaExceptionClassName":"","longDescription":""}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="limit" value="1001"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Payroll Security Group by Limit and Offset" id="bb6c66fe-23f7-4f51-8401-c445e896ab87">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/payrollSecurityGroup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Payroll Security Group by Limit and Offset" id="a9390534-45aa-4d93-aedc-7d6e02617147" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a41743c3-cd2e-44f6-b8d4-eef3e2af90f9" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c3b94610-5e50-4d77-8003-0b85671c5ef0" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="e50efb13-8a57-4579-ac87-93865143b1e6" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['EsgCode']</con:path>
+              <con:element>EsgCode</con:element>
+              <con:operatorId>2</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Payroll Security Group#Response#$['items'][0]['EsgCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['EsgName']</con:path>
+              <con:element>EsgName</con:element>
+              <con:operatorId>2</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Payroll Security Group#Response#$['items'][0]['EsgName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['offset']</con:path>
+              <con:element>offset</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "EsgCode" : "841",
+    "EsgName" : "841",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/841",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/841",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ADM",
+    "EsgName" : "ADM Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADM",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADM",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "AK01",
+    "EsgName" : "AK01",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AK01",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AK01",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ALECSEC",
+    "EsgName" : "ALECSEC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ALECSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ALECSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "APISEC",
+    "EsgName" : "API Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/APISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/APISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ARCSG",
+    "EsgName" : "ARC Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ARCSG",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ARCSG",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ASS",
+    "EsgName" : "Adam Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ASS",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ASS",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ADISEC",
+    "EsgName" : "Adi Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "AKPY",
+    "EsgName" : "Ahenk's Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AKPY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AKPY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-AMINAT",
+    "EsgName" : "Aminat's CPE Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-AMINAT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-AMINAT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "BOC",
+    "EsgName" : "BOC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/BOC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/BOC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "HDR",
+    "EsgName" : "CATC SECURITY",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/HDR",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/HDR",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CCC-MASTER",
+    "EsgName" : "CCC Master Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CCC-MASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CCC-MASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-SU",
+    "EsgName" : "CPE SU Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-SU",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-SU",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-RK",
+    "EsgName" : "CPE-Rajjini Kandasamy",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-RK",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-RK",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CERT",
+    "EsgName" : "Certification Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CERT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CERT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ZZMASTER",
+    "EsgName" : "Company ZZ Employees Only",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ZZMASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ZZMASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DB45",
+    "EsgName" : "DB45 PYSEC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DB45",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DB45",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DBTCSEC",
+    "EsgName" : "DBTCSEC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DBTCSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DBTCSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DKPYSECURE",
+    "EsgName" : "DK Payroll security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKPYSECURE",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKPYSECURE",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DKSEC",
+    "EsgName" : "DK Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "EKTAPAY",
+    "EsgName" : "Ekta Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/EKTAPAY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/EKTAPAY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-GH",
+    "EsgName" : "GH Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-GH",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-GH",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "GLPAYROLL",
+    "EsgName" : "GL Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "GLCPAYROLL",
+    "EsgName" : "GLC Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLCPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLCPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup",
+    "name" : "payrollSecurityGroup",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value="1"/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

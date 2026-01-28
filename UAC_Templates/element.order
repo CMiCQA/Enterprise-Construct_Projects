@@ -6,3 +6,6 @@ TC_TEMO05_Retrieve-Compliance-Security.xml
 TC_TEMP06_Retrieve-Bussiness-Partners.xml
 TC_TEMP07_Retrieve-Consolidation-Access.xml
 TC_TEMP08_Retrieve-Security-Group.xml
+TC_TEMP09_Retrieve-Job-Security-Group.xml
+TC_TEMP10_Retrieve-Payroll-Security-Group.xml
+TC_TEMP10_Templates.xml
