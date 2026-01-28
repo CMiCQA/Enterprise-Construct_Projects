@@ -1,0 +1,1416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="bae3fee9-1699-48d2-a269-719e893ef86b" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP07_Retrieve Consolidation Access" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="bae3fee9-1699-48d2-a269-719e893ef86bfileName">TC_TEMP07_Retrieve-Consolidation-Access</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Consolidation Access" id="ccacd390-fdbc-4f5e-a152-472295a6246b">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/consolidationAccess" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Consolidation Access" id="f4f9ebec-ac8f-4499-8a28-798064725965" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="2231750c-3c3d-4d6c-9e76-790ccb2b3b8e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="dfe30e58-e3cd-41cf-9b15-f7b2bc9de6ad" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="39d2f719-4230-4891-92aa-440d049bdb64" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['Cons2Code']</con:path>
+              <con:element>Cons2Code</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>GR</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['Cons2Name']</con:path>
+              <con:element>Cons2Name</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue> GR Consolidated</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "Cons2Code" : "GR",
+    "Cons2Name" : " GR Consolidated",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/GR",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/GR",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "01SKC",
+    "Cons2Name" : "01SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/01SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/01SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "10SKC",
+    "Cons2Name" : "10SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/10SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/10SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "20SKC",
+    "Cons2Name" : "20SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/20SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/20SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "30SKC",
+    "Cons2Name" : "30SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/30SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/30SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "34SKC",
+    "Cons2Name" : "34SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/34SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/34SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "40SKC",
+    "Cons2Name" : "40SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/40SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/40SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "60SKC",
+    "Cons2Name" : "60SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/60SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/60SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AAC00",
+    "Cons2Name" : "AAC 00 Dept",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AAC10",
+    "Cons2Name" : "AAC 10 Dept",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC10",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC10",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABC",
+    "Cons2Name" : "ABC Construction Consolidated",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABCEAST",
+    "Cons2Name" : "ABC East Region Projects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCEAST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCEAST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABC SO",
+    "Cons2Name" : "ABC South Region Projects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC%20SO",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC%20SO",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABCWEST",
+    "Cons2Name" : "ABC West Region Projects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCWEST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCWEST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AD01-00",
+    "Cons2Name" : "AD01 Consolidation 00",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AD01-60",
+    "Cons2Name" : "AD01 Consolidation 60",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-60",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-60",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AD01",
+    "Cons2Name" : "AD01 Consolidation Code 1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-CONS",
+    "Cons2Name" : "AJ Consolidated",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-CONS",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-CONS",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-01",
+    "Cons2Name" : "AJ Consolidation Code 1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-02",
+    "Cons2Name" : "AJ Consolidation Code 2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-03",
+    "Cons2Name" : "AJ Consolidation Code 3",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-03",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-03",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJMIRA2",
+    "Cons2Name" : "AJMIRA2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJMIRA2",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJMIRA2",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AKO-02",
+    "Cons2Name" : "AKO - Calgary PM Centre",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AKO-00",
+    "Cons2Name" : "AKO - HQ Profit Centre",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AKO-04",
+    "Cons2Name" : "AKO - Halifax EQ Centre",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-04",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-04",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess",
+    "name" : "consolidationAccess",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Consolidation Access by UUID" id="1ed2270a-4e0b-4951-96da-93f7984c3d0c">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/consolidationAccess/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Consolidation Access by UUID" id="01b0598f-3ac9-48f1-b303-4e2904bd58b9" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/id</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="4f73667f-63df-412c-bc59-c589d62a5cde" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="37c01833-acdc-4d41-afa7-d4174152b22b" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="2815577b-57d0-41b7-a87f-06d2ddcb9d3a" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['Cons2Code']</con:path>
+              <con:element>Cons2Code</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Consolidation Access#Response#$['items'][0]['Cons2Code']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['Cons2Name']</con:path>
+              <con:element>Cons2Name</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Consolidation Access#Response#$['items'][0]['Cons2Name']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "Cons2Code" : "GR",
+  "Cons2Name" : " GR Consolidated",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/GR",
+    "name" : "consolidationAccess",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/GR",
+    "name" : "consolidationAccess",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve Consolidation Access#Response#$['items'][0]['Cons2Code']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Consolidation Access by 1000 Limit" id="44ddb7b8-251d-450f-a111-b8061e99ae90">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/consolidationAccess" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Consolidation Access by 1000 Limit" id="f4f9ebec-ac8f-4499-8a28-798064725965" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="2231750c-3c3d-4d6c-9e76-790ccb2b3b8e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="dfe30e58-e3cd-41cf-9b15-f7b2bc9de6ad" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="39d2f719-4230-4891-92aa-440d049bdb64" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['Cons2Code']</con:path>
+              <con:element>Cons2Code</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>GR</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['Cons2Name']</con:path>
+              <con:element>Cons2Name</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue> GR Consolidated</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "Cons2Code" : "GR",
+    "Cons2Name" : " GR Consolidated",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/GR",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/GR",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "01SKC",
+    "Cons2Name" : "01SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/01SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/01SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "10SKC",
+    "Cons2Name" : "10SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/10SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/10SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "20SKC",
+    "Cons2Name" : "20SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/20SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/20SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "30SKC",
+    "Cons2Name" : "30SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/30SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/30SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "34SKC",
+    "Cons2Name" : "34SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/34SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/34SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "40SKC",
+    "Cons2Name" : "40SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/40SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/40SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "60SKC",
+    "Cons2Name" : "60SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/60SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/60SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AAC00",
+    "Cons2Name" : "AAC 00 Dept",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AAC10",
+    "Cons2Name" : "AAC 10 Dept",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC10",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC10",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABC",
+    "Cons2Name" : "ABC Construction Consolidated",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABCEAST",
+    "Cons2Name" : "ABC East Region Projects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCEAST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCEAST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABC SO",
+    "Cons2Name" : "ABC South Region Projects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC%20SO",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC%20SO",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABCWEST",
+    "Cons2Name" : "ABC West Region Projects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCWEST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCWEST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AD01-00",
+    "Cons2Name" : "AD01 Consolidation 00",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AD01-60",
+    "Cons2Name" : "AD01 Consolidation 60",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-60",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-60",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AD01",
+    "Cons2Name" : "AD01 Consolidation Code 1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-CONS",
+    "Cons2Name" : "AJ Consolidated",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-CONS",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-CONS",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-01",
+    "Cons2Name" : "AJ Consolidation Code 1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-02",
+    "Cons2Name" : "AJ Consolidation Code 2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-03",
+    "Cons2Name" : "AJ Consolidation Code 3",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-03",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-03",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJMIRA2",
+    "Cons2Name" : "AJMIRA2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJMIRA2",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJMIRA2",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AKO-02",
+    "Cons2Name" : "AKO - Calgary PM Centre",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AKO-00",
+    "Cons2Name" : "AKO - HQ Profit Centre",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AKO-04",
+    "Cons2Name" : "AKO - Halifax EQ Centre",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-04",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-04",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess",
+    "name" : "consolidationAccess",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Consolidation Access by 1001 Limit" id="1cc2fa7e-77dd-4f50-8d81-c883bda69df5">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/consolidationAccess" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Consolidation Access by 1001 Limit" id="f4f9ebec-ac8f-4499-8a28-798064725965" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="2231750c-3c3d-4d6c-9e76-790ccb2b3b8e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="dfe30e58-e3cd-41cf-9b15-f7b2bc9de6ad" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="f530b375-8bff-4100-8d9f-fe1b0dc076d6" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['javaMessage']</con:path>
+              <con:element>javaMessage</con:element>
+              <con:operatorId>13</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Limit exceeded</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"exceptionName":"CMGeneralException","code":"WSD-0000","cmicMessage":"Exception encountered during request processing.","javaMessage":"error: Limit exceeded, maximum is 1000","javaExceptionClassName":"","longDescription":""}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="limit" value="1001"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Consolidation Access by Limit and Offset" id="a429d4ee-f0ee-4fea-85bf-0100055c224a">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/consolidationAccess" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Consolidation Access by Limit and Offset" id="f4f9ebec-ac8f-4499-8a28-798064725965" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="2231750c-3c3d-4d6c-9e76-790ccb2b3b8e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="dfe30e58-e3cd-41cf-9b15-f7b2bc9de6ad" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="39d2f719-4230-4891-92aa-440d049bdb64" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['Cons2Code']</con:path>
+              <con:element>Cons2Code</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>GR</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['Cons2Name']</con:path>
+              <con:element>Cons2Name</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue> GR Consolidated</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['offset']</con:path>
+              <con:element>offset</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "Cons2Code" : "GR",
+    "Cons2Name" : " GR Consolidated",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/GR",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/GR",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "01SKC",
+    "Cons2Name" : "01SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/01SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/01SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "10SKC",
+    "Cons2Name" : "10SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/10SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/10SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "20SKC",
+    "Cons2Name" : "20SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/20SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/20SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "30SKC",
+    "Cons2Name" : "30SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/30SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/30SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "34SKC",
+    "Cons2Name" : "34SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/34SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/34SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "40SKC",
+    "Cons2Name" : "40SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/40SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/40SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "60SKC",
+    "Cons2Name" : "60SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/60SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/60SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AAC00",
+    "Cons2Name" : "AAC 00 Dept",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AAC10",
+    "Cons2Name" : "AAC 10 Dept",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC10",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC10",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABC",
+    "Cons2Name" : "ABC Construction Consolidated",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABCEAST",
+    "Cons2Name" : "ABC East Region Projects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCEAST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCEAST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABC SO",
+    "Cons2Name" : "ABC South Region Projects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC%20SO",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC%20SO",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABCWEST",
+    "Cons2Name" : "ABC West Region Projects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCWEST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCWEST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AD01-00",
+    "Cons2Name" : "AD01 Consolidation 00",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AD01-60",
+    "Cons2Name" : "AD01 Consolidation 60",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-60",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-60",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AD01",
+    "Cons2Name" : "AD01 Consolidation Code 1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-CONS",
+    "Cons2Name" : "AJ Consolidated",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-CONS",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-CONS",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-01",
+    "Cons2Name" : "AJ Consolidation Code 1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-02",
+    "Cons2Name" : "AJ Consolidation Code 2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-03",
+    "Cons2Name" : "AJ Consolidation Code 3",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-03",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-03",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJMIRA2",
+    "Cons2Name" : "AJMIRA2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJMIRA2",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJMIRA2",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AKO-02",
+    "Cons2Name" : "AKO - Calgary PM Centre",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AKO-00",
+    "Cons2Name" : "AKO - HQ Profit Centre",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AKO-04",
+    "Cons2Name" : "AKO - Halifax EQ Centre",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-04",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-04",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess",
+    "name" : "consolidationAccess",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value="1"/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

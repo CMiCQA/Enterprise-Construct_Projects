@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="5a2871a0-df45-429a-ac3a-a5f226606b2b" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMO05_Retrieve Compliance Security" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="5a2871a0-df45-429a-ac3a-a5f226606b2bfileName">TC_TEMO05_Retrieve-Compliance-Security</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Compliance Security" id="71afd39c-bd4c-4bf4-8354-8495a647fa52">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/complianceSecurity" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Compliance Security" id="e5138199-4b61-448a-bc02-80c13441d7fe" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7375d06e-539e-4e89-9877-0daa29fbeb43" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="df70a974-9611-494f-af86-aa242545a307" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="4b058d48-475a-463d-8314-7a0f14155673" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['IgrCode']</con:path>
+              <con:element>IgrCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ACCTNG</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['IgrName']</con:path>
+              <con:element>IgrName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Accounting Group Compliances</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "IgrCode" : "ACCTNG",
+    "IgrName" : "Accounting Group Compliances",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ACCTNG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ACCTNG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "BOND-SEC",
+    "IgrName" : "Bond Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/BOND-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/BOND-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "MTN",
+    "IgrName" : "Mai Thi's Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/MTN",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/MTN",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "PA",
+    "IgrName" : "PM Assist",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PA",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PA",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "PO-SEC",
+    "IgrName" : "PO Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PO-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PO-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "QA1",
+    "IgrName" : "QA1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/QA1",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/QA1",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "SC-SEC",
+    "IgrName" : "SC Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SC-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SC-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "SAFE-SEC",
+    "IgrName" : "Safety Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SAFE-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SAFE-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "SRKO",
+    "IgrName" : "Sruthi",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SRKO",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SRKO",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "TSG",
+    "IgrName" : "TEST SEC GROUP",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/TSG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/TSG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "ZZ-INSUR",
+    "IgrName" : "ZZ-INSUR",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ZZ-INSUR",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ZZ-INSUR",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 11,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity",
+    "name" : "complianceSecurity",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value=""/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Compliance Security by UUID" id="181e60ac-0bab-4f6a-88ce-f667bece7782">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/complianceSecurity/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Compliance Security by UUID" id="09d9f880-fdb7-4cc6-abb6-87e7036e4230" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ACCTNG</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="0499fa77-47ee-4c9c-869e-616d0978423b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="5342c3db-eed8-4984-afdf-9f12b51159f8" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="7613a87d-8bdd-41b0-b7af-49bd2ef679ec" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['IgrCode']</con:path>
+              <con:element>IgrCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Compliance Security#Response#$['items'][0]['IgrCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['IgrName']</con:path>
+              <con:element>IgrName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Compliance Security#Response#$['items'][0]['IgrName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "IgrCode" : "ACCTNG",
+  "IgrName" : "Accounting Group Compliances",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ACCTNG",
+    "name" : "complianceSecurity",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ACCTNG",
+    "name" : "complianceSecurity",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve Compliance Security#Response#$['items'][0]['IgrCode']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Compliance Security with Limit 1000" id="b31d0724-30b8-4eec-92f6-5c40c7fbdc9b">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/complianceSecurity" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Compliance Security with Limit 1000" id="e5138199-4b61-448a-bc02-80c13441d7fe" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7375d06e-539e-4e89-9877-0daa29fbeb43" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="df70a974-9611-494f-af86-aa242545a307" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="4b058d48-475a-463d-8314-7a0f14155673" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['IgrCode']</con:path>
+              <con:element>IgrCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ACCTNG</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['IgrName']</con:path>
+              <con:element>IgrName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Accounting Group Compliances</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "IgrCode" : "ACCTNG",
+    "IgrName" : "Accounting Group Compliances",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ACCTNG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ACCTNG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "BOND-SEC",
+    "IgrName" : "Bond Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/BOND-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/BOND-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "MTN",
+    "IgrName" : "Mai Thi's Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/MTN",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/MTN",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "PA",
+    "IgrName" : "PM Assist",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PA",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PA",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "PO-SEC",
+    "IgrName" : "PO Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PO-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PO-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "QA1",
+    "IgrName" : "QA1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/QA1",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/QA1",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "SC-SEC",
+    "IgrName" : "SC Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SC-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SC-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "SAFE-SEC",
+    "IgrName" : "Safety Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SAFE-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SAFE-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "SRKO",
+    "IgrName" : "Sruthi",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SRKO",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SRKO",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "TSG",
+    "IgrName" : "TEST SEC GROUP",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/TSG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/TSG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "ZZ-INSUR",
+    "IgrName" : "ZZ-INSUR",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ZZ-INSUR",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ZZ-INSUR",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 11,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity",
+    "name" : "complianceSecurity",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Compliance Security with Limit and offset" id="5932453d-e57d-43e4-917e-254acf212c4b">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/complianceSecurity" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Compliance Security with Limit and offset" id="e5138199-4b61-448a-bc02-80c13441d7fe" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7375d06e-539e-4e89-9877-0daa29fbeb43" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="df70a974-9611-494f-af86-aa242545a307" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="4b058d48-475a-463d-8314-7a0f14155673" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['IgrCode']</con:path>
+              <con:element>IgrCode</con:element>
+              <con:operatorId>2</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Compliance Security#Response#$['items'][0]['IgrCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['IgrName']</con:path>
+              <con:element>IgrName</con:element>
+              <con:operatorId>2</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Compliance Security#Response#$['items'][0]['IgrName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['offset']</con:path>
+              <con:element>offset</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "IgrCode" : "ACCTNG",
+    "IgrName" : "Accounting Group Compliances",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ACCTNG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ACCTNG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "BOND-SEC",
+    "IgrName" : "Bond Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/BOND-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/BOND-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "MTN",
+    "IgrName" : "Mai Thi's Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/MTN",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/MTN",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "PA",
+    "IgrName" : "PM Assist",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PA",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PA",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "PO-SEC",
+    "IgrName" : "PO Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PO-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PO-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "QA1",
+    "IgrName" : "QA1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/QA1",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/QA1",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "SC-SEC",
+    "IgrName" : "SC Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SC-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SC-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "SAFE-SEC",
+    "IgrName" : "Safety Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SAFE-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SAFE-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "SRKO",
+    "IgrName" : "Sruthi",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SRKO",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SRKO",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "TSG",
+    "IgrName" : "TEST SEC GROUP",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/TSG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/TSG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "ZZ-INSUR",
+    "IgrName" : "ZZ-INSUR",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ZZ-INSUR",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ZZ-INSUR",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 11,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity",
+    "name" : "complianceSecurity",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value="1"/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Compliance Security with Limit 1001" id="a2e63824-5508-487e-bc1c-2ac75bc73696">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/complianceSecurity" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Compliance Security with Limit 1001" id="e5138199-4b61-448a-bc02-80c13441d7fe" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7375d06e-539e-4e89-9877-0daa29fbeb43" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="df70a974-9611-494f-af86-aa242545a307" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="c772bf86-e822-4ad9-91a6-1157b5f6c884" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['javaMessage']</con:path>
+              <con:element>javaMessage</con:element>
+              <con:operatorId>13</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Limit exceeded</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"exceptionName":"CMGeneralException","code":"WSD-0000","cmicMessage":"Exception encountered during request processing.","javaMessage":"error: Limit exceeded, maximum is 1000","javaExceptionClassName":"","longDescription":""}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value="1001"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

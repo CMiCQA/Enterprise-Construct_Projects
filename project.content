@@ -8,6 +8,12 @@ cmic-uac-rest-api\newLicenseVersion.xml
 cmic-uac-rest-api\privileges.xml
 cmic-uac-rest-api\users.xml
 cmic-uac-rest-api\pmProjectRoles.xml
+cmic-uac-rest-api\pmSecurityRoles.xml
+cmic-uac-rest-api\companies.xml
+cmic-uac-rest-api\complianceSecurity.xml
+cmic-uac-rest-api\businessPartners.xml
+cmic-uac-rest-api\consolidationAccess.xml
+cmic-uac-rest-api\imagingSecurityGroup.xml
 PreReq\PreRequisite-Select-Project-with-UUID.xml
 UAC_Auth\TC_AUTH01_Login.xml
 UAC_Auth\TC_AUTH02_Logout.xml
@@ -19,3 +25,9 @@ UAC_Azure-Settings\TC_AS01_Azure-Settings.xml
 UAC_Users\TC_USR01_Retrieve-Users.xml
 UAC_Templates\TC_TEMP01_Retrieve-Enterprise-Roles.xml
 UAC_Templates\TC_TEMP02_Retrieve-PM-Project-Roles.xml
+UAC_Templates\TC_TEMP03_Retrieve-Security-Roles.xml
+UAC_Templates\TC_TEMP04_Retrieve-Companies.xml
+UAC_Templates\TC_TEMO05_Retrieve-Compliance-Security.xml
+UAC_Templates\TC_TEMP06_Retrieve-Bussiness-Partners.xml
+UAC_Templates\TC_TEMP07_Retrieve-Consolidation-Access.xml
+UAC_Templates\TC_TEMP08_Retrieve-Security-Group.xml

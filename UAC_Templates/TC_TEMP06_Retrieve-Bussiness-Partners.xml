@@ -1,0 +1,1421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="ea154471-a14b-4015-ba46-d2e9972a3bdc" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP06_Retrieve Bussiness Partners" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="ea154471-a14b-4015-ba46-d2e9972a3bdcfileName">TC_TEMP06_Retrieve-Bussiness-Partners</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Bussiness Partner" id="e4333ee6-08a5-4d09-b18e-3606306fcc91">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/businessPartners" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Bussiness Partner" id="dbfc6bc9-2a56-4a8e-b934-a22bbe5387de" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="969052fd-d508-477f-9723-2f85112c3882" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="1fb9bbb3-7e1a-456b-b50f-f0a5ba2eef47" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="f1ee26b2-003a-4107-bb6e-a4abd2dd951b" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['BpCode']</con:path>
+              <con:element>BpCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>NESPRESO</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['BpName']</con:path>
+              <con:element>BpName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue> Nestlé Nespresso S.A.</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "BpCode" : "NESPRESO",
+    "BpName" : " Nestlé Nespresso S.A.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NESPRESO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NESPRESO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "PARK",
+    "BpName" : " Park Supplies",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/PARK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/PARK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "NCYOWWZH",
+    "BpName" : ".    . Z? D Lk Szsuo P. Vd Zhsywv Wyp L. Ipe ? L E",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NCYOWWZH",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NCYOWWZH",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "ESZZXXWD",
+    "BpName" : ".    Hw. Eeplbm Ik Ol Tbyu. Yk? H P V O? ? K Uetwk",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ESZZXXWD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ESZZXXWD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "VUTAMXAF",
+    "BpName" : ".    Msu U A Yu Pi Bi  Zmytbe . Dabl Bhbk. . Hvyy ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/VUTAMXAF",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/VUTAMXAF",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "EZJQYSVD",
+    "BpName" : ".    Slwtzmu U S Ph U.  Koeuilwihoaam Phkp  Wwkd Z",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/EZJQYSVD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/EZJQYSVD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "JWEYFFDO",
+    "BpName" : ".    Ua Lv? Wzl? Itlblkt Ds Ivth D. Wbhzyi Iwpb Oa",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/JWEYFFDO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/JWEYFFDO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "JNEHRSOV",
+    "BpName" : ".   . O Tl Dm? Tdtbhkad?  Ootv Vu ? Oz Yvi Ttwtvt ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/JNEHRSOV",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/JNEHRSOV",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "DJBIRJOA",
+    "BpName" : ".   . O? Dv  Mv S.  Ow? Telotoaylldsw Oo ? B Hye? ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/DJBIRJOA",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/DJBIRJOA",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "NCOZYHHL",
+    "BpName" : ".   . Pvymzzbl B Pwmbkv Piemi Spzhum Mpu Bttezuh  ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NCOZYHHL",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NCOZYHHL",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "QCHGPVXA",
+    "BpName" : ".   . Vkobi Dtzsty Hm Za Hbk ? U ? Yyohea W? Silky",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/QCHGPVXA",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/QCHGPVXA",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "HTRIPMDK",
+    "BpName" : ".   . Yuapai? Wkh A Wwdydppz Aw. E U ? Yiha U Kl. ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/HTRIPMDK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/HTRIPMDK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "EMCRPILV",
+    "BpName" : ".   ?  M K? Atmym M. Ld U Okw Domiuz . Dp Lbvvdsbw",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/EMCRPILV",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/EMCRPILV",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "HRVHLLUZ",
+    "BpName" : ".   ?  O Ud Zul  Vv?  Esy Mp. H ?  I K Iv  V. ?  D",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/HRVHLLUZ",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/HRVHLLUZ",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "ZSEGHWCC",
+    "BpName" : ".   ? Ih. Mmd Avb Awuvslm Dbw A Wksztat Hvtymhl.  ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ZSEGHWCC",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ZSEGHWCC",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "ICWXLSRO",
+    "BpName" : ".   ? Pa? Iezkd Im?  Le W M Yah? Dvasold I. Yokli ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ICWXLSRO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ICWXLSRO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "BSNHWKAC",
+    "BpName" : ".   A. Hbotl  D O L Zoku ? Y. I L Yv P D Betviu Mt",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/BSNHWKAC",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/BSNHWKAC",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "GYAGRXKP",
+    "BpName" : ".   Ad. Yvzm?  L M . L U?  Dwwoid. Tw Ht. Shhsbu A",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/GYAGRXKP",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/GYAGRXKP",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "RBEDZAXE",
+    "BpName" : ".   Ahdolv .  Y Ly Z. Zd W H? Kvhph Hkhe Z Ap V Iy",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/RBEDZAXE",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/RBEDZAXE",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "MUYWQHNK",
+    "BpName" : ".   Alihiuhm. Ekpl U. Vel T Tkpybd Etl Tm  Takbzlm",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/MUYWQHNK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/MUYWQHNK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "VQYSVWZE",
+    "BpName" : ".   Alyyydvmawzp Y Estdzo Viu Ellkd A? Uv. U ? Liy",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/VQYSVWZE",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/VQYSVWZE",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "BTTCKANW",
+    "BpName" : ".   Aza? O? V Itmuw Wwmwzvuyi Sloud Yl  Ip Ewzlpd ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/BTTCKANW",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/BTTCKANW",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "KAYWAEPT",
+    "BpName" : ".   Bawwbbapz L Z Hd. Lbst Ma Pao. Ipbalimk? Dsa T",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/KAYWAEPT",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/KAYWAEPT",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "TRUYLEQP",
+    "BpName" : ".   Bi B Ilib U Ylzh Oii W Kwolpt. Lt Mud Kt Dv Vm",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/TRUYLEQP",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/TRUYLEQP",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "UNTOVIUD",
+    "BpName" : ".   Daidmmowilu Svas H I Tah I W? Ywd  Hotl.  Md Y",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/UNTOVIUD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/UNTOVIUD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners",
+    "name" : "businessPartners",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value=""/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Bussiness Partner by UUID" id="1e213a27-93e4-4491-8d47-866dac53d53a">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/businessPartners/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Bussiness Partner by UUID" id="61267985-a1c4-4417-9c78-f11d3680cd64" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NESPRESO</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f07a2c47-9c87-4104-a05a-165bb85fb9bb" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="f64313d7-5283-4c29-9e67-56116b4eadec" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="3b93667d-12a0-4ce0-81b6-084e5b5fb2fa" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['BpCode']</con:path>
+              <con:element>BpCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Bussiness Partner#Response#$['items'][0]['BpCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['BpName']</con:path>
+              <con:element>BpName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Bussiness Partner#Response#$['items'][0]['BpName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "BpCode" : "NESPRESO",
+  "BpName" : " Nestlé Nespresso S.A.",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NESPRESO",
+    "name" : "businessPartners",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NESPRESO",
+    "name" : "businessPartners",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve Bussiness Partner#Response#$['items'][0]['BpCode']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Bussiness Partner by Limit 1000" id="f3726500-53d1-4050-b076-ae32e7fc8575">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/businessPartners" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Bussiness Partner by Limit 1000" id="dbfc6bc9-2a56-4a8e-b934-a22bbe5387de" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="969052fd-d508-477f-9723-2f85112c3882" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="1fb9bbb3-7e1a-456b-b50f-f0a5ba2eef47" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="f1ee26b2-003a-4107-bb6e-a4abd2dd951b" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['BpCode']</con:path>
+              <con:element>BpCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>NESPRESO</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['BpName']</con:path>
+              <con:element>BpName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue> Nestlé Nespresso S.A.</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "BpCode" : "NESPRESO",
+    "BpName" : " Nestlé Nespresso S.A.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NESPRESO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NESPRESO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "PARK",
+    "BpName" : " Park Supplies",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/PARK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/PARK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "NCYOWWZH",
+    "BpName" : ".    . Z? D Lk Szsuo P. Vd Zhsywv Wyp L. Ipe ? L E",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NCYOWWZH",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NCYOWWZH",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "ESZZXXWD",
+    "BpName" : ".    Hw. Eeplbm Ik Ol Tbyu. Yk? H P V O? ? K Uetwk",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ESZZXXWD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ESZZXXWD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "VUTAMXAF",
+    "BpName" : ".    Msu U A Yu Pi Bi  Zmytbe . Dabl Bhbk. . Hvyy ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/VUTAMXAF",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/VUTAMXAF",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "EZJQYSVD",
+    "BpName" : ".    Slwtzmu U S Ph U.  Koeuilwihoaam Phkp  Wwkd Z",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/EZJQYSVD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/EZJQYSVD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "JWEYFFDO",
+    "BpName" : ".    Ua Lv? Wzl? Itlblkt Ds Ivth D. Wbhzyi Iwpb Oa",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/JWEYFFDO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/JWEYFFDO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "JNEHRSOV",
+    "BpName" : ".   . O Tl Dm? Tdtbhkad?  Ootv Vu ? Oz Yvi Ttwtvt ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/JNEHRSOV",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/JNEHRSOV",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "DJBIRJOA",
+    "BpName" : ".   . O? Dv  Mv S.  Ow? Telotoaylldsw Oo ? B Hye? ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/DJBIRJOA",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/DJBIRJOA",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "NCOZYHHL",
+    "BpName" : ".   . Pvymzzbl B Pwmbkv Piemi Spzhum Mpu Bttezuh  ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NCOZYHHL",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NCOZYHHL",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "QCHGPVXA",
+    "BpName" : ".   . Vkobi Dtzsty Hm Za Hbk ? U ? Yyohea W? Silky",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/QCHGPVXA",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/QCHGPVXA",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "HTRIPMDK",
+    "BpName" : ".   . Yuapai? Wkh A Wwdydppz Aw. E U ? Yiha U Kl. ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/HTRIPMDK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/HTRIPMDK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "EMCRPILV",
+    "BpName" : ".   ?  M K? Atmym M. Ld U Okw Domiuz . Dp Lbvvdsbw",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/EMCRPILV",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/EMCRPILV",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "HRVHLLUZ",
+    "BpName" : ".   ?  O Ud Zul  Vv?  Esy Mp. H ?  I K Iv  V. ?  D",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/HRVHLLUZ",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/HRVHLLUZ",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "ZSEGHWCC",
+    "BpName" : ".   ? Ih. Mmd Avb Awuvslm Dbw A Wksztat Hvtymhl.  ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ZSEGHWCC",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ZSEGHWCC",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "ICWXLSRO",
+    "BpName" : ".   ? Pa? Iezkd Im?  Le W M Yah? Dvasold I. Yokli ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ICWXLSRO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ICWXLSRO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "BSNHWKAC",
+    "BpName" : ".   A. Hbotl  D O L Zoku ? Y. I L Yv P D Betviu Mt",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/BSNHWKAC",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/BSNHWKAC",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "GYAGRXKP",
+    "BpName" : ".   Ad. Yvzm?  L M . L U?  Dwwoid. Tw Ht. Shhsbu A",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/GYAGRXKP",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/GYAGRXKP",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "RBEDZAXE",
+    "BpName" : ".   Ahdolv .  Y Ly Z. Zd W H? Kvhph Hkhe Z Ap V Iy",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/RBEDZAXE",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/RBEDZAXE",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "MUYWQHNK",
+    "BpName" : ".   Alihiuhm. Ekpl U. Vel T Tkpybd Etl Tm  Takbzlm",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/MUYWQHNK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/MUYWQHNK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "VQYSVWZE",
+    "BpName" : ".   Alyyydvmawzp Y Estdzo Viu Ellkd A? Uv. U ? Liy",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/VQYSVWZE",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/VQYSVWZE",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "BTTCKANW",
+    "BpName" : ".   Aza? O? V Itmuw Wwmwzvuyi Sloud Yl  Ip Ewzlpd ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/BTTCKANW",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/BTTCKANW",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "KAYWAEPT",
+    "BpName" : ".   Bawwbbapz L Z Hd. Lbst Ma Pao. Ipbalimk? Dsa T",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/KAYWAEPT",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/KAYWAEPT",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "TRUYLEQP",
+    "BpName" : ".   Bi B Ilib U Ylzh Oii W Kwolpt. Lt Mud Kt Dv Vm",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/TRUYLEQP",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/TRUYLEQP",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "UNTOVIUD",
+    "BpName" : ".   Daidmmowilu Svas H I Tah I W? Ywd  Hotl.  Md Y",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/UNTOVIUD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/UNTOVIUD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners",
+    "name" : "businessPartners",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Bussiness Partner by Limit and Offset" id="82dffd5e-e4bc-44ee-9195-8c7fd8024676">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/businessPartners" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Bussiness Partner by Limit and Offset" id="dbfc6bc9-2a56-4a8e-b934-a22bbe5387de" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="969052fd-d508-477f-9723-2f85112c3882" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="1fb9bbb3-7e1a-456b-b50f-f0a5ba2eef47" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="f1ee26b2-003a-4107-bb6e-a4abd2dd951b" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['BpCode']</con:path>
+              <con:element>BpCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>NESPRESO</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['BpName']</con:path>
+              <con:element>BpName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue> Nestlé Nespresso S.A.</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['offset']</con:path>
+              <con:element>offset</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "BpCode" : "NESPRESO",
+    "BpName" : " Nestlé Nespresso S.A.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NESPRESO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NESPRESO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "PARK",
+    "BpName" : " Park Supplies",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/PARK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/PARK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "NCYOWWZH",
+    "BpName" : ".    . Z? D Lk Szsuo P. Vd Zhsywv Wyp L. Ipe ? L E",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NCYOWWZH",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NCYOWWZH",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "ESZZXXWD",
+    "BpName" : ".    Hw. Eeplbm Ik Ol Tbyu. Yk? H P V O? ? K Uetwk",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ESZZXXWD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ESZZXXWD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "VUTAMXAF",
+    "BpName" : ".    Msu U A Yu Pi Bi  Zmytbe . Dabl Bhbk. . Hvyy ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/VUTAMXAF",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/VUTAMXAF",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "EZJQYSVD",
+    "BpName" : ".    Slwtzmu U S Ph U.  Koeuilwihoaam Phkp  Wwkd Z",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/EZJQYSVD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/EZJQYSVD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "JWEYFFDO",
+    "BpName" : ".    Ua Lv? Wzl? Itlblkt Ds Ivth D. Wbhzyi Iwpb Oa",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/JWEYFFDO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/JWEYFFDO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "JNEHRSOV",
+    "BpName" : ".   . O Tl Dm? Tdtbhkad?  Ootv Vu ? Oz Yvi Ttwtvt ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/JNEHRSOV",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/JNEHRSOV",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "DJBIRJOA",
+    "BpName" : ".   . O? Dv  Mv S.  Ow? Telotoaylldsw Oo ? B Hye? ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/DJBIRJOA",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/DJBIRJOA",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "NCOZYHHL",
+    "BpName" : ".   . Pvymzzbl B Pwmbkv Piemi Spzhum Mpu Bttezuh  ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NCOZYHHL",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/NCOZYHHL",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "QCHGPVXA",
+    "BpName" : ".   . Vkobi Dtzsty Hm Za Hbk ? U ? Yyohea W? Silky",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/QCHGPVXA",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/QCHGPVXA",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "HTRIPMDK",
+    "BpName" : ".   . Yuapai? Wkh A Wwdydppz Aw. E U ? Yiha U Kl. ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/HTRIPMDK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/HTRIPMDK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "EMCRPILV",
+    "BpName" : ".   ?  M K? Atmym M. Ld U Okw Domiuz . Dp Lbvvdsbw",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/EMCRPILV",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/EMCRPILV",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "HRVHLLUZ",
+    "BpName" : ".   ?  O Ud Zul  Vv?  Esy Mp. H ?  I K Iv  V. ?  D",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/HRVHLLUZ",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/HRVHLLUZ",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "ZSEGHWCC",
+    "BpName" : ".   ? Ih. Mmd Avb Awuvslm Dbw A Wksztat Hvtymhl.  ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ZSEGHWCC",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ZSEGHWCC",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "ICWXLSRO",
+    "BpName" : ".   ? Pa? Iezkd Im?  Le W M Yah? Dvasold I. Yokli ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ICWXLSRO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/ICWXLSRO",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "BSNHWKAC",
+    "BpName" : ".   A. Hbotl  D O L Zoku ? Y. I L Yv P D Betviu Mt",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/BSNHWKAC",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/BSNHWKAC",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "GYAGRXKP",
+    "BpName" : ".   Ad. Yvzm?  L M . L U?  Dwwoid. Tw Ht. Shhsbu A",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/GYAGRXKP",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/GYAGRXKP",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "RBEDZAXE",
+    "BpName" : ".   Ahdolv .  Y Ly Z. Zd W H? Kvhph Hkhe Z Ap V Iy",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/RBEDZAXE",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/RBEDZAXE",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "MUYWQHNK",
+    "BpName" : ".   Alihiuhm. Ekpl U. Vel T Tkpybd Etl Tm  Takbzlm",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/MUYWQHNK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/MUYWQHNK",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "VQYSVWZE",
+    "BpName" : ".   Alyyydvmawzp Y Estdzo Viu Ellkd A? Uv. U ? Liy",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/VQYSVWZE",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/VQYSVWZE",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "BTTCKANW",
+    "BpName" : ".   Aza? O? V Itmuw Wwmwzvuyi Sloud Yl  Ip Ewzlpd ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/BTTCKANW",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/BTTCKANW",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "KAYWAEPT",
+    "BpName" : ".   Bawwbbapz L Z Hd. Lbst Ma Pao. Ipbalimk? Dsa T",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/KAYWAEPT",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/KAYWAEPT",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "TRUYLEQP",
+    "BpName" : ".   Bi B Ilib U Ylzh Oii W Kwolpt. Lt Mud Kt Dv Vm",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/TRUYLEQP",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/TRUYLEQP",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "BpCode" : "UNTOVIUD",
+    "BpName" : ".   Daidmmowilu Svas H I Tah I W? Ywd  Hotl.  Md Y",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/UNTOVIUD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners/UNTOVIUD",
+      "name" : "businessPartners",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners",
+    "name" : "businessPartners",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value="1"/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Bussiness Partner by Limit 1001" id="8563a487-4199-4473-94c6-c664cd074ec3">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/businessPartners" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Bussiness Partner by Limit 1001" id="dbfc6bc9-2a56-4a8e-b934-a22bbe5387de" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/businessPartners</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="969052fd-d508-477f-9723-2f85112c3882" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="1fb9bbb3-7e1a-456b-b50f-f0a5ba2eef47" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="2175312c-dfb4-44a2-b433-fe239d2ddc45" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['javaMessage']</con:path>
+              <con:element>javaMessage</con:element>
+              <con:operatorId>13</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Limit exceeded</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"exceptionName":"CMGeneralException","code":"WSD-0000","cmicMessage":"Exception encountered during request processing.","javaMessage":"error: Limit exceeded, maximum is 1000","javaExceptionClassName":"","longDescription":""}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value="1001"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

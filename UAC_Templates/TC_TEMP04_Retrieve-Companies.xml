@@ -1,0 +1,1422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="9f3bb42a-2a6a-49b9-b957-fa0c0d27c9a6" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP04_Retrieve Companies" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="9f3bb42a-2a6a-49b9-b957-fa0c0d27c9a6fileName">TC_TEMP04_Retrieve-Companies</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Companies" id="f74e9c77-a1f2-4edd-b08b-882875d90357">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/companies" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Companies" id="e28ecb8c-ba49-4f8e-9aac-f8cd74ece100" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/companies</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="64cd993f-3c22-42a3-8d67-897a6a84fe53" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="9fe904e1-dc99-40a5-8678-b763922b782d" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="ff284a63-6633-465c-9096-ee8e409fab31" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['CompCode']</con:path>
+              <con:element>CompCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>RDRLHJWQ</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['CompName']</con:path>
+              <con:element>CompName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>.  Sliw . *Big Dummy Data*</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "CompCode" : "RDRLHJWQ",
+    "CompName" : ".  Sliw . *Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/RDRLHJWQ",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/RDRLHJWQ",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ZFPCARTW",
+    "CompName" : ". ? Uy? Dw*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ZFPCARTW",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ZFPCARTW",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "LWAMLPMK",
+    "CompName" : ". Huh Lsk *Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/LWAMLPMK",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/LWAMLPMK",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "PMREYNLK",
+    "CompName" : ". Iau. Bs *Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/PMREYNLK",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/PMREYNLK",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "01",
+    "CompName" : "01testingcom",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/01",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/01",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "04BTEST",
+    "CompName" : "04btest",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/04BTEST",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/04BTEST",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "1009",
+    "CompName" : "1009",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/1009",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/1009",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "10099",
+    "CompName" : "10099 Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/10099",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/10099",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "101",
+    "CompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/101",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/101",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "45675348",
+    "CompName" : "48555555",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/45675348",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/45675348",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "NASFSYRI",
+    "CompName" : "?  . I. Mt*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/NASFSYRI",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/NASFSYRI",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "CDGWOTKC",
+    "CompName" : "?  Vmiesbh*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/CDGWOTKC",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/CDGWOTKC",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ROQRFYID",
+    "CompName" : "? P W Ypim*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ROQRFYID",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ROQRFYID",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "SZDAITGH",
+    "CompName" : "? Ybz. Zkp*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/SZDAITGH",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/SZDAITGH",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "FQDWYIDQ",
+    "CompName" : "A ? Uyssu *Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/FQDWYIDQ",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/FQDWYIDQ",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "WCHVRLXD",
+    "CompName" : "A Ks Z Hes*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/WCHVRLXD",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/WCHVRLXD",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ASC",
+    "CompName" : "A S Group of Companies",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ASC",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ASC",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "AZC",
+    "CompName" : "A Z Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AZC",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AZC",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ABC",
+    "CompName" : "ABC Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABC",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABC",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ABCI",
+    "CompName" : "ABC Construction Inc.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABCI",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABCI",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ABJ",
+    "CompName" : "ABJ company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABJ",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABJ",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "AD01",
+    "CompName" : "AD01 Anupama Devis",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AD01",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AD01",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ADIUS",
+    "CompName" : "ADI USPAYROLL",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ADIUS",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ADIUS",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "AHKCO",
+    "CompName" : "AHK Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AHKCO",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AHKCO",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "AJ-COMP",
+    "CompName" : "AJ - Astha Jain Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AJ-COMP",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AJ-COMP",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies",
+    "name" : "companies",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value=""/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Companies by UUID" id="b3bb03f9-6f70-4772-9a21-a6165d4f6ac0">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/companies/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Companies by UUID" id="93aab790-0972-43af-9bd9-3b221de7393d" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/RDRLHJWQ</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e23e1427-fe08-4d30-b22a-2fb6813a699e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="224f4ed0-7d69-4f1b-97fa-b8669419f79b" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="61b42448-9c7b-4503-89f9-e114792944cd" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['CompCode']</con:path>
+              <con:element>CompCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Companies#Response#$['items'][0]['CompCode']}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['CompName']</con:path>
+              <con:element>CompName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Companies#Response#$['items'][0]['CompName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "CompCode" : "RDRLHJWQ",
+  "CompName" : ".  Sliw . *Big Dummy Data*",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/RDRLHJWQ",
+    "name" : "companies",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/RDRLHJWQ",
+    "name" : "companies",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve Companies#Response#$['items'][0]['CompCode']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Companies with 1000 Limit" id="0a3150d5-bb61-473d-bcfd-c9affd4524f1">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/companies" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Companies with 1000 Limit" id="e28ecb8c-ba49-4f8e-9aac-f8cd74ece100" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/companies</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="64cd993f-3c22-42a3-8d67-897a6a84fe53" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="9fe904e1-dc99-40a5-8678-b763922b782d" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="ff284a63-6633-465c-9096-ee8e409fab31" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['CompCode']</con:path>
+              <con:element>CompCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>RDRLHJWQ</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['CompName']</con:path>
+              <con:element>CompName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>.  Sliw . *Big Dummy Data*</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "CompCode" : "RDRLHJWQ",
+    "CompName" : ".  Sliw . *Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/RDRLHJWQ",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/RDRLHJWQ",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ZFPCARTW",
+    "CompName" : ". ? Uy? Dw*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ZFPCARTW",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ZFPCARTW",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "LWAMLPMK",
+    "CompName" : ". Huh Lsk *Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/LWAMLPMK",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/LWAMLPMK",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "PMREYNLK",
+    "CompName" : ". Iau. Bs *Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/PMREYNLK",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/PMREYNLK",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "01",
+    "CompName" : "01testingcom",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/01",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/01",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "04BTEST",
+    "CompName" : "04btest",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/04BTEST",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/04BTEST",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "1009",
+    "CompName" : "1009",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/1009",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/1009",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "10099",
+    "CompName" : "10099 Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/10099",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/10099",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "101",
+    "CompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/101",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/101",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "45675348",
+    "CompName" : "48555555",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/45675348",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/45675348",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "NASFSYRI",
+    "CompName" : "?  . I. Mt*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/NASFSYRI",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/NASFSYRI",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "CDGWOTKC",
+    "CompName" : "?  Vmiesbh*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/CDGWOTKC",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/CDGWOTKC",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ROQRFYID",
+    "CompName" : "? P W Ypim*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ROQRFYID",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ROQRFYID",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "SZDAITGH",
+    "CompName" : "? Ybz. Zkp*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/SZDAITGH",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/SZDAITGH",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "FQDWYIDQ",
+    "CompName" : "A ? Uyssu *Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/FQDWYIDQ",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/FQDWYIDQ",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "WCHVRLXD",
+    "CompName" : "A Ks Z Hes*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/WCHVRLXD",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/WCHVRLXD",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ASC",
+    "CompName" : "A S Group of Companies",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ASC",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ASC",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "AZC",
+    "CompName" : "A Z Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AZC",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AZC",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ABC",
+    "CompName" : "ABC Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABC",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABC",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ABCI",
+    "CompName" : "ABC Construction Inc.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABCI",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABCI",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ABJ",
+    "CompName" : "ABJ company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABJ",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABJ",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "AD01",
+    "CompName" : "AD01 Anupama Devis",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AD01",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AD01",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ADIUS",
+    "CompName" : "ADI USPAYROLL",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ADIUS",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ADIUS",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "AHKCO",
+    "CompName" : "AHK Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AHKCO",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AHKCO",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "AJ-COMP",
+    "CompName" : "AJ - Astha Jain Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AJ-COMP",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AJ-COMP",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies",
+    "name" : "companies",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Companies with 1001 Limit" id="f129a49a-52e3-4b8c-9f91-b1db93f2867c">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/companies" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Companies with 1001 Limit" id="e28ecb8c-ba49-4f8e-9aac-f8cd74ece100" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/companies</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="64cd993f-3c22-42a3-8d67-897a6a84fe53" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="9fe904e1-dc99-40a5-8678-b763922b782d" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="9e268a3b-d87a-42d2-89eb-51856a2f01ce" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['javaMessage']</con:path>
+              <con:element>javaMessage</con:element>
+              <con:operatorId>13</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Limit exceeded</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"exceptionName":"CMGeneralException","code":"WSD-0000","cmicMessage":"Exception encountered during request processing.","javaMessage":"error: Limit exceeded, maximum is 1000","javaExceptionClassName":"","longDescription":""}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value="1001"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Companies with Limit and Offset" id="5029db1f-db88-4fea-87fc-0190ce611fe3">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/companies" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Companies with Limit and Offset" id="e28ecb8c-ba49-4f8e-9aac-f8cd74ece100" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/companies</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="64cd993f-3c22-42a3-8d67-897a6a84fe53" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="9fe904e1-dc99-40a5-8678-b763922b782d" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="ff284a63-6633-465c-9096-ee8e409fab31" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['CompCode']</con:path>
+              <con:element>CompCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>RDRLHJWQ</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['CompName']</con:path>
+              <con:element>CompName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>.  Sliw . *Big Dummy Data*</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['offset']</con:path>
+              <con:element>offset</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "CompCode" : "RDRLHJWQ",
+    "CompName" : ".  Sliw . *Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/RDRLHJWQ",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/RDRLHJWQ",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ZFPCARTW",
+    "CompName" : ". ? Uy? Dw*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ZFPCARTW",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ZFPCARTW",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "LWAMLPMK",
+    "CompName" : ". Huh Lsk *Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/LWAMLPMK",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/LWAMLPMK",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "PMREYNLK",
+    "CompName" : ". Iau. Bs *Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/PMREYNLK",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/PMREYNLK",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "01",
+    "CompName" : "01testingcom",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/01",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/01",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "04BTEST",
+    "CompName" : "04btest",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/04BTEST",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/04BTEST",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "1009",
+    "CompName" : "1009",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/1009",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/1009",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "10099",
+    "CompName" : "10099 Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/10099",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/10099",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "101",
+    "CompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/101",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/101",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "45675348",
+    "CompName" : "48555555",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/45675348",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/45675348",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "NASFSYRI",
+    "CompName" : "?  . I. Mt*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/NASFSYRI",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/NASFSYRI",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "CDGWOTKC",
+    "CompName" : "?  Vmiesbh*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/CDGWOTKC",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/CDGWOTKC",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ROQRFYID",
+    "CompName" : "? P W Ypim*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ROQRFYID",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ROQRFYID",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "SZDAITGH",
+    "CompName" : "? Ybz. Zkp*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/SZDAITGH",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/SZDAITGH",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "FQDWYIDQ",
+    "CompName" : "A ? Uyssu *Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/FQDWYIDQ",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/FQDWYIDQ",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "WCHVRLXD",
+    "CompName" : "A Ks Z Hes*Big Dummy Data*",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/WCHVRLXD",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/WCHVRLXD",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ASC",
+    "CompName" : "A S Group of Companies",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ASC",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ASC",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "AZC",
+    "CompName" : "A Z Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AZC",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AZC",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ABC",
+    "CompName" : "ABC Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABC",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABC",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ABCI",
+    "CompName" : "ABC Construction Inc.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABCI",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABCI",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ABJ",
+    "CompName" : "ABJ company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABJ",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ABJ",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "AD01",
+    "CompName" : "AD01 Anupama Devis",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AD01",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AD01",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "ADIUS",
+    "CompName" : "ADI USPAYROLL",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ADIUS",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/ADIUS",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "AHKCO",
+    "CompName" : "AHK Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AHKCO",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AHKCO",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  }, {
+    "CompCode" : "AJ-COMP",
+    "CompName" : "AJ - Astha Jain Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AJ-COMP",
+      "name" : "companies",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies/AJ-COMP",
+      "name" : "companies",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/companies",
+    "name" : "companies",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value="1"/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

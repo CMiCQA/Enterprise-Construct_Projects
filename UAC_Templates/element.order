@@ -1,2 +1,8 @@
 TC_TEMP01_Retrieve-Enterprise-Roles.xml
 TC_TEMP02_Retrieve-PM-Project-Roles.xml
+TC_TEMP03_Retrieve-Security-Roles.xml
+TC_TEMP04_Retrieve-Companies.xml
+TC_TEMO05_Retrieve-Compliance-Security.xml
+TC_TEMP06_Retrieve-Bussiness-Partners.xml
+TC_TEMP07_Retrieve-Consolidation-Access.xml
+TC_TEMP08_Retrieve-Security-Group.xml

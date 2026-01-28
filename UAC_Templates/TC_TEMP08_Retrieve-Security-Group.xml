@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="12773ed8-cba9-4200-857f-58bef50e80b0" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP08_Retrieve Security Group" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="12773ed8-cba9-4200-857f-58bef50e80b0fileName">TC_TEMP08_Retrieve-Security-Group</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Security Group" id="929a18dd-a5d3-4b7e-b862-1b321d09411b">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/imagingSecurityGroup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Security Group" id="b33ede15-c287-4eb0-9444-d603d6466e79" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="046b1dcd-5059-41d4-86a9-abded4ae6d3b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="bfe61e0e-e4af-4378-b44a-df48c5f020e8" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="3d97e388-5628-4ae0-a28e-1e9a32e90b94" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['ImgsgGroupOraseq']</con:path>
+              <con:element>ImgsgGroupOraseq</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2254899919</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['ImgsgGroupName']</con:path>
+              <con:element>ImgsgGroupName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>APIGROUP</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>25</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "ImgsgGroupOraseq" : 2254899919,
+    "ImgsgGroupName" : "APIGROUP",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2254899919",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2254899919",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "ImgsgGroupOraseq" : 2260187003,
+    "ImgsgGroupName" : "CPE Level 2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2260187003",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2260187003",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "ImgsgGroupOraseq" : 35754428,
+    "ImgsgGroupName" : "Dhruv Testing group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/35754428",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/35754428",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "ImgsgGroupOraseq" : 2214210132,
+    "ImgsgGroupName" : "RKC Testing Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2214210132",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2214210132",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "ImgsgGroupOraseq" : 2331214969,
+    "ImgsgGroupName" : "RKTEST",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2331214969",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2331214969",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "ImgsgGroupOraseq" : 144399751,
+    "ImgsgGroupName" : "SB-AUTO",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/144399751",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/144399751",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "ImgsgGroupOraseq" : 28125,
+    "ImgsgGroupName" : "STANDARD",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/28125",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/28125",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "ImgsgGroupOraseq" : 2227779464,
+    "ImgsgGroupName" : "Test Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2227779464",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2227779464",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "ImgsgGroupOraseq" : 2307758630,
+    "ImgsgGroupName" : "cpe-laaibahmemon",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2307758630",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2307758630",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "ImgsgGroupOraseq" : 11893536,
+    "ImgsgGroupName" : "sbgroup",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/11893536",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/11893536",
+      "name" : "imagingSecurityGroup",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 10,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup",
+    "name" : "imagingSecurityGroup",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Security Group by UUID" id="c88fa01f-2b40-4382-9301-a9e8fcce2ed3">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/imagingSecurityGroup/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Security Group by UUID" id="72930570-d694-444f-b742-e40c3bd662ca" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/id</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="2dd77489-6cba-49e6-bad1-add8191c4533" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="52181503-4bc0-4903-84c1-242d66254f33" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="ca2e4996-7653-45c8-a286-c8c3e4aebba9" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['ImgsgGroupOraseq']</con:path>
+              <con:element>ImgsgGroupOraseq</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Security Group#Response#$['items'][0]['ImgsgGroupOraseq']}</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['ImgsgGroupName']</con:path>
+              <con:element>ImgsgGroupName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Security Group#Response#$['items'][0]['ImgsgGroupName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "ImgsgGroupOraseq" : 2254899919,
+  "ImgsgGroupName" : "APIGROUP",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2254899919",
+    "name" : "imagingSecurityGroup",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/imagingSecurityGroup/2254899919",
+    "name" : "imagingSecurityGroup",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve Security Group#Response#$['items'][0]['ImgsgGroupOraseq']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
