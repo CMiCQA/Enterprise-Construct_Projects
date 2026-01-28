@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="1353e135-d928-429b-8961-5abb65c6bb6e" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP10_Templates" searchProperties="true" timeout="0">
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="1353e135-d928-429b-8961-5abb65c6bb6e" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP11_Templates" searchProperties="true" timeout="0">
   <con:settings>
-    <con:setting id="1353e135-d928-429b-8961-5abb65c6bb6efileName">TC_TEMP10_Templates</con:setting>
+    <con:setting id="1353e135-d928-429b-8961-5abb65c6bb6efileName">TC_TEMP11_Templates</con:setting>
   </con:settings>
   <con:testStep type="datasource" name="Data Source" id="8eaf07e0-ca2e-47be-b05d-2082bde2ab6d">
     <con:settings/>
