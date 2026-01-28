@@ -1,0 +1,1506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="6736b50a-d3ab-4c2b-b105-5012a15b5a84" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP02_Retrieve PM Project Roles" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="6736b50a-d3ab-4c2b-b105-5012a15b5a84fileName">TC_TEMP02_Retrieve-PM-Project-Roles</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve PM Project Roles" id="1704ffa4-8b59-4218-9aa5-6f004e639440">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/pmProjectRoles" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve PM Project Roles" id="ff9c171d-c1f5-47b1-81ad-845177a7c9dc" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/pmProjectRoles</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="bed21730-445b-4973-ab39-d3181d2f2102" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="6bb4b290-8603-451d-9964-5f2ef8ef5c5c" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="ff05a8a0-6d81-4e07-b40c-8a2ebef5a705" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['PmrRoleCode']</con:path>
+              <con:element>PmrRoleCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1234SS</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['PmrRoleName']</con:path>
+              <con:element>PmrRoleName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1234SS</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "PmrRoleCode" : "1234SS",
+    "PmrRoleName" : "1234SS",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/1234SS",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/1234SS",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "123ABC",
+    "PmrRoleName" : "123abc",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/123ABC",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/123ABC",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "123EMAIL",
+    "PmrRoleName" : "123email",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/123EMAIL",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/123EMAIL",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ACCOUNTING",
+    "PmrRoleName" : "ACCOUNTING (Alerts)",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ACCOUNTING",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ACCOUNTING",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ADAM1",
+    "PmrRoleName" : "ADAM1",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADAM1",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADAM1",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ADMOBROLE",
+    "PmrRoleName" : "ADM Mobile Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADMOBROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADMOBROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "MOBILEADM",
+    "PmrRoleName" : "ADM-Mobile Testing Role ",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/MOBILEADM",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/MOBILEADM",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "APIROLE",
+    "PmrRoleName" : "API ROLE",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/APIROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/APIROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ARCCOLLAB",
+    "PmrRoleName" : "ARC Collaborator",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCCOLLAB",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCCOLLAB",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ARCPRJROLE",
+    "PmrRoleName" : "ARC Project Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCPRJROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCPRJROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ARCHITECT",
+    "PmrRoleName" : "ARCHITECT",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCHITECT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCHITECT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ARCH",
+    "PmrRoleName" : "ARCHITECT (ARCH - FL)",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCH",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCH",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "AUTOMATION",
+    "PmrRoleName" : "AUTOMATION",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AUTOMATION",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AUTOMATION",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "AZINTROLE",
+    "PmrRoleName" : "AZ internal PM role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AZINTROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AZINTROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ABPRJEXT",
+    "PmrRoleName" : "Abhilash EXT Proj Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ABPRJEXT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ABPRJEXT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ABPRJINT",
+    "PmrRoleName" : "Abhilash Int Proj Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ABPRJINT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ABPRJINT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "AKPRJ",
+    "PmrRoleName" : "Alex K. Proj Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AKPRJ",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AKPRJ",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ADMPMROLE",
+    "PmrRoleName" : "Alrina's PM Project ROLE",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADMPMROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADMPMROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ANALYSIS",
+    "PmrRoleName" : "Analytical",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ANALYSIS",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ANALYSIS",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "AHPROJINT",
+    "PmrRoleName" : "Andrew's Project Level Internal Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AHPROJINT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AHPROJINT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "APPRV_1",
+    "PmrRoleName" : "Approver 1",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/APPRV_1",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/APPRV_1",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ASHMNGR",
+    "PmrRoleName" : "Ashar Manager",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ASHMNGR",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ASHMNGR",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "BDROLE",
+    "PmrRoleName" : "B Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/BDROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/BDROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "CLLMASTER",
+    "PmrRoleName" : "CLLMASTER",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/CLLMASTER",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/CLLMASTER",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "CERT",
+    "PmrRoleName" : "Cert",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/CERT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/CERT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles",
+    "name" : "pmProjectRoles",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value=""/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve PM Project Roles by UUID" id="6c0e22d9-7ab5-4252-83b8-d04a3d43e1b7">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/pmProjectRoles/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve PM Project Roles by UUID" id="ac7cd21a-c006-4666-b884-80fcabee008f" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/1234SS</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d6055a01-a464-4183-b62b-264c34d4fcfa" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="eb57f3cb-46a8-4159-bda6-1315b8f01dc6" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="f30bc2e4-1298-4534-8c60-1dd610ee720e" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['PmrRoleCode']</con:path>
+              <con:element>PmrRoleCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve PM Project Roles#Response#$['items'][0]['PmrRoleCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['PmrRoleName']</con:path>
+              <con:element>PmrRoleName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve PM Project Roles#Response#$['items'][0]['PmrRoleName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['PmrCompCode']</con:path>
+              <con:element>PmrCompCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve PM Project Roles#Response#$['items'][0]['PmrCompCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>4</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "PmrRoleCode" : "1234SS",
+  "PmrRoleName" : "1234SS",
+  "PmrCompCode" : null,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/1234SS",
+    "name" : "pmProjectRoles",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/1234SS",
+    "name" : "pmProjectRoles",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve PM Project Roles#Response#$['items'][0]['PmrRoleCode']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve PM Project Roles by 1000 Limit" id="1202dd14-9c76-4a7a-bc0a-42ea3dc78e8c">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/pmProjectRoles" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve PM Project Roles by 1000 Limit" id="ff9c171d-c1f5-47b1-81ad-845177a7c9dc" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/pmProjectRoles</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="bed21730-445b-4973-ab39-d3181d2f2102" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="6bb4b290-8603-451d-9964-5f2ef8ef5c5c" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="ff05a8a0-6d81-4e07-b40c-8a2ebef5a705" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['PmrRoleCode']</con:path>
+              <con:element>PmrRoleCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1234SS</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['PmrRoleName']</con:path>
+              <con:element>PmrRoleName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1234SS</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "PmrRoleCode" : "1234SS",
+    "PmrRoleName" : "1234SS",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/1234SS",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/1234SS",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "123ABC",
+    "PmrRoleName" : "123abc",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/123ABC",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/123ABC",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "123EMAIL",
+    "PmrRoleName" : "123email",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/123EMAIL",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/123EMAIL",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ACCOUNTING",
+    "PmrRoleName" : "ACCOUNTING (Alerts)",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ACCOUNTING",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ACCOUNTING",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ADAM1",
+    "PmrRoleName" : "ADAM1",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADAM1",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADAM1",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ADMOBROLE",
+    "PmrRoleName" : "ADM Mobile Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADMOBROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADMOBROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "MOBILEADM",
+    "PmrRoleName" : "ADM-Mobile Testing Role ",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/MOBILEADM",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/MOBILEADM",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "APIROLE",
+    "PmrRoleName" : "API ROLE",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/APIROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/APIROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ARCCOLLAB",
+    "PmrRoleName" : "ARC Collaborator",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCCOLLAB",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCCOLLAB",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ARCPRJROLE",
+    "PmrRoleName" : "ARC Project Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCPRJROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCPRJROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ARCHITECT",
+    "PmrRoleName" : "ARCHITECT",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCHITECT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCHITECT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ARCH",
+    "PmrRoleName" : "ARCHITECT (ARCH - FL)",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCH",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCH",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "AUTOMATION",
+    "PmrRoleName" : "AUTOMATION",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AUTOMATION",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AUTOMATION",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "AZINTROLE",
+    "PmrRoleName" : "AZ internal PM role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AZINTROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AZINTROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ABPRJEXT",
+    "PmrRoleName" : "Abhilash EXT Proj Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ABPRJEXT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ABPRJEXT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ABPRJINT",
+    "PmrRoleName" : "Abhilash Int Proj Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ABPRJINT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ABPRJINT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "AKPRJ",
+    "PmrRoleName" : "Alex K. Proj Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AKPRJ",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AKPRJ",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ADMPMROLE",
+    "PmrRoleName" : "Alrina's PM Project ROLE",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADMPMROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADMPMROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ANALYSIS",
+    "PmrRoleName" : "Analytical",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ANALYSIS",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ANALYSIS",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "AHPROJINT",
+    "PmrRoleName" : "Andrew's Project Level Internal Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AHPROJINT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AHPROJINT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "APPRV_1",
+    "PmrRoleName" : "Approver 1",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/APPRV_1",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/APPRV_1",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ASHMNGR",
+    "PmrRoleName" : "Ashar Manager",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ASHMNGR",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ASHMNGR",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "BDROLE",
+    "PmrRoleName" : "B Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/BDROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/BDROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "CLLMASTER",
+    "PmrRoleName" : "CLLMASTER",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/CLLMASTER",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/CLLMASTER",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "CERT",
+    "PmrRoleName" : "Cert",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/CERT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/CERT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles",
+    "name" : "pmProjectRoles",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve PM Project Roles by 1001 Limit" id="b2eaf251-ddcc-4494-aab1-03f92c4d3e39">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/pmProjectRoles" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve PM Project Roles by 1001 Limit" id="ff9c171d-c1f5-47b1-81ad-845177a7c9dc" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/pmProjectRoles</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="bed21730-445b-4973-ab39-d3181d2f2102" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="6bb4b290-8603-451d-9964-5f2ef8ef5c5c" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="a92c07c4-b1ee-4704-8074-2a7308ec1794" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['javaMessage']</con:path>
+              <con:element>javaMessage</con:element>
+              <con:operatorId>13</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue> Limit exceeded</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"exceptionName":"CMGeneralException","code":"WSD-0000","cmicMessage":"Exception encountered during request processing.","javaMessage":"error: Limit exceeded, maximum is 1000","javaExceptionClassName":"","longDescription":""}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value="1001"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve PM Project Roles by Limit and Offset" id="36185661-5c3b-4343-8829-7de512cba962">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/pmProjectRoles" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve PM Project Roles by Limit and Offset" id="ff9c171d-c1f5-47b1-81ad-845177a7c9dc" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/pmProjectRoles</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="bed21730-445b-4973-ab39-d3181d2f2102" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="6bb4b290-8603-451d-9964-5f2ef8ef5c5c" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="ff05a8a0-6d81-4e07-b40c-8a2ebef5a705" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['PmrRoleCode']</con:path>
+              <con:element>PmrRoleCode</con:element>
+              <con:operatorId>2</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve PM Project Roles#Response#$['items'][0]['PmrRoleCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['PmrRoleName']</con:path>
+              <con:element>PmrRoleName</con:element>
+              <con:operatorId>2</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve PM Project Roles#Response#$['items'][0]['PmrRoleName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['limit']</con:path>
+              <con:element>limit</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1000</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['offset']</con:path>
+              <con:element>offset</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "PmrRoleCode" : "1234SS",
+    "PmrRoleName" : "1234SS",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/1234SS",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/1234SS",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "123ABC",
+    "PmrRoleName" : "123abc",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/123ABC",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/123ABC",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "123EMAIL",
+    "PmrRoleName" : "123email",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/123EMAIL",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/123EMAIL",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ACCOUNTING",
+    "PmrRoleName" : "ACCOUNTING (Alerts)",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ACCOUNTING",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ACCOUNTING",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ADAM1",
+    "PmrRoleName" : "ADAM1",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADAM1",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADAM1",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ADMOBROLE",
+    "PmrRoleName" : "ADM Mobile Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADMOBROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADMOBROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "MOBILEADM",
+    "PmrRoleName" : "ADM-Mobile Testing Role ",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/MOBILEADM",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/MOBILEADM",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "APIROLE",
+    "PmrRoleName" : "API ROLE",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/APIROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/APIROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ARCCOLLAB",
+    "PmrRoleName" : "ARC Collaborator",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCCOLLAB",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCCOLLAB",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ARCPRJROLE",
+    "PmrRoleName" : "ARC Project Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCPRJROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCPRJROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ARCHITECT",
+    "PmrRoleName" : "ARCHITECT",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCHITECT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCHITECT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ARCH",
+    "PmrRoleName" : "ARCHITECT (ARCH - FL)",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCH",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ARCH",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "AUTOMATION",
+    "PmrRoleName" : "AUTOMATION",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AUTOMATION",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AUTOMATION",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "AZINTROLE",
+    "PmrRoleName" : "AZ internal PM role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AZINTROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AZINTROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ABPRJEXT",
+    "PmrRoleName" : "Abhilash EXT Proj Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ABPRJEXT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ABPRJEXT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ABPRJINT",
+    "PmrRoleName" : "Abhilash Int Proj Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ABPRJINT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ABPRJINT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "AKPRJ",
+    "PmrRoleName" : "Alex K. Proj Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AKPRJ",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AKPRJ",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ADMPMROLE",
+    "PmrRoleName" : "Alrina's PM Project ROLE",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADMPMROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ADMPMROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ANALYSIS",
+    "PmrRoleName" : "Analytical",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ANALYSIS",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ANALYSIS",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "AHPROJINT",
+    "PmrRoleName" : "Andrew's Project Level Internal Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AHPROJINT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/AHPROJINT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "APPRV_1",
+    "PmrRoleName" : "Approver 1",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/APPRV_1",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/APPRV_1",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "ASHMNGR",
+    "PmrRoleName" : "Ashar Manager",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ASHMNGR",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/ASHMNGR",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "BDROLE",
+    "PmrRoleName" : "B Role",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/BDROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/BDROLE",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "CLLMASTER",
+    "PmrRoleName" : "CLLMASTER",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/CLLMASTER",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/CLLMASTER",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  }, {
+    "PmrRoleCode" : "CERT",
+    "PmrRoleName" : "Cert",
+    "PmrCompCode" : null,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/CERT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles/CERT",
+      "name" : "pmProjectRoles",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/pmProjectRoles",
+    "name" : "pmProjectRoles",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value="1"/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

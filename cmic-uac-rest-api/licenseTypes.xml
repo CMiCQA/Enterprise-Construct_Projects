@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource xmlns:con="http://eviware.com/soapui/config" name="licenseTypes" path="cmic-uac-rest-api/rest/1/licenseTypes" id="8640cc80-f450-4fb0-916f-975ff8147036">
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="licenseTypes" path="cmic-uac-rest-api/rest/1/licenseTypes" id="8640cc80-f450-4fb0-916f-975ff8147036">
   <con:settings>
     <con:setting id="8640cc80-f450-4fb0-916f-975ff8147036fileName">licenseTypes</con:setting>
   </con:settings>

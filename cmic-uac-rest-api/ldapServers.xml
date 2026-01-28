@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource xmlns:con="http://eviware.com/soapui/config" name="ldapServers" path="cmic-uac-rest-api/rest/1/ldapServers" id="c13856f3-48d0-4fae-b302-a507de1258ef">
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="ldapServers" path="cmic-uac-rest-api/rest/1/ldapServers" id="c13856f3-48d0-4fae-b302-a507de1258ef">
   <con:settings>
     <con:setting id="c13856f3-48d0-4fae-b302-a507de1258effileName">ldapServers</con:setting>
   </con:settings>

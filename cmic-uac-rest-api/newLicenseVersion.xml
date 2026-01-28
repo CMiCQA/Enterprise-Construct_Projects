@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource xmlns:con="http://eviware.com/soapui/config" name="newLicenseVersion" path="cmic-uac-rest-api/rest/1/newLicenseVersion" id="f62793b7-002f-437e-9fa6-9bf78c720370">
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="newLicenseVersion" path="cmic-uac-rest-api/rest/1/newLicenseVersion" id="f62793b7-002f-437e-9fa6-9bf78c720370">
   <con:settings>
     <con:setting id="f62793b7-002f-437e-9fa6-9bf78c720370fileName">newLicenseVersion</con:setting>
   </con:settings>

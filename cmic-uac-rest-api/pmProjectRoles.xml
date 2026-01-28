@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="enterpriseRoles" path="cmic-uac-rest-api/rest/1/enterpriseRoles" id="994a3911-346c-4edc-b43c-72a044fcda73">
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="pmProjectRoles" path="cmic-uac-rest-api/rest/1/pmProjectRoles" id="082ef32b-3f05-452e-8c62-f9e11fc0c409">
   <con:settings>
-    <con:setting id="994a3911-346c-4edc-b43c-72a044fcda73fileName">enterpriseRoles</con:setting>
+    <con:setting id="082ef32b-3f05-452e-8c62-f9e11fc0c409fileName">pmProjectRoles</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:resource name="{id}" path="{id}" id="d12951f0-99f9-4be6-95a4-8377564fdacd">
+  <con:resource name="{id}" path="{id}" id="8c446be4-ed05-48c7-8cd3-d76cc3f325cc">
     <con:settings/>
     <con:parameters>
       <con:parameter required="true">
@@ -14,10 +14,10 @@
         <con:default>id</con:default>
       </con:parameter>
     </con:parameters>
-    <con:method name="Method 1" id="734b797c-3f6f-4ebe-900b-09171d59939a" method="GET">
+    <con:method name="Method 1" id="24193ce2-a2f5-447b-83c6-5d0fcbdc75e6" method="GET">
       <con:settings/>
       <con:parameters/>
-      <con:request name="Request 1" id="e01b782d-bf8c-4a75-b5a0-e556190af8cd" mediaType="application/json">
+      <con:request name="Request 1" id="ac7cd21a-c006-4666-b884-80fcabee008f" mediaType="application/json">
         <con:settings/>
         <con:request/>
         <con:credentials>
@@ -29,7 +29,7 @@
       </con:request>
     </con:method>
   </con:resource>
-  <con:method name="Method 1" id="0f086415-44d6-4de5-bf0f-e08c62e3d02b" method="GET">
+  <con:method name="Method 1" id="8612ab18-e542-4cd6-b098-1914be5b69fd" method="GET">
     <con:settings/>
     <con:parameters>
       <con:parameter required="false">
@@ -45,8 +45,10 @@
         <con:default/>
       </con:parameter>
     </con:parameters>
-    <con:request name="Request 1" id="9815993d-1b98-45f9-80d5-c97506d0c22a" mediaType="application/json">
-      <con:settings/>
+    <con:request name="Request 1" id="ff9c171d-c1f5-47b1-81ad-845177a7c9dc" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
       <con:request/>
       <con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>

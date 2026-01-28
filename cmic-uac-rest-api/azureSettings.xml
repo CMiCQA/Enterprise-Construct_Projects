@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource xmlns:con="http://eviware.com/soapui/config" name="azureSettings" path="cmic-uac-rest-api/rest/1/azureSettings" id="2098c4e1-9f9f-4031-827c-cf0feb327794">
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="azureSettings" path="cmic-uac-rest-api/rest/1/azureSettings" id="2098c4e1-9f9f-4031-827c-cf0feb327794">
   <con:settings>
     <con:setting id="2098c4e1-9f9f-4031-827c-cf0feb327794fileName">azureSettings</con:setting>
   </con:settings>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource xmlns:con="http://eviware.com/soapui/config" name="privileges" path="cmic-uac-rest-api/jersey/v1/privileges" id="3fbba7f1-c482-4b0a-a4f6-901c6a2a39f1">
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="privileges" path="cmic-uac-rest-api/jersey/v1/privileges" id="3fbba7f1-c482-4b0a-a4f6-901c6a2a39f1">
   <con:settings>
     <con:setting id="3fbba7f1-c482-4b0a-a4f6-901c6a2a39f1fileName">privileges</con:setting>
   </con:settings>
