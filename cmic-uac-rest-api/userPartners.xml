@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="userPartners" path="cmic-uac-rest-api/rest/1/userPartners" id="2920fb8c-bfd1-44a7-986c-44e8323b6436">
+  <con:settings>
+    <con:setting id="2920fb8c-bfd1-44a7-986c-44e8323b6436fileName">userPartners</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:resource name="{id}" path="{id}" id="f9071dae-1508-4320-a4b2-f3ddf5de46bf">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>id</con:name>
+        <con:value>id</con:value>
+        <con:style>TEMPLATE</con:style>
+        <con:default>id</con:default>
+      </con:parameter>
+    </con:parameters>
+    <con:method name="Method 1" id="642a1c7e-a260-45f9-a209-d591b298356b" method="GET">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="b272ccbc-cadf-4e7f-b75f-16a4a8b526a7" mediaType="application/json">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:method name="Method 1" id="aef6562b-0fbd-405f-836f-21a75eb6c729" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="false">
+        <con:name>limit</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="false">
+        <con:name>offset</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="ee5dd00d-b47f-4e76-977a-dae3d24a6fa2" mediaType="application/json">
+      <con:settings/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>limit</con:entry>
+        <con:entry>offset</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

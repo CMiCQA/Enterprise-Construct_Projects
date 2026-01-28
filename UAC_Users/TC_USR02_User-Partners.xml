@@ -1,0 +1,1576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="3af4f218-644f-448b-b08e-dd405ba5cfae" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_USR02_User Partners" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="3af4f218-644f-448b-b08e-dd405ba5cfaefileName">TC_USR02_User-Partners</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve User Partners" id="d4670b8a-2896-4764-a88e-03d1ed52f00d">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/userPartners" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve User Partners" id="ee5dd00d-b47f-4e76-977a-dae3d24a6fa2" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="868d3465-6c07-4f0e-b344-485462fa6d0b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="84f65145-d47c-42e9-a448-d6ae915dfd01" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="892db810-68bf-47e7-ba66-2090a8b7ecdf" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['SuPartnCode']</con:path>
+              <con:element>SuPartnCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>00138</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuPartnTypeCode']</con:path>
+              <con:element>SuPartnTypeCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>P</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuPartnName']</con:path>
+              <con:element>SuPartnName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Grainus Systems-BP GPJ</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "SuPartnCode" : "00138",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Grainus Systems-BP GPJ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00138",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00138",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "001ST",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Sysco Pvt.ltd",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/001ST",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/001ST",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "00PT",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Pentagon Services",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00PT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00PT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "00VT",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Vision Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00VT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00VT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "01ARCH",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Arrow Chane Architects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/01ARCH",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/01ARCH",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "02-APP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "1010",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/02-APP",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/02-APP",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "0NT",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Nicklodian pvt.ltd",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/0NT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/0NT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "0NV",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Invision Pvt.ltd",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/0NV",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/0NV",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "Grand River Construction Inc.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "100",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "new",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/100",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/100",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "10001",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "DandyLyoness Design/Build Consulting",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/10001",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/10001",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1001",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "Chu",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1001",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1001",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "102",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "CMIC Vendor",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/102",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/102",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "121",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "VT-test corp2.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/121",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/121",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "14NA",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/14NA",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/14NA",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1901",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Starbucks Coffee Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1901",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1901",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1OAT",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "REGRESSION OATS COMPANY",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1OAT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1OAT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1TIME",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "1 Time",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1TIME",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1TIME",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "202602-A",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "cmic system",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/202602-A",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/202602-A",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "48487",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "JS COMMERCIAL, LP",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/48487",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/48487",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "999",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "Company 999",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/999",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/999",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "A1ARCH",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "A1 Architects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1ARCH",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1ARCH",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "A1BRICKS",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "A2 Bricks Manufacturing Inc.99",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1BRICKS",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1BRICKS",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "A1CEMENT",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "A1 Cement Inc.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1CEMENT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1CEMENT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "A1DOORS",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "A1 Doors Inc.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1DOORS",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1DOORS",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners",
+    "name" : "userPartners",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve User Partners by UUID" id="55eef3a0-7e3b-4639-997a-2181d4410112">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/userPartners/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve User Partners by UUID" id="b272ccbc-cadf-4e7f-b75f-16a4a8b526a7" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00138</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d83f1555-4af5-4a84-be07-13fa509eda24" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="6da1b8d9-7f4f-4e96-832b-11907475c22c" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="bb31e3e2-4933-4422-9488-47e19b92e520" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['SuPartnCode']</con:path>
+              <con:element>SuPartnCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve User Partners#Response#$['items'][0]['SuPartnCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SuPartnTypeCode']</con:path>
+              <con:element>SuPartnTypeCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve User Partners#Response#$['items'][0]['SuPartnTypeCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SuPartnName']</con:path>
+              <con:element>SuPartnName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve User Partners#Response#$['items'][0]['SuPartnName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "SuPartnCode" : "00138",
+  "SuPartnTypeCode" : "P",
+  "SuPartnName" : "Grainus Systems-BP GPJ",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00138",
+    "name" : "userPartners",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00138",
+    "name" : "userPartners",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve User Partners#Response#$['items'][0]['SuPartnCode']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve User Partners with 1000 Limit" id="3cf5b6bc-6a06-47d0-a54e-508b90782982">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/userPartners" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve User Partners with 1000 Limit" id="ee5dd00d-b47f-4e76-977a-dae3d24a6fa2" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="868d3465-6c07-4f0e-b344-485462fa6d0b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="84f65145-d47c-42e9-a448-d6ae915dfd01" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="892db810-68bf-47e7-ba66-2090a8b7ecdf" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['SuPartnCode']</con:path>
+              <con:element>SuPartnCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>00138</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuPartnTypeCode']</con:path>
+              <con:element>SuPartnTypeCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>P</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuPartnName']</con:path>
+              <con:element>SuPartnName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Grainus Systems-BP GPJ</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "SuPartnCode" : "00138",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Grainus Systems-BP GPJ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00138",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00138",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "001ST",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Sysco Pvt.ltd",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/001ST",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/001ST",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "00PT",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Pentagon Services",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00PT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00PT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "00VT",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Vision Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00VT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00VT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "01ARCH",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Arrow Chane Architects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/01ARCH",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/01ARCH",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "02-APP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "1010",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/02-APP",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/02-APP",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "0NT",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Nicklodian pvt.ltd",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/0NT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/0NT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "0NV",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Invision Pvt.ltd",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/0NV",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/0NV",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "Grand River Construction Inc.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "100",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "new",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/100",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/100",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "10001",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "DandyLyoness Design/Build Consulting",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/10001",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/10001",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1001",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "Chu",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1001",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1001",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "102",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "CMIC Vendor",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/102",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/102",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "121",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "VT-test corp2.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/121",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/121",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "14NA",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/14NA",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/14NA",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1901",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Starbucks Coffee Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1901",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1901",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1OAT",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "REGRESSION OATS COMPANY",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1OAT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1OAT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1TIME",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "1 Time",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1TIME",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1TIME",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "202602-A",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "cmic system",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/202602-A",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/202602-A",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "48487",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "JS COMMERCIAL, LP",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/48487",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/48487",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "999",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "Company 999",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/999",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/999",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "A1ARCH",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "A1 Architects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1ARCH",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1ARCH",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "A1BRICKS",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "A2 Bricks Manufacturing Inc.99",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1BRICKS",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1BRICKS",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "A1CEMENT",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "A1 Cement Inc.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1CEMENT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1CEMENT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "A1DOORS",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "A1 Doors Inc.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1DOORS",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1DOORS",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners",
+    "name" : "userPartners",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve User Partners with 1001 Limit" id="9ec712c5-78a4-45bf-855d-551376deefcf">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/userPartners" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve User Partners with 1001 Limit" id="ee5dd00d-b47f-4e76-977a-dae3d24a6fa2" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="868d3465-6c07-4f0e-b344-485462fa6d0b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="84f65145-d47c-42e9-a448-d6ae915dfd01" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="f35c6e77-19a9-426d-9103-d6d9df4bc7f6" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['javaMessage']</con:path>
+              <con:element>javaMessage</con:element>
+              <con:operatorId>13</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Limit exceeded</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"exceptionName":"CMGeneralException","code":"WSD-0000","cmicMessage":"Exception encountered during request processing.","javaMessage":"error: Limit exceeded, maximum is 1000","javaExceptionClassName":"","longDescription":""}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="limit" value="1001"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve User Partners with Limit and Offset" id="47fd3599-122a-4bd2-8153-c5c1dd30e341">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/userPartners" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve User Partners with Limit and Offset" id="ee5dd00d-b47f-4e76-977a-dae3d24a6fa2" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="868d3465-6c07-4f0e-b344-485462fa6d0b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="84f65145-d47c-42e9-a448-d6ae915dfd01" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="892db810-68bf-47e7-ba66-2090a8b7ecdf" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['SuPartnCode']</con:path>
+              <con:element>SuPartnCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>00138</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuPartnTypeCode']</con:path>
+              <con:element>SuPartnTypeCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>P</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuPartnName']</con:path>
+              <con:element>SuPartnName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Grainus Systems-BP GPJ</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "SuPartnCode" : "00138",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Grainus Systems-BP GPJ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00138",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00138",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "001ST",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Sysco Pvt.ltd",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/001ST",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/001ST",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "00PT",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Pentagon Services",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00PT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00PT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "00VT",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Vision Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00VT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/00VT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "01ARCH",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Arrow Chane Architects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/01ARCH",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/01ARCH",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "02-APP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "1010",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/02-APP",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/02-APP",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "0NT",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Nicklodian pvt.ltd",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/0NT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/0NT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "0NV",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Invision Pvt.ltd",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/0NV",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/0NV",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "Grand River Construction Inc.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "100",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "new",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/100",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/100",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "10001",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "DandyLyoness Design/Build Consulting",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/10001",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/10001",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1001",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "Chu",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1001",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1001",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "102",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "CMIC Vendor",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/102",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/102",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "121",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "VT-test corp2.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/121",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/121",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "14NA",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/14NA",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/14NA",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1901",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Starbucks Coffee Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1901",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1901",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1OAT",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "REGRESSION OATS COMPANY",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1OAT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1OAT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "1TIME",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "1 Time",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1TIME",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/1TIME",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "202602-A",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "cmic system",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/202602-A",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/202602-A",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "48487",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "JS COMMERCIAL, LP",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/48487",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/48487",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "999",
+    "SuPartnTypeCode" : "C",
+    "SuPartnName" : "Company 999",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/999",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/999",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "A1ARCH",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "A1 Architects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1ARCH",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1ARCH",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "A1BRICKS",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "A2 Bricks Manufacturing Inc.99",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1BRICKS",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1BRICKS",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "A1CEMENT",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "A1 Cement Inc.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1CEMENT",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1CEMENT",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuPartnCode" : "A1DOORS",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "A1 Doors Inc.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1DOORS",
+      "name" : "userPartners",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners/A1DOORS",
+      "name" : "userPartners",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/userPartners",
+    "name" : "userPartners",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value="1"/>
+          <con:entry key="limit" value="1000"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript>import groovy.json.JsonOutput
+import java.net.HttpURLConnection
+import java.net.URL
+
+// --- Access SLA flag from TestSuite ---
+def slaFlag = context.testCase.testSuite.getPropertyValue("SLA_FAILED")
+log.info("TestCase Teardown running. SLA_FAILED = ${slaFlag}")
+ 
+if (slaFlag == "true") {
+    log.info("SLA failed — skipping TestRail result post.")
+    return
+}
+
+// Function to post test result to TestRail
+def postTestResultToTestRail() {
+
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+
+    def projectId = context.expand('${#Project#projectID}')
+    def testRunId = context.expand('${#Project#RunID}')
+
+    def testCaseId = context.expand('${#TestCase#TestCaseID}')
+    def testCaseName = testRunner.testCase.name
+
+    def failedTestSteps = []
+    def result = ""
+    def statusId = 1
+    def comment = ""
+
+    for (r in testRunner.results) {
+        if (r.getStatus().toString() != "PASS") {
+            def stepResult = context.expand('${' + r.testStep.name + '#Response}')
+            failedTestSteps.add(r.testStep.name + (stepResult ? (" - " + stepResult) : ""))
+        }
+    }
+
+    if (!failedTestSteps) {
+        comment = "${testCaseName} has passed successfully"
+    } else {
+        statusId = 5
+        comment = "${testCaseName} has failed on test steps:\n${failedTestSteps.join('\n')}"
+    }
+
+    def postUrl = "${testRailUrl}/add_result_for_case/${testRunId}/${testCaseId}"
+
+    def connection = new URL(postUrl).openConnection() as HttpURLConnection
+    connection.requestMethod = 'POST'
+    connection.doOutput = true
+    connection.setRequestProperty("Content-Type", "application/json")
+    connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+
+    def requestBody = [
+            status_id: statusId,
+            comment: comment
+    ]
+
+    def outputStream = connection.outputStream
+    outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+    outputStream.flush()
+
+    def responseCode = connection.responseCode
+    def responseMessage = connection.responseMessage
+
+    log.info("Response code: ${responseCode}")
+    log.info("Response message: ${responseMessage}")
+}
+
+postTestResultToTestRail()</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value>629646</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>
