@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="8230fdd0-ed8f-4875-b2c2-a2e63fba054d" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP13_Template Permissions" searchProperties="true" timeout="0">
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="90fb9318-e4d0-4bfa-bd75-ad473b42fb4c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP16_Template Permissions (PM Job Security Role)" searchProperties="true" timeout="0">
   <con:settings>
-    <con:setting id="8230fdd0-ed8f-4875-b2c2-a2e63fba054dfileName">TC_TEMP13_Template-Permissions</con:setting>
+    <con:setting id="90fb9318-e4d0-4bfa-bd75-ad473b42fb4cfileName">TC_TEMP16_Template-Permissions-%28PM-Job-Security-Role%29</con:setting>
   </con:settings>
-  <con:testStep type="datasource" name="Data Source" id="5d232128-6044-4fb7-b8ea-cb7e11ea98d4">
+  <con:testStep type="datasource" name="Data Source" id="adcca545-d6a5-49cd-82a2-d99c9527a6e4">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep">
       <con:dataSource type="Data Generator">
@@ -42,72 +42,7 @@
       <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve All Permisions" id="949674dc-b03b-4a62-82d1-16a1970d59a0">
-    <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 2" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Retrieve All Permisions" id="c81009c3-a06c-45dd-a289-e0fe16508aa4" mediaType="application/json">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request/>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="e1b00849-b3a6-4257-9802-debad34a6a9f" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="c3ae2e08-86b2-4b4e-a17d-eece7fc6d11d" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve Enterprise Roles" id="b26128da-1453-44fc-8fec-73d96051ac9e">
-    <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/enterpriseRoles" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Retrieve Enterprise Roles" id="9815993d-1b98-45f9-80d5-c97506d0c22a" mediaType="application/json">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request/>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="8d356b37-fd3b-4ca1-a71a-7dcd257643a7" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="ce1407d5-2f34-4657-ae7c-b30cde85a394" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters>
-          <con:entry key="offset" value=""/>
-          <con:entry key="limit" value=""/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>limit</con:entry>
-          <con:entry>offset</con:entry>
-        </con:parameterOrder>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Login" id="8d12ae9f-7921-43ed-8b3b-640124495015">
+  <con:testStep type="restrequest" name="Login" id="9083ed11-ba02-4974-aa2c-93374fdfc01a">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/jersey/v1/login" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Login" id="b297b346-5cf6-493b-b43d-769779655936" mediaType="application/json">
@@ -236,7 +171,523 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve License Types" id="56409271-c8b8-40b3-ab78-e54267424a3f">
+  <con:testStep type="restrequest" name="Retrieve All Permisions" id="e7eeef18-ff2a-4959-a83d-dcc1fd99ce73">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve All Permisions" id="c81009c3-a06c-45dd-a289-e0fe16508aa4" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e1b00849-b3a6-4257-9802-debad34a6a9f" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c3ae2e08-86b2-4b4e-a17d-eece7fc6d11d" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Job Security Group" id="e8aa542f-0ca8-472e-b895-b309e837a432">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/jobSecurityGroup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Job Security Group" id="9230dfb2-c6df-437b-ad27-5e043dc74d50" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5fb91ecf-096e-4099-99a5-581017918147" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="4490e217-1547-430b-ab6c-e2f2a2e5f6ca" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="afc8b98f-546b-47f9-bc10-3a0b2a1fee1a" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['JsgCompCode']</con:path>
+              <con:element>JsgCompCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>101</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JsgCode']</con:path>
+              <con:element>JsgCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ANNIE1</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JsgName']</con:path>
+              <con:element>JsgName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Annie Job Group</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JsgCompName']</con:path>
+              <con:element>JsgCompName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>101</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "JsgCompCode" : "101",
+    "JsgCode" : "ANNIE1",
+    "JsgName" : "Annie Job Group",
+    "JsgCompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000331303100000006414E4E494531",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000331303100000006414E4E494531",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "101",
+    "JsgCode" : "EFSEC01",
+    "JsgName" : "Earl Security Job Group",
+    "JsgCompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000033130310000000745465345433031",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000033130310000000745465345433031",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "101",
+    "JsgCode" : "MASTER",
+    "JsgName" : "Master Job Security Grouop",
+    "JsgCompName" : "101",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003313031000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003313031000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AZC",
+    "JsgCode" : "AZC-SECURE",
+    "JsgName" : "AZC-SECURE",
+    "JsgCompName" : "A Z Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415A430000000A415A432D534543555245",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415A430000000A415A432D534543555245",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ABJ",
+    "JsgCode" : "MASTER",
+    "JsgName" : "MASTER GROUP",
+    "JsgCompName" : "ABJ company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341424A000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341424A000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AD01",
+    "JsgCode" : "ADJS",
+    "JsgName" : "AD01 Job Security Group",
+    "JsgCompName" : "AD01 Anupama Devis",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414430310000000441444A53",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414430310000000441444A53",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ADIUS",
+    "JsgCode" : "ADISCE",
+    "JsgName" : "ADI  JOB SECURITY",
+    "JsgCompName" : "ADI USPAYROLL",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000005414449555300000006414449534345",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000005414449555300000006414449534345",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AHKCO",
+    "JsgCode" : "AHJC",
+    "JsgName" : "AK Job Security",
+    "JsgCompName" : "AHK Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000541484B434F0000000441484A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000541484B434F0000000441484A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AJ-COMP",
+    "JsgCode" : "AJJOBSEC",
+    "JsgName" : "Astha's Job Security Group",
+    "JsgCompName" : "AJ - Astha Jain Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007414A2D434F4D5000000008414A4A4F42534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007414A2D434F4D5000000008414A4A4F42534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "AKJC",
+    "JsgName" : "AKJC",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000004414B4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000004414B4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "AK_SC",
+    "JsgName" : "AK's security group",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000005414B5F5343",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000005414B5F5343",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "NJJC",
+    "JsgName" : "NJJC",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F5250000000044E4A4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F5250000000044E4A4A43",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "TEST",
+    "JsgName" : "test",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F52500000000454455354",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F52500000000454455354",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKCORP",
+    "JsgCode" : "VID",
+    "JsgName" : "VID",
+    "JsgCompName" : "AK CORPORATION",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000003564944",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000006414B434F525000000003564944",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AKO",
+    "JsgCode" : "MASTER",
+    "JsgName" : "Master Group AKO",
+    "JsgCompName" : "AKO Alexandre Kolevatov LLC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003414B4F000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003414B4F000000064D4153544552",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ALEC",
+    "JsgCode" : "ALECSEC",
+    "JsgName" : "ALEC SECURITY",
+    "JsgCompName" : "ALEC UAE Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414C454300000007414C4543534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000004414C454300000007414C4543534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "APITEST",
+    "JsgCode" : "APISEC2",
+    "JsgName" : "API Security",
+    "JsgCompName" : "API TESTING",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007415049544553540000000741504953454332",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000007415049544553540000000741504953454332",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "APU",
+    "JsgCode" : "APS",
+    "JsgName" : "Apurva's Security Group",
+    "JsgCompName" : "APURVA SINGH APS",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341505500000003415053",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341505500000003415053",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARC-003",
+    "JsgName" : "Kingston Ferries",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303033",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303033",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARC-004",
+    "JsgName" : "ARC Project for GCS",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303034",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303034",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARC-006",
+    "JsgName" : "ARC Project2 GCS QADaily",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303036",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/000200000003415243000000074152432D303036",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "ARC",
+    "JsgCode" : "ARJOBS",
+    "JsgName" : "AR Jobs/Project",
+    "JsgCompName" : "AR Design &amp; Build",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000034152430000000641524A4F4253",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000034152430000000641524A4F4253",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AV",
+    "JsgCode" : "AV",
+    "JsgName" : "AV Security Group",
+    "JsgCompName" : "AV Adam Vesters Co",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000024156000000024156",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/0002000000024156000000024156",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AVC",
+    "JsgCode" : "AVC",
+    "JsgName" : "AVC GROUP",
+    "JsgCompName" : "AV Construction Ltd.",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341564300000003415643",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000341564300000003415643",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "JsgCompCode" : "AANVICOM",
+    "JsgCode" : "AANVISEC",
+    "JsgName" : "Aanvi's job security",
+    "JsgCompName" : "Aanvi's Home Company",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000841414E5649434F4D0000000841414E5649534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup/00020000000841414E5649434F4D0000000841414E5649534543",
+      "name" : "jobSecurityGroup",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/jobSecurityGroup",
+    "name" : "jobSecurityGroup",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve License Types" id="a872fb86-dd9a-41d9-8176-4e6079b12fdd">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/licenseTypes" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Retrieve License Types" id="a416c467-c1dd-4311-8953-d1b51487f1f3" mediaType="application/json">
@@ -511,7 +962,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Create Template" id="0b82c346-f9f4-4197-9fbe-8fbadabe548e">
+  <con:testStep type="restrequest" name="Create Template" id="16231105-1152-489b-8f1a-5ef274049132">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Create Template" id="27a126f5-ad58-4df1-9790-cdb5df9122e1" mediaType="application/json" postQueryString="false">
@@ -625,131 +1076,18 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Assign Template License" id="51568ffb-2954-4e02-839a-4f94187bfc3c">
-    <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templateLicenses" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Assign Template License" id="d0591e49-76b3-4de0-a3b3-aa349c06f623" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request>{\r
-   "SutlVUuid" : "${Create Template#Response#$['SutVUuid']}",\r
-   "SutlSutOraseq" : "${Create Template#Response#$['SutOraseq']}",\r
-   "LtCode" : "${Retrieve License Types#Response#$['items'][1]['LtCode']}",\r
-   "LtName" : "${Retrieve License Types#Response#$['items'][1]['LtName']}",\r
-   "LtUserType" : "${Retrieve License Types#Response#$['items'][1]['LtUserType']}"\r
-}</con:request>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="9d041dc5-f250-4467-886a-75cce491ab4c" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>201</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="2f0de846-9029-4047-84f9-7c8570bb399f" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="DataAndMetadataAssertion" id="eaf3e385-94d6-449a-85e7-0a65246d7a3c" name="Smart Assertion">
-          <con:configuration xsi:type="con:DataAndMetadataAssertion">
-            <con:mode>Received Data</con:mode>
-            <con:elements>
-              <con:path>$['SutlVUuid']</con:path>
-              <con:element>SutlVUuid</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Create Template#Response#$['SutVUuid']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtSumOfLicenses']</con:path>
-              <con:element>LtSumOfLicenses</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>false</con:enabled>
-              <con:expectedValue/>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>4</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtCode']</con:path>
-              <con:element>LtCode</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtCode']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['SutlSutOraseq']</con:path>
-              <con:element>SutlSutOraseq</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Create Template#Response#$['SutOraseq']}</con:expectedValue>
-              <con:numberType>true</con:numberType>
-              <con:expectedDataType>2</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtName']</con:path>
-              <con:element>LtName</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtName']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtUserType']</con:path>
-              <con:element>LtUserType</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtUserType']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:originalMessage>{
-  "SutlSutOraseq" : 2349816922,
-  "LtCode" : "E",
-  "LtName" : "E",
-  "LtUserType" : "C",
-  "SutlVUuid" : "1389138429381314812459418455439781576213274125707854589581",
-  "LtSumOfLicenses" : null,
-  "links" : [ {
-    "rel" : "self",
-    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
-    "name" : "templateLicenses",
-    "kind" : "item"
-  }, {
-    "rel" : "canonical",
-    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
-    "name" : "templateLicenses",
-    "kind" : "item"
-  } ]
-}</con:originalMessage>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Assign Template Permissions (Enterprise)" id="23bc2422-b5fe-4988-8551-d16581c9dfdc">
+  <con:testStep type="restrequest" name="Assign Template Permissions (Job Security Role)" id="7d483fde-50ab-4ccf-8c49-36bb4ec3155e">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Assign Template Permissions (Enterprise)" id="ace94b91-e4e4-40b9-9cef-0e9b24b92d70" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Assign Template Permissions (Job Security Role)" id="ace94b91-e4e4-40b9-9cef-0e9b24b92d70" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request>{\r
-   "SutsVUuid" : "ENT${Create Template#Response#$['SutVUuid']}",\r
+   "SutsVUuid" : "JOB${Create Template#Response#$['SutVUuid']}",\r
    "SutsSutOraseq" : "${Create Template#Response#$['SutOraseq']}",\r
-   "SutsPermissionType" : "ROLES",\r
-   "SutsPermissionValue" : "${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}"\r
+   "SutsPermissionType" : "JCJOBSECGRP",\r
+   "SutsPermissionValue" : "${Retrieve Job Security Group#Response#$['items'][0]['JsgCode']}"\r
 }</con:request>
         <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="00a168a0-741c-43e7-9bab-c4a97a8d2032" name="Valid HTTP Status Codes">
@@ -771,7 +1109,7 @@
               <con:element>SutsPermissionType</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ROLES</con:expectedValue>
+              <con:expectedValue>JCJOBSECGRP</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -780,7 +1118,7 @@
               <con:element>SutsPermissionValue</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}</con:expectedValue>
+              <con:expectedValue>${Retrieve Job Security Group#Response#$['items'][0]['JsgCode']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -789,7 +1127,7 @@
               <con:element>SutsVUuid</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ENT${Create Template#Response#$['SutVUuid']}</con:expectedValue>
+              <con:expectedValue>JOB${Create Template#Response#$['SutVUuid']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -832,7 +1170,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve Template Permission by UUID" id="c84b8c80-9f69-4f8d-8a73-9b3f613e5cdd">
+  <con:testStep type="restrequest" name="Retrieve Template Permission by UUID" id="3d4e2de1-a268-4dd8-b5f0-1c85439c355b">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions/{id}" methodName="Method 2" xsi:type="con:RestRequestStep">
       <con:restRequest name="Retrieve Template Permission by UUID" id="a6ffb5b2-ca17-44fa-b594-c07c9e960496" mediaType="application/json">
@@ -860,7 +1198,7 @@
               <con:element>SutsVUuid</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ENT${Create Template#Response#$['SutVUuid']}</con:expectedValue>
+              <con:expectedValue>JOB${Create Template#Response#$['SutVUuid']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -878,7 +1216,7 @@
               <con:element>SutsPermissionType</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ROLES</con:expectedValue>
+              <con:expectedValue>JCJOBSECGRP</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -887,7 +1225,7 @@
               <con:element>SutsPermissionValue</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}</con:expectedValue>
+              <con:expectedValue>${Retrieve Job Security Group#Response#$['items'][0]['JsgCode']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -918,12 +1256,12 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="id" value="${Assign Template Permissions (Enterprise)#Response#$['SutsVUuid']}"/>
+          <con:entry key="id" value="${Assign Template Permissions (Job Security Role)#Response#$['SutsVUuid']}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Template Permission" id="da38174d-64d9-4f3f-9a6d-cdddf9504925">
+  <con:testStep type="restrequest" name="Delete Template Permission" id="f9671419-ee83-42f6-b385-0fb9737a5954">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Delete Template Permission" id="ff730ed1-4b6b-401a-9b36-c07a09db52f7" mediaType="application/json" postQueryString="false">
@@ -949,12 +1287,12 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="id" value="${Assign Template Permissions (Enterprise)#Response#$['SutsVUuid']}"/>
+          <con:entry key="id" value="${Assign Template Permissions (Job Security Role)#Response#$['SutsVUuid']}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Template" id="6f4f6ac8-fdb1-41fe-8ac0-f25dd26ee72d">
+  <con:testStep type="restrequest" name="Delete Template" id="e76c69fc-6ba1-4e5a-bf59-e4531e3cd022">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Delete Template" id="daf5c457-b0cc-4551-bcc2-90c052897b1c" mediaType="application/json" postQueryString="false">

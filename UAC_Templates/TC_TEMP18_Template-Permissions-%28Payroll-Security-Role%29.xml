@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="8230fdd0-ed8f-4875-b2c2-a2e63fba054d" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP13_Template Permissions" searchProperties="true" timeout="0">
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="0c0fe6c9-de8a-4917-addd-18a5ad6920ca" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP18_Template Permissions (Payroll Security Role)" searchProperties="true" timeout="0">
   <con:settings>
-    <con:setting id="8230fdd0-ed8f-4875-b2c2-a2e63fba054dfileName">TC_TEMP13_Template-Permissions</con:setting>
+    <con:setting id="0c0fe6c9-de8a-4917-addd-18a5ad6920cafileName">TC_TEMP18_Template-Permissions-%28Payroll-Security-Role%29</con:setting>
   </con:settings>
-  <con:testStep type="datasource" name="Data Source" id="5d232128-6044-4fb7-b8ea-cb7e11ea98d4">
+  <con:testStep type="datasource" name="Data Source" id="178f5f9c-7238-4f5e-b352-6400d2b2428c">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep">
       <con:dataSource type="Data Generator">
@@ -42,72 +42,7 @@
       <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve All Permisions" id="949674dc-b03b-4a62-82d1-16a1970d59a0">
-    <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 2" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Retrieve All Permisions" id="c81009c3-a06c-45dd-a289-e0fe16508aa4" mediaType="application/json">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request/>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="e1b00849-b3a6-4257-9802-debad34a6a9f" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="c3ae2e08-86b2-4b4e-a17d-eece7fc6d11d" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve Enterprise Roles" id="b26128da-1453-44fc-8fec-73d96051ac9e">
-    <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/enterpriseRoles" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Retrieve Enterprise Roles" id="9815993d-1b98-45f9-80d5-c97506d0c22a" mediaType="application/json">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request/>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="8d356b37-fd3b-4ca1-a71a-7dcd257643a7" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="ce1407d5-2f34-4657-ae7c-b30cde85a394" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters>
-          <con:entry key="offset" value=""/>
-          <con:entry key="limit" value=""/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>limit</con:entry>
-          <con:entry>offset</con:entry>
-        </con:parameterOrder>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Login" id="8d12ae9f-7921-43ed-8b3b-640124495015">
+  <con:testStep type="restrequest" name="Login" id="07813f02-0774-4636-9b8e-9f8c021ac40f">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/jersey/v1/login" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Login" id="b297b346-5cf6-493b-b43d-769779655936" mediaType="application/json">
@@ -236,7 +171,455 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve License Types" id="56409271-c8b8-40b3-ab78-e54267424a3f">
+  <con:testStep type="restrequest" name="Retrieve All Permisions" id="593ea183-22a8-46bf-b9e9-d9200a5f0f5a">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve All Permisions" id="c81009c3-a06c-45dd-a289-e0fe16508aa4" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e1b00849-b3a6-4257-9802-debad34a6a9f" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c3ae2e08-86b2-4b4e-a17d-eece7fc6d11d" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Payroll Security Group" id="712ae95f-37d6-4b52-b85c-de574fc1231c">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/payrollSecurityGroup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Payroll Security Group" id="a9390534-45aa-4d93-aedc-7d6e02617147" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a41743c3-cd2e-44f6-b8d4-eef3e2af90f9" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c3b94610-5e50-4d77-8003-0b85671c5ef0" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="e50efb13-8a57-4579-ac87-93865143b1e6" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['EsgCode']</con:path>
+              <con:element>EsgCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>841</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['EsgName']</con:path>
+              <con:element>EsgName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>841</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "EsgCode" : "841",
+    "EsgName" : "841",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/841",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/841",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ADM",
+    "EsgName" : "ADM Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADM",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADM",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "AK01",
+    "EsgName" : "AK01",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AK01",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AK01",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ALECSEC",
+    "EsgName" : "ALECSEC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ALECSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ALECSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "APISEC",
+    "EsgName" : "API Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/APISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/APISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ARCSG",
+    "EsgName" : "ARC Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ARCSG",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ARCSG",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ASS",
+    "EsgName" : "Adam Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ASS",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ASS",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ADISEC",
+    "EsgName" : "Adi Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ADISEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "AKPY",
+    "EsgName" : "Ahenk's Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AKPY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/AKPY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-AMINAT",
+    "EsgName" : "Aminat's CPE Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-AMINAT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-AMINAT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "BOC",
+    "EsgName" : "BOC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/BOC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/BOC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "HDR",
+    "EsgName" : "CATC SECURITY",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/HDR",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/HDR",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CCC-MASTER",
+    "EsgName" : "CCC Master Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CCC-MASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CCC-MASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-SU",
+    "EsgName" : "CPE SU Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-SU",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-SU",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-RK",
+    "EsgName" : "CPE-Rajjini Kandasamy",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-RK",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-RK",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CERT",
+    "EsgName" : "Certification Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CERT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CERT",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "ZZMASTER",
+    "EsgName" : "Company ZZ Employees Only",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ZZMASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/ZZMASTER",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DB45",
+    "EsgName" : "DB45 PYSEC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DB45",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DB45",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DBTCSEC",
+    "EsgName" : "DBTCSEC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DBTCSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DBTCSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DKPYSECURE",
+    "EsgName" : "DK Payroll security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKPYSECURE",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKPYSECURE",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "DKSEC",
+    "EsgName" : "DK Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/DKSEC",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "EKTAPAY",
+    "EsgName" : "Ekta Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/EKTAPAY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/EKTAPAY",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "CPE-GH",
+    "EsgName" : "GH Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-GH",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/CPE-GH",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "GLPAYROLL",
+    "EsgName" : "GL Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  }, {
+    "EsgCode" : "GLCPAYROLL",
+    "EsgName" : "GLC Payroll Security",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLCPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup/GLCPAYROLL",
+      "name" : "payrollSecurityGroup",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/payrollSecurityGroup",
+    "name" : "payrollSecurityGroup",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve License Types" id="30afb4bd-7a62-48d9-b103-7e82bd582cd9">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/licenseTypes" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Retrieve License Types" id="a416c467-c1dd-4311-8953-d1b51487f1f3" mediaType="application/json">
@@ -511,7 +894,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Create Template" id="0b82c346-f9f4-4197-9fbe-8fbadabe548e">
+  <con:testStep type="restrequest" name="Create Template" id="f264e345-a2a3-49cc-add2-fd4ca7517aea">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Create Template" id="27a126f5-ad58-4df1-9790-cdb5df9122e1" mediaType="application/json" postQueryString="false">
@@ -625,131 +1008,18 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Assign Template License" id="51568ffb-2954-4e02-839a-4f94187bfc3c">
-    <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templateLicenses" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Assign Template License" id="d0591e49-76b3-4de0-a3b3-aa349c06f623" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request>{\r
-   "SutlVUuid" : "${Create Template#Response#$['SutVUuid']}",\r
-   "SutlSutOraseq" : "${Create Template#Response#$['SutOraseq']}",\r
-   "LtCode" : "${Retrieve License Types#Response#$['items'][1]['LtCode']}",\r
-   "LtName" : "${Retrieve License Types#Response#$['items'][1]['LtName']}",\r
-   "LtUserType" : "${Retrieve License Types#Response#$['items'][1]['LtUserType']}"\r
-}</con:request>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="9d041dc5-f250-4467-886a-75cce491ab4c" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>201</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="2f0de846-9029-4047-84f9-7c8570bb399f" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="DataAndMetadataAssertion" id="eaf3e385-94d6-449a-85e7-0a65246d7a3c" name="Smart Assertion">
-          <con:configuration xsi:type="con:DataAndMetadataAssertion">
-            <con:mode>Received Data</con:mode>
-            <con:elements>
-              <con:path>$['SutlVUuid']</con:path>
-              <con:element>SutlVUuid</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Create Template#Response#$['SutVUuid']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtSumOfLicenses']</con:path>
-              <con:element>LtSumOfLicenses</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>false</con:enabled>
-              <con:expectedValue/>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>4</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtCode']</con:path>
-              <con:element>LtCode</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtCode']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['SutlSutOraseq']</con:path>
-              <con:element>SutlSutOraseq</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Create Template#Response#$['SutOraseq']}</con:expectedValue>
-              <con:numberType>true</con:numberType>
-              <con:expectedDataType>2</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtName']</con:path>
-              <con:element>LtName</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtName']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtUserType']</con:path>
-              <con:element>LtUserType</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtUserType']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:originalMessage>{
-  "SutlSutOraseq" : 2349816922,
-  "LtCode" : "E",
-  "LtName" : "E",
-  "LtUserType" : "C",
-  "SutlVUuid" : "1389138429381314812459418455439781576213274125707854589581",
-  "LtSumOfLicenses" : null,
-  "links" : [ {
-    "rel" : "self",
-    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
-    "name" : "templateLicenses",
-    "kind" : "item"
-  }, {
-    "rel" : "canonical",
-    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
-    "name" : "templateLicenses",
-    "kind" : "item"
-  } ]
-}</con:originalMessage>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Assign Template Permissions (Enterprise)" id="23bc2422-b5fe-4988-8551-d16581c9dfdc">
+  <con:testStep type="restrequest" name="Assign Template Permissions (Payroll Security Role)" id="b938cee5-3933-4d6e-bef3-732c4dac8913">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Assign Template Permissions (Enterprise)" id="ace94b91-e4e4-40b9-9cef-0e9b24b92d70" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Assign Template Permissions (Payroll Security Role)" id="ace94b91-e4e4-40b9-9cef-0e9b24b92d70" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request>{\r
-   "SutsVUuid" : "ENT${Create Template#Response#$['SutVUuid']}",\r
+   "SutsVUuid" : "${Create Template#Response#$['SutVUuid']}",\r
    "SutsSutOraseq" : "${Create Template#Response#$['SutOraseq']}",\r
-   "SutsPermissionType" : "ROLES",\r
-   "SutsPermissionValue" : "${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}"\r
+   "SutsPermissionType" : "PYEMPSECGRP",\r
+   "SutsPermissionValue" : "${Retrieve Payroll Security Group#Response#$['items'][0]['EsgCode']}"\r
 }</con:request>
         <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="00a168a0-741c-43e7-9bab-c4a97a8d2032" name="Valid HTTP Status Codes">
@@ -771,7 +1041,7 @@
               <con:element>SutsPermissionType</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ROLES</con:expectedValue>
+              <con:expectedValue>PYEMPSECGRP</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -780,7 +1050,7 @@
               <con:element>SutsPermissionValue</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}</con:expectedValue>
+              <con:expectedValue>${Retrieve Payroll Security Group#Response#$['items'][0]['EsgCode']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -789,7 +1059,7 @@
               <con:element>SutsVUuid</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ENT${Create Template#Response#$['SutVUuid']}</con:expectedValue>
+              <con:expectedValue>${Create Template#Response#$['SutVUuid']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -832,7 +1102,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve Template Permission by UUID" id="c84b8c80-9f69-4f8d-8a73-9b3f613e5cdd">
+  <con:testStep type="restrequest" name="Retrieve Template Permission by UUID" id="a977aad5-0150-4ab8-aeae-0c7c9a0c27ce">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions/{id}" methodName="Method 2" xsi:type="con:RestRequestStep">
       <con:restRequest name="Retrieve Template Permission by UUID" id="a6ffb5b2-ca17-44fa-b594-c07c9e960496" mediaType="application/json">
@@ -860,7 +1130,7 @@
               <con:element>SutsVUuid</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ENT${Create Template#Response#$['SutVUuid']}</con:expectedValue>
+              <con:expectedValue>${Create Template#Response#$['SutVUuid']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -878,7 +1148,7 @@
               <con:element>SutsPermissionType</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ROLES</con:expectedValue>
+              <con:expectedValue>PYEMPSECGRP</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -887,7 +1157,7 @@
               <con:element>SutsPermissionValue</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}</con:expectedValue>
+              <con:expectedValue>${Retrieve Payroll Security Group#Response#$['items'][0]['EsgCode']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -918,12 +1188,12 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="id" value="${Assign Template Permissions (Enterprise)#Response#$['SutsVUuid']}"/>
+          <con:entry key="id" value="${Assign Template Permissions (Payroll Security Role)#Response#$['SutsVUuid']}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Template Permission" id="da38174d-64d9-4f3f-9a6d-cdddf9504925">
+  <con:testStep type="restrequest" name="Delete Template Permission" id="d592266b-8f86-4000-8251-83b5aeb6e94c">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Delete Template Permission" id="ff730ed1-4b6b-401a-9b36-c07a09db52f7" mediaType="application/json" postQueryString="false">
@@ -949,12 +1219,12 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="id" value="${Assign Template Permissions (Enterprise)#Response#$['SutsVUuid']}"/>
+          <con:entry key="id" value="${Assign Template Permissions (Payroll Security Role)#Response#$['SutsVUuid']}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Template" id="6f4f6ac8-fdb1-41fe-8ac0-f25dd26ee72d">
+  <con:testStep type="restrequest" name="Delete Template" id="4961ba2a-efc0-4d36-83f7-35173fb3db62">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Delete Template" id="daf5c457-b0cc-4551-bcc2-90c052897b1c" mediaType="application/json" postQueryString="false">

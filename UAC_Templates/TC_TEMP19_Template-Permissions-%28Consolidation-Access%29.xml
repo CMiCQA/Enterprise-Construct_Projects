@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="8230fdd0-ed8f-4875-b2c2-a2e63fba054d" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP13_Template Permissions" searchProperties="true" timeout="0">
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="977d9238-98e8-439b-a25d-29b992235f75" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP19_Template Permissions (Consolidation Access)" searchProperties="true" timeout="0">
   <con:settings>
-    <con:setting id="8230fdd0-ed8f-4875-b2c2-a2e63fba054dfileName">TC_TEMP13_Template-Permissions</con:setting>
+    <con:setting id="977d9238-98e8-439b-a25d-29b992235f75fileName">TC_TEMP19_Template-Permissions-%28Consolidation-Access%29</con:setting>
   </con:settings>
-  <con:testStep type="datasource" name="Data Source" id="5d232128-6044-4fb7-b8ea-cb7e11ea98d4">
+  <con:testStep type="datasource" name="Data Source" id="4150c9b4-1e0b-4ae6-8581-358ca452e404">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep">
       <con:dataSource type="Data Generator">
@@ -42,72 +42,7 @@
       <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve All Permisions" id="949674dc-b03b-4a62-82d1-16a1970d59a0">
-    <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 2" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Retrieve All Permisions" id="c81009c3-a06c-45dd-a289-e0fe16508aa4" mediaType="application/json">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request/>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="e1b00849-b3a6-4257-9802-debad34a6a9f" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="c3ae2e08-86b2-4b4e-a17d-eece7fc6d11d" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve Enterprise Roles" id="b26128da-1453-44fc-8fec-73d96051ac9e">
-    <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/enterpriseRoles" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Retrieve Enterprise Roles" id="9815993d-1b98-45f9-80d5-c97506d0c22a" mediaType="application/json">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request/>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/enterpriseRoles</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="8d356b37-fd3b-4ca1-a71a-7dcd257643a7" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="ce1407d5-2f34-4657-ae7c-b30cde85a394" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters>
-          <con:entry key="offset" value=""/>
-          <con:entry key="limit" value=""/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>limit</con:entry>
-          <con:entry>offset</con:entry>
-        </con:parameterOrder>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Login" id="8d12ae9f-7921-43ed-8b3b-640124495015">
+  <con:testStep type="restrequest" name="Login" id="eaaba5e9-151d-45d6-8d31-e0e209309304">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/jersey/v1/login" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Login" id="b297b346-5cf6-493b-b43d-769779655936" mediaType="application/json">
@@ -236,7 +171,455 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve License Types" id="56409271-c8b8-40b3-ab78-e54267424a3f">
+  <con:testStep type="restrequest" name="Retrieve All Permisions" id="7a0b743c-b98d-42b3-8ad7-7ffe0edf7a68">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve All Permisions" id="c81009c3-a06c-45dd-a289-e0fe16508aa4" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e1b00849-b3a6-4257-9802-debad34a6a9f" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c3ae2e08-86b2-4b4e-a17d-eece7fc6d11d" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Consolidation Access" id="5f333880-c898-4f84-bbb8-4d8eacaec342">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/consolidationAccess" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Consolidation Access" id="f4f9ebec-ac8f-4499-8a28-798064725965" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="2231750c-3c3d-4d6c-9e76-790ccb2b3b8e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="dfe30e58-e3cd-41cf-9b15-f7b2bc9de6ad" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="39d2f719-4230-4891-92aa-440d049bdb64" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['Cons2Code']</con:path>
+              <con:element>Cons2Code</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>GR</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['Cons2Name']</con:path>
+              <con:element>Cons2Name</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue> GR Consolidated</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "Cons2Code" : "GR",
+    "Cons2Name" : " GR Consolidated",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/GR",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/GR",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "01SKC",
+    "Cons2Name" : "01SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/01SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/01SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "10SKC",
+    "Cons2Name" : "10SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/10SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/10SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "20SKC",
+    "Cons2Name" : "20SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/20SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/20SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "30SKC",
+    "Cons2Name" : "30SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/30SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/30SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "34SKC",
+    "Cons2Name" : "34SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/34SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/34SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "40SKC",
+    "Cons2Name" : "40SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/40SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/40SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "60SKC",
+    "Cons2Name" : "60SKC",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/60SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/60SKC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AAC00",
+    "Cons2Name" : "AAC 00 Dept",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AAC10",
+    "Cons2Name" : "AAC 10 Dept",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC10",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AAC10",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABC",
+    "Cons2Name" : "ABC Construction Consolidated",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABCEAST",
+    "Cons2Name" : "ABC East Region Projects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCEAST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCEAST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABC SO",
+    "Cons2Name" : "ABC South Region Projects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC%20SO",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABC%20SO",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "ABCWEST",
+    "Cons2Name" : "ABC West Region Projects",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCWEST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/ABCWEST",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AD01-00",
+    "Cons2Name" : "AD01 Consolidation 00",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AD01-60",
+    "Cons2Name" : "AD01 Consolidation 60",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-60",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01-60",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AD01",
+    "Cons2Name" : "AD01 Consolidation Code 1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AD01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-CONS",
+    "Cons2Name" : "AJ Consolidated",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-CONS",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-CONS",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-01",
+    "Cons2Name" : "AJ Consolidation Code 1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-01",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-02",
+    "Cons2Name" : "AJ Consolidation Code 2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJ-03",
+    "Cons2Name" : "AJ Consolidation Code 3",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-03",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJ-03",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AJMIRA2",
+    "Cons2Name" : "AJMIRA2",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJMIRA2",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AJMIRA2",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AKO-02",
+    "Cons2Name" : "AKO - Calgary PM Centre",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-02",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AKO-00",
+    "Cons2Name" : "AKO - HQ Profit Centre",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-00",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  }, {
+    "Cons2Code" : "AKO-04",
+    "Cons2Name" : "AKO - Halifax EQ Centre",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-04",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess/AKO-04",
+      "name" : "consolidationAccess",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/consolidationAccess",
+    "name" : "consolidationAccess",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve License Types" id="4626a920-6548-4b6d-bfa7-31304c8ae2a2">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/licenseTypes" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Retrieve License Types" id="a416c467-c1dd-4311-8953-d1b51487f1f3" mediaType="application/json">
@@ -511,7 +894,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Create Template" id="0b82c346-f9f4-4197-9fbe-8fbadabe548e">
+  <con:testStep type="restrequest" name="Create Template" id="76695942-7b4e-4106-a846-fe8a97de9203">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Create Template" id="27a126f5-ad58-4df1-9790-cdb5df9122e1" mediaType="application/json" postQueryString="false">
@@ -625,131 +1008,18 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Assign Template License" id="51568ffb-2954-4e02-839a-4f94187bfc3c">
-    <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templateLicenses" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Assign Template License" id="d0591e49-76b3-4de0-a3b3-aa349c06f623" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request>{\r
-   "SutlVUuid" : "${Create Template#Response#$['SutVUuid']}",\r
-   "SutlSutOraseq" : "${Create Template#Response#$['SutOraseq']}",\r
-   "LtCode" : "${Retrieve License Types#Response#$['items'][1]['LtCode']}",\r
-   "LtName" : "${Retrieve License Types#Response#$['items'][1]['LtName']}",\r
-   "LtUserType" : "${Retrieve License Types#Response#$['items'][1]['LtUserType']}"\r
-}</con:request>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="9d041dc5-f250-4467-886a-75cce491ab4c" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>201</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="2f0de846-9029-4047-84f9-7c8570bb399f" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="DataAndMetadataAssertion" id="eaf3e385-94d6-449a-85e7-0a65246d7a3c" name="Smart Assertion">
-          <con:configuration xsi:type="con:DataAndMetadataAssertion">
-            <con:mode>Received Data</con:mode>
-            <con:elements>
-              <con:path>$['SutlVUuid']</con:path>
-              <con:element>SutlVUuid</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Create Template#Response#$['SutVUuid']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtSumOfLicenses']</con:path>
-              <con:element>LtSumOfLicenses</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>false</con:enabled>
-              <con:expectedValue/>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>4</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtCode']</con:path>
-              <con:element>LtCode</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtCode']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['SutlSutOraseq']</con:path>
-              <con:element>SutlSutOraseq</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Create Template#Response#$['SutOraseq']}</con:expectedValue>
-              <con:numberType>true</con:numberType>
-              <con:expectedDataType>2</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtName']</con:path>
-              <con:element>LtName</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtName']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtUserType']</con:path>
-              <con:element>LtUserType</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtUserType']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:originalMessage>{
-  "SutlSutOraseq" : 2349816922,
-  "LtCode" : "E",
-  "LtName" : "E",
-  "LtUserType" : "C",
-  "SutlVUuid" : "1389138429381314812459418455439781576213274125707854589581",
-  "LtSumOfLicenses" : null,
-  "links" : [ {
-    "rel" : "self",
-    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
-    "name" : "templateLicenses",
-    "kind" : "item"
-  }, {
-    "rel" : "canonical",
-    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
-    "name" : "templateLicenses",
-    "kind" : "item"
-  } ]
-}</con:originalMessage>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Assign Template Permissions (Enterprise)" id="23bc2422-b5fe-4988-8551-d16581c9dfdc">
+  <con:testStep type="restrequest" name="Assign Template Permissions (Consolidation Access)" id="1bf669ce-95bb-4691-b1cd-4dc4af1b2b2a">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Assign Template Permissions (Enterprise)" id="ace94b91-e4e4-40b9-9cef-0e9b24b92d70" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Assign Template Permissions (Consolidation Access)" id="ace94b91-e4e4-40b9-9cef-0e9b24b92d70" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request>{\r
-   "SutsVUuid" : "ENT${Create Template#Response#$['SutVUuid']}",\r
+   "SutsVUuid" : "${Create Template#Response#$['SutVUuid']}",\r
    "SutsSutOraseq" : "${Create Template#Response#$['SutOraseq']}",\r
-   "SutsPermissionType" : "ROLES",\r
-   "SutsPermissionValue" : "${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}"\r
+   "SutsPermissionType" : "CONS2",\r
+   "SutsPermissionValue" : "${Retrieve Consolidation Access#Response#$['items'][0]['Cons2Code']}"\r
 }</con:request>
         <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="00a168a0-741c-43e7-9bab-c4a97a8d2032" name="Valid HTTP Status Codes">
@@ -771,7 +1041,7 @@
               <con:element>SutsPermissionType</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ROLES</con:expectedValue>
+              <con:expectedValue>CONS2</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -780,7 +1050,7 @@
               <con:element>SutsPermissionValue</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}</con:expectedValue>
+              <con:expectedValue>${Retrieve Consolidation Access#Response#$['items'][0]['Cons2Code']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -789,7 +1059,7 @@
               <con:element>SutsVUuid</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ENT${Create Template#Response#$['SutVUuid']}</con:expectedValue>
+              <con:expectedValue>${Create Template#Response#$['SutVUuid']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -832,7 +1102,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve Template Permission by UUID" id="c84b8c80-9f69-4f8d-8a73-9b3f613e5cdd">
+  <con:testStep type="restrequest" name="Retrieve Template Permission by UUID" id="9dca119c-eb74-4466-b0f8-1d671dcc5b03">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions/{id}" methodName="Method 2" xsi:type="con:RestRequestStep">
       <con:restRequest name="Retrieve Template Permission by UUID" id="a6ffb5b2-ca17-44fa-b594-c07c9e960496" mediaType="application/json">
@@ -860,7 +1130,7 @@
               <con:element>SutsVUuid</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ENT${Create Template#Response#$['SutVUuid']}</con:expectedValue>
+              <con:expectedValue>${Create Template#Response#$['SutVUuid']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -878,7 +1148,7 @@
               <con:element>SutsPermissionType</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ROLES</con:expectedValue>
+              <con:expectedValue>CONS2</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -887,7 +1157,7 @@
               <con:element>SutsPermissionValue</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}</con:expectedValue>
+              <con:expectedValue>${Retrieve Consolidation Access#Response#$['items'][0]['Cons2Code']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -918,12 +1188,12 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="id" value="${Assign Template Permissions (Enterprise)#Response#$['SutsVUuid']}"/>
+          <con:entry key="id" value="${Assign Template Permissions (Consolidation Access)#Response#$['SutsVUuid']}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Template Permission" id="da38174d-64d9-4f3f-9a6d-cdddf9504925">
+  <con:testStep type="restrequest" name="Delete Template Permission" id="b98dd6c0-658e-439a-b9ac-c88d0b4aa5c3">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Delete Template Permission" id="ff730ed1-4b6b-401a-9b36-c07a09db52f7" mediaType="application/json" postQueryString="false">
@@ -949,12 +1219,12 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="id" value="${Assign Template Permissions (Enterprise)#Response#$['SutsVUuid']}"/>
+          <con:entry key="id" value="${Assign Template Permissions (Consolidation Access)#Response#$['SutsVUuid']}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Template" id="6f4f6ac8-fdb1-41fe-8ac0-f25dd26ee72d">
+  <con:testStep type="restrequest" name="Delete Template" id="a269d42b-92ea-4218-ada6-2849aaa760ce">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Delete Template" id="daf5c457-b0cc-4551-bcc2-90c052897b1c" mediaType="application/json" postQueryString="false">
@@ -1061,7 +1331,7 @@ postTestResultToTestRail()</con:tearDownScript>
   <con:properties>
     <con:property>
       <con:name>TestCaseID</con:name>
-      <con:value>631096</con:value>
+      <con:value>631103</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

@@ -150,7 +150,7 @@
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="29115ffe-145f-44e6-a1f7-45b26f33e93e">
-            <con:authProfile>QALATEST (Raman)</con:authProfile>
+            <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="b5ec2841-29b5-46fd-b5ce-4131d9626d74">
             <con:authProfile>raman</con:authProfile>

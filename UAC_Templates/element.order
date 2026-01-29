@@ -13,3 +13,8 @@ TC_TEMP12_Template-Licenses.xml
 TC_TEMP13_Template-Permissions.xml
 TC_TEMP14_Template-Permissions-%28PM-Project-Roles%29.xml
 TC_TEMP15_Template-Permissions-%28PM-Security-Role%29.xml
+TC_TEMP16_Template-Permissions-%28PM-Job-Security-Role%29.xml
+TC_TEMP17_Template-Permissions-%28Imaging-Security-Role%29.xml
+TC_TEMP18_Template-Permissions-%28Payroll-Security-Role%29.xml
+TC_TEMP19_Template-Permissions-%28Consolidation-Access%29.xml
+TC_TEMP20_Template-Permissions-%28Compliance-Security%29.xml

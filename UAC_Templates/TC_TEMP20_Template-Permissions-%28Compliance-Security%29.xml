@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="95a7a3ac-923c-4467-b09e-fcd3bb0b60b8" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP12_Template Licenses" searchProperties="true" timeout="0">
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="f5739636-9678-4c05-8247-8122f7d15b27" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP20_Template Permissions (Compliance Security)" searchProperties="true" timeout="0">
   <con:settings>
-    <con:setting id="95a7a3ac-923c-4467-b09e-fcd3bb0b60b8fileName">TC_TEMP12_Template-Licenses</con:setting>
+    <con:setting id="f5739636-9678-4c05-8247-8122f7d15b27fileName">TC_TEMP20_Template-Permissions-%28Compliance-Security%29</con:setting>
   </con:settings>
-  <con:testStep type="datasource" name="Data Source" id="da42a58a-e6f6-4f4b-8db9-4b95e355f210">
+  <con:testStep type="datasource" name="Data Source" id="531523f2-be2b-4471-aeb0-f7ad8a9026ae">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep">
       <con:dataSource type="Data Generator">
         <con:configuration>
           <generatedDataCount>1</generatedDataCount>
           <generatorsTotalNumber>2</generatorsTotalNumber>
-          <lastSelectedProperty>1</lastSelectedProperty>
+          <lastSelectedProperty>0</lastSelectedProperty>
           <GeneratorType0>STR</GeneratorType0>
           <PropertyName0>UUID</PropertyName0>
           <repetitionCountUUID>0</repetitionCountUUID>
@@ -42,7 +42,7 @@
       <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Login" id="64d95094-a413-4426-aad7-74bab56daa8c">
+  <con:testStep type="restrequest" name="Login" id="87167d8a-77f4-452e-a3ce-3afed48329d8">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/jersey/v1/login" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Login" id="b297b346-5cf6-493b-b43d-769779655936" mediaType="application/json">
@@ -171,7 +171,262 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve License Types" id="067fec39-ff42-4066-9932-0eee0c68bd71">
+  <con:testStep type="restrequest" name="Retrieve All Permisions" id="cd53047e-967b-4286-86c0-ded89b574f7b">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve All Permisions" id="c81009c3-a06c-45dd-a289-e0fe16508aa4" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e1b00849-b3a6-4257-9802-debad34a6a9f" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c3ae2e08-86b2-4b4e-a17d-eece7fc6d11d" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Compliance Security" id="14f66b64-8308-4a99-99aa-7e49d3910dd3">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/complianceSecurity" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Compliance Security" id="e5138199-4b61-448a-bc02-80c13441d7fe" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7375d06e-539e-4e89-9877-0daa29fbeb43" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="df70a974-9611-494f-af86-aa242545a307" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="4b058d48-475a-463d-8314-7a0f14155673" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['IgrCode']</con:path>
+              <con:element>IgrCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ACCTNG</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['IgrName']</con:path>
+              <con:element>IgrName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Accounting Group Compliances</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "IgrCode" : "ACCTNG",
+    "IgrName" : "Accounting Group Compliances",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ACCTNG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ACCTNG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "BOND-SEC",
+    "IgrName" : "Bond Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/BOND-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/BOND-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "MTN",
+    "IgrName" : "Mai Thi's Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/MTN",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/MTN",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "PA",
+    "IgrName" : "PM Assist",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PA",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PA",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "PO-SEC",
+    "IgrName" : "PO Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PO-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/PO-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "QA1",
+    "IgrName" : "QA1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/QA1",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/QA1",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "SC-SEC",
+    "IgrName" : "SC Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SC-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SC-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "SAFE-SEC",
+    "IgrName" : "Safety Compl. - Security Group",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SAFE-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SAFE-SEC",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "SRKO",
+    "IgrName" : "Sruthi",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SRKO",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/SRKO",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "TSG",
+    "IgrName" : "TEST SEC GROUP",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/TSG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/TSG",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  }, {
+    "IgrCode" : "ZZ-INSUR",
+    "IgrName" : "ZZ-INSUR",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ZZ-INSUR",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity/ZZ-INSUR",
+      "name" : "complianceSecurity",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 11,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/complianceSecurity",
+    "name" : "complianceSecurity",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value=""/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve License Types" id="aab121a7-f033-4855-b67f-26dfcf499fa3">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/licenseTypes" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Retrieve License Types" id="a416c467-c1dd-4311-8953-d1b51487f1f3" mediaType="application/json">
@@ -446,7 +701,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Create Template" id="69aa387a-467b-410f-9d3c-2d9c8a61d876">
+  <con:testStep type="restrequest" name="Create Template" id="8abeb77d-dd08-4bfe-81e1-a11b0ee2925d">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Create Template" id="27a126f5-ad58-4df1-9790-cdb5df9122e1" mediaType="application/json" postQueryString="false">
@@ -560,38 +815,55 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Assign Template License" id="674fe8b0-6fe9-4076-b4f6-a21e022bb02d">
+  <con:testStep type="restrequest" name="Assign Template Permissions (Compliance Security)" id="1dae1c3c-51f9-4de0-8a6d-50c43488884d">
     <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templateLicenses" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Assign Template License" id="d0591e49-76b3-4de0-a3b3-aa349c06f623" mediaType="application/json" postQueryString="false">
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Assign Template Permissions (Compliance Security)" id="ace94b91-e4e4-40b9-9cef-0e9b24b92d70" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request>{\r
-   "SutlVUuid" : "${Create Template#Response#$['SutVUuid']}",\r
-   "SutlSutOraseq" : "${Create Template#Response#$['SutOraseq']}",\r
-   "LtCode" : "${Retrieve License Types#Response#$['items'][1]['LtCode']}",\r
-   "LtName" : "${Retrieve License Types#Response#$['items'][1]['LtName']}",\r
-   "LtUserType" : "${Retrieve License Types#Response#$['items'][1]['LtUserType']}"\r
+   "SutsVUuid" : "${Create Template#Response#$['SutVUuid']}",\r
+   "SutsSutOraseq" : "${Create Template#Response#$['SutOraseq']}",\r
+   "SutsPermissionType" : "INSGROUP",\r
+   "SutsPermissionValue" : "${Retrieve Compliance Security#Response#$['items'][0]['IgrCode']}"\r
 }</con:request>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="9d041dc5-f250-4467-886a-75cce491ab4c" name="Valid HTTP Status Codes">
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="00a168a0-741c-43e7-9bab-c4a97a8d2032" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>201</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="2f0de846-9029-4047-84f9-7c8570bb399f" name="Response SLA">
+        <con:assertion type="Response SLA Assertion" id="1bb4bb29-6331-411b-95a2-47d1b363b736" name="Response SLA">
           <con:configuration>
             <SLA>1000</SLA>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="DataAndMetadataAssertion" id="eaf3e385-94d6-449a-85e7-0a65246d7a3c" name="Smart Assertion">
+        <con:assertion type="DataAndMetadataAssertion" id="1a1a5f5d-0be5-4552-a688-bed8d92ca885" name="Smart Assertion">
           <con:configuration xsi:type="con:DataAndMetadataAssertion">
             <con:mode>Received Data</con:mode>
             <con:elements>
-              <con:path>$['SutlVUuid']</con:path>
-              <con:element>SutlVUuid</con:element>
+              <con:path>$['SutsPermissionType']</con:path>
+              <con:element>SutsPermissionType</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>INSGROUP</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SutsPermissionValue']</con:path>
+              <con:element>SutsPermissionValue</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Compliance Security#Response#$['items'][0]['IgrCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SutsVUuid']</con:path>
+              <con:element>SutsVUuid</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
               <con:expectedValue>${Create Template#Response#$['SutVUuid']}</con:expectedValue>
@@ -599,66 +871,30 @@
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
             <con:elements>
-              <con:path>$['LtSumOfLicenses']</con:path>
-              <con:element>LtSumOfLicenses</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>false</con:enabled>
-              <con:expectedValue/>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>4</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtCode']</con:path>
-              <con:element>LtCode</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtCode']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['SutlSutOraseq']</con:path>
-              <con:element>SutlSutOraseq</con:element>
+              <con:path>$['SutsSutOraseq']</con:path>
+              <con:element>SutsSutOraseq</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
               <con:expectedValue>${Create Template#Response#$['SutOraseq']}</con:expectedValue>
               <con:numberType>true</con:numberType>
               <con:expectedDataType>2</con:expectedDataType>
             </con:elements>
-            <con:elements>
-              <con:path>$['LtName']</con:path>
-              <con:element>LtName</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtName']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtUserType']</con:path>
-              <con:element>LtUserType</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtUserType']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
             <con:originalMessage>{
-  "SutlSutOraseq" : 2349816922,
-  "LtCode" : "E",
-  "LtName" : "E",
-  "LtUserType" : "C",
-  "SutlVUuid" : "1389138429381314812459418455439781576213274125707854589581",
-  "LtSumOfLicenses" : null,
+  "SutsPermissionType" : "ROLES",
+  "SutsPermissionCompCode" : null,
+  "SutsPermissionValue" : "1ROLE",
+  "SutsVUuid" : "ENT07177813509035315428213946172811803696218456797001542003022",
+  "SutsSutOraseq" : 2349834700,
+  "SutsImgSecGroupItemName" : null,
   "links" : [ {
     "rel" : "self",
-    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
-    "name" : "templateLicenses",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions/ENT07177813509035315428213946172811803696218456797001542003022",
+    "name" : "templatePermissions",
     "kind" : "item"
   }, {
     "rel" : "canonical",
-    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
-    "name" : "templateLicenses",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions/ENT07177813509035315428213946172811803696218456797001542003022",
+    "name" : "templatePermissions",
     "kind" : "item"
   } ]
 }</con:originalMessage>
@@ -673,619 +909,32 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve Template License" id="c84aa2ef-0cea-40e5-a150-e7416c7324ff">
+  <con:testStep type="restrequest" name="Retrieve Template Permission by UUID" id="4c395ca3-cea6-4432-8c30-b9027a7a35fc">
     <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templateLicenses" methodName="Method 2" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Retrieve Template License" id="5064d9a6-efd2-4c6d-bbcb-28dea680701b" mediaType="application/json">
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions/{id}" methodName="Method 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Template Permission by UUID" id="a6ffb5b2-ca17-44fa-b594-c07c9e960496" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request/>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="874655f2-604f-4cc0-8e0d-d71dced91d8c" name="Valid HTTP Status Codes">
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions/ENT07177813509035315428213946172811803696218456797001542003022</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="247affb6-b95a-4848-9a53-4cbbb67f404f" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="d274c161-ec4a-48aa-bdc7-42238586c32a" name="Response SLA">
+        <con:assertion type="Response SLA Assertion" id="399eacb1-1bc2-4c32-b986-2ce3e9c90dba" name="Response SLA">
           <con:configuration>
             <SLA>1000</SLA>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="DataAndMetadataAssertion" id="d972a9d0-c063-4787-9f1b-70c2c4642b0e" name="Smart Assertion">
+        <con:assertion type="DataAndMetadataAssertion" id="f0e03123-1333-4598-b109-f09b44ba95f7" name="Smart Assertion">
           <con:configuration xsi:type="con:DataAndMetadataAssertion">
             <con:mode>Received Data</con:mode>
             <con:elements>
-              <con:path>$['items'][0]['SutlSutOraseq']</con:path>
-              <con:element>SutlSutOraseq</con:element>
-              <con:operatorId>16</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>2224587120</con:expectedValue>
-              <con:numberType>true</con:numberType>
-              <con:expectedDataType>2</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['items'][0]['LtCode']</con:path>
-              <con:element>LtCode</con:element>
-              <con:operatorId>16</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>E</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['items'][0]['LtName']</con:path>
-              <con:element>LtName</con:element>
-              <con:operatorId>16</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>Enterprise</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['items'][0]['LtUserType']</con:path>
-              <con:element>LtUserType</con:element>
-              <con:operatorId>16</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>C</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['items'][0]['SutlVUuid']</con:path>
-              <con:element>SutlVUuid</con:element>
-              <con:operatorId>13</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>309ae580-9e1a-1327-a548-d1327a3b14d2</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['items'][0]['LtSumOfLicenses']</con:path>
-              <con:element>LtSumOfLicenses</con:element>
-              <con:operatorId>16</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>999999</con:expectedValue>
-              <con:numberType>true</con:numberType>
-              <con:expectedDataType>2</con:expectedDataType>
-            </con:elements>
-            <con:originalMessage>{
-  "items" : [ {
-    "SutlSutOraseq" : 2224587120,
-    "LtCode" : "E",
-    "LtName" : "Enterprise",
-    "LtUserType" : "C",
-    "SutlVUuid" : "309ae580-9e1a-1327-a548-d1327a3b14d2",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/309ae580-9e1a-1327-a548-d1327a3b14d2",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/309ae580-9e1a-1327-a548-d1327a3b14d2",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2349556801,
-    "LtCode" : "E",
-    "LtName" : "Enterprise",
-    "LtUserType" : "C",
-    "SutlVUuid" : "f6600330-fc86-11f0-8a13-c53bb83c0307",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f6600330-fc86-11f0-8a13-c53bb83c0307",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f6600330-fc86-11f0-8a13-c53bb83c0307",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2349816922,
-    "LtCode" : "H",
-    "LtName" : "HRSS (Self-Service)",
-    "LtUserType" : "C",
-    "SutlVUuid" : "5d1208e0-fd1c-11f0-a036-5988a68036ea",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/5d1208e0-fd1c-11f0-a036-5988a68036ea",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/5d1208e0-fd1c-11f0-a036-5988a68036ea",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323162,
-    "LtCode" : "P",
-    "LtName" : "Field",
-    "LtUserType" : "C",
-    "SutlVUuid" : "a521d390-ca4f-11f0-9f84-fb1f8a4f9879",
-    "LtSumOfLicenses" : 1999998,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/a521d390-ca4f-11f0-9f84-fb1f8a4f9879",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/a521d390-ca4f-11f0-9f84-fb1f8a4f9879",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323162,
-    "LtCode" : "E",
-    "LtName" : "Enterprise",
-    "LtUserType" : "C",
-    "SutlVUuid" : "f42e7800-8b6d-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f42e7800-8b6d-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f42e7800-8b6d-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323162,
-    "LtCode" : "C",
-    "LtName" : "CRM",
-    "LtUserType" : "C",
-    "SutlVUuid" : "0d84f380-8b71-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 0,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/0d84f380-8b71-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/0d84f380-8b71-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2349816922,
-    "LtCode" : "P",
-    "LtName" : "Field",
-    "LtUserType" : "C",
-    "SutlVUuid" : "5cc91900-fd1c-11f0-a036-5988a68036ea",
-    "LtSumOfLicenses" : 1999998,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/5cc91900-fd1c-11f0-a036-5988a68036ea",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/5cc91900-fd1c-11f0-a036-5988a68036ea",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323175,
-    "LtCode" : "E",
-    "LtName" : "Enterprise",
-    "LtUserType" : "C",
-    "SutlVUuid" : "5668b380-8cfb-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/5668b380-8cfb-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/5668b380-8cfb-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323175,
-    "LtCode" : "Y",
-    "LtName" : "Enterprise and Field",
-    "LtUserType" : "C",
-    "SutlVUuid" : "050cf400-8cfc-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 0,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/050cf400-8cfc-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/050cf400-8cfc-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323175,
-    "LtCode" : "H",
-    "LtName" : "HRSS (Self-Service)",
-    "LtUserType" : "C",
-    "SutlVUuid" : "4520a680-8cfd-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/4520a680-8cfd-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/4520a680-8cfd-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323175,
-    "LtCode" : "C",
-    "LtName" : "CRM",
-    "LtUserType" : "C",
-    "SutlVUuid" : "86658600-8cfe-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 0,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/86658600-8cfe-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/86658600-8cfe-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323175,
-    "LtCode" : "A",
-    "LtName" : "Scheduling",
-    "LtUserType" : "C",
-    "SutlVUuid" : "2a9bfc80-8d00-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/2a9bfc80-8d00-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/2a9bfc80-8d00-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323175,
-    "LtCode" : "T",
-    "LtName" : "E-Time",
-    "LtUserType" : "C",
-    "SutlVUuid" : "499b8e00-8d02-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/499b8e00-8d02-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/499b8e00-8d02-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323175,
-    "LtCode" : "V",
-    "LtName" : "Prequalification",
-    "LtUserType" : "C",
-    "SutlVUuid" : "4d301480-8d04-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/4d301480-8d04-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/4d301480-8d04-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323188,
-    "LtCode" : "E",
-    "LtName" : "Enterprise",
-    "LtUserType" : "C",
-    "SutlVUuid" : "9023e200-8e01-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/9023e200-8e01-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/9023e200-8e01-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323188,
-    "LtCode" : "H",
-    "LtName" : "HRSS (Self-Service)",
-    "LtUserType" : "C",
-    "SutlVUuid" : "818afa00-8e04-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/818afa00-8e04-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/818afa00-8e04-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323188,
-    "LtCode" : "C",
-    "LtName" : "CRM",
-    "LtUserType" : "C",
-    "SutlVUuid" : "f3644300-8e06-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 0,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f3644300-8e06-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f3644300-8e06-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323188,
-    "LtCode" : "A",
-    "LtName" : "Scheduling",
-    "LtUserType" : "C",
-    "SutlVUuid" : "6a014080-8e07-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/6a014080-8e07-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/6a014080-8e07-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323188,
-    "LtCode" : "T",
-    "LtName" : "E-Time",
-    "LtUserType" : "C",
-    "SutlVUuid" : "19d6ae00-8e08-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/19d6ae00-8e08-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/19d6ae00-8e08-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323188,
-    "LtCode" : "V",
-    "LtName" : "Prequalification",
-    "LtUserType" : "C",
-    "SutlVUuid" : "d29ced00-8e08-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/d29ced00-8e08-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/d29ced00-8e08-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224587120,
-    "LtCode" : "Y",
-    "LtName" : "Enterprise and Field",
-    "LtUserType" : "C",
-    "SutlVUuid" : "e30fc080-54a0-1090-b8a2-cd39a62270b3",
-    "LtSumOfLicenses" : 0,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/e30fc080-54a0-1090-b8a2-cd39a62270b3",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/e30fc080-54a0-1090-b8a2-cd39a62270b3",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323188,
-    "LtCode" : "Y",
-    "LtName" : "Enterprise and Field",
-    "LtUserType" : "C",
-    "SutlVUuid" : "ffe69c80-8e02-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 0,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/ffe69c80-8e02-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/ffe69c80-8e02-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2224323162,
-    "LtCode" : "Y",
-    "LtName" : "Enterprise and Field",
-    "LtUserType" : "C",
-    "SutlVUuid" : "a0bd2980-8b6f-108e-9d15-3fb08903111f",
-    "LtSumOfLicenses" : 0,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/a0bd2980-8b6f-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/a0bd2980-8b6f-108e-9d15-3fb08903111f",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2349556801,
-    "LtCode" : "A",
-    "LtName" : "Scheduling",
-    "LtUserType" : "C",
-    "SutlVUuid" : "f62914b0-fc86-11f0-8a13-c53bb83c0307",
-    "LtSumOfLicenses" : 999999,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f62914b0-fc86-11f0-8a13-c53bb83c0307",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f62914b0-fc86-11f0-8a13-c53bb83c0307",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  }, {
-    "SutlSutOraseq" : 2349556801,
-    "LtCode" : "C",
-    "LtName" : "CRM",
-    "LtUserType" : "C",
-    "SutlVUuid" : "f646fcf0-fc86-11f0-8a13-c53bb83c0307",
-    "LtSumOfLicenses" : 0,
-    "links" : [ {
-      "rel" : "self",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f646fcf0-fc86-11f0-8a13-c53bb83c0307",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    }, {
-      "rel" : "canonical",
-      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f646fcf0-fc86-11f0-8a13-c53bb83c0307",
-      "name" : "templateLicenses",
-      "kind" : "item"
-    } ]
-  } ],
-  "count" : 25,
-  "hasMore" : true,
-  "limit" : 25,
-  "offset" : 0,
-  "links" : [ {
-    "rel" : "self",
-    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses",
-    "name" : "templateLicenses",
-    "kind" : "collection"
-  } ]
-}</con:originalMessage>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="Retrieve Template License by UUID" id="cefeca98-fd78-4ca6-802b-9acc4da7fb8a">
-    <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templateLicenses/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Retrieve Template License by UUID" id="c8dfcd51-0d35-46c7-a8b0-54a15858f29d" mediaType="application/json">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request/>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="4e5134ad-fade-4dc4-9b8f-40b3f213177d" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="7f247c47-c58a-4c39-9fc9-db3b646e65b6" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="DataAndMetadataAssertion" id="ad73a776-76ca-45d7-93c5-3435df0f6b26" name="Smart Assertion">
-          <con:configuration xsi:type="con:DataAndMetadataAssertion">
-            <con:mode>Received Data</con:mode>
-            <con:elements>
-              <con:path>$['LtCode']</con:path>
-              <con:element>LtCode</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtCode']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['SutlSutOraseq']</con:path>
-              <con:element>SutlSutOraseq</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Create Template#Response#$['SutOraseq']}</con:expectedValue>
-              <con:numberType>true</con:numberType>
-              <con:expectedDataType>2</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtName']</con:path>
-              <con:element>LtName</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtName']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['LtUserType']</con:path>
-              <con:element>LtUserType</con:element>
-              <con:operatorId>1</con:operatorId>
-              <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtUserType']}</con:expectedValue>
-              <con:numberType>false</con:numberType>
-              <con:expectedDataType>1</con:expectedDataType>
-            </con:elements>
-            <con:elements>
-              <con:path>$['SutlVUuid']</con:path>
-              <con:element>SutlVUuid</con:element>
+              <con:path>$['SutsVUuid']</con:path>
+              <con:element>SutsVUuid</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
               <con:expectedValue>${Create Template#Response#$['SutVUuid']}</con:expectedValue>
@@ -1293,30 +942,48 @@
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
             <con:elements>
-              <con:path>$['LtSumOfLicenses']</con:path>
-              <con:element>LtSumOfLicenses</con:element>
-              <con:operatorId>16</con:operatorId>
+              <con:path>$['SutsSutOraseq']</con:path>
+              <con:element>SutsSutOraseq</con:element>
+              <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>999999</con:expectedValue>
+              <con:expectedValue>${Create Template#Response#$['SutOraseq']}</con:expectedValue>
               <con:numberType>true</con:numberType>
               <con:expectedDataType>2</con:expectedDataType>
             </con:elements>
+            <con:elements>
+              <con:path>$['SutsPermissionType']</con:path>
+              <con:element>SutsPermissionType</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>INSGROUP</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SutsPermissionValue']</con:path>
+              <con:element>SutsPermissionValue</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Compliance Security#Response#$['items'][0]['IgrCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
             <con:originalMessage>{
-  "SutlSutOraseq" : 2349816922,
-  "LtCode" : "E",
-  "LtName" : "Enterprise",
-  "LtUserType" : "C",
-  "SutlVUuid" : "1389138429381314812459418455439781576213274125707854589581",
-  "LtSumOfLicenses" : 999999,
+  "SutsPermissionType" : "ROLES",
+  "SutsPermissionCompCode" : null,
+  "SutsPermissionValue" : "1ROLE",
+  "SutsVUuid" : "ENT07177813509035315428213946172811803696218456797001542003022",
+  "SutsSutOraseq" : 2349834700,
+  "SutsImgSecGroupItemName" : null,
   "links" : [ {
     "rel" : "self",
-    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
-    "name" : "templateLicenses",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions/ENT07177813509035315428213946172811803696218456797001542003022",
+    "name" : "templatePermissions",
     "kind" : "item"
   }, {
     "rel" : "canonical",
-    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
-    "name" : "templateLicenses",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions/ENT07177813509035315428213946172811803696218456797001542003022",
+    "name" : "templatePermissions",
     "kind" : "item"
   } ]
 }</con:originalMessage>
@@ -1328,29 +995,29 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="id" value="${Assign Template License#Response#$['SutlVUuid']}"/>
+          <con:entry key="id" value="${Assign Template Permissions (Compliance Security)#Response#$['SutsVUuid']}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Template License" id="b933d632-c080-4589-b5e7-a1fc42044a7e">
+  <con:testStep type="restrequest" name="Delete Template Permission" id="e80aaeb6-5405-4dfe-94e4-7447bf054444">
     <con:settings/>
-    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templateLicenses/{id}" methodName="Method 2" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Delete Template License" id="2509baa2-e788-4f64-b0b3-0794c043a6fa" mediaType="application/json" postQueryString="false">
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Delete Template Permission" id="ff730ed1-4b6b-401a-9b36-c07a09db52f7" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request/>
-        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="fc4ccfa9-bfe5-49b8-868e-5275d331fee1" name="Valid HTTP Status Codes">
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions/id</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d2466a0d-8129-43eb-ba4d-5e2f2c70a6a0" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>204</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="ff6e7e81-7695-461a-854c-68d7446961b1" name="Response SLA">
+        <con:assertion type="Response SLA Assertion" id="47e89004-048c-45ae-b70b-a12e2fca54af" name="Response SLA">
           <con:configuration>
-            <SLA>1000</SLA>
+            <SLA>200</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -1359,12 +1026,12 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="id" value="${Assign Template License#Response#$['SutlVUuid']}"/>
+          <con:entry key="id" value="${Assign Template Permissions (Compliance Security)#Response#$['SutsVUuid']}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Delete Template" id="ad007686-3ef6-4b04-8102-bee98e38af85">
+  <con:testStep type="restrequest" name="Delete Template" id="1fbf3891-57c8-437a-84fa-dae86e1a1f10">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Delete Template" id="daf5c457-b0cc-4551-bcc2-90c052897b1c" mediaType="application/json" postQueryString="false">
@@ -1471,7 +1138,7 @@ postTestResultToTestRail()</con:tearDownScript>
   <con:properties>
     <con:property>
       <con:name>TestCaseID</con:name>
-      <con:value>631095</con:value>
+      <con:value>631104</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

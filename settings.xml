@@ -201,19 +201,19 @@
   </con:environment>
   <con:environment id="29115ffe-145f-44e6-a1f7-45b26f33e93e" name="QALATEST" index="2">
     <con:service type="REST" name="cmic-uac-rest-api">
-      <con:endpoint authProfile="QALATEST (Raman)" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qalatestmob.cmicpaas.com/cmicqalatest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qalatestmob.cmicpaas.com/cmicqalatest</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-crm-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qalatestmob.cmicpaas.com/cmicqalatest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qalatestmob.cmicpaas.com/cmicqalatest</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-jc-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qalatestmob.cmicpaas.com/cmicqalatest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qalatestmob.cmicpaas.com/cmicqalatest</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-lem-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qalatestmob.cmicpaas.com/cmicqalatest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qalatestmob.cmicpaas.com/cmicqalatest</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-cf-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qalatestmob.cmicpaas.com/cmicqalatest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qalatestmob.cmicpaas.com/cmicqalatest</con:endpoint>
     </con:service>
     <con:property>
       <con:name>TestCaseID</con:name>
@@ -615,7 +615,7 @@
       <con:authProfile>raman</con:authProfile>
     </con:entry>
     <con:entry environmentId="29115ffe-145f-44e6-a1f7-45b26f33e93e">
-      <con:authProfile>No Authorization</con:authProfile>
+      <con:authProfile>raman</con:authProfile>
     </con:entry>
     <con:entry environmentId="b5ec2841-29b5-46fd-b5ce-4131d9626d74">
       <con:authProfile>No Authorization</con:authProfile>
