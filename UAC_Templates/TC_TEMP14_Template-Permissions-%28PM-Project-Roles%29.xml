@@ -1036,10 +1036,10 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Assign Template Permissions (PM)" id="d8059d54-3431-42cc-a1cd-843dd7a87118">
+  <con:testStep type="restrequest" name="Assign Template Permissions (PM) without Permission Type" id="d8059d54-3431-42cc-a1cd-843dd7a87118">
     <con:settings/>
     <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Assign Template Permissions (PM)" id="ace94b91-e4e4-40b9-9cef-0e9b24b92d70" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Assign Template Permissions (PM) without Permission Type" id="ace94b91-e4e4-40b9-9cef-0e9b24b92d70" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -1048,6 +1048,40 @@
    "SutsSutOraseq" : "${Create Template#Response#$['SutOraseq']}",
    "SutsPermissionType" : "PMROLE",
    "SutsPermissionValue" : "${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}"
+}</con:request>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="00a168a0-741c-43e7-9bab-c4a97a8d2032" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="1bb4bb29-6331-411b-95a2-47d1b363b736" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Assign Template Permissions (PM)" id="c6953eb0-2924-4d88-bd8c-4a50470ad373">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templatePermissions" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Assign Template Permissions (PM)" id="ace94b91-e4e4-40b9-9cef-0e9b24b92d70" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "SutsVUuid" : "PM${Create Template#Response#$['SutVUuid']}",\r
+   "SutsSutOraseq" : "${Create Template#Response#$['SutOraseq']}",\r
+   "SutsPermissionType" : "PMROLE",\r
+   "SutsPermissionValue" : "${Retrieve PM Project Roles#Response#$['items'][0]['PmrRoleCode']}"\r
 }</con:request>
         <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templatePermissions</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="00a168a0-741c-43e7-9bab-c4a97a8d2032" name="Valid HTTP Status Codes">
@@ -1069,7 +1103,7 @@
               <con:element>SutsPermissionType</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ROLES</con:expectedValue>
+              <con:expectedValue>PMROLE</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -1078,7 +1112,7 @@
               <con:element>SutsPermissionValue</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}</con:expectedValue>
+              <con:expectedValue>${Retrieve PM Project Roles#Response#$['items'][0]['PmrRoleCode']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -1087,7 +1121,7 @@
               <con:element>SutsVUuid</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ENT${Create Template#Response#$['SutVUuid']}</con:expectedValue>
+              <con:expectedValue>PM${Create Template#Response#$['SutVUuid']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -1158,7 +1192,7 @@
               <con:element>SutsVUuid</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ENT${Create Template#Response#$['SutVUuid']}</con:expectedValue>
+              <con:expectedValue>PM${Create Template#Response#$['SutVUuid']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -1176,7 +1210,7 @@
               <con:element>SutsPermissionType</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>ROLES</con:expectedValue>
+              <con:expectedValue>PMROLE</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -1185,7 +1219,7 @@
               <con:element>SutsPermissionValue</con:element>
               <con:operatorId>1</con:operatorId>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>${Retrieve Enterprise Roles#Response#$['items'][0]['RoleCode']}</con:expectedValue>
+              <con:expectedValue>${Retrieve PM Project Roles#Response#$['items'][0]['PmrRoleCode']}</con:expectedValue>
               <con:numberType>false</con:numberType>
               <con:expectedDataType>1</con:expectedDataType>
             </con:elements>
@@ -1233,7 +1267,7 @@
         <con:assertion type="Valid HTTP Status Codes" id="d2466a0d-8129-43eb-ba4d-5e2f2c70a6a0" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
-            <codes>200</codes>
+            <codes>204</codes>
           </con:configuration>
         </con:assertion>
         <con:assertion type="Response SLA Assertion" id="47e89004-048c-45ae-b70b-a12e2fca54af" name="Response SLA">
@@ -1246,7 +1280,9 @@
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
+        <con:parameters>
+          <con:entry key="id" value="${Assign Template Permissions (PM)#Response#$['SutsVUuid']}"/>
+        </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
