@@ -22,6 +22,7 @@ cmic-uac-rest-api\employeeNumbers.xml
 cmic-uac-rest-api\templateLicenses.xml
 cmic-uac-rest-api\templatePermissions.xml
 cmic-uac-rest-api\emailTemplate.xml
+cmic-uac-rest-api\userMaintenanceUrlBuilder.xml
 PreReq\PreRequisite-Select-Project-with-UUID.xml
 UAC_Auth\TC_AUTH01_Login.xml
 UAC_Auth\TC_AUTH02_Logout.xml
@@ -33,6 +34,7 @@ UAC_Azure-Settings\TC_AS01_Azure-Settings.xml
 UAC_Users\TC_USR01_Retrieve-Users.xml
 UAC_Users\TC_USR02_User-Partners.xml
 UAC_Users\TC_USR03_Employee-Numbers.xml
+UAC_Users\TC_USR04_User-Maintenance-URL-Builder.xml
 UAC_Templates\TC_TEMP01_Retrieve-Enterprise-Roles.xml
 UAC_Templates\TC_TEMP02_Retrieve-PM-Project-Roles.xml
 UAC_Templates\TC_TEMP03_Retrieve-Security-Roles.xml

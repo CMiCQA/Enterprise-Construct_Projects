@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="userMaintenanceUrlBuilder" path="cmic-uac-rest-api/jersey/v1/userMaintenanceUrlBuilder" id="139cbfd7-e593-4528-9566-bdd0aa6412fa">
+  <con:settings>
+    <con:setting id="139cbfd7-e593-4528-9566-bdd0aa6412fafileName">userMaintenanceUrlBuilder</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="false">
+      <con:name>userId</con:name>
+      <con:value>{userId}</con:value>
+      <con:style>QUERY</con:style>
+      <con:default>{userId}</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="35dc95ad-413f-4d16-bccf-7a6f3579e711" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="2ce92028-c18d-4335-b8f5-83cf66d46275" mediaType="application/json">
+      <con:settings/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>
