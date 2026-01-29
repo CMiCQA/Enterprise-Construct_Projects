@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="ae884f22-538d-4123-86bc-faddcc85801d" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP21_Email Template" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="ae884f22-538d-4123-86bc-faddcc85801dfileName">TC_TEMP21_Email-Template</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source" id="2f5a72cb-4777-4674-b3c2-436c38327198">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>1</generatedDataCount>
+          <generatorsTotalNumber>2</generatorsTotalNumber>
+          <lastSelectedProperty>0</lastSelectedProperty>
+          <GeneratorType0>STR</GeneratorType0>
+          <PropertyName0>UUID</PropertyName0>
+          <repetitionCountUUID>0</repetitionCountUUID>
+          <repeatValuesUUID>false</repeatValuesUUID>
+          <PasswordDataGeneratorUseSpacesUUID>false</PasswordDataGeneratorUseSpacesUUID>
+          <PasswordDataGeneratorUsePunctuationMarksUUID>false</PasswordDataGeneratorUsePunctuationMarksUUID>
+          <PasswordDataGeneratorUseLettersUUID>false</PasswordDataGeneratorUseLettersUUID>
+          <PasswordDataGeneratorUseDigitsUUID>true</PasswordDataGeneratorUseDigitsUUID>
+          <PasswordDataGeneratorMaxCharacterCountUUID>60</PasswordDataGeneratorMaxCharacterCountUUID>
+          <PasswordDataGeneratorMinCharacterCountUUID>5</PasswordDataGeneratorMinCharacterCountUUID>
+          <GeneratorType1>STR</GeneratorType1>
+          <PropertyName1>Data</PropertyName1>
+          <repetitionCountData>0</repetitionCountData>
+          <repeatValuesData>false</repeatValuesData>
+          <PasswordDataGeneratorUseSpacesData>false</PasswordDataGeneratorUseSpacesData>
+          <PasswordDataGeneratorUsePunctuationMarksData>false</PasswordDataGeneratorUsePunctuationMarksData>
+          <PasswordDataGeneratorUseLettersData>false</PasswordDataGeneratorUseLettersData>
+          <PasswordDataGeneratorUseDigitsData>true</PasswordDataGeneratorUseDigitsData>
+          <PasswordDataGeneratorMaxCharacterCountData>5</PasswordDataGeneratorMaxCharacterCountData>
+          <PasswordDataGeneratorMinCharacterCountData>3</PasswordDataGeneratorMinCharacterCountData>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>UUID</con:property>
+      <con:property>Data</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Email Template" id="5594d7c7-73bb-4a98-af7a-aae9898545e4">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/emailTemplate" methodName="Method 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Email Template" id="74888d4a-029a-46d3-a36e-57d33092572c" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="ce87915d-5439-416e-8705-00561562b368" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c50be8a8-725a-42ca-b4dc-5fd8fb65d619" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="f96a2b9c-78e6-4daa-b933-96694994e1d9" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['SietVUuid']</con:path>
+              <con:element>SietVUuid</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>a0bafe80-a4c0-104c-90a9-e52802e788cd</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SietSubject']</con:path>
+              <con:element>SietSubject</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Welcome to the CMiC Construction Platforms</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "SietVUuid" : "a0bafe80-a4c0-104c-90a9-e52802e788cd",
+    "SietSubject" : "Welcome to the CMiC Construction Platforms",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate/a0bafe80-a4c0-104c-90a9-e52802e788cd",
+      "name" : "emailTemplate",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate/a0bafe80-a4c0-104c-90a9-e52802e788cd",
+      "name" : "emailTemplate",
+      "kind" : "item"
+    }, {
+      "rel" : "enclosure",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate/a0bafe80-a4c0-104c-90a9-e52802e788cd/enclosure/SietBody",
+      "name" : "SietBody",
+      "kind" : "other"
+    } ]
+  } ],
+  "count" : 1,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate",
+    "name" : "emailTemplate",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Create Email Template" id="e0126016-4247-4989-a72d-8d80827d269e">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/emailTemplate" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Create Email Template" id="a0dfb9ea-de10-4f8c-8a73-e27c7b6c5b85" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "SietVUuid" : "${Data Source#UUID}",\r
+   "SietBody" : "PCFET0NUWVBFIGh0bWw+PGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjxoZWFkPgogICAgPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWwgY2hhcnNldD1VVEYtOCI+CiAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoIj4KICAgIDxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CiAgICA8bWV0YSBuYW1lPSJ4LWFwcGxlLWRpc2FibGUtbWVzc2FnZS1yZWZvcm1hdHRpbmciPgogICAgPHRpdGxlPldlbGNvbWUgdG8gdGhlIENNaUMgQ29uc3RydWN0aW9uIFBsYXRmb3JtPC90aXRsZT4KICAgIDwhLS1baWYgZ3RlIG1zb10+IDxzdHlsZT4gKiB7IGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7IH0gPC9zdHlsZT4gPCFbZW5kaWZdLS0+CiAgICA8IS0tIEFsbCBvdGhlciBjbGllbnRzIGdldCB0aGUgd2ViZm9udCByZWZlcmVuY2U7IHNvbWUgd2lsbCByZW5kZXIgdGhlIGZvbnQgYW5kIG90aGVycyB3aWxsIHNpbGVudGx5IGZhaWwgdG8gdGhlIGZhbGxiYWNrcy4gTW9yZSBvbiB0aGF0IGhlcmU6IGh0dHA6Ly9zdHlsZWNhbXBhaWduLmNvbS9ibG9nLzIwMTUvMDIvd2ViZm9udC1zdXBwb3J0LWluLWVtYWlsLyAtLT4KICAgIDwhLS1baWYgIW1zb10+PCEtLT4KICAgIDxsaW5rIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1Sb2JvdG86MTAwLDMwMCw0MDAsNTAwLDcwMCw5MDAiIHJlbD0ic3R5bGVzaGVldCI+CiAgICA8IS0tPCFbZW5kaWZdLS0+CjwvaGVhZD4KCjxib2R5IHdpZHRoPSIxMDAlIiBiZ2NvbG9yPSIjZjBmMGYwIiBzdHlsZT0ibWFyZ2luOiAwIGF1dG8gIWltcG9ydGFudDsgcGFkZGluZzogMCAhaW1wb3J0YW50OyBoZWlnaHQ6IDEwMCUgIWltcG9ydGFudDsgd2lkdGg6IDEwMCUgIWltcG9ydGFudDsgZm9udC1mYW1pbHk6IFNhbnMtU2VyaWY7Ij4KICAgIDxzdHlsZT4KICAgICAgICBodG1sLAogICAgICAgIGJvZHkgewogICAgICAgICAgICBtYXJnaW46IDAgYXV0byAhaW1wb3J0YW50OwogICAgICAgICAgICBwYWRkaW5nOiAwICFpbXBvcnRhbnQ7CiAgICAgICAgICAgIGhlaWdodDogMTAwJSAhaW1wb3J0YW50OwogICAgICAgICAgICB3aWR0aDogMTAwJSAhaW1wb3J0YW50OwogICAgICAgIH0KCiAgICAgICAgKiB7CiAgICAgICAgICAgIC1tcy10ZXh0LXNpemUtYWRqdXN0OiAxMDAlOwogICAgICAgICAgICAtd2Via2l0LXRleHQtc2l6ZS1hZGp1c3Q6IDEwMCU7CiAgICAgICAgfQoKICAgICAgICBkaXZbc3R5bGUqPSJtYXJnaW46IDE2cHggMCJdIHsKICAgICAgICAgICAgbWFyZ2luOiAwICFpbXBvcnRhbnQ7CiAgICAgICAgfQoKICAgICAgICB0YWJsZSwKICAgICAgICB0ZCB7CiAgICAgICAgICAgIG1zby10YWJsZS1sc3BhY2U6IDBwdCAhaW1wb3J0YW50OwogICAgICAgICAgICBtc28tdGFibGUtcnNwYWNlOiAwcHQgIWltcG9ydGFudDsKICAgICAgICB9CgogICAgICAgIHRhYmxlIHsKICAgICAgICAgICAgYm9yZGVyLXNwYWNpbmc6IDAgIWltcG9ydGFudDsKICAgICAgICAgICAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZSAhaW1wb3J0YW50OwogICAgICAgICAgICB0YWJsZS1sYXlvdXQ6IGZpeGVkICFpbXBvcnRhbnQ7CiAgICAgICAgICAgIG1hcmdpbjogMCBhdXRvICFpbXBvcnRhbnQ7CiAgICAgICAgfQoKICAgICAgICB0YWJsZSB0YWJsZSB0YWJsZSB7CiAgICAgICAgICAgIHRhYmxlLWxheW91dDogYXV0bzsKICAgICAgICB9CgogICAgICAgIGltZyB7CiAgICAgICAgICAgIC1tcy1pbnRlcnBvbGF0aW9uLW1vZGU6IGJpY3ViaWM7CiAgICAgICAgfQoKICAgICAgICAubW9iaWxlLWxpbmstLWZvb3RlciBhLAogICAgICAgIGFbeC1hcHBsZS1kYXRhLWRldGVjdG9yc10gewogICAgICAgICAgICBjb2xvcjogaW5oZXJpdCAhaW1wb3J0YW50OwogICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZSAhaW1wb3J0YW50OwogICAgICAgIH0KCiAgICAgICAgLkV4dGVybmFsQ2xhc3MgcCwKICAgICAgICAuRXh0ZXJuYWxDbGFzcyBzcGFuLAogICAgICAgIC5FeHRlcm5hbENsYXNzIGZvbnQsCiAgICAgICAgLkV4dGVybmFsQ2xhc3MgdGQgewogICAgICAgICAgICBsaW5lLWhlaWdodDogMTAwJTsKICAgICAgICB9CgogICAgICAgIC5FeHRlcm5hbENsYXNzIHsKICAgICAgICAgICAgd2lkdGg6IDEwMCU7CiAgICAgICAgfQoKICAgICAgICAuYnV0dG9uLXRkLAogICAgICAgIC5idXR0b24tYSB7CiAgICAgICAgICAgIHRyYW5zaXRpb246IGFsbCAyMDBtcyBlYXNlLWluOwogICAgICAgIH0KCiAgICAgICAgLmJ1dHRvbi10ZDpob3ZlciwKICAgICAgICAuYnV0dG9uLWE6aG92ZXIgewogICAgICAgICAgICBiYWNrZ3JvdW5kOiAjNjZhMGZmICFpbXBvcnRhbnQ7CiAgICAgICAgICAgIGJvcmRlci1jb2xvcjogIzY2YTBmZiAhaW1wb3J0YW50OwogICAgICAgIH0KCiAgICAgICAgLmljb24gewogICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7CiAgICAgICAgICAgIHdpZHRoOiAxZW07CiAgICAgICAgICAgIGhlaWdodDogMWVtOwogICAgICAgICAgICBzdHJva2Utd2lkdGg6IDA7CiAgICAgICAgICAgIHN0cm9rZTogY3VycmVudENvbG9yOwogICAgICAgICAgICBmaWxsOiBjdXJyZW50Q29sb3I7CiAgICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxkaXYgc3R5bGU9ImhlaWdodDogODBweCI+PC9kaXY+CiAgICA8Y2VudGVyIHN0eWxlPSJ3aWR0aDogMTAwJTsgYmFja2dyb3VuZDogI2YwZjBmMDsiPiA8c3BhbiBzdHlsZT0iZGlzcGxheTpub25lO2ZvbnQtc2l6ZToxcHg7bGluZS1oZWlnaHQ6MXB4O21heC1oZWlnaHQ6MHB4O21heC13aWR0aDowcHg7b3BhY2l0eTowO292ZXJmbG93OmhpZGRlbjttc28taGlkZTphbGw7Zm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7Ij4KICAgICAgICAgICAgV2VsY29tZSB0byB0aGUgQ01pQyBDb25zdHJ1Y3Rpb24gUGxhdGZvcm0gPC9zcGFuPgogICAgICAgIDxkaXYgc3R5bGU9Im1heC13aWR0aDogNjAwcHg7IG1hcmdpbjogYXV0bzsiPgogICAgICAgICAgICA8IS0tW2lmIG1zb10+IDx0YWJsZSByb2xlPSJwcmVzZW50YXRpb24iIGNlbGxzcGFjaW5nPSIwIiBjZWxscGFkZGluZz0iMCIgYm9yZGVyPSIwIiB3aWR0aD0iNjAwIiBhbGlnbj0iY2VudGVyIj4gPHRyPiA8dGQ+IDwhW2VuZGlmXS0tPgogICAgICAgICAgICA8dGFibGUgcm9sZT0icHJlc2VudGF0aW9uIiBjZWxsc3BhY2luZz0iMCIgY2VsbHBhZGRpbmc9IjAiIGJvcmRlcj0iMCIgYWxpZ249ImNlbnRlciIgd2lkdGg9IjEwMCUiIHN0eWxlPSJtYXgtd2lkdGg6IDYwMHB4OyI+CiAgICAgICAgICAgICAgICA8dGJvZHk+PHRyPgogICAgICAgICAgICAgICAgICAgIDx0ZCBiZ2NvbG9yPSIjZjBmMGYwIj4gPGltZyBjbGFzcz0iZW1haWwtdGVtcGxhdGUtbG9nbyIgc3JjPSJodHRwczovL3NvbHV0aW9uc3IxMi5jbWljcGFhcy5jb20vY21pY2xhdW5jaC9sYXVuY2gtcGFnZS1yZXNvdXJjZXMvQ01pQy5wbmciIGhlaWdodD0iNjUiIGFsdD0iYWx0X3RleHQiIGJvcmRlcj0iMCIgYWxpZ249ImNlbnRlciIgc3R5bGU9Im1zby1oZWlnaHQtcnVsZTogZXhhY3RseTsgYmFja2dyb3VuZDogI2YwZjBmMDsgbWFyZ2luLXRvcDogMTBweDsiPiA8L3RkPgogICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICAgIDx0cj4KICAgICAgICAgICAgICAgICAgICA8dGQ+Jm5ic3A7PC90ZD4KICAgICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgIDwvdGJvZHk+PC90YWJsZT4KICAgICAgICAgICAgPHRhYmxlIHJvbGU9InByZXNlbnRhdGlvbiIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBib3JkZXI9IjAiIGFsaWduPSJjZW50ZXIiIHdpZHRoPSIxMDAlIiBzdHlsZT0ibWF4LXdpZHRoOiA1OTZweDsgYm9yZGVyOiAycHggc29saWQgI2M3YzdjNzsgZm9udC1mYW1pbHk6ICdSb2JvdG8gTWVkaXVtJywgJ1JvYm90byBSZWd1bGFyJywgJ1JvYm90bycsIFNhbnMtU2VyaWY7IGZvbnQtd2VpZ2h0OiBub3JtYWw7Ij4KICAgICAgICAgICAgICAgIDx0Ym9keT48dHI+CiAgICAgICAgICAgICAgICAgICAgPHRkIGJnY29sb3I9IiNmY2ZjZmMiPgogICAgICAgICAgICAgICAgICAgICAgICA8dGFibGUgcm9sZT0icHJlc2VudGF0aW9uIiBjZWxsc3BhY2luZz0iMCIgY2VsbHBhZGRpbmc9IjAiIGJvcmRlcj0iMCIgd2lkdGg9IjEwMCUiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRib2R5Pjx0cj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGQgc3R5bGU9ImZvbnQtd2VpZ2h0OiAzMDA7IGZvbnQtc2l6ZTogMjhweDsgY29sb3I6ICM0Mjg1RjQ7IHRleHQtYWxpZ246IGxlZnQ7IGZvbnQtZmFtaWx5OiAnUm9ib3RvIExpZ2h0JywgJ1JvYm90byBSZWd1bGFyJywgJ1JvYm90bycsIFNhbnMtU2VyaWY7IHBhZGRpbmc6MTVweCAyMHB4IDEwcHggMjBweDsiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBIZWxsbywgJHt1c2VyTmFtZX0hCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC90ZD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvdGJvZHk+PC90YWJsZT4KICAgICAgICAgICAgICAgICAgICA8L3RkPgogICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICAgIDx0cj4KICAgICAgICAgICAgICAgICAgICA8dGQgaWQ9ImVtYWlsLXRlbXBsYXRlLWJvZHkiIGJnY29sb3I9IiNmY2ZjZmMiIHN0eWxlPSJmb250LXdlaWdodDogbm9ybWFsOyBmb250LXNpemU6IDE2cHg7IGNvbG9yOiAjMzMzMzMzOyB0ZXh0LWFsaWduOiBsZWZ0OyBmb250LWZhbWlseTogJ1JvYm90bycsIFNhbnMtU2VyaWY7IHBhZGRpbmc6MTVweCAyMHB4IDEwcHggMzBweDsiPjxwPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDUxLCA1MSwgNTEpOyI+V2VsY29tZSB0byB0aGUgQ01pQyBDb25zdHJ1Y3Rpb24gUGxhdGZvcm0hIFdlJ3JlIHRocmlsbGVkIHRvIGhhdmUgeW91IG9uIGJvYXJkLiBPdXIgcGxhdGZvcm0gaXMgZGVzaWduZWQgdG8gc3RyZWFtbGluZSB5b3VyIGNvbnN0cnVjdGlvbiBwcm9qZWN0IG1hbmFnZW1lbnQgZXhwZXJpZW5jZSwgcHJvdmlkaW5nIHlvdSB3aXRoIHBvd2VyZnVsIHRvb2xzIGFuZCByZXNvdXJjZXMgdG8gZW5oYW5jZSBlZmZpY2llbmN5IGFuZCBjb2xsYWJvcmF0aW9uLnM8L3NwYW4+PC9wPjwvdGQ+CiAgICAgICAgICAgICAgICA8L3RyPgogICAgICAgICAgICAgICAgPHRyPgogICAgICAgICAgICAgICAgICAgIDx0ZCBiZ2NvbG9yPSIjZmNmY2ZjIj4KICAgICAgICAgICAgICAgICAgICAgICAgPHRhYmxlIHJvbGU9InByZXNlbnRhdGlvbiIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBib3JkZXI9IjAiIHdpZHRoPSIxMDAlIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0Ym9keT48dHI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRkIGJnY29sb3I9IiNmY2ZjZmMiIGhlaWdodD0iMTAwJSIgdmFsaWduPSJ0b3AiIGFsaWduPSJjZW50ZXIiIHdpZHRoPSIxMDAlIiBzdHlsZT0iZm9udC13ZWlnaHQ6IDQwMDsgZm9udC1zaXplOiAxMnB4OyBjb2xvcjogIzMzMzMzMzsgdGV4dC1hbGlnbjogY2VudGVyOyBmb250LWZhbWlseTogJ1JvYm90byBMaWdodCcsICdSb2JvdG8gUmVndWxhcicsICdSb2JvdG8nLCBTYW5zLVNlcmlmOyBwYWRkaW5nOjEwcHggMjBweCAxMHB4IDMwcHg7Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGJyPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGFibGUgcm9sZT0icHJlc2VudGF0aW9uIiBjZWxsc3BhY2luZz0iMCIgY2VsbHBhZGRpbmc9IjAiIGJvcmRlcj0iMCIgYWxpZ249ImNlbnRlciIgc3R5bGU9Im1hcmdpbjogYXV0bzsiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRib2R5Pjx0cj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGQgc3R5bGU9ImJhY2tncm91bmQ6ICM0Mjg1ZjQ7IHRleHQtYWxpZ246IGNlbnRlcjsgLW1vei1ib3gtc2hhZG93OiAwcHggMHB4IDVweCByZ2JhKDAsIDAsIDAsIDAuMzQ5MDE5NjA3ODQzMTM3KTsgLXdlYmtpdC1ib3gtc2hhZG93OiAwcHggMHB4IDVweCByZ2JhKDAsIDAsIDAsIDAuMzQ5MDE5NjA3ODQzMTM3KTsgYm94LXNoYWRvdzogMHB4IDBweCA1cHggcmdiYSgwLCAwLCAwLCAwLjM0OTAxOTYwNzg0MzEzNyk7IiBjbGFzcz0iYnV0dG9uLXRkIj4gPGEgaWQ9ImJ1dHRvbi11cmwiIGhyZWY9Imh0dHBzOi8vcWEuY21pY3BhYXMuY29tL2NtaWNsYXVuY2gvY21pY2xhdW5jaF9SMTIuaHRtbCIgdGFyZ2V0PSJfYmxhbmsiIHN0eWxlPSJiYWNrZ3JvdW5kOiAjNDI4NWY0OyBib3JkZXI6IDE1cHggc29saWQgIzQyODVmNDsgZm9udC1mYW1pbHk6ICdSb2JvdG8gTWVkaXVtJywgJ1JvYm90byBSZWd1bGFyJywgJ1JvYm90bycsIFNhbnMtU2VyaWY7IGZvbnQtd2VpZ2h0OiA1MDA7IGZvbnQtc3R5bGU6IG5vcm1hbDsgZm9udC1zaXplOiAxOHB4OyBsaW5lLWhlaWdodDogMS4xOyB0ZXh0LWFsaWduOiBjZW50ZXI7IHRleHQtZGVjb3JhdGlvbjogbm9uZTsgZGlzcGxheTogYmxvY2s7IiBjbGFzcz0iYnV0dG9uLWEiPiA8c3BhbiBzdHlsZT0iY29sb3I6I2ZmZmZmZjsiPiZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwO0xldCdzCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgR2V0IFN0YXJ0ZWQhJm5ic3A7Jm5ic3A7Jm5ic3A7Jm5ic3A7PC9zcGFuPiA8L2E+IDwvdGQ+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3RyPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3Rib2R5PjwvdGFibGU+IDxicj4gWW91IG1heSBhbHNvIGNvcHkvcGFzdGUgdGhpcyBsaW5rIGludG8geW91ciBicm93c2VyOjxicj4gPGEgaWQ9ImJ1dHRvbi11cmwtdGV4dCIgaHJlZj0iaHR0cHM6Ly9xYS5jbWljcGFhcy5jb20vY21pY2xhdW5jaC9jbWljbGF1bmNoX1IxMi5odG1sIiB0YXJnZXQ9Il9ibGFuayI+aHR0cHM6Ly9xYS5jbWljcGFhcy5jb20vY21pY2xhdW5jaC9jbWljbGF1bmNoX1IxMi5odG1sPC9hPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvdGQ+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3RyPgogICAgICAgICAgICAgICAgICAgICAgICA8L3Rib2R5PjwvdGFibGU+CiAgICAgICAgICAgICAgICAgICAgPC90ZD4KICAgICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgICAgICA8dHI+CiAgICAgICAgICAgICAgICAgICAgPHRkIGJnY29sb3I9IiNmY2ZjZmMiPgogICAgICAgICAgICAgICAgICAgICAgICA8dGFibGUgcm9sZT0icHJlc2VudGF0aW9uIiBjZWxsc3BhY2luZz0iMCIgY2VsbHBhZGRpbmc9IjAiIGJvcmRlcj0iMCIgd2lkdGg9IjEwMCUiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRib2R5Pjx0cj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGQgc3R5bGU9ImZvbnQtd2VpZ2h0OiA1MDA7IGZvbnQtc2l6ZTogMTNweDsgY29sb3I6ICMzMzMzMzM7IHRleHQtYWxpZ246IHJpZ2h0OyBmb250LWZhbWlseTogJ1JvYm90bycsIFNhbnMtU2VyaWY7IHBhZGRpbmc6MjBweCAyMHB4IDIwcHggMjBweDsiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBQb3dlcmVkIGJ5PGltZyBjbGFzcz0iZW1haWwtdGVtcGxhdGUtbG9nbyIgc3JjPSJodHRwczovL3NvbHV0aW9uc3IxMi5jbWljcGFhcy5jb20vY21pY2xhdW5jaC9sYXVuY2gtcGFnZS1yZXNvdXJjZXMvQ01pQy5wbmciIGhlaWdodD0iMTQiIGFsdD0iYWx0X3RleHQiIGJvcmRlcj0iMCIgYWxpZ249ImNlbnRlciIgc3R5bGU9Im1zby1oZWlnaHQtcnVsZTogZXhhY3RseTsgYmFja2dyb3VuZDogI2ZmZmZmZjsgbWFyZ2luLWJvdHRvbTogLTJweDsgbWFyZ2luLWxlZnQ6IDJweDsgdmVydGljYWwtYWxpZ246IGJhc2VsaW5lOyI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC90ZD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvdGJvZHk+PC90YWJsZT4KICAgICAgICAgICAgICAgICAgICA8L3RkPgogICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgPC90Ym9keT48L3RhYmxlPgogICAgICAgIDwvZGl2PgogICAgPC9jZW50ZXI+CgoKCgo8L2JvZHk+PC9odG1sPg==",\r
+   "SietSubject" : "Welcome to the CMiC Construction Platforms"\r
+}</con:request>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d371ab75-641d-44f0-b7b4-1669d34d9542" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>201</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="9f331b5d-8010-4680-8652-f14dc7c6e515" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Update Email Template" id="eb35743f-a74e-4378-abcb-1dc26f9a3571">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/emailTemplate/{id}" methodName="Method 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Update Email Template" id="4d82fbaf-acd5-49af-92d1-43cbb873594d" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "SietVUuid" : "${Create Email Template#Response#$['SietVUuid']}",\r
+   "SietBody" : "PCFET0NUWVBFIGh0bWw+PGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjxoZWFkPgogICAgPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWwgY2hhcnNldD1VVEYtOCI+CiAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoIj4KICAgIDxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CiAgICA8bWV0YSBuYW1lPSJ4LWFwcGxlLWRpc2FibGUtbWVzc2FnZS1yZWZvcm1hdHRpbmciPgogICAgPHRpdGxlPldlbGNvbWUgdG8gdGhlIENNaUMgQ29uc3RydWN0aW9uIFBsYXRmb3JtPC90aXRsZT4KICAgIDwhLS1baWYgZ3RlIG1zb10+IDxzdHlsZT4gKiB7IGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7IH0gPC9zdHlsZT4gPCFbZW5kaWZdLS0+CiAgICA8IS0tIEFsbCBvdGhlciBjbGllbnRzIGdldCB0aGUgd2ViZm9udCByZWZlcmVuY2U7IHNvbWUgd2lsbCByZW5kZXIgdGhlIGZvbnQgYW5kIG90aGVycyB3aWxsIHNpbGVudGx5IGZhaWwgdG8gdGhlIGZhbGxiYWNrcy4gTW9yZSBvbiB0aGF0IGhlcmU6IGh0dHA6Ly9zdHlsZWNhbXBhaWduLmNvbS9ibG9nLzIwMTUvMDIvd2ViZm9udC1zdXBwb3J0LWluLWVtYWlsLyAtLT4KICAgIDwhLS1baWYgIW1zb10+PCEtLT4KICAgIDxsaW5rIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1Sb2JvdG86MTAwLDMwMCw0MDAsNTAwLDcwMCw5MDAiIHJlbD0ic3R5bGVzaGVldCI+CiAgICA8IS0tPCFbZW5kaWZdLS0+CjwvaGVhZD4KCjxib2R5IHdpZHRoPSIxMDAlIiBiZ2NvbG9yPSIjZjBmMGYwIiBzdHlsZT0ibWFyZ2luOiAwIGF1dG8gIWltcG9ydGFudDsgcGFkZGluZzogMCAhaW1wb3J0YW50OyBoZWlnaHQ6IDEwMCUgIWltcG9ydGFudDsgd2lkdGg6IDEwMCUgIWltcG9ydGFudDsgZm9udC1mYW1pbHk6IFNhbnMtU2VyaWY7Ij4KICAgIDxzdHlsZT4KICAgICAgICBodG1sLAogICAgICAgIGJvZHkgewogICAgICAgICAgICBtYXJnaW46IDAgYXV0byAhaW1wb3J0YW50OwogICAgICAgICAgICBwYWRkaW5nOiAwICFpbXBvcnRhbnQ7CiAgICAgICAgICAgIGhlaWdodDogMTAwJSAhaW1wb3J0YW50OwogICAgICAgICAgICB3aWR0aDogMTAwJSAhaW1wb3J0YW50OwogICAgICAgIH0KCiAgICAgICAgKiB7CiAgICAgICAgICAgIC1tcy10ZXh0LXNpemUtYWRqdXN0OiAxMDAlOwogICAgICAgICAgICAtd2Via2l0LXRleHQtc2l6ZS1hZGp1c3Q6IDEwMCU7CiAgICAgICAgfQoKICAgICAgICBkaXZbc3R5bGUqPSJtYXJnaW46IDE2cHggMCJdIHsKICAgICAgICAgICAgbWFyZ2luOiAwICFpbXBvcnRhbnQ7CiAgICAgICAgfQoKICAgICAgICB0YWJsZSwKICAgICAgICB0ZCB7CiAgICAgICAgICAgIG1zby10YWJsZS1sc3BhY2U6IDBwdCAhaW1wb3J0YW50OwogICAgICAgICAgICBtc28tdGFibGUtcnNwYWNlOiAwcHQgIWltcG9ydGFudDsKICAgICAgICB9CgogICAgICAgIHRhYmxlIHsKICAgICAgICAgICAgYm9yZGVyLXNwYWNpbmc6IDAgIWltcG9ydGFudDsKICAgICAgICAgICAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZSAhaW1wb3J0YW50OwogICAgICAgICAgICB0YWJsZS1sYXlvdXQ6IGZpeGVkICFpbXBvcnRhbnQ7CiAgICAgICAgICAgIG1hcmdpbjogMCBhdXRvICFpbXBvcnRhbnQ7CiAgICAgICAgfQoKICAgICAgICB0YWJsZSB0YWJsZSB0YWJsZSB7CiAgICAgICAgICAgIHRhYmxlLWxheW91dDogYXV0bzsKICAgICAgICB9CgogICAgICAgIGltZyB7CiAgICAgICAgICAgIC1tcy1pbnRlcnBvbGF0aW9uLW1vZGU6IGJpY3ViaWM7CiAgICAgICAgfQoKICAgICAgICAubW9iaWxlLWxpbmstLWZvb3RlciBhLAogICAgICAgIGFbeC1hcHBsZS1kYXRhLWRldGVjdG9yc10gewogICAgICAgICAgICBjb2xvcjogaW5oZXJpdCAhaW1wb3J0YW50OwogICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZSAhaW1wb3J0YW50OwogICAgICAgIH0KCiAgICAgICAgLkV4dGVybmFsQ2xhc3MgcCwKICAgICAgICAuRXh0ZXJuYWxDbGFzcyBzcGFuLAogICAgICAgIC5FeHRlcm5hbENsYXNzIGZvbnQsCiAgICAgICAgLkV4dGVybmFsQ2xhc3MgdGQgewogICAgICAgICAgICBsaW5lLWhlaWdodDogMTAwJTsKICAgICAgICB9CgogICAgICAgIC5FeHRlcm5hbENsYXNzIHsKICAgICAgICAgICAgd2lkdGg6IDEwMCU7CiAgICAgICAgfQoKICAgICAgICAuYnV0dG9uLXRkLAogICAgICAgIC5idXR0b24tYSB7CiAgICAgICAgICAgIHRyYW5zaXRpb246IGFsbCAyMDBtcyBlYXNlLWluOwogICAgICAgIH0KCiAgICAgICAgLmJ1dHRvbi10ZDpob3ZlciwKICAgICAgICAuYnV0dG9uLWE6aG92ZXIgewogICAgICAgICAgICBiYWNrZ3JvdW5kOiAjNjZhMGZmICFpbXBvcnRhbnQ7CiAgICAgICAgICAgIGJvcmRlci1jb2xvcjogIzY2YTBmZiAhaW1wb3J0YW50OwogICAgICAgIH0KCiAgICAgICAgLmljb24gewogICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7CiAgICAgICAgICAgIHdpZHRoOiAxZW07CiAgICAgICAgICAgIGhlaWdodDogMWVtOwogICAgICAgICAgICBzdHJva2Utd2lkdGg6IDA7CiAgICAgICAgICAgIHN0cm9rZTogY3VycmVudENvbG9yOwogICAgICAgICAgICBmaWxsOiBjdXJyZW50Q29sb3I7CiAgICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxkaXYgc3R5bGU9ImhlaWdodDogODBweCI+PC9kaXY+CiAgICA8Y2VudGVyIHN0eWxlPSJ3aWR0aDogMTAwJTsgYmFja2dyb3VuZDogI2YwZjBmMDsiPiA8c3BhbiBzdHlsZT0iZGlzcGxheTpub25lO2ZvbnQtc2l6ZToxcHg7bGluZS1oZWlnaHQ6MXB4O21heC1oZWlnaHQ6MHB4O21heC13aWR0aDowcHg7b3BhY2l0eTowO292ZXJmbG93OmhpZGRlbjttc28taGlkZTphbGw7Zm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7Ij4KICAgICAgICAgICAgV2VsY29tZSB0byB0aGUgQ01pQyBDb25zdHJ1Y3Rpb24gUGxhdGZvcm0gPC9zcGFuPgogICAgICAgIDxkaXYgc3R5bGU9Im1heC13aWR0aDogNjAwcHg7IG1hcmdpbjogYXV0bzsiPgogICAgICAgICAgICA8IS0tW2lmIG1zb10+IDx0YWJsZSByb2xlPSJwcmVzZW50YXRpb24iIGNlbGxzcGFjaW5nPSIwIiBjZWxscGFkZGluZz0iMCIgYm9yZGVyPSIwIiB3aWR0aD0iNjAwIiBhbGlnbj0iY2VudGVyIj4gPHRyPiA8dGQ+IDwhW2VuZGlmXS0tPgogICAgICAgICAgICA8dGFibGUgcm9sZT0icHJlc2VudGF0aW9uIiBjZWxsc3BhY2luZz0iMCIgY2VsbHBhZGRpbmc9IjAiIGJvcmRlcj0iMCIgYWxpZ249ImNlbnRlciIgd2lkdGg9IjEwMCUiIHN0eWxlPSJtYXgtd2lkdGg6IDYwMHB4OyI+CiAgICAgICAgICAgICAgICA8dGJvZHk+PHRyPgogICAgICAgICAgICAgICAgICAgIDx0ZCBiZ2NvbG9yPSIjZjBmMGYwIj4gPGltZyBjbGFzcz0iZW1haWwtdGVtcGxhdGUtbG9nbyIgc3JjPSJodHRwczovL3NvbHV0aW9uc3IxMi5jbWljcGFhcy5jb20vY21pY2xhdW5jaC9sYXVuY2gtcGFnZS1yZXNvdXJjZXMvQ01pQy5wbmciIGhlaWdodD0iNjUiIGFsdD0iYWx0X3RleHQiIGJvcmRlcj0iMCIgYWxpZ249ImNlbnRlciIgc3R5bGU9Im1zby1oZWlnaHQtcnVsZTogZXhhY3RseTsgYmFja2dyb3VuZDogI2YwZjBmMDsgbWFyZ2luLXRvcDogMTBweDsiPiA8L3RkPgogICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICAgIDx0cj4KICAgICAgICAgICAgICAgICAgICA8dGQ+Jm5ic3A7PC90ZD4KICAgICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgIDwvdGJvZHk+PC90YWJsZT4KICAgICAgICAgICAgPHRhYmxlIHJvbGU9InByZXNlbnRhdGlvbiIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBib3JkZXI9IjAiIGFsaWduPSJjZW50ZXIiIHdpZHRoPSIxMDAlIiBzdHlsZT0ibWF4LXdpZHRoOiA1OTZweDsgYm9yZGVyOiAycHggc29saWQgI2M3YzdjNzsgZm9udC1mYW1pbHk6ICdSb2JvdG8gTWVkaXVtJywgJ1JvYm90byBSZWd1bGFyJywgJ1JvYm90bycsIFNhbnMtU2VyaWY7IGZvbnQtd2VpZ2h0OiBub3JtYWw7Ij4KICAgICAgICAgICAgICAgIDx0Ym9keT48dHI+CiAgICAgICAgICAgICAgICAgICAgPHRkIGJnY29sb3I9IiNmY2ZjZmMiPgogICAgICAgICAgICAgICAgICAgICAgICA8dGFibGUgcm9sZT0icHJlc2VudGF0aW9uIiBjZWxsc3BhY2luZz0iMCIgY2VsbHBhZGRpbmc9IjAiIGJvcmRlcj0iMCIgd2lkdGg9IjEwMCUiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRib2R5Pjx0cj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGQgc3R5bGU9ImZvbnQtd2VpZ2h0OiAzMDA7IGZvbnQtc2l6ZTogMjhweDsgY29sb3I6ICM0Mjg1RjQ7IHRleHQtYWxpZ246IGxlZnQ7IGZvbnQtZmFtaWx5OiAnUm9ib3RvIExpZ2h0JywgJ1JvYm90byBSZWd1bGFyJywgJ1JvYm90bycsIFNhbnMtU2VyaWY7IHBhZGRpbmc6MTVweCAyMHB4IDEwcHggMjBweDsiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBIZWxsbywgJHt1c2VyTmFtZX0hCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC90ZD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvdGJvZHk+PC90YWJsZT4KICAgICAgICAgICAgICAgICAgICA8L3RkPgogICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICAgIDx0cj4KICAgICAgICAgICAgICAgICAgICA8dGQgaWQ9ImVtYWlsLXRlbXBsYXRlLWJvZHkiIGJnY29sb3I9IiNmY2ZjZmMiIHN0eWxlPSJmb250LXdlaWdodDogbm9ybWFsOyBmb250LXNpemU6IDE2cHg7IGNvbG9yOiAjMzMzMzMzOyB0ZXh0LWFsaWduOiBsZWZ0OyBmb250LWZhbWlseTogJ1JvYm90bycsIFNhbnMtU2VyaWY7IHBhZGRpbmc6MTVweCAyMHB4IDEwcHggMzBweDsiPjxwPjxmb250IGNvbG9yPSIjMzMzMzMzIj5XZWxjb21lIHRvIHRoZSBDTWlDIENvbnN0cnVjdGlvbiBQbGF0Zm9ybSEgV2UncmUgdGhyaWxsZWQgdG8gaGF2ZSB5b3Ugb24gYm9hcmQuIE91ciBwbGF0Zm9ybSBpcyBkZXNpZ25lZCB0byBzdHJlYW1saW5lIHlvdXIgY29uc3RydWN0aW9uIHByb2plY3QgbWFuYWdlbWVudCBleHBlcmllbmNlLCBwcm92aWRpbmcgeW91IHdpdGggcG93ZXJmdWwgdG9vbHMgYW5kIHJlc291cmNlcyB0byBlbmhhbmNlIGVmZmljaWVuY3kgYW5kIGNvbGxhYm9yYXRpb24uczwvZm9udD48L3A+PHA+PGZvbnQgY29sb3I9IiMzMzMzMzMiPjxicj48L2ZvbnQ+PC9wPjxwPjxmb250IGNvbG9yPSIjMzMzMzMzIj5JZiB5b3UgaGF2ZSBhbnkgcXVlc3Rpb25zIG9yIG5lZWQgYXNzaXN0YW5jZSBnZXR0aW5nIHN0YXJ0ZWQsIHBsZWFzZSBkb24ndCBoZXNpdGF0ZSB0byByZWFjaCBvdXQgdG8gb3VyIHN1cHBvcnQgdGVhbS4gV2UncmUgaGVyZSB0byBlbnN1cmUgeW91IGhhdmUgYSBzbW9vdGggYW5kIHByb2R1Y3RpdmUgZXhwZXJpZW5jZSB3aXRoIENNaUMuPC9mb250PjwvcD48L3RkPgogICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICAgIDx0cj4KICAgICAgICAgICAgICAgICAgICA8dGQgYmdjb2xvcj0iI2ZjZmNmYyI+CiAgICAgICAgICAgICAgICAgICAgICAgIDx0YWJsZSByb2xlPSJwcmVzZW50YXRpb24iIGNlbGxzcGFjaW5nPSIwIiBjZWxscGFkZGluZz0iMCIgYm9yZGVyPSIwIiB3aWR0aD0iMTAwJSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGJvZHk+PHRyPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0ZCBiZ2NvbG9yPSIjZmNmY2ZjIiBoZWlnaHQ9IjEwMCUiIHZhbGlnbj0idG9wIiBhbGlnbj0iY2VudGVyIiB3aWR0aD0iMTAwJSIgc3R5bGU9ImZvbnQtd2VpZ2h0OiA0MDA7IGZvbnQtc2l6ZTogMTJweDsgY29sb3I6ICMzMzMzMzM7IHRleHQtYWxpZ246IGNlbnRlcjsgZm9udC1mYW1pbHk6ICdSb2JvdG8gTGlnaHQnLCAnUm9ib3RvIFJlZ3VsYXInLCAnUm9ib3RvJywgU2Fucy1TZXJpZjsgcGFkZGluZzoxMHB4IDIwcHggMTBweCAzMHB4OyI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxicj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRhYmxlIHJvbGU9InByZXNlbnRhdGlvbiIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBib3JkZXI9IjAiIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJtYXJnaW46IGF1dG87Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0Ym9keT48dHI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRkIHN0eWxlPSJiYWNrZ3JvdW5kOiAjNDI4NWY0OyB0ZXh0LWFsaWduOiBjZW50ZXI7IC1tb3otYm94LXNoYWRvdzogMHB4IDBweCA1cHggcmdiYSgwLCAwLCAwLCAwLjM0OTAxOTYwNzg0MzEzNyk7IC13ZWJraXQtYm94LXNoYWRvdzogMHB4IDBweCA1cHggcmdiYSgwLCAwLCAwLCAwLjM0OTAxOTYwNzg0MzEzNyk7IGJveC1zaGFkb3c6IDBweCAwcHggNXB4IHJnYmEoMCwgMCwgMCwgMC4zNDkwMTk2MDc4NDMxMzcpOyIgY2xhc3M9ImJ1dHRvbi10ZCI+IDxhIGlkPSJidXR0b24tdXJsIiBocmVmPSJodHRwczovL3FhLmNtaWNwYWFzLmNvbS9jbWljbGF1bmNoL2NtaWNsYXVuY2hfUjEyLmh0bWwiIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0iYmFja2dyb3VuZDogIzQyODVmNDsgYm9yZGVyOiAxNXB4IHNvbGlkICM0Mjg1ZjQ7IGZvbnQtZmFtaWx5OiAnUm9ib3RvIE1lZGl1bScsICdSb2JvdG8gUmVndWxhcicsICdSb2JvdG8nLCBTYW5zLVNlcmlmOyBmb250LXdlaWdodDogNTAwOyBmb250LXN0eWxlOiBub3JtYWw7IGZvbnQtc2l6ZTogMThweDsgbGluZS1oZWlnaHQ6IDEuMTsgdGV4dC1hbGlnbjogY2VudGVyOyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyIgY2xhc3M9ImJ1dHRvbi1hIj4gPHNwYW4gc3R5bGU9ImNvbG9yOiNmZmZmZmY7Ij4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDtMZXQncwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEdldCBTdGFydGVkISZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOzwvc3Bhbj4gPC9hPiA8L3RkPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC90Ym9keT48L3RhYmxlPiA8YnI+IFlvdSBtYXkgYWxzbyBjb3B5L3Bhc3RlIHRoaXMgbGluayBpbnRvIHlvdXIgYnJvd3Nlcjo8YnI+IDxhIGlkPSJidXR0b24tdXJsLXRleHQiIGhyZWY9Imh0dHBzOi8vcWEuY21pY3BhYXMuY29tL2NtaWNsYXVuY2gvY21pY2xhdW5jaF9SMTIuaHRtbCIgdGFyZ2V0PSJfYmxhbmsiPmh0dHBzOi8vcWEuY21pY3BhYXMuY29tL2NtaWNsYXVuY2gvY21pY2xhdW5jaF9SMTIuaHRtbDwvYT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3RkPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICAgICAgICAgICAgPC90Ym9keT48L3RhYmxlPgogICAgICAgICAgICAgICAgICAgIDwvdGQ+CiAgICAgICAgICAgICAgICA8L3RyPgogICAgICAgICAgICAgICAgPHRyPgogICAgICAgICAgICAgICAgICAgIDx0ZCBiZ2NvbG9yPSIjZmNmY2ZjIj4KICAgICAgICAgICAgICAgICAgICAgICAgPHRhYmxlIHJvbGU9InByZXNlbnRhdGlvbiIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBib3JkZXI9IjAiIHdpZHRoPSIxMDAlIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0Ym9keT48dHI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRkIHN0eWxlPSJmb250LXdlaWdodDogNTAwOyBmb250LXNpemU6IDEzcHg7IGNvbG9yOiAjMzMzMzMzOyB0ZXh0LWFsaWduOiByaWdodDsgZm9udC1mYW1pbHk6ICdSb2JvdG8nLCBTYW5zLVNlcmlmOyBwYWRkaW5nOjIwcHggMjBweCAyMHB4IDIwcHg7Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUG93ZXJlZCBieTxpbWcgY2xhc3M9ImVtYWlsLXRlbXBsYXRlLWxvZ28iIHNyYz0iaHR0cHM6Ly9zb2x1dGlvbnNyMTIuY21pY3BhYXMuY29tL2NtaWNsYXVuY2gvbGF1bmNoLXBhZ2UtcmVzb3VyY2VzL0NNaUMucG5nIiBoZWlnaHQ9IjE0IiBhbHQ9ImFsdF90ZXh0IiBib3JkZXI9IjAiIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJtc28taGVpZ2h0LXJ1bGU6IGV4YWN0bHk7IGJhY2tncm91bmQ6ICNmZmZmZmY7IG1hcmdpbi1ib3R0b206IC0ycHg7IG1hcmdpbi1sZWZ0OiAycHg7IHZlcnRpY2FsLWFsaWduOiBiYXNlbGluZTsiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvdGQ+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3RyPgogICAgICAgICAgICAgICAgICAgICAgICA8L3Rib2R5PjwvdGFibGU+CiAgICAgICAgICAgICAgICAgICAgPC90ZD4KICAgICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgIDwvdGJvZHk+PC90YWJsZT4KICAgICAgICA8L2Rpdj4KICAgIDwvY2VudGVyPgoKCgoKPC9ib2R5PjwvaHRtbD4=",\r
+   "SietSubject" : "Welcome to the CMiC"\r
+}</con:request>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="52f65814-98d7-4b02-9256-90f2a36ec83e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="314edeee-27ab-4b3d-9e07-5a43d9af0c7b" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="8752f511-60e4-4fb0-8694-1867aba9f7fb" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['SietVUuid']</con:path>
+              <con:element>SietVUuid</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>a0bafe80-a4c0-104c-90a9-e52802e788</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SietSubject']</con:path>
+              <con:element>SietSubject</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Welcome to the CMiC Construction Platforms</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "SietVUuid" : "a0bafe80-a4c0-104c-90a9-e52802e788",
+  "SietSubject" : "Welcome to the CMiC Construction Platforms",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate/a0bafe80-a4c0-104c-90a9-e52802e788",
+    "name" : "emailTemplate",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate/a0bafe80-a4c0-104c-90a9-e52802e788",
+    "name" : "emailTemplate",
+    "kind" : "item"
+  }, {
+    "rel" : "enclosure",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate/a0bafe80-a4c0-104c-90a9-e52802e788/enclosure/SietBody",
+    "name" : "SietBody",
+    "kind" : "other"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Create Email Template#Response#$['SietVUuid']}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>id</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Replace Email Template" id="0633d5c4-2e34-44e2-adfe-367520c0a68b">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/emailTemplate/{id}" methodName="Method 3" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Replace Email Template" id="0ae54a42-2791-4579-a5fa-d53300284116" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "SietVUuid" : "${Create Email Template#Response#$['SietVUuid']}",\r
+   "SietBody" : "PCFET0NUWVBFIGh0bWw+PGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjxoZWFkPgogICAgPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWwgY2hhcnNldD1VVEYtOCI+CiAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoIj4KICAgIDxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CiAgICA8bWV0YSBuYW1lPSJ4LWFwcGxlLWRpc2FibGUtbWVzc2FnZS1yZWZvcm1hdHRpbmciPgogICAgPHRpdGxlPldlbGNvbWUgdG8gdGhlIENNaUMgQ29uc3RydWN0aW9uIFBsYXRmb3JtPC90aXRsZT4KICAgIDwhLS1baWYgZ3RlIG1zb10+IDxzdHlsZT4gKiB7IGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmICFpbXBvcnRhbnQ7IH0gPC9zdHlsZT4gPCFbZW5kaWZdLS0+CiAgICA8IS0tIEFsbCBvdGhlciBjbGllbnRzIGdldCB0aGUgd2ViZm9udCByZWZlcmVuY2U7IHNvbWUgd2lsbCByZW5kZXIgdGhlIGZvbnQgYW5kIG90aGVycyB3aWxsIHNpbGVudGx5IGZhaWwgdG8gdGhlIGZhbGxiYWNrcy4gTW9yZSBvbiB0aGF0IGhlcmU6IGh0dHA6Ly9zdHlsZWNhbXBhaWduLmNvbS9ibG9nLzIwMTUvMDIvd2ViZm9udC1zdXBwb3J0LWluLWVtYWlsLyAtLT4KICAgIDwhLS1baWYgIW1zb10+PCEtLT4KICAgIDxsaW5rIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1Sb2JvdG86MTAwLDMwMCw0MDAsNTAwLDcwMCw5MDAiIHJlbD0ic3R5bGVzaGVldCI+CiAgICA8IS0tPCFbZW5kaWZdLS0+CjwvaGVhZD4KCjxib2R5IHdpZHRoPSIxMDAlIiBiZ2NvbG9yPSIjZjBmMGYwIiBzdHlsZT0ibWFyZ2luOiAwIGF1dG8gIWltcG9ydGFudDsgcGFkZGluZzogMCAhaW1wb3J0YW50OyBoZWlnaHQ6IDEwMCUgIWltcG9ydGFudDsgd2lkdGg6IDEwMCUgIWltcG9ydGFudDsgZm9udC1mYW1pbHk6IFNhbnMtU2VyaWY7Ij4KICAgIDxzdHlsZT4KICAgICAgICBodG1sLAogICAgICAgIGJvZHkgewogICAgICAgICAgICBtYXJnaW46IDAgYXV0byAhaW1wb3J0YW50OwogICAgICAgICAgICBwYWRkaW5nOiAwICFpbXBvcnRhbnQ7CiAgICAgICAgICAgIGhlaWdodDogMTAwJSAhaW1wb3J0YW50OwogICAgICAgICAgICB3aWR0aDogMTAwJSAhaW1wb3J0YW50OwogICAgICAgIH0KCiAgICAgICAgKiB7CiAgICAgICAgICAgIC1tcy10ZXh0LXNpemUtYWRqdXN0OiAxMDAlOwogICAgICAgICAgICAtd2Via2l0LXRleHQtc2l6ZS1hZGp1c3Q6IDEwMCU7CiAgICAgICAgfQoKICAgICAgICBkaXZbc3R5bGUqPSJtYXJnaW46IDE2cHggMCJdIHsKICAgICAgICAgICAgbWFyZ2luOiAwICFpbXBvcnRhbnQ7CiAgICAgICAgfQoKICAgICAgICB0YWJsZSwKICAgICAgICB0ZCB7CiAgICAgICAgICAgIG1zby10YWJsZS1sc3BhY2U6IDBwdCAhaW1wb3J0YW50OwogICAgICAgICAgICBtc28tdGFibGUtcnNwYWNlOiAwcHQgIWltcG9ydGFudDsKICAgICAgICB9CgogICAgICAgIHRhYmxlIHsKICAgICAgICAgICAgYm9yZGVyLXNwYWNpbmc6IDAgIWltcG9ydGFudDsKICAgICAgICAgICAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZSAhaW1wb3J0YW50OwogICAgICAgICAgICB0YWJsZS1sYXlvdXQ6IGZpeGVkICFpbXBvcnRhbnQ7CiAgICAgICAgICAgIG1hcmdpbjogMCBhdXRvICFpbXBvcnRhbnQ7CiAgICAgICAgfQoKICAgICAgICB0YWJsZSB0YWJsZSB0YWJsZSB7CiAgICAgICAgICAgIHRhYmxlLWxheW91dDogYXV0bzsKICAgICAgICB9CgogICAgICAgIGltZyB7CiAgICAgICAgICAgIC1tcy1pbnRlcnBvbGF0aW9uLW1vZGU6IGJpY3ViaWM7CiAgICAgICAgfQoKICAgICAgICAubW9iaWxlLWxpbmstLWZvb3RlciBhLAogICAgICAgIGFbeC1hcHBsZS1kYXRhLWRldGVjdG9yc10gewogICAgICAgICAgICBjb2xvcjogaW5oZXJpdCAhaW1wb3J0YW50OwogICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZSAhaW1wb3J0YW50OwogICAgICAgIH0KCiAgICAgICAgLkV4dGVybmFsQ2xhc3MgcCwKICAgICAgICAuRXh0ZXJuYWxDbGFzcyBzcGFuLAogICAgICAgIC5FeHRlcm5hbENsYXNzIGZvbnQsCiAgICAgICAgLkV4dGVybmFsQ2xhc3MgdGQgewogICAgICAgICAgICBsaW5lLWhlaWdodDogMTAwJTsKICAgICAgICB9CgogICAgICAgIC5FeHRlcm5hbENsYXNzIHsKICAgICAgICAgICAgd2lkdGg6IDEwMCU7CiAgICAgICAgfQoKICAgICAgICAuYnV0dG9uLXRkLAogICAgICAgIC5idXR0b24tYSB7CiAgICAgICAgICAgIHRyYW5zaXRpb246IGFsbCAyMDBtcyBlYXNlLWluOwogICAgICAgIH0KCiAgICAgICAgLmJ1dHRvbi10ZDpob3ZlciwKICAgICAgICAuYnV0dG9uLWE6aG92ZXIgewogICAgICAgICAgICBiYWNrZ3JvdW5kOiAjNjZhMGZmICFpbXBvcnRhbnQ7CiAgICAgICAgICAgIGJvcmRlci1jb2xvcjogIzY2YTBmZiAhaW1wb3J0YW50OwogICAgICAgIH0KCiAgICAgICAgLmljb24gewogICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7CiAgICAgICAgICAgIHdpZHRoOiAxZW07CiAgICAgICAgICAgIGhlaWdodDogMWVtOwogICAgICAgICAgICBzdHJva2Utd2lkdGg6IDA7CiAgICAgICAgICAgIHN0cm9rZTogY3VycmVudENvbG9yOwogICAgICAgICAgICBmaWxsOiBjdXJyZW50Q29sb3I7CiAgICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxkaXYgc3R5bGU9ImhlaWdodDogODBweCI+PC9kaXY+CiAgICA8Y2VudGVyIHN0eWxlPSJ3aWR0aDogMTAwJTsgYmFja2dyb3VuZDogI2YwZjBmMDsiPiA8c3BhbiBzdHlsZT0iZGlzcGxheTpub25lO2ZvbnQtc2l6ZToxcHg7bGluZS1oZWlnaHQ6MXB4O21heC1oZWlnaHQ6MHB4O21heC13aWR0aDowcHg7b3BhY2l0eTowO292ZXJmbG93OmhpZGRlbjttc28taGlkZTphbGw7Zm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7Ij4KICAgICAgICAgICAgV2VsY29tZSB0byB0aGUgQ01pQyBDb25zdHJ1Y3Rpb24gUGxhdGZvcm0gPC9zcGFuPgogICAgICAgIDxkaXYgc3R5bGU9Im1heC13aWR0aDogNjAwcHg7IG1hcmdpbjogYXV0bzsiPgogICAgICAgICAgICA8IS0tW2lmIG1zb10+IDx0YWJsZSByb2xlPSJwcmVzZW50YXRpb24iIGNlbGxzcGFjaW5nPSIwIiBjZWxscGFkZGluZz0iMCIgYm9yZGVyPSIwIiB3aWR0aD0iNjAwIiBhbGlnbj0iY2VudGVyIj4gPHRyPiA8dGQ+IDwhW2VuZGlmXS0tPgogICAgICAgICAgICA8dGFibGUgcm9sZT0icHJlc2VudGF0aW9uIiBjZWxsc3BhY2luZz0iMCIgY2VsbHBhZGRpbmc9IjAiIGJvcmRlcj0iMCIgYWxpZ249ImNlbnRlciIgd2lkdGg9IjEwMCUiIHN0eWxlPSJtYXgtd2lkdGg6IDYwMHB4OyI+CiAgICAgICAgICAgICAgICA8dGJvZHk+PHRyPgogICAgICAgICAgICAgICAgICAgIDx0ZCBiZ2NvbG9yPSIjZjBmMGYwIj4gPGltZyBjbGFzcz0iZW1haWwtdGVtcGxhdGUtbG9nbyIgc3JjPSJodHRwczovL3NvbHV0aW9uc3IxMi5jbWljcGFhcy5jb20vY21pY2xhdW5jaC9sYXVuY2gtcGFnZS1yZXNvdXJjZXMvQ01pQy5wbmciIGhlaWdodD0iNjUiIGFsdD0iYWx0X3RleHQiIGJvcmRlcj0iMCIgYWxpZ249ImNlbnRlciIgc3R5bGU9Im1zby1oZWlnaHQtcnVsZTogZXhhY3RseTsgYmFja2dyb3VuZDogI2YwZjBmMDsgbWFyZ2luLXRvcDogMTBweDsiPiA8L3RkPgogICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICAgIDx0cj4KICAgICAgICAgICAgICAgICAgICA8dGQ+Jm5ic3A7PC90ZD4KICAgICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgIDwvdGJvZHk+PC90YWJsZT4KICAgICAgICAgICAgPHRhYmxlIHJvbGU9InByZXNlbnRhdGlvbiIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBib3JkZXI9IjAiIGFsaWduPSJjZW50ZXIiIHdpZHRoPSIxMDAlIiBzdHlsZT0ibWF4LXdpZHRoOiA1OTZweDsgYm9yZGVyOiAycHggc29saWQgI2M3YzdjNzsgZm9udC1mYW1pbHk6ICdSb2JvdG8gTWVkaXVtJywgJ1JvYm90byBSZWd1bGFyJywgJ1JvYm90bycsIFNhbnMtU2VyaWY7IGZvbnQtd2VpZ2h0OiBub3JtYWw7Ij4KICAgICAgICAgICAgICAgIDx0Ym9keT48dHI+CiAgICAgICAgICAgICAgICAgICAgPHRkIGJnY29sb3I9IiNmY2ZjZmMiPgogICAgICAgICAgICAgICAgICAgICAgICA8dGFibGUgcm9sZT0icHJlc2VudGF0aW9uIiBjZWxsc3BhY2luZz0iMCIgY2VsbHBhZGRpbmc9IjAiIGJvcmRlcj0iMCIgd2lkdGg9IjEwMCUiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRib2R5Pjx0cj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGQgc3R5bGU9ImZvbnQtd2VpZ2h0OiAzMDA7IGZvbnQtc2l6ZTogMjhweDsgY29sb3I6ICM0Mjg1RjQ7IHRleHQtYWxpZ246IGxlZnQ7IGZvbnQtZmFtaWx5OiAnUm9ib3RvIExpZ2h0JywgJ1JvYm90byBSZWd1bGFyJywgJ1JvYm90bycsIFNhbnMtU2VyaWY7IHBhZGRpbmc6MTVweCAyMHB4IDEwcHggMjBweDsiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBIZWxsbywgJHt1c2VyTmFtZX0hCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC90ZD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvdGJvZHk+PC90YWJsZT4KICAgICAgICAgICAgICAgICAgICA8L3RkPgogICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICAgIDx0cj4KICAgICAgICAgICAgICAgICAgICA8dGQgaWQ9ImVtYWlsLXRlbXBsYXRlLWJvZHkiIGJnY29sb3I9IiNmY2ZjZmMiIHN0eWxlPSJmb250LXdlaWdodDogbm9ybWFsOyBmb250LXNpemU6IDE2cHg7IGNvbG9yOiAjMzMzMzMzOyB0ZXh0LWFsaWduOiBsZWZ0OyBmb250LWZhbWlseTogJ1JvYm90bycsIFNhbnMtU2VyaWY7IHBhZGRpbmc6MTVweCAyMHB4IDEwcHggMzBweDsiPjxwPjxmb250IGNvbG9yPSIjMzMzMzMzIj5XZWxjb21lIHRvIHRoZSBDTWlDIENvbnN0cnVjdGlvbiBQbGF0Zm9ybSEgV2UncmUgdGhyaWxsZWQgdG8gaGF2ZSB5b3Ugb24gYm9hcmQuIE91ciBwbGF0Zm9ybSBpcyBkZXNpZ25lZCB0byBzdHJlYW1saW5lIHlvdXIgY29uc3RydWN0aW9uIHByb2plY3QgbWFuYWdlbWVudCBleHBlcmllbmNlLCBwcm92aWRpbmcgeW91IHdpdGggcG93ZXJmdWwgdG9vbHMgYW5kIHJlc291cmNlcyB0byBlbmhhbmNlIGVmZmljaWVuY3kgYW5kIGNvbGxhYm9yYXRpb24uczwvZm9udD48L3A+PHA+PGZvbnQgY29sb3I9IiMzMzMzMzMiPjxicj48L2ZvbnQ+PC9wPjxwPjxmb250IGNvbG9yPSIjMzMzMzMzIj5JZiB5b3UgaGF2ZSBhbnkgcXVlc3Rpb25zIG9yIG5lZWQgYXNzaXN0YW5jZSBnZXR0aW5nIHN0YXJ0ZWQsIHBsZWFzZSBkb24ndCBoZXNpdGF0ZSB0byByZWFjaCBvdXQgdG8gb3VyIHN1cHBvcnQgdGVhbS4gV2UncmUgaGVyZSB0byBlbnN1cmUgeW91IGhhdmUgYSBzbW9vdGggYW5kIHByb2R1Y3RpdmUgZXhwZXJpZW5jZSB3aXRoIENNaUMuPC9mb250PjwvcD48L3RkPgogICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICAgIDx0cj4KICAgICAgICAgICAgICAgICAgICA8dGQgYmdjb2xvcj0iI2ZjZmNmYyI+CiAgICAgICAgICAgICAgICAgICAgICAgIDx0YWJsZSByb2xlPSJwcmVzZW50YXRpb24iIGNlbGxzcGFjaW5nPSIwIiBjZWxscGFkZGluZz0iMCIgYm9yZGVyPSIwIiB3aWR0aD0iMTAwJSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8dGJvZHk+PHRyPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0ZCBiZ2NvbG9yPSIjZmNmY2ZjIiBoZWlnaHQ9IjEwMCUiIHZhbGlnbj0idG9wIiBhbGlnbj0iY2VudGVyIiB3aWR0aD0iMTAwJSIgc3R5bGU9ImZvbnQtd2VpZ2h0OiA0MDA7IGZvbnQtc2l6ZTogMTJweDsgY29sb3I6ICMzMzMzMzM7IHRleHQtYWxpZ246IGNlbnRlcjsgZm9udC1mYW1pbHk6ICdSb2JvdG8gTGlnaHQnLCAnUm9ib3RvIFJlZ3VsYXInLCAnUm9ib3RvJywgU2Fucy1TZXJpZjsgcGFkZGluZzoxMHB4IDIwcHggMTBweCAzMHB4OyI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxicj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRhYmxlIHJvbGU9InByZXNlbnRhdGlvbiIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBib3JkZXI9IjAiIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJtYXJnaW46IGF1dG87Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0Ym9keT48dHI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRkIHN0eWxlPSJiYWNrZ3JvdW5kOiAjNDI4NWY0OyB0ZXh0LWFsaWduOiBjZW50ZXI7IC1tb3otYm94LXNoYWRvdzogMHB4IDBweCA1cHggcmdiYSgwLCAwLCAwLCAwLjM0OTAxOTYwNzg0MzEzNyk7IC13ZWJraXQtYm94LXNoYWRvdzogMHB4IDBweCA1cHggcmdiYSgwLCAwLCAwLCAwLjM0OTAxOTYwNzg0MzEzNyk7IGJveC1zaGFkb3c6IDBweCAwcHggNXB4IHJnYmEoMCwgMCwgMCwgMC4zNDkwMTk2MDc4NDMxMzcpOyIgY2xhc3M9ImJ1dHRvbi10ZCI+IDxhIGlkPSJidXR0b24tdXJsIiBocmVmPSJodHRwczovL3FhLmNtaWNwYWFzLmNvbS9jbWljbGF1bmNoL2NtaWNsYXVuY2hfUjEyLmh0bWwiIHRhcmdldD0iX2JsYW5rIiBzdHlsZT0iYmFja2dyb3VuZDogIzQyODVmNDsgYm9yZGVyOiAxNXB4IHNvbGlkICM0Mjg1ZjQ7IGZvbnQtZmFtaWx5OiAnUm9ib3RvIE1lZGl1bScsICdSb2JvdG8gUmVndWxhcicsICdSb2JvdG8nLCBTYW5zLVNlcmlmOyBmb250LXdlaWdodDogNTAwOyBmb250LXN0eWxlOiBub3JtYWw7IGZvbnQtc2l6ZTogMThweDsgbGluZS1oZWlnaHQ6IDEuMTsgdGV4dC1hbGlnbjogY2VudGVyOyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IGRpc3BsYXk6IGJsb2NrOyIgY2xhc3M9ImJ1dHRvbi1hIj4gPHNwYW4gc3R5bGU9ImNvbG9yOiNmZmZmZmY7Ij4mbmJzcDsmbmJzcDsmbmJzcDsmbmJzcDtMZXQncwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEdldCBTdGFydGVkISZuYnNwOyZuYnNwOyZuYnNwOyZuYnNwOzwvc3Bhbj4gPC9hPiA8L3RkPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC90Ym9keT48L3RhYmxlPiA8YnI+IFlvdSBtYXkgYWxzbyBjb3B5L3Bhc3RlIHRoaXMgbGluayBpbnRvIHlvdXIgYnJvd3Nlcjo8YnI+IDxhIGlkPSJidXR0b24tdXJsLXRleHQiIGhyZWY9Imh0dHBzOi8vcWEuY21pY3BhYXMuY29tL2NtaWNsYXVuY2gvY21pY2xhdW5jaF9SMTIuaHRtbCIgdGFyZ2V0PSJfYmxhbmsiPmh0dHBzOi8vcWEuY21pY3BhYXMuY29tL2NtaWNsYXVuY2gvY21pY2xhdW5jaF9SMTIuaHRtbDwvYT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3RkPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPC90cj4KICAgICAgICAgICAgICAgICAgICAgICAgPC90Ym9keT48L3RhYmxlPgogICAgICAgICAgICAgICAgICAgIDwvdGQ+CiAgICAgICAgICAgICAgICA8L3RyPgogICAgICAgICAgICAgICAgPHRyPgogICAgICAgICAgICAgICAgICAgIDx0ZCBiZ2NvbG9yPSIjZmNmY2ZjIj4KICAgICAgICAgICAgICAgICAgICAgICAgPHRhYmxlIHJvbGU9InByZXNlbnRhdGlvbiIgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBib3JkZXI9IjAiIHdpZHRoPSIxMDAlIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0Ym9keT48dHI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHRkIHN0eWxlPSJmb250LXdlaWdodDogNTAwOyBmb250LXNpemU6IDEzcHg7IGNvbG9yOiAjMzMzMzMzOyB0ZXh0LWFsaWduOiByaWdodDsgZm9udC1mYW1pbHk6ICdSb2JvdG8nLCBTYW5zLVNlcmlmOyBwYWRkaW5nOjIwcHggMjBweCAyMHB4IDIwcHg7Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUG93ZXJlZCBieTxpbWcgY2xhc3M9ImVtYWlsLXRlbXBsYXRlLWxvZ28iIHNyYz0iaHR0cHM6Ly9zb2x1dGlvbnNyMTIuY21pY3BhYXMuY29tL2NtaWNsYXVuY2gvbGF1bmNoLXBhZ2UtcmVzb3VyY2VzL0NNaUMucG5nIiBoZWlnaHQ9IjE0IiBhbHQ9ImFsdF90ZXh0IiBib3JkZXI9IjAiIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJtc28taGVpZ2h0LXJ1bGU6IGV4YWN0bHk7IGJhY2tncm91bmQ6ICNmZmZmZmY7IG1hcmdpbi1ib3R0b206IC0ycHg7IG1hcmdpbi1sZWZ0OiAycHg7IHZlcnRpY2FsLWFsaWduOiBiYXNlbGluZTsiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvdGQ+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3RyPgogICAgICAgICAgICAgICAgICAgICAgICA8L3Rib2R5PjwvdGFibGU+CiAgICAgICAgICAgICAgICAgICAgPC90ZD4KICAgICAgICAgICAgICAgIDwvdHI+CiAgICAgICAgICAgIDwvdGJvZHk+PC90YWJsZT4KICAgICAgICA8L2Rpdj4KICAgIDwvY2VudGVyPgoKCgoKPC9ib2R5PjwvaHRtbD4=",\r
+   "SietSubject" : "Welcome to the CMiC Construction Platforms"\r
+}</con:request>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="0f10af61-acf5-4918-8c0e-965e731993f8" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="d43261e6-551a-4964-92ef-73f6f5a0008a" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="b5cfeef7-ed91-4400-ab25-be2789a6d22a" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['SietVUuid']</con:path>
+              <con:element>SietVUuid</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>a0bafe80-a4c0-104c-90a9-e52802e788</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SietSubject']</con:path>
+              <con:element>SietSubject</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Welcome to the CMiC Construction Platforms</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "SietVUuid" : "a0bafe80-a4c0-104c-90a9-e52802e788",
+  "SietSubject" : "Welcome to the CMiC Construction Platforms",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate/a0bafe80-a4c0-104c-90a9-e52802e788",
+    "name" : "emailTemplate",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate/a0bafe80-a4c0-104c-90a9-e52802e788",
+    "name" : "emailTemplate",
+    "kind" : "item"
+  }, {
+    "rel" : "enclosure",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate/a0bafe80-a4c0-104c-90a9-e52802e788/enclosure/SietBody",
+    "name" : "SietBody",
+    "kind" : "other"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Create Email Template#Response#$['SietVUuid']}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>id</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Email Template by UUID" id="c47731c8-86d8-43a0-9cbe-2ec1c1da3ead">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/emailTemplate/{id}" methodName="Method 4" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Email Template by UUID" id="61614f4e-b4f6-4a42-becc-4cd734299e4b" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob1.cmicpaas.com/cmicqadaily2/</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="97b93b5c-5edc-44a6-85b2-025a154590e6" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="4777469b-a8ea-491f-b46e-e448e8dd9bbd" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="c37f0ac2-69a5-4efe-983d-c68db2c77cc0" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['SietVUuid']</con:path>
+              <con:element>SietVUuid</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>a0bafe80-a4c0-104c-90a9-e52802e788</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SietSubject']</con:path>
+              <con:element>SietSubject</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Welcome to the CMiC Construction Platforms</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "SietVUuid" : "a0bafe80-a4c0-104c-90a9-e52802e788",
+  "SietSubject" : "Welcome to the CMiC Construction Platforms",
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate/a0bafe80-a4c0-104c-90a9-e52802e788",
+    "name" : "emailTemplate",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate/a0bafe80-a4c0-104c-90a9-e52802e788",
+    "name" : "emailTemplate",
+    "kind" : "item"
+  }, {
+    "rel" : "enclosure",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/emailTemplate/a0bafe80-a4c0-104c-90a9-e52802e788/enclosure/SietBody",
+    "name" : "SietBody",
+    "kind" : "other"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Create Email Template#Response#$['SietVUuid']}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>id</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript>import groovy.json.JsonOutput
+import java.net.HttpURLConnection
+import java.net.URL
+
+// --- Access SLA flag from TestSuite ---
+def slaFlag = context.testCase.testSuite.getPropertyValue("SLA_FAILED")
+log.info("TestCase Teardown running. SLA_FAILED = ${slaFlag}")
+ 
+if (slaFlag == "true") {
+    log.info("SLA failed — skipping TestRail result post.")
+    return
+}
+
+// Function to post test result to TestRail
+def postTestResultToTestRail() {
+
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+
+    def projectId = context.expand('${#Project#projectID}')
+    def testRunId = context.expand('${#Project#RunID}')
+
+    def testCaseId = context.expand('${#TestCase#TestCaseID}')
+    def testCaseName = testRunner.testCase.name
+
+    def failedTestSteps = []
+    def result = ""
+    def statusId = 1
+    def comment = ""
+
+    for (r in testRunner.results) {
+        if (r.getStatus().toString() != "PASS") {
+            def stepResult = context.expand('${' + r.testStep.name + '#Response}')
+            failedTestSteps.add(r.testStep.name + (stepResult ? (" - " + stepResult) : ""))
+        }
+    }
+
+    if (!failedTestSteps) {
+        comment = "${testCaseName} has passed successfully"
+    } else {
+        statusId = 5
+        comment = "${testCaseName} has failed on test steps:\n${failedTestSteps.join('\n')}"
+    }
+
+    def postUrl = "${testRailUrl}/add_result_for_case/${testRunId}/${testCaseId}"
+
+    def connection = new URL(postUrl).openConnection() as HttpURLConnection
+    connection.requestMethod = 'POST'
+    connection.doOutput = true
+    connection.setRequestProperty("Content-Type", "application/json")
+    connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+
+    def requestBody = [
+            status_id: statusId,
+            comment: comment
+    ]
+
+    def outputStream = connection.outputStream
+    outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+    outputStream.flush()
+
+    def responseCode = connection.responseCode
+    def responseMessage = connection.responseMessage
+
+    log.info("Response code: ${responseCode}")
+    log.info("Response message: ${responseMessage}")
+}
+
+postTestResultToTestRail()</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value>631117</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

@@ -21,6 +21,7 @@ cmic-uac-rest-api\userPartners.xml
 cmic-uac-rest-api\employeeNumbers.xml
 cmic-uac-rest-api\templateLicenses.xml
 cmic-uac-rest-api\templatePermissions.xml
+cmic-uac-rest-api\emailTemplate.xml
 PreReq\PreRequisite-Select-Project-with-UUID.xml
 UAC_Auth\TC_AUTH01_Login.xml
 UAC_Auth\TC_AUTH02_Logout.xml
@@ -52,3 +53,4 @@ UAC_Templates\TC_TEMP17_Template-Permissions-%28Imaging-Security-Role%29.xml
 UAC_Templates\TC_TEMP18_Template-Permissions-%28Payroll-Security-Role%29.xml
 UAC_Templates\TC_TEMP19_Template-Permissions-%28Consolidation-Access%29.xml
 UAC_Templates\TC_TEMP20_Template-Permissions-%28Compliance-Security%29.xml
+UAC_Templates\TC_TEMP21_Email-Template.xml
