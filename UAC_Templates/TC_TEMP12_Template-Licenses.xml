@@ -1,0 +1,1478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="95a7a3ac-923c-4467-b09e-fcd3bb0b60b8" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_TEMP12_Template Licenses" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="95a7a3ac-923c-4467-b09e-fcd3bb0b60b8fileName">TC_TEMP12_Template-Licenses</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source" id="da42a58a-e6f6-4f4b-8db9-4b95e355f210">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>1</generatedDataCount>
+          <generatorsTotalNumber>2</generatorsTotalNumber>
+          <lastSelectedProperty>1</lastSelectedProperty>
+          <GeneratorType0>STR</GeneratorType0>
+          <PropertyName0>UUID</PropertyName0>
+          <repetitionCountUUID>0</repetitionCountUUID>
+          <repeatValuesUUID>false</repeatValuesUUID>
+          <PasswordDataGeneratorUseSpacesUUID>false</PasswordDataGeneratorUseSpacesUUID>
+          <PasswordDataGeneratorUsePunctuationMarksUUID>false</PasswordDataGeneratorUsePunctuationMarksUUID>
+          <PasswordDataGeneratorUseLettersUUID>false</PasswordDataGeneratorUseLettersUUID>
+          <PasswordDataGeneratorUseDigitsUUID>true</PasswordDataGeneratorUseDigitsUUID>
+          <PasswordDataGeneratorMaxCharacterCountUUID>60</PasswordDataGeneratorMaxCharacterCountUUID>
+          <PasswordDataGeneratorMinCharacterCountUUID>5</PasswordDataGeneratorMinCharacterCountUUID>
+          <GeneratorType1>STR</GeneratorType1>
+          <PropertyName1>Data</PropertyName1>
+          <repetitionCountData>0</repetitionCountData>
+          <repeatValuesData>false</repeatValuesData>
+          <PasswordDataGeneratorUseSpacesData>false</PasswordDataGeneratorUseSpacesData>
+          <PasswordDataGeneratorUsePunctuationMarksData>false</PasswordDataGeneratorUsePunctuationMarksData>
+          <PasswordDataGeneratorUseLettersData>false</PasswordDataGeneratorUseLettersData>
+          <PasswordDataGeneratorUseDigitsData>true</PasswordDataGeneratorUseDigitsData>
+          <PasswordDataGeneratorMaxCharacterCountData>5</PasswordDataGeneratorMaxCharacterCountData>
+          <PasswordDataGeneratorMinCharacterCountData>3</PasswordDataGeneratorMinCharacterCountData>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>UUID</con:property>
+      <con:property>Data</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Login" id="64d95094-a413-4426-aad7-74bab56daa8c">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/jersey/v1/login" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Login" id="b297b346-5cf6-493b-b43d-769779655936" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint xsi:nil="true"/>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/jersey/v1/login</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3419cd42-875a-4254-a8e9-74960054bf3c" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="a15262d2-9578-4867-8bfc-0867a082b8b2" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['sysUser']</con:path>
+              <con:element>sysUser</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>RAMAN2</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['sysContactCode']</con:path>
+              <con:element>sysContactCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>RJA</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['sessionId']</con:path>
+              <con:element>sessionId</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>R2z7gRM9xXVnD2sV2WALEItQ8b-FzJco3U82hK0wz1SSgB5cQxgs!823826461!1769451098941</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['fullName']</con:path>
+              <con:element>fullName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Raman Jain</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['partnName']</con:path>
+              <con:element>partnName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Raman Company</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['partnCode']</con:path>
+              <con:element>partnCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>RJC</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['partnTypeCode']</con:path>
+              <con:element>partnTypeCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>C</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['azureLicensed']</con:path>
+              <con:element>azureLicensed</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Y</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"sysUser":"RAMAN2","sysContactCode":"RJA","sessionId":"R2z7gRM9xXVnD2sV2WALEItQ8b-FzJco3U82hK0wz1SSgB5cQxgs!823826461!1769451098941","fullName":"Raman Jain","partnName":"Raman Company","partnCode":"RJC","partnTypeCode":"C","azureLicensed":"Y"}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="48df59ab-9fb8-436f-9c77-264e6f1193e7">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="adeb508a-495c-47b8-9884-91be0504cb65">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="29115ffe-145f-44e6-a1f7-45b26f33e93e">
+            <con:authProfile>QALATEST (Raman)</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b5ec2841-29b5-46fd-b5ce-4131d9626d74">
+            <con:authProfile>raman</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c6f15ecf-b67c-4a3e-b574-685e816480d9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3ac2367f-7c3a-4624-9907-a6de4d8e254c">
+            <con:authProfile>NOVA CLOUD</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="7f04ef6b-0932-4c01-a1b5-687ac3090b4f">
+            <con:authProfile>ATLAS CLOUD</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="dc8e31ee-1f6a-4251-a524-b3c213e112b3">
+            <con:authProfile>ATLAS CLOUD</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve License Types" id="067fec39-ff42-4066-9932-0eee0c68bd71">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/licenseTypes" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve License Types" id="a416c467-c1dd-4311-8953-d1b51487f1f3" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f78825e2-be64-40c2-b849-a7717d402025" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="41d72a54-7699-407a-99d2-ba2499128d1d" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="0ed1d9a3-4094-4723-bcce-fb1edc411526" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['LtCode']</con:path>
+              <con:element>LtCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>X</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['LtUserType']</con:path>
+              <con:element>LtUserType</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>P</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['LtName']</con:path>
+              <con:element>LtName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Collaboration</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['LtSumOfLicenses']</con:path>
+              <con:element>LtSumOfLicenses</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>999999</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "LtCode" : "X",
+    "LtUserType" : "P",
+    "LtName" : "Collaboration",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/X",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/X",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "E",
+    "LtUserType" : "C",
+    "LtName" : "Enterprise",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/E",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/E",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "P",
+    "LtUserType" : "C",
+    "LtName" : "Field",
+    "LtSumOfLicenses" : 1999998,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/P",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/P",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "Y",
+    "LtUserType" : "C",
+    "LtName" : "Enterprise and Field",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/Y",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/Y",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "H",
+    "LtUserType" : "C",
+    "LtName" : "HRSS (Self-Service)",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/H",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/H",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "C",
+    "LtUserType" : "C",
+    "LtName" : "CRM",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/C",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/C",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "M",
+    "LtUserType" : "C",
+    "LtName" : "Site Management",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/M",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/M",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "U",
+    "LtUserType" : "B",
+    "LtName" : "Unlimited AI Usage",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/U",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/U",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "L",
+    "LtUserType" : "B",
+    "LtName" : "ECM + Analytics",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/L",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/L",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "V",
+    "LtUserType" : "C",
+    "LtName" : "Prequalification",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/V",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/V",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "T",
+    "LtUserType" : "C",
+    "LtName" : "E-Time",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/T",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/T",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  }, {
+    "LtCode" : "A",
+    "LtUserType" : "C",
+    "LtName" : "Scheduling",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/A",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes/A",
+      "name" : "licenseTypes",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 12,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/licenseTypes",
+    "name" : "licenseTypes",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Create Template" id="69aa387a-467b-410f-9d3c-2d9c8a61d876">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Create Template" id="27a126f5-ad58-4df1-9790-cdb5df9122e1" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "SutVUuid" : "${Data Source#UUID}",\r
+   "SutName" : "API${Data Source#Data}",\r
+   "SutPartnerType" : "C",\r
+   "SutPartnerCode" : "${Login#Response#$['partnCode']}",\r
+   "SutPartnerName" : "${Login#Response#$['partnName']}"\r
+}</con:request>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templates</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3cfd319d-dd9b-41e5-a227-5c5f60d5c4aa" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>201</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c47c28c3-26a3-432c-b1fe-9793e5b577c1" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="080f1255-94ae-4fa8-a907-f2c047ce4ca9" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['SutVUuid']</con:path>
+              <con:element>SutVUuid</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#UUID}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SutName']</con:path>
+              <con:element>SutName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>API${Data Source#Data}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SutPartnerType']</con:path>
+              <con:element>SutPartnerType</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>C</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SutPartnerCode']</con:path>
+              <con:element>SutPartnerCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Login#Response#$['partnCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SutPartnerName']</con:path>
+              <con:element>SutPartnerName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Login#Response#$['partnName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SutOraseq']</con:path>
+              <con:element>SutOraseq</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2349560052</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "SutName" : "API931",
+  "SutPartnerType" : "C",
+  "SutPartnerTypeDesc" : null,
+  "SutPartnerCode" : "RJC",
+  "SutPartnerName" : "Raman Company",
+  "SutVUuid" : "55202047442471872368705894267806180164782",
+  "SutOraseq" : 2349560052,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/55202047442471872368705894267806180164782",
+    "name" : "templates",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/55202047442471872368705894267806180164782",
+    "name" : "templates",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Assign Template License" id="674fe8b0-6fe9-4076-b4f6-a21e022bb02d">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templateLicenses" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Assign Template License" id="d0591e49-76b3-4de0-a3b3-aa349c06f623" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "SutlVUuid" : "${Create Template#Response#$['SutVUuid']}",\r
+   "SutlSutOraseq" : "${Create Template#Response#$['SutOraseq']}",\r
+   "LtCode" : "${Retrieve License Types#Response#$['items'][1]['LtCode']}",\r
+   "LtName" : "${Retrieve License Types#Response#$['items'][1]['LtName']}",\r
+   "LtUserType" : "${Retrieve License Types#Response#$['items'][1]['LtUserType']}"\r
+}</con:request>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="9d041dc5-f250-4467-886a-75cce491ab4c" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>201</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="2f0de846-9029-4047-84f9-7c8570bb399f" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="eaf3e385-94d6-449a-85e7-0a65246d7a3c" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['SutlVUuid']</con:path>
+              <con:element>SutlVUuid</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Create Template#Response#$['SutVUuid']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['LtSumOfLicenses']</con:path>
+              <con:element>LtSumOfLicenses</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue/>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>4</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['LtCode']</con:path>
+              <con:element>LtCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SutlSutOraseq']</con:path>
+              <con:element>SutlSutOraseq</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Create Template#Response#$['SutOraseq']}</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['LtName']</con:path>
+              <con:element>LtName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['LtUserType']</con:path>
+              <con:element>LtUserType</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtUserType']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "SutlSutOraseq" : 2349816922,
+  "LtCode" : "E",
+  "LtName" : "E",
+  "LtUserType" : "C",
+  "SutlVUuid" : "1389138429381314812459418455439781576213274125707854589581",
+  "LtSumOfLicenses" : null,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
+    "name" : "templateLicenses",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
+    "name" : "templateLicenses",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Template License" id="c84aa2ef-0cea-40e5-a150-e7416c7324ff">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templateLicenses" methodName="Method 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Template License" id="5064d9a6-efd2-4c6d-bbcb-28dea680701b" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="874655f2-604f-4cc0-8e0d-d71dced91d8c" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="d274c161-ec4a-48aa-bdc7-42238586c32a" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="d972a9d0-c063-4787-9f1b-70c2c4642b0e" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['SutlSutOraseq']</con:path>
+              <con:element>SutlSutOraseq</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2224587120</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['LtCode']</con:path>
+              <con:element>LtCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>E</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['LtName']</con:path>
+              <con:element>LtName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Enterprise</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['LtUserType']</con:path>
+              <con:element>LtUserType</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>C</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SutlVUuid']</con:path>
+              <con:element>SutlVUuid</con:element>
+              <con:operatorId>13</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>309ae580-9e1a-1327-a548-d1327a3b14d2</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['LtSumOfLicenses']</con:path>
+              <con:element>LtSumOfLicenses</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>999999</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "SutlSutOraseq" : 2224587120,
+    "LtCode" : "E",
+    "LtName" : "Enterprise",
+    "LtUserType" : "C",
+    "SutlVUuid" : "309ae580-9e1a-1327-a548-d1327a3b14d2",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/309ae580-9e1a-1327-a548-d1327a3b14d2",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/309ae580-9e1a-1327-a548-d1327a3b14d2",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2349556801,
+    "LtCode" : "E",
+    "LtName" : "Enterprise",
+    "LtUserType" : "C",
+    "SutlVUuid" : "f6600330-fc86-11f0-8a13-c53bb83c0307",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f6600330-fc86-11f0-8a13-c53bb83c0307",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f6600330-fc86-11f0-8a13-c53bb83c0307",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2349816922,
+    "LtCode" : "H",
+    "LtName" : "HRSS (Self-Service)",
+    "LtUserType" : "C",
+    "SutlVUuid" : "5d1208e0-fd1c-11f0-a036-5988a68036ea",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/5d1208e0-fd1c-11f0-a036-5988a68036ea",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/5d1208e0-fd1c-11f0-a036-5988a68036ea",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323162,
+    "LtCode" : "P",
+    "LtName" : "Field",
+    "LtUserType" : "C",
+    "SutlVUuid" : "a521d390-ca4f-11f0-9f84-fb1f8a4f9879",
+    "LtSumOfLicenses" : 1999998,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/a521d390-ca4f-11f0-9f84-fb1f8a4f9879",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/a521d390-ca4f-11f0-9f84-fb1f8a4f9879",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323162,
+    "LtCode" : "E",
+    "LtName" : "Enterprise",
+    "LtUserType" : "C",
+    "SutlVUuid" : "f42e7800-8b6d-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f42e7800-8b6d-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f42e7800-8b6d-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323162,
+    "LtCode" : "C",
+    "LtName" : "CRM",
+    "LtUserType" : "C",
+    "SutlVUuid" : "0d84f380-8b71-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/0d84f380-8b71-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/0d84f380-8b71-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2349816922,
+    "LtCode" : "P",
+    "LtName" : "Field",
+    "LtUserType" : "C",
+    "SutlVUuid" : "5cc91900-fd1c-11f0-a036-5988a68036ea",
+    "LtSumOfLicenses" : 1999998,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/5cc91900-fd1c-11f0-a036-5988a68036ea",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/5cc91900-fd1c-11f0-a036-5988a68036ea",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323175,
+    "LtCode" : "E",
+    "LtName" : "Enterprise",
+    "LtUserType" : "C",
+    "SutlVUuid" : "5668b380-8cfb-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/5668b380-8cfb-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/5668b380-8cfb-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323175,
+    "LtCode" : "Y",
+    "LtName" : "Enterprise and Field",
+    "LtUserType" : "C",
+    "SutlVUuid" : "050cf400-8cfc-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/050cf400-8cfc-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/050cf400-8cfc-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323175,
+    "LtCode" : "H",
+    "LtName" : "HRSS (Self-Service)",
+    "LtUserType" : "C",
+    "SutlVUuid" : "4520a680-8cfd-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/4520a680-8cfd-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/4520a680-8cfd-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323175,
+    "LtCode" : "C",
+    "LtName" : "CRM",
+    "LtUserType" : "C",
+    "SutlVUuid" : "86658600-8cfe-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/86658600-8cfe-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/86658600-8cfe-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323175,
+    "LtCode" : "A",
+    "LtName" : "Scheduling",
+    "LtUserType" : "C",
+    "SutlVUuid" : "2a9bfc80-8d00-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/2a9bfc80-8d00-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/2a9bfc80-8d00-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323175,
+    "LtCode" : "T",
+    "LtName" : "E-Time",
+    "LtUserType" : "C",
+    "SutlVUuid" : "499b8e00-8d02-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/499b8e00-8d02-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/499b8e00-8d02-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323175,
+    "LtCode" : "V",
+    "LtName" : "Prequalification",
+    "LtUserType" : "C",
+    "SutlVUuid" : "4d301480-8d04-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/4d301480-8d04-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/4d301480-8d04-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323188,
+    "LtCode" : "E",
+    "LtName" : "Enterprise",
+    "LtUserType" : "C",
+    "SutlVUuid" : "9023e200-8e01-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/9023e200-8e01-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/9023e200-8e01-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323188,
+    "LtCode" : "H",
+    "LtName" : "HRSS (Self-Service)",
+    "LtUserType" : "C",
+    "SutlVUuid" : "818afa00-8e04-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/818afa00-8e04-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/818afa00-8e04-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323188,
+    "LtCode" : "C",
+    "LtName" : "CRM",
+    "LtUserType" : "C",
+    "SutlVUuid" : "f3644300-8e06-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f3644300-8e06-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f3644300-8e06-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323188,
+    "LtCode" : "A",
+    "LtName" : "Scheduling",
+    "LtUserType" : "C",
+    "SutlVUuid" : "6a014080-8e07-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/6a014080-8e07-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/6a014080-8e07-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323188,
+    "LtCode" : "T",
+    "LtName" : "E-Time",
+    "LtUserType" : "C",
+    "SutlVUuid" : "19d6ae00-8e08-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/19d6ae00-8e08-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/19d6ae00-8e08-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323188,
+    "LtCode" : "V",
+    "LtName" : "Prequalification",
+    "LtUserType" : "C",
+    "SutlVUuid" : "d29ced00-8e08-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/d29ced00-8e08-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/d29ced00-8e08-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224587120,
+    "LtCode" : "Y",
+    "LtName" : "Enterprise and Field",
+    "LtUserType" : "C",
+    "SutlVUuid" : "e30fc080-54a0-1090-b8a2-cd39a62270b3",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/e30fc080-54a0-1090-b8a2-cd39a62270b3",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/e30fc080-54a0-1090-b8a2-cd39a62270b3",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323188,
+    "LtCode" : "Y",
+    "LtName" : "Enterprise and Field",
+    "LtUserType" : "C",
+    "SutlVUuid" : "ffe69c80-8e02-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/ffe69c80-8e02-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/ffe69c80-8e02-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2224323162,
+    "LtCode" : "Y",
+    "LtName" : "Enterprise and Field",
+    "LtUserType" : "C",
+    "SutlVUuid" : "a0bd2980-8b6f-108e-9d15-3fb08903111f",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/a0bd2980-8b6f-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/a0bd2980-8b6f-108e-9d15-3fb08903111f",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2349556801,
+    "LtCode" : "A",
+    "LtName" : "Scheduling",
+    "LtUserType" : "C",
+    "SutlVUuid" : "f62914b0-fc86-11f0-8a13-c53bb83c0307",
+    "LtSumOfLicenses" : 999999,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f62914b0-fc86-11f0-8a13-c53bb83c0307",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f62914b0-fc86-11f0-8a13-c53bb83c0307",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutlSutOraseq" : 2349556801,
+    "LtCode" : "C",
+    "LtName" : "CRM",
+    "LtUserType" : "C",
+    "SutlVUuid" : "f646fcf0-fc86-11f0-8a13-c53bb83c0307",
+    "LtSumOfLicenses" : 0,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f646fcf0-fc86-11f0-8a13-c53bb83c0307",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/f646fcf0-fc86-11f0-8a13-c53bb83c0307",
+      "name" : "templateLicenses",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses",
+    "name" : "templateLicenses",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Template License by UUID" id="cefeca98-fd78-4ca6-802b-9acc4da7fb8a">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templateLicenses/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Template License by UUID" id="c8dfcd51-0d35-46c7-a8b0-54a15858f29d" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="4e5134ad-fade-4dc4-9b8f-40b3f213177d" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="7f247c47-c58a-4c39-9fc9-db3b646e65b6" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="ad73a776-76ca-45d7-93c5-3435df0f6b26" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['LtCode']</con:path>
+              <con:element>LtCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtCode']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SutlSutOraseq']</con:path>
+              <con:element>SutlSutOraseq</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Create Template#Response#$['SutOraseq']}</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['LtName']</con:path>
+              <con:element>LtName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['LtUserType']</con:path>
+              <con:element>LtUserType</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve License Types#Response#$['items'][1]['LtUserType']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['SutlVUuid']</con:path>
+              <con:element>SutlVUuid</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Create Template#Response#$['SutVUuid']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['LtSumOfLicenses']</con:path>
+              <con:element>LtSumOfLicenses</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>999999</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "SutlSutOraseq" : 2349816922,
+  "LtCode" : "E",
+  "LtName" : "Enterprise",
+  "LtUserType" : "C",
+  "SutlVUuid" : "1389138429381314812459418455439781576213274125707854589581",
+  "LtSumOfLicenses" : 999999,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
+    "name" : "templateLicenses",
+    "kind" : "item"
+  }, {
+    "rel" : "canonical",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581",
+    "name" : "templateLicenses",
+    "kind" : "item"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Assign Template License#Response#$['SutlVUuid']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Delete Template License" id="b933d632-c080-4589-b5e7-a1fc42044a7e">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templateLicenses/{id}" methodName="Method 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Delete Template License" id="2509baa2-e788-4f64-b0b3-0794c043a6fa" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templateLicenses/1389138429381314812459418455439781576213274125707854589581</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="fc4ccfa9-bfe5-49b8-868e-5275d331fee1" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>204</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ff6e7e81-7695-461a-854c-68d7446961b1" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Assign Template License#Response#$['SutlVUuid']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Delete Template" id="ad007686-3ef6-4b04-8102-bee98e38af85">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Delete Template" id="daf5c457-b0cc-4551-bcc2-90c052897b1c" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/55202047442471872368705894267806180164782</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="1e1cce80-0f6e-41be-b1be-1fa9cf04aa8e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>204</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="a2835b56-da40-4afa-80dc-08be51f11881" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Create Template#Response#$['SutVUuid']}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>id</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript>import groovy.json.JsonOutput
+import java.net.HttpURLConnection
+import java.net.URL
+
+// --- Access SLA flag from TestSuite ---
+def slaFlag = context.testCase.testSuite.getPropertyValue("SLA_FAILED")
+log.info("TestCase Teardown running. SLA_FAILED = ${slaFlag}")
+ 
+if (slaFlag == "true") {
+    log.info("SLA failed — skipping TestRail result post.")
+    return
+}
+
+// Function to post test result to TestRail
+def postTestResultToTestRail() {
+
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+
+    def projectId = context.expand('${#Project#projectID}')
+    def testRunId = context.expand('${#Project#RunID}')
+
+    def testCaseId = context.expand('${#TestCase#TestCaseID}')
+    def testCaseName = testRunner.testCase.name
+
+    def failedTestSteps = []
+    def result = ""
+    def statusId = 1
+    def comment = ""
+
+    for (r in testRunner.results) {
+        if (r.getStatus().toString() != "PASS") {
+            def stepResult = context.expand('${' + r.testStep.name + '#Response}')
+            failedTestSteps.add(r.testStep.name + (stepResult ? (" - " + stepResult) : ""))
+        }
+    }
+
+    if (!failedTestSteps) {
+        comment = "${testCaseName} has passed successfully"
+    } else {
+        statusId = 5
+        comment = "${testCaseName} has failed on test steps:\n${failedTestSteps.join('\n')}"
+    }
+
+    def postUrl = "${testRailUrl}/add_result_for_case/${testRunId}/${testCaseId}"
+
+    def connection = new URL(postUrl).openConnection() as HttpURLConnection
+    connection.requestMethod = 'POST'
+    connection.doOutput = true
+    connection.setRequestProperty("Content-Type", "application/json")
+    connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+
+    def requestBody = [
+            status_id: statusId,
+            comment: comment
+    ]
+
+    def outputStream = connection.outputStream
+    outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+    outputStream.flush()
+
+    def responseCode = connection.responseCode
+    def responseMessage = connection.responseMessage
+
+    log.info("Response code: ${responseCode}")
+    log.info("Response message: ${responseMessage}")
+}
+
+postTestResultToTestRail()</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value>631095</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

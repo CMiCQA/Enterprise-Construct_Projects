@@ -9,3 +9,5 @@ TC_TEMP08_Retrieve-Security-Group.xml
 TC_TEMP09_Retrieve-Job-Security-Group.xml
 TC_TEMP10_Retrieve-Payroll-Security-Group.xml
 TC_TEMP11_Templates.xml
+TC_TEMP12_Template-Licenses.xml
+TC_TEMP13_Template-Permissions.xml
