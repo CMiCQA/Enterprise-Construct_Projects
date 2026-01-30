@@ -4,3 +4,4 @@ TC_AUTH03_Ida-Servers.xml
 TC_AUTH04_License-Types.xml
 TC_AUTH05_License-Version.xml
 TC_AUTH06_Privileges.xml
+TC_AUTH07_Onboarding-Error.xml

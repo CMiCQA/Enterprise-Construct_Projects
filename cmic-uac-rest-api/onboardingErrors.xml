@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="onboardingErrors" path="cmic-uac-rest-api/rest/1/onboardingErrors" id="54dab844-c419-45a8-b087-f22922665bb0">
+  <con:settings>
+    <con:setting id="54dab844-c419-45a8-b087-f22922665bb0fileName">onboardingErrors</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="22ad7a38-c048-467c-8558-ba46409816a6" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="85e3c74d-9a79-4b78-87e6-7785e4828156" mediaType="application/json">
+      <con:settings/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

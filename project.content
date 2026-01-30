@@ -28,6 +28,7 @@ cmic-uac-rest-api\job_group_name_lov.xml
 cmic-uac-rest-api\scheduler_history.xml
 cmic-uac-rest-api\scheduler_name_lov.xml
 cmic-uac-rest-api\processUser.xml
+cmic-uac-rest-api\onboardingErrors.xml
 PreReq\PreRequisite-Select-Project-with-UUID.xml
 UAC_Auth\TC_AUTH01_Login.xml
 UAC_Auth\TC_AUTH02_Logout.xml
@@ -35,6 +36,7 @@ UAC_Auth\TC_AUTH03_Ida-Servers.xml
 UAC_Auth\TC_AUTH04_License-Types.xml
 UAC_Auth\TC_AUTH05_License-Version.xml
 UAC_Auth\TC_AUTH06_Privileges.xml
+UAC_Auth\TC_AUTH07_Onboarding-Error.xml
 UAC_Azure-Settings\TC_AS01_Azure-Settings.xml
 UAC_Users\TC_USR01_Retrieve-Users.xml
 UAC_Users\TC_USR02_User-Partners.xml
