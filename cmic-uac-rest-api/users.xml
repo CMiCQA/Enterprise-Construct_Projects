@@ -44,6 +44,12 @@
         <con:style>QUERY</con:style>
         <con:default/>
       </con:parameter>
+      <con:parameter required="false">
+        <con:name>finder</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
     </con:parameters>
     <con:request name="Request 1" id="924dbd35-9c54-4de8-a6f7-f57c02aee9de" mediaType="application/json">
       <con:settings/>
@@ -57,6 +63,7 @@
       <con:parameterOrder>
         <con:entry>limit</con:entry>
         <con:entry>offset</con:entry>
+        <con:entry>finder</con:entry>
       </con:parameterOrder>
     </con:request>
   </con:method>

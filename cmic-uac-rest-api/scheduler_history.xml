@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="scheduler_history" path="cmic-uac-rest-api/rest/2/scheduler_history" id="3a5f83f3-eedb-4c6f-a56f-27469b650b41">
+  <con:settings>
+    <con:setting id="3a5f83f3-eedb-4c6f-a56f-27469b650b41fileName">scheduler_history</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:resource name="{id}" path="{id}" id="fe1a44d0-df3e-4be1-b039-e49384b59c97">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>id</con:name>
+        <con:value>id</con:value>
+        <con:style>TEMPLATE</con:style>
+        <con:default>id</con:default>
+      </con:parameter>
+    </con:parameters>
+    <con:method name="Method 1" id="b031583f-3a36-4c59-ae90-443291521a1d" method="GET">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="1733c3d9-5881-4251-8ecf-5ae6e5f4f68f" mediaType="application/json">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:method name="Method 1" id="f17ddb77-ac3c-4d96-84f4-279031f993a6" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="0d5cf20b-5a93-4358-83f8-946ba7bebabd" mediaType="application/json">
+      <con:settings/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

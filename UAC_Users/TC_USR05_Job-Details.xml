@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="8b6f9a7c-210e-4064-aca6-ec4c9d8682b8" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_USR05_Job Details" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="8b6f9a7c-210e-4064-aca6-ec4c9d8682b8fileName">TC_USR05_Job-Details</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Job Details" id="625b1508-cc0b-4a86-aacf-797b1fa54d75">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/2/job_details" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Job Details" id="5eecd67e-22a6-4fb9-81f0-191245092315" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="8c0d5b22-af1f-4c1b-8016-92a188d3a32a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="f5cd75f1-a2f9-4ce1-89d1-12faf1421a61" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="388464f8-c89d-46ae-ba3a-92304873cf2d" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['JdSchedName']</con:path>
+              <con:element>JdSchedName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>CMICPGScheduler</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JdJobGroup']</con:path>
+              <con:element>JdJobGroup</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>CMIC_PG_JOB_GRP</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['name']</con:path>
+              <con:element>name</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>CMIC_PG_JOB</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['startDate']</con:path>
+              <con:element>startDate</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2026-01-30T12:11:45-05:00</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['state']</con:path>
+              <con:element>state</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>WAITING</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['nextFireDate']</con:path>
+              <con:element>nextFireDate</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2026-01-30T13:21:45-05:00</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JdCreateDate']</con:path>
+              <con:element>JdCreateDate</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2026-01-30T12:11:45-05:00</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JdCreateUser']</con:path>
+              <con:element>JdCreateUser</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>DA</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JdUpdateDate']</con:path>
+              <con:element>JdUpdateDate</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2026-01-30T12:11:45-05:00</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['JdUpdateUser']</con:path>
+              <con:element>JdUpdateUser</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>DA</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "JdSchedName" : "CMICPGScheduler",
+    "JdJobGroup" : "CMIC_PG_JOB_GRP",
+    "name" : "CMIC_PG_JOB",
+    "startDate" : "2026-01-30T12:11:45-05:00",
+    "state" : "WAITING",
+    "description" : null,
+    "nextFireDate" : "2026-01-30T13:21:45-05:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2026-01-30T12:11:45-05:00",
+    "JdCreateUser" : "DA",
+    "JdUpdateDate" : "2026-01-30T12:11:45-05:00",
+    "JdUpdateUser" : "DA",
+    "@context" : {
+      "key" : "AAGtXHAACAACdjNAAD",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAACdjNAAD",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAACdjNAAD",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "IndexingScheduler",
+    "JdJobGroup" : "CMIC_INDEXER",
+    "name" : "DOCS_JOB_DA",
+    "startDate" : "2026-01-30T12:11:38-05:00",
+    "state" : "WAITING",
+    "description" : "Docs Indexing for tenant DA, Action : APPEND",
+    "nextFireDate" : "2026-01-30T13:26:38-05:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2026-01-30T12:11:38-05:00",
+    "JdCreateUser" : "DA",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAACAACdjNAAC",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAACdjNAAC",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAACdjNAAC",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "IndexingScheduler",
+    "JdJobGroup" : "CMIC_INDEXER",
+    "name" : "LOGS_JOB_DA",
+    "startDate" : "2026-01-30T12:11:38-05:00",
+    "state" : "WAITING",
+    "description" : "Logs Indexing for tenant DA, Action : APPEND",
+    "nextFireDate" : "2026-01-30T13:26:38-05:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2026-01-30T12:11:38-05:00",
+    "JdCreateUser" : "DA",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAACAACdjNAAB",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAACdjNAAB",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAACdjNAAB",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "MsTeamsScheduler",
+    "JdJobGroup" : "MsTeams",
+    "name" : "TEAMS_RECORD_PROCESSING_JOB_1",
+    "startDate" : "2026-01-29T21:32:54-05:00",
+    "state" : "WAITING",
+    "description" : "Teams record processing - CRON job 1",
+    "nextFireDate" : "2026-01-29T21:32:54-05:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2026-01-29T21:32:54-05:00",
+    "JdCreateUser" : "DA",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACtNvAAB",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACtNvAAB",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACtNvAAB",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "BiScheduler",
+    "JdJobGroup" : "BI_QUERIES",
+    "name" : "JC_Transactions_20251014_105927",
+    "startDate" : "2025-10-14T10:59:41-04:00",
+    "state" : "WAITING",
+    "description" : "Analytics Schedule Export",
+    "nextFireDate" : "2025-10-14T10:59:41-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-10-14T10:59:41-04:00",
+    "JdCreateUser" : "RAVI4",
+    "JdUpdateDate" : "2025-10-14T10:59:41-04:00",
+    "JdUpdateUser" : "RAVI4",
+    "@context" : {
+      "key" : "AAGtXHAAGAADIThAAG",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAADIThAAG",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAADIThAAG",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260385850_82569.22641177229800468638644913233411",
+    "startDate" : "2025-03-16T07:02:55-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000004482 rev. 0",
+    "nextFireDate" : "2025-03-16T07:02:55-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-16T07:02:55-04:00",
+    "JdCreateUser" : "RAMAN2",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACwQoAAJ",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACwQoAAJ",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACwQoAAJ",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_15744.1772512127047012665708536535667474",
+    "startDate" : "2025-03-14T17:54:58-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T17:54:58-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T17:54:57-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACtNfAAE",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACtNfAAE",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACtNfAAE",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_70994.3009366028023168933170223981497626",
+    "startDate" : "2025-03-14T17:53:35-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T17:53:35-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T17:53:35-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAACAAC0JpAAB",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAAC0JpAAB",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAAC0JpAAB",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_79633.8467578644230298574481559310482806",
+    "startDate" : "2025-03-14T16:47:44-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T16:47:44-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T16:47:44-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACr+cAAA",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2BcAAA",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2BcAAA",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_98196.9816004450947035984646937195407166",
+    "startDate" : "2025-03-14T16:47:02-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T16:47:02-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T16:47:01-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACr/bAAF",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2FbAAF",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2FbAAF",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_93809.7662846551974824151222000534095181",
+    "startDate" : "2025-03-14T16:46:59-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T16:46:59-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T16:46:59-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACr/bAAE",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2FbAAE",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2FbAAE",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_58675.3405152865673242709916531589844267",
+    "startDate" : "2025-03-14T16:46:18-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T16:46:18-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T16:46:18-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACr/bAAD",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2FbAAD",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2FbAAD",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_53994.6199333093420313369282770626403698",
+    "startDate" : "2025-03-14T16:45:42-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T16:45:42-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T16:45:42-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACr/bAAA",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2FbAAA",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2FbAAA",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_32865.6906057765815684455024222768888628",
+    "startDate" : "2025-03-14T16:45:23-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T16:45:23-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T16:45:22-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAACAAAsQ2AAA",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAAAsQ2AAA",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAAAsQ2AAA",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_96001.0199543653041184681879412416387046",
+    "startDate" : "2025-03-14T16:41:58-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T16:41:58-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T16:41:58-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACr/bAAC",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2FbAAC",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2FbAAC",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_71803.439181200102464234499414682619112",
+    "startDate" : "2025-03-14T16:40:58-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T16:40:58-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T16:40:57-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACwRzAAG",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACwRzAAG",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACwRzAAG",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_93032.6484485079662372898580874111248172",
+    "startDate" : "2025-03-14T16:40:26-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T16:40:26-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T16:40:25-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACwRzAAJ",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACwRzAAJ",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACwRzAAJ",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_52611.344187598579099316508246350573389",
+    "startDate" : "2025-03-14T16:40:01-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T16:40:01-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T16:40:01-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAABEKQAAA",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAABEKQAAA",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAABEKQAAA",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_35543.8273708849493433112534746329640029",
+    "startDate" : "2025-03-14T16:39:49-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T16:39:49-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T16:39:48-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACr/bAAB",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2FbAAB",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACr%2FbAAB",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260373678_21818.4076755803985369021210222871671727",
+    "startDate" : "2025-03-14T16:39:39-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000000675 rev. 0",
+    "nextFireDate" : "2025-03-14T16:39:39-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T16:39:39-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAACwRzAAI",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACwRzAAI",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAACwRzAAI",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260370791_18021.3048022988606571826925317483945957",
+    "startDate" : "2025-03-14T13:57:01-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000004429 rev. 0",
+    "nextFireDate" : "2025-03-14T13:57:01-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T13:57:01-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAACAAC0JZAAD",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAAC0JZAAD",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAAC0JZAAD",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260370791_2647.174294319491967789827484864860724695",
+    "startDate" : "2025-03-14T13:56:54-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000004429 rev. 0",
+    "nextFireDate" : "2025-03-14T13:56:54-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T13:56:53-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAACAAC0JZAAF",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAAC0JZAAF",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAAC0JZAAF",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260370791_625.660133679913614990253971328815503937",
+    "startDate" : "2025-03-14T13:56:11-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000004429 rev. 0",
+    "nextFireDate" : "2025-03-14T13:56:11-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T13:56:11-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAABEKqAAG",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAABEKqAAG",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAABEKqAAG",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260370791_96545.7203341869897001760221834550492706",
+    "startDate" : "2025-03-14T13:55:45-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000004429 rev. 0",
+    "nextFireDate" : "2025-03-14T13:55:45-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T13:55:45-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAACAAC0JZAAE",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAAC0JZAAE",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAAC0JZAAE",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "JdSchedName" : "PSPDF",
+    "JdJobGroup" : "PSPDFJSONANNOTATION",
+    "name" : "PSPDF_ANNOT_GEN_THUMBNAIL_2260370791_88493.3355012649069741229485653448550843",
+    "startDate" : "2025-03-14T13:54:37-04:00",
+    "state" : "ERROR",
+    "description" : "Annotation thumbnail for 00000000000000004429 rev. 0",
+    "nextFireDate" : "2025-03-14T13:54:37-04:00",
+    "firedTriggerDate" : null,
+    "JdCreateDate" : "2025-03-14T13:54:37-04:00",
+    "JdCreateUser" : "SHAMROCK",
+    "JdUpdateDate" : null,
+    "JdUpdateUser" : null,
+    "@context" : {
+      "key" : "AAGtXHAAGAABEKqAAF",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAABEKqAAF",
+        "name" : "job_details",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAAGAABEKqAAF",
+        "name" : "job_details",
+        "kind" : "item"
+      } ]
+    }
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details",
+    "name" : "job_details",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Job Details by UUID" id="fa546db8-30c0-4cfd-98df-5f9a71b53fd5">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/2/job_details/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Job Details by UUID" id="089e83b0-b5f5-4c90-a324-97e6a0267e1f" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAACdjNAAD</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d9859a56-3653-4b5e-9bcf-3ccd789a53f4" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="504bfb64-d25f-48b6-a9bd-6d2a78aa865a" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="27e7819d-54c7-4654-882e-89d1f64c941d" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['JdSchedName']</con:path>
+              <con:element>JdSchedName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Details#Response#$['items'][0]['JdSchedName']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['JdJobGroup']</con:path>
+              <con:element>JdJobGroup</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Details#Response#$['items'][0]['JdJobGroup']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['name']</con:path>
+              <con:element>name</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Details#Response#$['items'][0]['name']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['startDate']</con:path>
+              <con:element>startDate</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Details#Response#$['items'][0]['startDate']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['state']</con:path>
+              <con:element>state</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Details#Response#$['items'][0]['state']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['description']</con:path>
+              <con:element>description</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Details#Response#$['items'][0]['description']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>4</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['nextFireDate']</con:path>
+              <con:element>nextFireDate</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Details#Response#$['items'][0]['nextFireDate']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['firedTriggerDate']</con:path>
+              <con:element>firedTriggerDate</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Details#Response#$['items'][0]['firedTriggerDate']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>4</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['JdCreateDate']</con:path>
+              <con:element>JdCreateDate</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Details#Response#$['items'][0]['JdCreateDate']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['JdCreateUser']</con:path>
+              <con:element>JdCreateUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Details#Response#$['items'][0]['JdCreateUser']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['JdUpdateDate']</con:path>
+              <con:element>JdUpdateDate</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Details#Response#$['items'][0]['JdUpdateDate']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['JdUpdateUser']</con:path>
+              <con:element>JdUpdateUser</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Retrieve Job Details#Response#$['items'][0]['JdUpdateUser']}</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "JdSchedName" : "CMICPGScheduler",
+  "JdJobGroup" : "CMIC_PG_JOB_GRP",
+  "name" : "CMIC_PG_JOB",
+  "startDate" : "2026-01-30T12:11:45-05:00",
+  "state" : "WAITING",
+  "description" : null,
+  "nextFireDate" : "2026-01-30T13:26:45-05:00",
+  "firedTriggerDate" : null,
+  "JdCreateDate" : "2026-01-30T12:11:45-05:00",
+  "JdCreateUser" : "DA",
+  "JdUpdateDate" : "2026-01-30T12:11:45-05:00",
+  "JdUpdateUser" : "DA",
+  "@context" : {
+    "key" : "AAGtXHAACAACdjNAAD",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAACdjNAAD",
+      "name" : "job_details",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_details/AAGtXHAACAACdjNAAD",
+      "name" : "job_details",
+      "kind" : "item"
+    } ]
+  }
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve Job Details#Response#$['items'][0]['@context']['key']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript>import groovy.json.JsonOutput
+import java.net.HttpURLConnection
+import java.net.URL
+
+// --- Access SLA flag from TestSuite ---
+def slaFlag = context.testCase.testSuite.getPropertyValue("SLA_FAILED")
+log.info("TestCase Teardown running. SLA_FAILED = ${slaFlag}")
+ 
+if (slaFlag == "true") {
+    log.info("SLA failed — skipping TestRail result post.")
+    return
+}
+
+// Function to post test result to TestRail
+def postTestResultToTestRail() {
+
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+
+    def projectId = context.expand('${#Project#projectID}')
+    def testRunId = context.expand('${#Project#RunID}')
+
+    def testCaseId = context.expand('${#TestCase#TestCaseID}')
+    def testCaseName = testRunner.testCase.name
+
+    def failedTestSteps = []
+    def result = ""
+    def statusId = 1
+    def comment = ""
+
+    for (r in testRunner.results) {
+        if (r.getStatus().toString() != "PASS") {
+            def stepResult = context.expand('${' + r.testStep.name + '#Response}')
+            failedTestSteps.add(r.testStep.name + (stepResult ? (" - " + stepResult) : ""))
+        }
+    }
+
+    if (!failedTestSteps) {
+        comment = "${testCaseName} has passed successfully"
+    } else {
+        statusId = 5
+        comment = "${testCaseName} has failed on test steps:\n${failedTestSteps.join('\n')}"
+    }
+
+    def postUrl = "${testRailUrl}/add_result_for_case/${testRunId}/${testCaseId}"
+
+    def connection = new URL(postUrl).openConnection() as HttpURLConnection
+    connection.requestMethod = 'POST'
+    connection.doOutput = true
+    connection.setRequestProperty("Content-Type", "application/json")
+    connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+
+    def requestBody = [
+            status_id: statusId,
+            comment: comment
+    ]
+
+    def outputStream = connection.outputStream
+    outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+    outputStream.flush()
+
+    def responseCode = connection.responseCode
+    def responseMessage = connection.responseMessage
+
+    log.info("Response code: ${responseCode}")
+    log.info("Response message: ${responseMessage}")
+}
+
+postTestResultToTestRail()</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value>631131</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="processUser" path="cmic-uac-rest-api/jersey/v1/processUser" id="02f657aa-2bbb-40c9-b2ce-1c40e8ef7359">
+  <con:settings>
+    <con:setting id="02f657aa-2bbb-40c9-b2ce-1c40e8ef7359fileName">processUser</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:resource name="{id}" path="{id}" id="aee95690-a70e-470c-a3ee-5a663ae55d87">
+    <con:settings>
+      <con:setting id="aee95690-a70e-470c-a3ee-5a663ae55d87fileName">processUser</con:setting>
+    </con:settings>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>id</con:name>
+        <con:value>id</con:value>
+        <con:style>TEMPLATE</con:style>
+        <con:default>id</con:default>
+      </con:parameter>
+    </con:parameters>
+    <con:method name="Method 1" id="815fb2cb-6366-40f7-928b-f19d28aea66f" method="PATCH">
+      <con:settings/>
+      <con:parameters/>
+      <con:request name="Request 1" id="ce075878-3d6e-4591-90a9-91709d5902cc" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:request>
+    </con:method>
+  </con:resource>
+  <con:method name="Method 1" id="c3488384-3950-46ec-9d69-71d71f18b021" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="ac947f86-5684-4d31-a4ca-3fc5d9cdf472" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="63005fb4-ed0c-42a0-9f07-7ac5387d42dd" method="PATCH">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="e4561561-c3c1-41dc-91ec-daf718222d66" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="56fea461-083a-404c-85ab-010ebb950a66" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_USR08_Scheduler Name LOV" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="56fea461-083a-404c-85ab-010ebb950a66fileName">TC_USR08_Scheduler-Name-LOV</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Scheduler Name LOV" id="df17d16f-c0b7-4246-bf5c-cbd8ca61db49">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/2/scheduler_name_lov" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Scheduler Name LOV" id="8db2715c-b259-488b-bc14-c7bab5b0e7b2" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5c424aa3-0bf7-429c-9de2-d487d6903dd9" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ead83ad1-33b7-4b0d-94a0-378d108a7a82" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="5d16b4fc-d7f1-47a0-8059-587832415ed9" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['scheduler_desc']</con:path>
+              <con:element>scheduler_desc</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>AI</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['scheduler_name']</con:path>
+              <con:element>scheduler_name</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>AIScheduler</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['scheduler_id']</con:path>
+              <con:element>scheduler_id</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1116A1EC6AA64D33E06327261DAC2780</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "scheduler_desc" : "AI",
+    "scheduler_name" : "AIScheduler",
+    "scheduler_id" : "1116A1EC6AA64D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_desc" : "API Events Action",
+    "scheduler_name" : "WebhookAction",
+    "scheduler_id" : "18D167A74512F080E06327261DACFA8D",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_desc" : "API Events Subscriber",
+    "scheduler_name" : "WebhookSubscriber",
+    "scheduler_id" : "18D167A74514F080E06327261DACFA8D",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_desc" : "BI",
+    "scheduler_name" : "BiScheduler",
+    "scheduler_id" : "28BDFC4DFB865020E06327261DACB774",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_desc" : "Comdata",
+    "scheduler_name" : "ComDataScheduler",
+    "scheduler_id" : "1116A1EC6AB14D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_desc" : "Default",
+    "scheduler_name" : "CmicScheduler",
+    "scheduler_id" : "1116A1EC6AAA4D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_desc" : "Drawing Management",
+    "scheduler_name" : "DrawingMgmt",
+    "scheduler_id" : "1116A1EC6AB34D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_desc" : "Indexer",
+    "scheduler_name" : "IndexingScheduler",
+    "scheduler_id" : "1116A1EC6AB64D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_desc" : "PSPDF",
+    "scheduler_name" : "PSPDF",
+    "scheduler_id" : "23C9C94414158CE2E06327261DAC39A4",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_desc" : "Plangrid",
+    "scheduler_name" : "CMICPGScheduler",
+    "scheduler_id" : "1116A1EC6AA84D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_desc" : "Push Notifications",
+    "scheduler_name" : "PushNotifications",
+    "scheduler_id" : "1116A1EC6AB84D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov/0000",
+        "name" : "scheduler_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  } ],
+  "count" : 11,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_name_lov",
+    "name" : "scheduler_name_lov",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript>import groovy.json.JsonOutput
+import java.net.HttpURLConnection
+import java.net.URL
+
+// --- Access SLA flag from TestSuite ---
+def slaFlag = context.testCase.testSuite.getPropertyValue("SLA_FAILED")
+log.info("TestCase Teardown running. SLA_FAILED = ${slaFlag}")
+ 
+if (slaFlag == "true") {
+    log.info("SLA failed — skipping TestRail result post.")
+    return
+}
+
+// Function to post test result to TestRail
+def postTestResultToTestRail() {
+
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+
+    def projectId = context.expand('${#Project#projectID}')
+    def testRunId = context.expand('${#Project#RunID}')
+
+    def testCaseId = context.expand('${#TestCase#TestCaseID}')
+    def testCaseName = testRunner.testCase.name
+
+    def failedTestSteps = []
+    def result = ""
+    def statusId = 1
+    def comment = ""
+
+    for (r in testRunner.results) {
+        if (r.getStatus().toString() != "PASS") {
+            def stepResult = context.expand('${' + r.testStep.name + '#Response}')
+            failedTestSteps.add(r.testStep.name + (stepResult ? (" - " + stepResult) : ""))
+        }
+    }
+
+    if (!failedTestSteps) {
+        comment = "${testCaseName} has passed successfully"
+    } else {
+        statusId = 5
+        comment = "${testCaseName} has failed on test steps:\n${failedTestSteps.join('\n')}"
+    }
+
+    def postUrl = "${testRailUrl}/add_result_for_case/${testRunId}/${testCaseId}"
+
+    def connection = new URL(postUrl).openConnection() as HttpURLConnection
+    connection.requestMethod = 'POST'
+    connection.doOutput = true
+    connection.setRequestProperty("Content-Type", "application/json")
+    connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+
+    def requestBody = [
+            status_id: statusId,
+            comment: comment
+    ]
+
+    def outputStream = connection.outputStream
+    outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+    outputStream.flush()
+
+    def responseCode = connection.responseCode
+    def responseMessage = connection.responseMessage
+
+    log.info("Response code: ${responseCode}")
+    log.info("Response message: ${responseMessage}")
+}
+
+postTestResultToTestRail()</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value>631134</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

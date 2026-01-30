@@ -1,0 +1,1697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="bfa4321f-c232-44cf-8571-e3161cbfc5b8" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_USR09_Process User" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="bfa4321f-c232-44cf-8571-e3161cbfc5b8fileName">TC_USR09_Process-User</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source" id="f78eed0d-163f-4a1e-bce0-e002b6a63c9a">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>1</generatedDataCount>
+          <generatorsTotalNumber>2</generatorsTotalNumber>
+          <lastSelectedProperty>1</lastSelectedProperty>
+          <GeneratorType0>NAME</GeneratorType0>
+          <PropertyName0>FirstName</PropertyName0>
+          <repetitionCountFirstName>0</repetitionCountFirstName>
+          <repeatValuesFirstName>false</repeatValuesFirstName>
+          <NameTypeName0>FirstName</NameTypeName0>
+          <NameGenderName0>Any</NameGenderName0>
+          <GeneratorType1>NAME</GeneratorType1>
+          <PropertyName1>LastName</PropertyName1>
+          <repetitionCountLastName>0</repetitionCountLastName>
+          <repeatValuesLastName>false</repeatValuesLastName>
+          <NameTypeName1>LastName</NameTypeName1>
+          <NameGenderName1>Any</NameGenderName1>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>FirstName</con:property>
+      <con:property>LastName</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="Data Source 2" id="db56e3a0-be83-409a-b6e6-28a0dc14148a">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>1</generatedDataCount>
+          <generatorsTotalNumber>2</generatorsTotalNumber>
+          <lastSelectedProperty>1</lastSelectedProperty>
+          <GeneratorType0>STR</GeneratorType0>
+          <PropertyName0>UUID</PropertyName0>
+          <repetitionCountUUID>0</repetitionCountUUID>
+          <repeatValuesUUID>false</repeatValuesUUID>
+          <PasswordDataGeneratorUseSpacesUUID>false</PasswordDataGeneratorUseSpacesUUID>
+          <PasswordDataGeneratorUsePunctuationMarksUUID>false</PasswordDataGeneratorUsePunctuationMarksUUID>
+          <PasswordDataGeneratorUseLettersUUID>false</PasswordDataGeneratorUseLettersUUID>
+          <PasswordDataGeneratorUseDigitsUUID>true</PasswordDataGeneratorUseDigitsUUID>
+          <PasswordDataGeneratorMaxCharacterCountUUID>60</PasswordDataGeneratorMaxCharacterCountUUID>
+          <PasswordDataGeneratorMinCharacterCountUUID>5</PasswordDataGeneratorMinCharacterCountUUID>
+          <GeneratorType1>STR</GeneratorType1>
+          <PropertyName1>Data</PropertyName1>
+          <repetitionCountData>0</repetitionCountData>
+          <repeatValuesData>false</repeatValuesData>
+          <PasswordDataGeneratorUseSpacesData>false</PasswordDataGeneratorUseSpacesData>
+          <PasswordDataGeneratorUsePunctuationMarksData>false</PasswordDataGeneratorUsePunctuationMarksData>
+          <PasswordDataGeneratorUseLettersData>false</PasswordDataGeneratorUseLettersData>
+          <PasswordDataGeneratorUseDigitsData>true</PasswordDataGeneratorUseDigitsData>
+          <PasswordDataGeneratorMaxCharacterCountData>5</PasswordDataGeneratorMaxCharacterCountData>
+          <PasswordDataGeneratorMinCharacterCountData>3</PasswordDataGeneratorMinCharacterCountData>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>UUID</con:property>
+      <con:property>Data</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Login" id="d4d72ac0-3684-4301-94f7-909dbc347e2f">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/jersey/v1/login" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Login" id="b297b346-5cf6-493b-b43d-769779655936" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint xsi:nil="true"/>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/jersey/v1/login</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3419cd42-875a-4254-a8e9-74960054bf3c" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="a15262d2-9578-4867-8bfc-0867a082b8b2" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['sysUser']</con:path>
+              <con:element>sysUser</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>RAMAN2</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['sysContactCode']</con:path>
+              <con:element>sysContactCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>RJA</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['sessionId']</con:path>
+              <con:element>sessionId</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>R2z7gRM9xXVnD2sV2WALEItQ8b-FzJco3U82hK0wz1SSgB5cQxgs!823826461!1769451098941</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['fullName']</con:path>
+              <con:element>fullName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Raman Jain</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['partnName']</con:path>
+              <con:element>partnName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Raman Company</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['partnCode']</con:path>
+              <con:element>partnCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>RJC</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['partnTypeCode']</con:path>
+              <con:element>partnTypeCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>C</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['azureLicensed']</con:path>
+              <con:element>azureLicensed</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Y</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"sysUser":"RAMAN2","sysContactCode":"RJA","sessionId":"R2z7gRM9xXVnD2sV2WALEItQ8b-FzJco3U82hK0wz1SSgB5cQxgs!823826461!1769451098941","fullName":"Raman Jain","partnName":"Raman Company","partnCode":"RJC","partnTypeCode":"C","azureLicensed":"Y"}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="48df59ab-9fb8-436f-9c77-264e6f1193e7">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="adeb508a-495c-47b8-9884-91be0504cb65">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="29115ffe-145f-44e6-a1f7-45b26f33e93e">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="b5ec2841-29b5-46fd-b5ce-4131d9626d74">
+            <con:authProfile>raman</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c6f15ecf-b67c-4a3e-b574-685e816480d9">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="3ac2367f-7c3a-4624-9907-a6de4d8e254c">
+            <con:authProfile>NOVA CLOUD</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="7f04ef6b-0932-4c01-a1b5-687ac3090b4f">
+            <con:authProfile>ATLAS CLOUD</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="dc8e31ee-1f6a-4251-a524-b3c213e112b3">
+            <con:authProfile>ATLAS CLOUD</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Ida Servers" id="e6926c52-a75f-499e-b92f-1c0958817739">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/ldapServers" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Ida Servers" id="0f2bf14a-2883-4c5b-b9c0-bbcdf7825a3f" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/ldapServers</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7fbb21a7-70d1-40cc-b6a6-6284564a09fd" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ecc0268d-a4df-4623-a6d1-120cfd3e7d42" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="13800e2f-985b-4495-a25a-56d612e679c2" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['LdapsOraseq']</con:path>
+              <con:element>LdapsOraseq</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>68047</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['LdapsName']</con:path>
+              <con:element>LdapsName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Default</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "LdapsOraseq" : 68047,
+    "LdapsName" : "Default",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/ldapServers/68047",
+      "name" : "ldapServers",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/ldapServers/68047",
+      "name" : "ldapServers",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 1,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/ldapServers",
+    "name" : "ldapServers",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Templates" id="cfc747f6-26d4-4d78-a558-9fd8cbb8c92d">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates" methodName="Method 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Templates" id="f939f541-b7b4-4a9f-bb9e-7373da910b04" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templates</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="87f130dc-99d2-41b2-9a60-5448b14f57c5" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="88ff08fa-7643-48fe-afbf-3072684f8cf3" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="cd6fff70-3855-496e-af7e-ddd8002ca55c" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['SutName']</con:path>
+              <con:element>SutName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Analyst</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SutPartnerType']</con:path>
+              <con:element>SutPartnerType</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>C</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SutPartnerTypeDesc']</con:path>
+              <con:element>SutPartnerTypeDesc</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Internal</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SutPartnerCode']</con:path>
+              <con:element>SutPartnerCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>CCC</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SutPartnerName']</con:path>
+              <con:element>SutPartnerName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>CMiC Construction Company</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SutOraseq']</con:path>
+              <con:element>SutOraseq</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2224587120</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "SutName" : "Analyst",
+    "SutPartnerType" : "C",
+    "SutPartnerTypeDesc" : "Internal",
+    "SutPartnerCode" : "CCC",
+    "SutPartnerName" : "CMiC Construction Company",
+    "SutVUuid" : "f4a49880-549f-1090-b8a2-cd39a62270b3",
+    "SutOraseq" : 2224587120,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/f4a49880-549f-1090-b8a2-cd39a62270b3",
+      "name" : "templates",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/f4a49880-549f-1090-b8a2-cd39a62270b3",
+      "name" : "templates",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutName" : "Subcontractor",
+    "SutPartnerType" : "P",
+    "SutPartnerTypeDesc" : "External",
+    "SutPartnerCode" : "ZZ-WMT",
+    "SutPartnerName" : "Wal-Mart Stores Inc",
+    "SutVUuid" : "40e0fd00-4a7e-132e-8b3d-db8ccc757aec",
+    "SutOraseq" : 2256914748,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/40e0fd00-4a7e-132e-8b3d-db8ccc757aec",
+      "name" : "templates",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/40e0fd00-4a7e-132e-8b3d-db8ccc757aec",
+      "name" : "templates",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutName" : "INT001",
+    "SutPartnerType" : "C",
+    "SutPartnerTypeDesc" : "Internal",
+    "SutPartnerCode" : "RKC",
+    "SutPartnerName" : "RKC Construction Company",
+    "SutVUuid" : "c28776a0-5ce1-11f0-8521-a588488622fa",
+    "SutOraseq" : 2285269414,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/c28776a0-5ce1-11f0-8521-a588488622fa",
+      "name" : "templates",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/c28776a0-5ce1-11f0-8521-a588488622fa",
+      "name" : "templates",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutName" : "API931",
+    "SutPartnerType" : "C",
+    "SutPartnerTypeDesc" : "Internal",
+    "SutPartnerCode" : "RJC",
+    "SutPartnerName" : "Raman Company",
+    "SutVUuid" : "55202047442471872368705894267806180164782",
+    "SutOraseq" : 2349560052,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/55202047442471872368705894267806180164782",
+      "name" : "templates",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/55202047442471872368705894267806180164782",
+      "name" : "templates",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutName" : "API",
+    "SutPartnerType" : "C",
+    "SutPartnerTypeDesc" : "Internal",
+    "SutPartnerCode" : "ZZ",
+    "SutPartnerName" : "CMiC Test Company",
+    "SutVUuid" : "f6056010-fc86-11f0-8a13-c53bb83c0307",
+    "SutOraseq" : 2349556801,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/f6056010-fc86-11f0-8a13-c53bb83c0307",
+      "name" : "templates",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/f6056010-fc86-11f0-8a13-c53bb83c0307",
+      "name" : "templates",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutName" : "Team lead ",
+    "SutPartnerType" : "C",
+    "SutPartnerTypeDesc" : "Internal",
+    "SutPartnerCode" : "ZZ",
+    "SutPartnerName" : "CMiC Test Company",
+    "SutVUuid" : "703fee80-8e00-108e-9d15-3fb08903111f",
+    "SutOraseq" : 2224323188,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/703fee80-8e00-108e-9d15-3fb08903111f",
+      "name" : "templates",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/703fee80-8e00-108e-9d15-3fb08903111f",
+      "name" : "templates",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutName" : "Subcontracting",
+    "SutPartnerType" : "P",
+    "SutPartnerTypeDesc" : "External",
+    "SutPartnerCode" : "PARK",
+    "SutPartnerName" : " Park Supplies",
+    "SutVUuid" : "f8ce8ab0-5cef-11f0-bf1f-853197e0ff29",
+    "SutOraseq" : 2285271335,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/f8ce8ab0-5cef-11f0-bf1f-853197e0ff29",
+      "name" : "templates",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/f8ce8ab0-5cef-11f0-bf1f-853197e0ff29",
+      "name" : "templates",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutName" : "Product Manager",
+    "SutPartnerType" : "C",
+    "SutPartnerTypeDesc" : "Internal",
+    "SutPartnerCode" : "ZZ",
+    "SutPartnerName" : "CMiC Test Company",
+    "SutVUuid" : "e24bd580-8b6b-108e-9d15-3fb08903111f",
+    "SutOraseq" : 2224323162,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/e24bd580-8b6b-108e-9d15-3fb08903111f",
+      "name" : "templates",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/e24bd580-8b6b-108e-9d15-3fb08903111f",
+      "name" : "templates",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutName" : "Manager",
+    "SutPartnerType" : "C",
+    "SutPartnerTypeDesc" : "Internal",
+    "SutPartnerCode" : "ZZ",
+    "SutPartnerName" : "CMiC Test Company",
+    "SutVUuid" : "da21a080-8cf9-108e-9d15-3fb08903111f",
+    "SutOraseq" : 2224323175,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/da21a080-8cf9-108e-9d15-3fb08903111f",
+      "name" : "templates",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/da21a080-8cf9-108e-9d15-3fb08903111f",
+      "name" : "templates",
+      "kind" : "item"
+    } ]
+  }, {
+    "SutName" : "Support Analyst",
+    "SutPartnerType" : "C",
+    "SutPartnerTypeDesc" : "Internal",
+    "SutPartnerCode" : "RKC",
+    "SutPartnerName" : "RKC Construction Company",
+    "SutVUuid" : "7d24a9d0-5853-11f0-af2f-49ef6eefaf6d",
+    "SutOraseq" : 2284690983,
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/7d24a9d0-5853-11f0-af2f-49ef6eefaf6d",
+      "name" : "templates",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/7d24a9d0-5853-11f0-af2f-49ef6eefaf6d",
+      "name" : "templates",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 10,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/1/templates",
+    "name" : "templates",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Create Template" id="c6243f26-039f-4cb0-bf41-d597d1af7bb1">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Create Template" id="27a126f5-ad58-4df1-9790-cdb5df9122e1" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "SutVUuid" : "${Data Source 2#UUID}",\r
+   "SutName" : "API${Data Source 2#Data}",\r
+   "SutPartnerType" : "C",\r
+   "SutPartnerCode" : "${Login#Response#$['partnCode']}",\r
+   "SutPartnerName" : "${Login#Response#$['partnName']}"\r
+}</con:request>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templates</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3cfd319d-dd9b-41e5-a227-5c5f60d5c4aa" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>201</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c47c28c3-26a3-432c-b1fe-9793e5b577c1" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Create Process User" id="8cacf84b-11c4-46f3-a0f3-9ec41ce7f50b">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/jersey/v1/processUser" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Create Process User" id="ac947f86-5684-4d31-a4ca-3fc5d9cdf472" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "firstName" : "${Data Source#FirstName}",\r
+   "lastName" : "${Data Source#LastName}",\r
+   "loginUser" : "${Data Source#FirstName}${Data Source#LastName}",\r
+   "userId" : "${Data Source#FirstName}${Data Source 2#Data}",\r
+   "email" : "api@cmic.ca",\r
+   "templateUuid" : "${Create Template#Response#$['SutVUuid']}",\r
+   "ldapOraseq" : "${Retrieve Ida Servers#Response#$['items'][0]['LdapsOraseq']}"\r
+}</con:request>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/jersey/v1/processUser</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="09b19844-b786-47aa-b0c8-d68eaae6dfdb" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c8da17db-0250-454e-b7fd-ae60bd7ab27b" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Users by Search Finder" id="c73eeca7-4c83-438d-9dfd-7559253e088d">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/users" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Users by Search Finder" id="924dbd35-9c54-4de8-a6f7-f57c02aee9de" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily/cmic-uac-rest-api/rest/1/users</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="011c22e4-098e-478d-ad0d-c7c6adf28226" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ae3733a4-3398-4fbc-a3a6-37fd8f4113b5" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="2a80a226-6e3c-4444-984d-eb36e35b80ae" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['SuUser']</con:path>
+              <con:element>SuUser</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ZSHNIER</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuPassword']</con:path>
+              <con:element>SuPassword</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>********************</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuPartnCode']</con:path>
+              <con:element>SuPartnCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ZZ-HDEPO</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuPartnTypeCode']</con:path>
+              <con:element>SuPartnTypeCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>P</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuPartnName']</con:path>
+              <con:element>SuPartnName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ZZ - Home Depotw</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuContactCode']</con:path>
+              <con:element>SuContactCode</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ZS</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuFirstName']</con:path>
+              <con:element>SuFirstName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Zach</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuLastName']</con:path>
+              <con:element>SuLastName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Shnier</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuLdapsName']</con:path>
+              <con:element>SuLdapsName</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Default</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuLdapsOraseq']</con:path>
+              <con:element>SuLdapsOraseq</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>68047</con:expectedValue>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuUuid']</con:path>
+              <con:element>SuUuid</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>FCFB1AEB902F7BF0E05327261DAC531D</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuCreatedDate']</con:path>
+              <con:element>SuCreatedDate</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2019-11-08T11:14:35-05:00</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['SuLdapUser']</con:path>
+              <con:element>SuLdapUser</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ZSHNIER</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "SuUser" : "ZSHNIER",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "ZS",
+    "SuFirstName" : "Zach",
+    "SuLastName" : "Shnier",
+    "SuEmpNo" : null,
+    "SuEmail1" : "Zachary.Shnier@cmic.ca",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "FCFB1AEB902F7BF0E05327261DAC531D",
+    "SuCreatedDate" : "2019-11-08T11:14:35-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "ZSHNIER",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/FCFB1AEB902F7BF0E05327261DAC531D",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/FCFB1AEB902F7BF0E05327261DAC531D",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "COLLABONE",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "CO",
+    "SuFirstName" : "Collab",
+    "SuLastName" : "One",
+    "SuEmpNo" : null,
+    "SuEmail1" : "Collabone@cmic.ca",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "FCFB1AEB90F47BF0E05327261DAC531D",
+    "SuCreatedDate" : "2022-06-15T14:53:53-04:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "COLLABONE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/FCFB1AEB90F47BF0E05327261DAC531D",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/FCFB1AEB90F47BF0E05327261DAC531D",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "COLLABTWO",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "CT",
+    "SuFirstName" : "Collab",
+    "SuLastName" : "Two",
+    "SuEmpNo" : null,
+    "SuEmail1" : "Collabtwo@cmic.ca",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "FCFB1AEB90F57BF0E05327261DAC531D",
+    "SuCreatedDate" : "2022-06-15T14:56:50-04:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "COLLABTWO",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/FCFB1AEB90F57BF0E05327261DAC531D",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/FCFB1AEB90F57BF0E05327261DAC531D",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "CONTACTONE",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "CTH",
+    "SuFirstName" : "Contact",
+    "SuLastName" : "One",
+    "SuEmpNo" : null,
+    "SuEmail1" : "ContactOne@cmic.ca",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "FCFB1AEB90F67BF0E05327261DAC531D",
+    "SuCreatedDate" : "2022-06-15T15:05:51-04:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "CONTACTONE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/FCFB1AEB90F67BF0E05327261DAC531D",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/FCFB1AEB90F67BF0E05327261DAC531D",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "CONTACTTWO",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "CTW",
+    "SuFirstName" : "Contact",
+    "SuLastName" : "Two",
+    "SuEmpNo" : null,
+    "SuEmail1" : "ContactTWo@cmic.ca",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "FCFB1AEB90F77BF0E05327261DAC531D",
+    "SuCreatedDate" : "2022-06-15T15:08:05-04:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "CONTACTTWO",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/FCFB1AEB90F77BF0E05327261DAC531D",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/FCFB1AEB90F77BF0E05327261DAC531D",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "JCOLL1",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "JSAM",
+    "SuFirstName" : "Jennifer",
+    "SuLastName" : "Samuel",
+    "SuEmpNo" : null,
+    "SuEmail1" : "Jennifer.Samuel@cmic.ca",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "42C6E1D295A95048E06327261DAC3FF5",
+    "SuCreatedDate" : "2025-11-04T09:52:32-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "JCOLL1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/42C6E1D295A95048E06327261DAC3FF5",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/42C6E1D295A95048E06327261DAC3FF5",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "GVCOLLAB",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "GC",
+    "SuFirstName" : "Gayathri",
+    "SuLastName" : "CollabUser",
+    "SuEmpNo" : null,
+    "SuEmail1" : "gayathri@cmic.ca",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "0A9938D1E47F2680E06327261DAC0E39",
+    "SuCreatedDate" : "2023-11-20T11:46:04-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "GVCOLLAB",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/0A9938D1E47F2680E06327261DAC0E39",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/0A9938D1E47F2680E06327261DAC0E39",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "VCOLLAB",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "GG",
+    "SuFirstName" : "Garu",
+    "SuLastName" : "Gcollab",
+    "SuEmpNo" : null,
+    "SuEmail1" : "garu@cmic.ca",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "0B3EE6A7F9758042E06327261DACD452",
+    "SuCreatedDate" : "2023-11-28T17:25:51-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "VCOLLAB",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/0B3EE6A7F9758042E06327261DACD452",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/0B3EE6A7F9758042E06327261DACD452",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "GD1",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "GD",
+    "SuFirstName" : "gg",
+    "SuLastName" : "dd",
+    "SuEmpNo" : null,
+    "SuEmail1" : "gordana.pmm@gmail.com",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "106A1C8B11798066E06327261DAC8BF9",
+    "SuCreatedDate" : "2024-02-02T12:05:38-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "GD1",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/106A1C8B11798066E06327261DAC8BF9",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/106A1C8B11798066E06327261DAC8BF9",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "GF",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "GFEDERA",
+    "SuFirstName" : "GCS251111",
+    "SuLastName" : "Federated11",
+    "SuEmpNo" : null,
+    "SuEmail1" : "surdoferzu@necub.com",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "4482A7F0013AB37AE06327261DAC36AA",
+    "SuCreatedDate" : "2025-11-26T11:12:00-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "GF",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/4482A7F0013AB37AE06327261DAC36AA",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/4482A7F0013AB37AE06327261DAC36AA",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "GCS251112",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "GFEDERAT",
+    "SuFirstName" : "GCS251112",
+    "SuLastName" : "Federated12",
+    "SuEmpNo" : null,
+    "SuEmail1" : "petoy24598@izeao.com",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "44829BEA451CFF4DE06327261DACF03B",
+    "SuCreatedDate" : "2025-11-26T11:09:43-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "GCS251112",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/44829BEA451CFF4DE06327261DACF03B",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/44829BEA451CFF4DE06327261DACF03B",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "FTEST",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "FT",
+    "SuFirstName" : "Fab",
+    "SuLastName" : "Test2205",
+    "SuEmpNo" : null,
+    "SuEmail1" : "fabtest2205@cmic.ca",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "44AAE6FC62A4E99CE06327261DAC641F",
+    "SuCreatedDate" : "2025-11-28T11:13:57-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "FTEST",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/44AAE6FC62A4E99CE06327261DAC641F",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/44AAE6FC62A4E99CE06327261DAC641F",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "TESTDELETE",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-HDEPO",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "ZZ - Home Depotw",
+    "SuContactCode" : "DT",
+    "SuFirstName" : "Delete",
+    "SuLastName" : "Test",
+    "SuEmpNo" : null,
+    "SuEmail1" : null,
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "494E6A9A11A2181CE06327261DAC0FE1",
+    "SuCreatedDate" : "2026-01-26T12:01:41-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "TESTDELETE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/494E6A9A11A2181CE06327261DAC0FE1",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/494E6A9A11A2181CE06327261DAC0FE1",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "JG",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-CGRP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Citigroup",
+    "SuContactCode" : "JG",
+    "SuFirstName" : "JSON",
+    "SuLastName" : "Gateway",
+    "SuEmpNo" : null,
+    "SuEmail1" : "jsongateway@outlook.com",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "03348716AAD01A94E06327261DAC55FE",
+    "SuCreatedDate" : "2023-08-18T10:41:45-04:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "JG",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/03348716AAD01A94E06327261DAC55FE",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/03348716AAD01A94E06327261DAC55FE",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "EBERRY",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-CGRP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Citigroup",
+    "SuContactCode" : "EB",
+    "SuFirstName" : "Emily",
+    "SuLastName" : "Berry",
+    "SuEmpNo" : null,
+    "SuEmail1" : "vic_for_cmic@hotmail.com",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "1A127389FC64F411E06327261DAC6568",
+    "SuCreatedDate" : "2024-06-04T10:41:55-04:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "EBERRY",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/1A127389FC64F411E06327261DAC6568",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/1A127389FC64F411E06327261DAC6568",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "GCS009P",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-CGRP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Citigroup",
+    "SuContactCode" : "GP4",
+    "SuFirstName" : "GCS",
+    "SuLastName" : "009P",
+    "SuEmpNo" : null,
+    "SuEmail1" : "kogavib907@macho3.com",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "31B8F382613E1A55E06327261DAC61B7",
+    "SuCreatedDate" : "2025-04-01T10:00:45-04:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "GCS009P",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/31B8F382613E1A55E06327261DAC61B7",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/31B8F382613E1A55E06327261DAC61B7",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "GCS002P",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-CGRP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Citigroup",
+    "SuContactCode" : "GP",
+    "SuFirstName" : "GCS",
+    "SuLastName" : "002P",
+    "SuEmpNo" : null,
+    "SuEmail1" : "sihafefy@logsmarter.net",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "31A61A539204DD6AE06327261DACFC2F",
+    "SuCreatedDate" : "2025-03-31T12:01:48-04:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "GCS002P",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/31A61A539204DD6AE06327261DACFC2F",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/31A61A539204DD6AE06327261DACFC2F",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "NS",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-CGRP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Citigroup",
+    "SuContactCode" : "NS",
+    "SuFirstName" : "Newt",
+    "SuLastName" : "Scamander",
+    "SuEmpNo" : null,
+    "SuEmail1" : "bizufyqe@thetechnext.net",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "291517D4B78D1EA3E06327261DAC3963",
+    "SuCreatedDate" : "2024-12-12T10:10:05-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "NS",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/291517D4B78D1EA3E06327261DAC3963",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/291517D4B78D1EA3E06327261DAC3963",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "FDE",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-CGRP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Citigroup",
+    "SuContactCode" : "FD",
+    "SuFirstName" : "Fleur",
+    "SuLastName" : "Delacour",
+    "SuEmpNo" : null,
+    "SuEmail1" : "HEKOV37502@DATINGEL.COM",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "291517D4B7A91EA3E06327261DAC3963",
+    "SuCreatedDate" : "2024-12-12T10:17:27-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "FDE",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/291517D4B7A91EA3E06327261DAC3963",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/291517D4B7A91EA3E06327261DAC3963",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "DRACOM",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-CGRP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Citigroup",
+    "SuContactCode" : "DMA",
+    "SuFirstName" : "Draco",
+    "SuLastName" : "Malfoy",
+    "SuEmpNo" : null,
+    "SuEmail1" : "tocagef466@cantozil.com",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "285239E081193F49E06327261DAC18BB",
+    "SuCreatedDate" : "2024-12-02T17:42:52-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "DRACOM",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/285239E081193F49E06327261DAC18BB",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/285239E081193F49E06327261DAC18BB",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "KB",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-CGRP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Citigroup",
+    "SuContactCode" : "KB",
+    "SuFirstName" : "Katie",
+    "SuLastName" : "Bell",
+    "SuEmpNo" : null,
+    "SuEmail1" : "wudemupy@azuretechtalk.net",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "2AC09B5CBB950462E06327261DAC6933",
+    "SuCreatedDate" : "2025-01-02T16:11:34-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "KB",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/2AC09B5CBB950462E06327261DAC6933",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/2AC09B5CBB950462E06327261DAC6933",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "GCS006P",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-CGRP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Citigroup",
+    "SuContactCode" : "GP2",
+    "SuFirstName" : "GCS",
+    "SuLastName" : "006P",
+    "SuEmpNo" : null,
+    "SuEmail1" : "hakuco@logsmarter.net",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "31A9BA7C1D8D48F5E06327261DAC9323",
+    "SuCreatedDate" : "2025-03-31T16:03:27-04:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "GCS006P",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/31A9BA7C1D8D48F5E06327261DAC9323",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/31A9BA7C1D8D48F5E06327261DAC9323",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "GCS008P",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-CGRP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Citigroup",
+    "SuContactCode" : "GP3",
+    "SuFirstName" : "GCS",
+    "SuLastName" : "008P",
+    "SuEmpNo" : null,
+    "SuEmail1" : "gustelerza@gufum.com",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "31B8686DB801C8A3E06327261DAC9230",
+    "SuCreatedDate" : "2025-04-01T09:51:32-04:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "GCS008P",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/31B8686DB801C8A3E06327261DAC9230",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/31B8686DB801C8A3E06327261DAC9230",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "KG",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-CGRP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Citigroup",
+    "SuContactCode" : "KG",
+    "SuFirstName" : "Karen",
+    "SuLastName" : "Gamble",
+    "SuEmpNo" : null,
+    "SuEmail1" : "nefoja9886@cctoolz.com",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "2991FCB156BCB621E06327261DAC100E",
+    "SuCreatedDate" : "2024-12-18T15:09:12-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "KG",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/2991FCB156BCB621E06327261DAC100E",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/2991FCB156BCB621E06327261DAC100E",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  }, {
+    "SuUser" : "DW",
+    "SuPassword" : "********************",
+    "SuPartnCode" : "ZZ-CGRP",
+    "SuPartnTypeCode" : "P",
+    "SuPartnName" : "Citigroup",
+    "SuContactCode" : "DW",
+    "SuFirstName" : "Dana",
+    "SuLastName" : "Waller",
+    "SuEmpNo" : null,
+    "SuEmail1" : "barzokepse@gufum.com",
+    "SuEmail2" : null,
+    "SuLdapsName" : "Default",
+    "SuLdapsOraseq" : 68047,
+    "SuUuid" : "2991FCB156DEB621E06327261DAC100E",
+    "SuCreatedDate" : "2024-12-18T15:23:39-05:00",
+    "SuMpowerUser" : null,
+    "SuLdapUser" : "DW",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/2991FCB156DEB621E06327261DAC100E",
+      "name" : "users",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users/2991FCB156DEB621E06327261DAC100E",
+      "name" : "users",
+      "kind" : "item"
+    } ]
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily/cmic-uac-rest-api/rest/1/users",
+    "name" : "users",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="offset" value=""/>
+          <con:entry key="limit" value=""/>
+          <con:entry key="finder" value="searchUsers;search=${Create Process User#Request#$['userId']}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>limit</con:entry>
+          <con:entry>offset</con:entry>
+          <con:entry>finder</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Update Process User" id="063696bd-502e-4fa4-b1bb-29cd24130cac">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/jersey/v1/processUser" methodName="Method 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Update Process User" id="e4561561-c3c1-41dc-91ec-daf718222d66" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "firstName" : "${Retrieve Users by Search Finder#Response#$['items'][0]['SuFirstName']}",\r
+   "lastName" : "${Retrieve Users by Search Finder#Response#$['items'][0]['SuLastName']}",\r
+   "loginUser" : "${Retrieve Users by Search Finder#Response#$['items'][0]['SuFirstName']}${Retrieve Users by Search Finder#Response#$['items'][0]['SuLastName']}",\r
+   "userId" : "${Retrieve Users by Search Finder#Response#$['items'][0]['SuUser']}",\r
+   "email" : "apicmic1@cmic.ca",\r
+   "templateUuid" : "${Create Template#Response#$['SutVUuid']}",\r
+   "ldapOraseq" : "${Retrieve Ida Servers#Response#$['items'][0]['LdapsOraseq']}",\r
+   "empNo" : null,\r
+   "partnCode" : "{Login#Response#$['partnCode']}",\r
+   "partnTypeCode" : "C",\r
+   "contactCode" : "${Retrieve Users by Search Finder#Response#$['items'][0]['SuContactCode']}"\r
+}</con:request>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/jersey/v1/processUser</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="36241234-8044-4685-b805-d263021d492f" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="b063048b-aeb5-4575-8d8a-e2fd4d62f139" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Delete Template" id="9b226cfc-5f0a-445f-a837-982d8e3fe592">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/1/templates/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Delete Template" id="daf5c457-b0cc-4551-bcc2-90c052897b1c" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/1/templates/55202047442471872368705894267806180164782</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="1e1cce80-0f6e-41be-b1be-1fa9cf04aa8e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>204</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="a2835b56-da40-4afa-80dc-08be51f11881" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Create Template#Response#$['SutVUuid']}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>id</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript>import groovy.json.JsonOutput
+import java.net.HttpURLConnection
+import java.net.URL
+
+// --- Access SLA flag from TestSuite ---
+def slaFlag = context.testCase.testSuite.getPropertyValue("SLA_FAILED")
+log.info("TestCase Teardown running. SLA_FAILED = ${slaFlag}")
+ 
+if (slaFlag == "true") {
+    log.info("SLA failed — skipping TestRail result post.")
+    return
+}
+
+// Function to post test result to TestRail
+def postTestResultToTestRail() {
+
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+
+    def projectId = context.expand('${#Project#projectID}')
+    def testRunId = context.expand('${#Project#RunID}')
+
+    def testCaseId = context.expand('${#TestCase#TestCaseID}')
+    def testCaseName = testRunner.testCase.name
+
+    def failedTestSteps = []
+    def result = ""
+    def statusId = 1
+    def comment = ""
+
+    for (r in testRunner.results) {
+        if (r.getStatus().toString() != "PASS") {
+            def stepResult = context.expand('${' + r.testStep.name + '#Response}')
+            failedTestSteps.add(r.testStep.name + (stepResult ? (" - " + stepResult) : ""))
+        }
+    }
+
+    if (!failedTestSteps) {
+        comment = "${testCaseName} has passed successfully"
+    } else {
+        statusId = 5
+        comment = "${testCaseName} has failed on test steps:\n${failedTestSteps.join('\n')}"
+    }
+
+    def postUrl = "${testRailUrl}/add_result_for_case/${testRunId}/${testCaseId}"
+
+    def connection = new URL(postUrl).openConnection() as HttpURLConnection
+    connection.requestMethod = 'POST'
+    connection.doOutput = true
+    connection.setRequestProperty("Content-Type", "application/json")
+    connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+
+    def requestBody = [
+            status_id: statusId,
+            comment: comment
+    ]
+
+    def outputStream = connection.outputStream
+    outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+    outputStream.flush()
+
+    def responseCode = connection.responseCode
+    def responseMessage = connection.responseMessage
+
+    log.info("Response code: ${responseCode}")
+    log.info("Response message: ${responseMessage}")
+}
+
+postTestResultToTestRail()</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value>631135</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

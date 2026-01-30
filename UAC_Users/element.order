@@ -2,3 +2,8 @@ TC_USR01_Retrieve-Users.xml
 TC_USR02_User-Partners.xml
 TC_USR03_Employee-Numbers.xml
 TC_USR04_User-Maintenance-URL-Builder.xml
+TC_USR05_Job-Details.xml
+TC_USR06_Job-Group-Name-LOV.xml
+TC_USR07_Scheduler-History.xml
+TC_USR08_Scheduler-Name-LOV.xml
+TC_USR09_Process-User.xml

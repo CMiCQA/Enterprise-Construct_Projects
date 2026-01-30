@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="71c24591-e5dd-413e-89f7-7e3650022425" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_USR06_Job Group Name LOV" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="71c24591-e5dd-413e-89f7-7e3650022425fileName">TC_USR06_Job-Group-Name-LOV</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Job Group Name LOV" id="0a9e49fd-2c87-41b7-84d0-fb9b3fd2b89c">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/2/job_group_name_lov" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Job Group Name LOV" id="ff0ae79b-3d91-4d94-8af1-60f1bd8715dc" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3732bd0c-2e8f-4223-a4c2-d2c9bc3a0829" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="e2d09706-15e4-4f86-bf66-fe444c4c7b36" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="2982b4c5-6e39-4d88-b226-5f646f741fe4" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['job_group_desc']</con:path>
+              <con:element>job_group_desc</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>AI Drawing upload</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['job_group_name']</con:path>
+              <con:element>job_group_name</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>AI_DRAWING</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['scheduler_id']</con:path>
+              <con:element>scheduler_id</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1116A1EC6AA64D33E06327261DAC2780</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "job_group_desc" : "AI Drawing upload",
+    "job_group_name" : "AI_DRAWING",
+    "scheduler_id" : "1116A1EC6AA64D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "AI Potential Specbook Submittal Extraction",
+    "job_group_name" : "AI_SPECSBMT",
+    "scheduler_id" : "1116A1EC6AA64D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "AI Specbook upload",
+    "job_group_name" : "AI_SPECBOOK",
+    "scheduler_id" : "1116A1EC6AA64D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Annotation thumbnail",
+    "job_group_name" : "ANNOT_THUMBNAIL",
+    "scheduler_id" : "1116A1EC6AAA4D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Attachment thumbnail",
+    "job_group_name" : "Thumbnail",
+    "scheduler_id" : "1116A1EC6AAA4D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "BI Queries",
+    "job_group_name" : "BI_QUERIES",
+    "scheduler_id" : "28BDFC4DFB865020E06327261DACB774",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Document archive",
+    "job_group_name" : "ARCHIVE",
+    "scheduler_id" : "1116A1EC6AB34D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Drawing",
+    "job_group_name" : "DRAWING",
+    "scheduler_id" : "1116A1EC6AB34D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Drawing Sheet Location Change Utility",
+    "job_group_name" : "CHANGEDRAWINGLOCATION",
+    "scheduler_id" : "23C9C94414158CE2E06327261DAC39A4",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "FTP",
+    "job_group_name" : "ftp",
+    "scheduler_id" : "1116A1EC6AB14D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Image Documents thumbnail",
+    "job_group_name" : "ImgThumbnail",
+    "scheduler_id" : "1116A1EC6AAA4D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Indexing",
+    "job_group_name" : "CMIC_INDEXER",
+    "scheduler_id" : "1116A1EC6AB64D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Intercom",
+    "job_group_name" : "Intercom",
+    "scheduler_id" : "1116A1EC6AAA4D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Journal note sentiment",
+    "job_group_name" : "AI_PM_JOURNAL_NOTE_SENTIMENT",
+    "scheduler_id" : "1116A1EC6AA64D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Notification",
+    "job_group_name" : "NOTIFICATION",
+    "scheduler_id" : "1116A1EC6AB84D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "PM Attachment",
+    "job_group_name" : "PMATTACHMENT",
+    "scheduler_id" : "1116A1EC6AAA4D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "PSPDF XFDF to JSON annotation Conversion Utility",
+    "job_group_name" : "PSPDFJSONANNOTATION",
+    "scheduler_id" : "23C9C94414158CE2E06327261DAC39A4",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "PSPDF XFDF to JSON annotation Conversion Utility",
+    "job_group_name" : "PSPDFXFDFTOJSON",
+    "scheduler_id" : "23C9C94414158CE2E06327261DAC39A4",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Plangrid sync",
+    "job_group_name" : "CMIC_PG_JOB_GRP",
+    "scheduler_id" : "1116A1EC6AA84D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Process api event",
+    "job_group_name" : "Webhooks",
+    "scheduler_id" : "18D167A74514F080E06327261DACFA8D",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Register api event",
+    "job_group_name" : "Webhooks",
+    "scheduler_id" : "18D167A74512F080E06327261DACFA8D",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Request for document",
+    "job_group_name" : "REQUEST_FOR_DOCUMENTS",
+    "scheduler_id" : "1116A1EC6AAA4D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "job_group_desc" : "Server status",
+    "job_group_name" : "ServerStatus",
+    "scheduler_id" : "1116A1EC6AAA4D33E06327261DAC2780",
+    "@context" : {
+      "key" : "0000",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov/0000",
+        "name" : "job_group_name_lov",
+        "kind" : "item"
+      } ]
+    }
+  } ],
+  "count" : 23,
+  "hasMore" : false,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/job_group_name_lov",
+    "name" : "job_group_name_lov",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript>import groovy.json.JsonOutput
+import java.net.HttpURLConnection
+import java.net.URL
+
+// --- Access SLA flag from TestSuite ---
+def slaFlag = context.testCase.testSuite.getPropertyValue("SLA_FAILED")
+log.info("TestCase Teardown running. SLA_FAILED = ${slaFlag}")
+ 
+if (slaFlag == "true") {
+    log.info("SLA failed — skipping TestRail result post.")
+    return
+}
+
+// Function to post test result to TestRail
+def postTestResultToTestRail() {
+
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+
+    def projectId = context.expand('${#Project#projectID}')
+    def testRunId = context.expand('${#Project#RunID}')
+
+    def testCaseId = context.expand('${#TestCase#TestCaseID}')
+    def testCaseName = testRunner.testCase.name
+
+    def failedTestSteps = []
+    def result = ""
+    def statusId = 1
+    def comment = ""
+
+    for (r in testRunner.results) {
+        if (r.getStatus().toString() != "PASS") {
+            def stepResult = context.expand('${' + r.testStep.name + '#Response}')
+            failedTestSteps.add(r.testStep.name + (stepResult ? (" - " + stepResult) : ""))
+        }
+    }
+
+    if (!failedTestSteps) {
+        comment = "${testCaseName} has passed successfully"
+    } else {
+        statusId = 5
+        comment = "${testCaseName} has failed on test steps:\n${failedTestSteps.join('\n')}"
+    }
+
+    def postUrl = "${testRailUrl}/add_result_for_case/${testRunId}/${testCaseId}"
+
+    def connection = new URL(postUrl).openConnection() as HttpURLConnection
+    connection.requestMethod = 'POST'
+    connection.doOutput = true
+    connection.setRequestProperty("Content-Type", "application/json")
+    connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+
+    def requestBody = [
+            status_id: statusId,
+            comment: comment
+    ]
+
+    def outputStream = connection.outputStream
+    outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+    outputStream.flush()
+
+    def responseCode = connection.responseCode
+    def responseMessage = connection.responseMessage
+
+    log.info("Response code: ${responseCode}")
+    log.info("Response message: ${responseMessage}")
+}
+
+postTestResultToTestRail()</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value>631132</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

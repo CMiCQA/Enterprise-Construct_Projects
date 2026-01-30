@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="cd90c427-12df-43bc-9229-65bb85e20525" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TC_USR07_Scheduler History" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="cd90c427-12df-43bc-9229-65bb85e20525fileName">TC_USR07_Scheduler-History</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Retrieve Schduler History" id="5cbbd9cf-19ab-49cf-bdb3-0c01ef0bcc18">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/2/scheduler_history" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Schduler History" id="0d5cf20b-5a93-4358-83f8-946ba7bebabd" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="db591b05-31ec-46ef-8a97-cc31bb54fabf" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="e16c46af-1c2f-4f99-b791-f42b97807e14" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="2c06f79f-6652-47d7-97e8-bd379d0be68e" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['items'][0]['scheduler_name']</con:path>
+              <con:element>scheduler_name</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>WebhookAction</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['history_job_group']</con:path>
+              <con:element>history_job_group</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Webhooks</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['name']</con:path>
+              <con:element>name</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>WEBHOOK_ACTION_SENDING_JOB_1</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['date']</con:path>
+              <con:element>date</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2026-01-30T13:35:01-05:00</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['status']</con:path>
+              <con:element>status</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>COMPLETED</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['description']</con:path>
+              <con:element>description</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>CRON JOB 1 IS PROCESSING DATA</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['items'][0]['details']</con:path>
+              <con:element>details</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Job start date: Fri Jan 30 13:35:00 EST 2026
+Job end date: Fri Jan 30 13:35:00 EST 2026
+Job state: COMPLETED
+, Initial data: [ ]
+Preparing to send out webhooks
+Attempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.
+</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "items" : [ {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:35:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:35:00 EST 2026\nJob end date: Fri Jan 30 13:35:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350240348",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240348",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240348",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "CmicScheduler",
+    "history_job_group" : "REQUEST_FOR_DOCUMENTS",
+    "name" : "RFD_JOB_57395.5731002483583598634185902134448836",
+    "date" : "2026-01-30T13:34:11-05:00",
+    "status" : "COMPLETED",
+    "description" : "Extract Documents : { ProjOraseq : 2213050983, JobOraseq : 2350240010, p_tenantAndUser : DA }",
+    "details" : "Job start date: Fri Jan 30 13:33:58 EST 2026\nJob end date: Fri Jan 30 13:34:10 EST 2026\nJob state: COMPLETED\nTenant And User: DA\nInitial data: [ \n\tjobOraseq: 2350240010\n\ttenantAndUser: DA\n\tprojOraseq: 2213050983\n]\nAcceptance email notification sent to (stephanie@cmic.ca)\nZipping completed successfully\n4 documents zipped.\n1 zip files created.\nExtraction completed email notification sent to (stephanie@cmic.ca)\nJob completed successfully.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350240291",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240291",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240291",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:34:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:34:00 EST 2026\nJob end date: Fri Jan 30 13:34:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350240284",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240284",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240284",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:33:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:33:00 EST 2026\nJob end date: Fri Jan 30 13:33:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350240283",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240283",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240283",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:32:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:32:00 EST 2026\nJob end date: Fri Jan 30 13:32:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350240262",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240262",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240262",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:31:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:31:00 EST 2026\nJob end date: Fri Jan 30 13:31:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350240235",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240235",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240235",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:30:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:30:00 EST 2026\nJob end date: Fri Jan 30 13:30:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350240171",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240171",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240171",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:29:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:29:00 EST 2026\nJob end date: Fri Jan 30 13:29:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350240131",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240131",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240131",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:28:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:28:00 EST 2026\nJob end date: Fri Jan 30 13:28:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350240121",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240121",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240121",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:27:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:27:00 EST 2026\nJob end date: Fri Jan 30 13:27:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350240105",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240105",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240105",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:26:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:26:00 EST 2026\nJob end date: Fri Jan 30 13:26:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350240065",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240065",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240065",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:25:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:25:00 EST 2026\nJob end date: Fri Jan 30 13:25:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350240012",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240012",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240012",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:24:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:24:00 EST 2026\nJob end date: Fri Jan 30 13:24:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239970",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239970",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239970",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:23:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:23:00 EST 2026\nJob end date: Fri Jan 30 13:23:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239682",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239682",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239682",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "CmicScheduler",
+    "history_job_group" : "Thumbnail",
+    "name" : "2350239581",
+    "date" : "2026-01-30T13:22:25-05:00",
+    "status" : "COMPLETED",
+    "description" : "Thumbnail generation for an attachment",
+    "details" : "Job start date: Fri Jan 30 13:22:21 EST 2026\nJob end date: Fri Jan 30 13:22:25 EST 2026\nJob state: COMPLETED\n, Initial data: [ \n\tobjectOraseq: 2350239581\n\ttenantAndUser: MILLICENT\n\tobjectFileType: PRIMARY_ATTACHMENT\n]\n, source path: \\\\qafs\\qafs\\attachments\\qadaily2\\2350239581\\M-101\\0\\M_101.pdf.\n, start external process.\n, external process log:log4j:WARN No appenders could be found for logger (org.apache.pdfbox.io.ScratchFile).\r\nlog4j:WARN Please initialize the log4j system properly.\r\nlog4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.\r\n\n, external process exitValue:0\n, Thumbanil generation succeeded externally.\n, updateThumbnailFlag succeeded.\n, Job completed successfully\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239613",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239613",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239613",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "DrawingMgmt",
+    "history_job_group" : "DRAWING",
+    "name" : "DRAWING_CLEANUP_c7f44386-35ae-4a55-80d6-572ec2809365",
+    "date" : "2026-01-30T13:22:18-05:00",
+    "status" : "COMPLETED",
+    "description" : "Drawing upload cleanup after publishing for project 2213050983",
+    "details" : "Job start date: Fri Jan 30 13:22:17 EST 2026\nJob end date: Fri Jan 30 13:22:17 EST 2026\nJob state: COMPLETED\nInitial data: [ \n\tcontactInfo: SUS%^%C%^%MJA\n\tuploadDir: \\\\qafs\\qafs\\attachments\\qadaily2\\\n\ttenantAndUser: MILLICENT\n\tprojOraseq: 2213050983\n\tuuid: 3d9c5181-7dca-4792-8060-901c46c495af\n]\nDeleted 5 files for project (2213050983) upload folder 3d9c5181-7dca-4792-8060-901c46c495af\nJob completed successfully\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239606",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239606",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239606",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "DrawingMgmt",
+    "history_job_group" : "DRAWING",
+    "name" : "DRAWING_LINK_d3c894ef-8dfb-4e44-bb11-b223e9d69c9a",
+    "date" : "2026-01-30T13:22:17-05:00",
+    "status" : "COMPLETED",
+    "description" : "Drawing links for project 2213050983 for 1 updated sheets",
+    "details" : "Job start date: Fri Jan 30 13:21:48 EST 2026\nJob end date: Fri Jan 30 13:22:16 EST 2026\nJob state: COMPLETED\nInitial data: [ \n\tcontactInfo: SUS%^%C%^%MJA\n\trecipients: []\n\tdocType: DRAWMGMT\n\ttenantAndUser: MILLICENT\n\tprojOraseq: 2213050983\n\tupdateSheetList: 2282506204\n\tupdateSheetListSize: 1\n\tuuid: 3d9c5181-7dca-4792-8060-901c46c495af\n\tdistLocCodes: [{\"pmdLocation\":\"\"}]\n]\nOutput:[{\n\tSheetProcessed: 85,\n\t LinkGenerated: 2,\n\t LinkUpdated: 0,\n\t LinkHidden: 2\n\t }]\nEmail notification sent to (Millicent Jackson) stephanie@cmic.ca\nJob completed successfully\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239605",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239605",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239605",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:22:02-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:22:00 EST 2026\nJob end date: Fri Jan 30 13:22:01 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nSending to https://qa.cmicpaas.com/cmicqadaily2/hcm-rest-api/rest/1/syscontact/14968E496974DEA5E06327261DAC7A7E with UUID 14968E496974DEA5E06327261DAC7A7E\nAttempted to process 1 pending webhooks - 0 were sent out successfully and 1 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239601",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239601",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239601",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:21:03-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:21:00 EST 2026\nJob end date: Fri Jan 30 13:21:01 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239575",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239575",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239575",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:20:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:20:00 EST 2026\nJob end date: Fri Jan 30 13:20:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239548",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239548",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239548",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "DrawingMgmt",
+    "history_job_group" : "DRAWING",
+    "name" : "DRAWING_UPLOAD_a6e3d872-118e-4270-a49d-4ea485109a82",
+    "date" : "2026-01-30T13:19:08-05:00",
+    "status" : "COMPLETED",
+    "description" : "Drawing Upload 3d9c5181-7dca-4792-8060-901c46c495af for project 2213050983 with revision JAN302026-CLASSIC",
+    "details" : "Job start date: Fri Jan 30 13:19:02 EST 2026\nJob end date: Fri Jan 30 13:19:07 EST 2026\nJob state: COMPLETED\nInitial data: [ \n\tcontCode: MJA\n\tpartnCode: SUS\n\tcontactInfo: SUS%^%C%^%MJA\n\tpartnType: C\n\tdocType: DRAWMGMT\n\tspecNumLenToExtract: 15\n\ttenantAndUser: MILLICENT\n\tdrawingSetDetailsCriteria: none\n\tprojOraseq: 2213050983\n\tversionName: JAN302026-CLASSIC\n\tuuid: 3d9c5181-7dca-4792-8060-901c46c495af\n\trevDate: 2026-01-30\n\tsheetNumberRegion: 2145,1397,174,49\n\tuploadDir: \\\\qafs\\qafs\\attachments\\qadaily2\\\n\tsheetNameRegion: 2145,1338,183,54\n\tlocationCode: null\n\treceivedDate: 2026-01-23\n]\nCompleted processing extracted 1 drawing sheets\nEmail notification sent to (Millicent Jackson) stephanie@cmic.ca\nJob completed successfully\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239531",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239531",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239531",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "WebhookAction",
+    "history_job_group" : "Webhooks",
+    "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+    "date" : "2026-01-30T13:19:01-05:00",
+    "status" : "COMPLETED",
+    "description" : "CRON JOB 1 IS PROCESSING DATA",
+    "details" : "Job start date: Fri Jan 30 13:19:00 EST 2026\nJob end date: Fri Jan 30 13:19:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239507",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239507",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239507",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "DrawingMgmt",
+    "history_job_group" : "DRAWING",
+    "name" : "DRAWING_CLEANUP_21e4c292-6e31-41fc-85dc-6d02be539cc6",
+    "date" : "2026-01-30T13:18:37-05:00",
+    "status" : "COMPLETED",
+    "description" : "Drawing upload cleanup after publishing for project 2213050983",
+    "details" : "Job start date: Fri Jan 30 13:18:35 EST 2026\nJob end date: Fri Jan 30 13:18:36 EST 2026\nJob state: COMPLETED\nInitial data: [ \n\tcontactInfo: SUS%^%C%^%MJA\n\tuploadDir: \\\\qafs\\qafs\\attachments\\qadaily2\\\n\ttenantAndUser: MILLICENT\n\tprojOraseq: 2213050983\n\tuuid: ed69063f-297f-4da7-b09c-6bdad2480677\n]\nDeleted 5 files for project (2213050983) upload folder ed69063f-297f-4da7-b09c-6bdad2480677\nJob completed successfully\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239489",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239489",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239489",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "CmicScheduler",
+    "history_job_group" : "Thumbnail",
+    "name" : "2350239385",
+    "date" : "2026-01-30T13:18:30-05:00",
+    "status" : "COMPLETED",
+    "description" : "Thumbnail generation for an attachment",
+    "details" : "Job start date: Fri Jan 30 13:18:21 EST 2026\nJob end date: Fri Jan 30 13:18:29 EST 2026\nJob state: COMPLETED\n, Initial data: [ \n\tobjectOraseq: 2350239385\n\ttenantAndUser: HADQA12\n\tobjectFileType: PRIMARY_ATTACHMENT\n]\n, source path: \\\\qafs\\qafs\\attachments\\qadaily2\\2350239385\\ATT0000093\\0\\leonardo-baldissara-totibRS7MD0-unsplash.jpg.\n, start external process.\n, external process log:\n, external process exitValue:0\n, Thumbanil generation succeeded externally.\n, updateThumbnailFlag succeeded.\n, Job completed successfully\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239488",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239488",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239488",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  }, {
+    "scheduler_name" : "DrawingMgmt",
+    "history_job_group" : "DRAWING",
+    "name" : "DRAWING_LINK_444eb537-35c0-4e29-b5f0-c4ae50dacae8",
+    "date" : "2026-01-30T13:18:16-05:00",
+    "status" : "COMPLETED",
+    "description" : "Drawing links for project 2213050983 for 1 updated sheets",
+    "details" : "Job start date: Fri Jan 30 13:17:31 EST 2026\nJob end date: Fri Jan 30 13:18:15 EST 2026\nJob state: COMPLETED\nInitial data: [ \n\tcontactInfo: SUS%^%C%^%MJA\n\trecipients: [{\"PartnCode\":\"SUS\",\"PartnType\":\"C\",\"ContactCode\":\"MJA\",\"ContactName\":\"MILLICENT JACKSON\"}]\n\tdocType: DRAWMGMT\n\ttenantAndUser: MILLICENT\n\tprojOraseq: 2213050983\n\tupdateSheetList: 2282506204\n\tupdateSheetListSize: 1\n\tuuid: ed69063f-297f-4da7-b09c-6bdad2480677\n\tdistLocCodes: [{\"pmdLocation\":\"\"}]\n]\nOutput:[{\n\tSheetProcessed: 85,\n\t LinkGenerated: 2,\n\t LinkUpdated: 0,\n\t LinkHidden: 2\n\t }]\nEmail notification sent to (Millicent Jackson) stephanie@cmic.ca\nEmail notification sent to (Millicent Jackson) stephanie@cmic.ca\nJob completed successfully\n",
+    "exception" : null,
+    "@context" : {
+      "key" : "2350239455",
+      "links" : [ {
+        "rel" : "self",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239455",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      }, {
+        "rel" : "canonical",
+        "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350239455",
+        "name" : "scheduler_history",
+        "kind" : "item"
+      } ]
+    }
+  } ],
+  "count" : 25,
+  "hasMore" : true,
+  "limit" : 25,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history",
+    "name" : "scheduler_history",
+    "kind" : "collection"
+  } ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Retrieve Schduler History by UUID" id="1df9ad8b-8821-440f-b52d-27998ecbfd6b">
+    <con:settings/>
+    <con:config service="cmic-uac-rest-api" resourcePath="/cmic-uac-rest-api/rest/2/scheduler_history/{id}" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Retrieve Schduler History by UUID" id="1733c3d9-5881-4251-8ecf-5ae6e5f4f68f" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://qamob.cmicpaas.com/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240348</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="ea0f97c2-9569-46ef-88f7-7237a7b860a0" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="600117eb-191c-4bc5-94e7-5af5a8967460" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="c1a538b8-0f28-4a46-8393-d9b43ab081dc" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['scheduler_name']</con:path>
+              <con:element>scheduler_name</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>WebhookAction</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['history_job_group']</con:path>
+              <con:element>history_job_group</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Webhooks</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['name']</con:path>
+              <con:element>name</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>WEBHOOK_ACTION_SENDING_JOB_1</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['date']</con:path>
+              <con:element>date</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2026-01-30T13:35:01-05:00</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['description']</con:path>
+              <con:element>description</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>CRON JOB 1 IS PROCESSING DATA</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['status']</con:path>
+              <con:element>status</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>COMPLETED</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['details']</con:path>
+              <con:element>details</con:element>
+              <con:operatorId>16</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Job start date: Fri Jan 30 13:35:00 EST 2026
+Job end date: Fri Jan 30 13:35:00 EST 2026
+Job state: COMPLETED
+, Initial data: [ ]
+Preparing to send out webhooks
+Attempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.
+</con:expectedValue>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "scheduler_name" : "WebhookAction",
+  "history_job_group" : "Webhooks",
+  "name" : "WEBHOOK_ACTION_SENDING_JOB_1",
+  "date" : "2026-01-30T13:35:01-05:00",
+  "status" : "COMPLETED",
+  "description" : "CRON JOB 1 IS PROCESSING DATA",
+  "details" : "Job start date: Fri Jan 30 13:35:00 EST 2026\nJob end date: Fri Jan 30 13:35:00 EST 2026\nJob state: COMPLETED\n, Initial data: [ ]\nPreparing to send out webhooks\nAttempted to process 0 pending webhooks - 0 were sent out successfully and 0 failed to send.\n",
+  "exception" : null,
+  "@context" : {
+    "key" : "2350240348",
+    "links" : [ {
+      "rel" : "self",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240348",
+      "name" : "scheduler_history",
+      "kind" : "item"
+    }, {
+      "rel" : "canonical",
+      "href" : "https://qamob.cmicpaas.com:443/cmicqadaily2/cmic-uac-rest-api/rest/2/scheduler_history/2350240348",
+      "name" : "scheduler_history",
+      "kind" : "item"
+    } ]
+  }
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${Retrieve Schduler History#Response#$['items'][0]['@context']['key']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:tearDownScript>import groovy.json.JsonOutput
+import java.net.HttpURLConnection
+import java.net.URL
+
+// --- Access SLA flag from TestSuite ---
+def slaFlag = context.testCase.testSuite.getPropertyValue("SLA_FAILED")
+log.info("TestCase Teardown running. SLA_FAILED = ${slaFlag}")
+ 
+if (slaFlag == "true") {
+    log.info("SLA failed — skipping TestRail result post.")
+    return
+}
+
+// Function to post test result to TestRail
+def postTestResultToTestRail() {
+
+    def testRailUrl = context.expand('${#Project#TestRailUrl}')
+    def testRailUsername = context.expand('${#Project#TestRailUserName}')
+    def testRailApiKey = context.expand('${#Project#TestRailAPIkey}')
+
+    def projectId = context.expand('${#Project#projectID}')
+    def testRunId = context.expand('${#Project#RunID}')
+
+    def testCaseId = context.expand('${#TestCase#TestCaseID}')
+    def testCaseName = testRunner.testCase.name
+
+    def failedTestSteps = []
+    def result = ""
+    def statusId = 1
+    def comment = ""
+
+    for (r in testRunner.results) {
+        if (r.getStatus().toString() != "PASS") {
+            def stepResult = context.expand('${' + r.testStep.name + '#Response}')
+            failedTestSteps.add(r.testStep.name + (stepResult ? (" - " + stepResult) : ""))
+        }
+    }
+
+    if (!failedTestSteps) {
+        comment = "${testCaseName} has passed successfully"
+    } else {
+        statusId = 5
+        comment = "${testCaseName} has failed on test steps:\n${failedTestSteps.join('\n')}"
+    }
+
+    def postUrl = "${testRailUrl}/add_result_for_case/${testRunId}/${testCaseId}"
+
+    def connection = new URL(postUrl).openConnection() as HttpURLConnection
+    connection.requestMethod = 'POST'
+    connection.doOutput = true
+    connection.setRequestProperty("Content-Type", "application/json")
+    connection.setRequestProperty("Authorization", "Basic " + "${testRailUsername}:${testRailApiKey}".bytes.encodeBase64().toString())
+
+    def requestBody = [
+            status_id: statusId,
+            comment: comment
+    ]
+
+    def outputStream = connection.outputStream
+    outputStream.write(JsonOutput.toJson(requestBody).getBytes())
+    outputStream.flush()
+
+    def responseCode = connection.responseCode
+    def responseMessage = connection.responseMessage
+
+    log.info("Response code: ${responseCode}")
+    log.info("Response message: ${responseMessage}")
+}
+
+postTestResultToTestRail()</con:tearDownScript>
+  <con:properties>
+    <con:property>
+      <con:name>TestCaseID</con:name>
+      <con:value>631133</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

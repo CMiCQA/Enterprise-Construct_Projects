@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="job_group_name_lov" path="cmic-uac-rest-api/rest/2/job_group_name_lov" id="146c3890-35ae-4067-b12b-fa493cb79a67">
+  <con:settings>
+    <con:setting id="146c3890-35ae-4067-b12b-fa493cb79a67fileName">job_group_name_lov</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="1dacde79-f5ef-45f5-bab9-0cfa9dd89b39" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="ff0ae79b-3d91-4d94-8af1-60f1bd8715dc" mediaType="application/json">
+      <con:settings/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>
