@@ -184,19 +184,19 @@
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="b5ec2841-29b5-46fd-b5ce-4131d9626d74">
-            <con:authProfile>raman</con:authProfile>
+            <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="c6f15ecf-b67c-4a3e-b574-685e816480d9">
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="3ac2367f-7c3a-4624-9907-a6de4d8e254c">
-            <con:authProfile>NOVA CLOUD</con:authProfile>
+            <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="7f04ef6b-0932-4c01-a1b5-687ac3090b4f">
-            <con:authProfile>ATLAS CLOUD</con:authProfile>
+            <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
           <con:entry environmentId="dc8e31ee-1f6a-4251-a524-b3c213e112b3">
-            <con:authProfile>ATLAS CLOUD</con:authProfile>
+            <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>
       </con:restRequest>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project xmlns:con="http://eviware.com/soapui/config" id="e8de09f9-3717-451a-bdb9-0176d670a0a1" created="3.64.0" activeEnvironment="QADAILY2" encryptionMode="Not encrypted" name="Enterprise Flutter Project(Internal APIs)" compositeProjectFormat="1.3" projectVersion="" updated="3.64.0">
+<con:soapui-project xmlns:con="http://eviware.com/soapui/config" id="e8de09f9-3717-451a-bdb9-0176d670a0a1" created="3.64.0" activeEnvironment="ATLAS TEST" encryptionMode="Not encrypted" name="Enterprise Flutter Project(Internal APIs)" compositeProjectFormat="1.3" projectVersion="" updated="3.62.0">
   <con:settings>
     <con:setting id="e8de09f9-3717-451a-bdb9-0176d670a0a1fileName">Project-1-readyapi-project</con:setting>
   </con:settings>
@@ -78,16 +78,16 @@
       <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-jc-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-crm-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-cf-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-lem-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqadaily</con:endpoint>
     </con:service>
     <con:property>
       <con:name>TestCaseID</con:name>
@@ -264,19 +264,19 @@
   </con:environment>
   <con:environment id="b5ec2841-29b5-46fd-b5ce-4131d9626d74" name="QAPRIOR" index="3">
     <con:service type="REST" name="cmic-uac-rest-api">
-      <con:endpoint authProfile="raman" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqaprior</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqaprior</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-crm-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqaprior</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqaprior</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-jc-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqaprior</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqaprior</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-lem-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqaprior</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqaprior</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-cf-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqaprior</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qamob.cmicpaas.com/cmicqaprior</con:endpoint>
     </con:service>
     <con:property>
       <con:name>TestCaseID</con:name>
@@ -390,19 +390,19 @@
   </con:environment>
   <con:environment id="3ac2367f-7c3a-4624-9907-a6de4d8e254c" name="NOVA TEST" index="5">
     <con:service type="REST" name="cmic-uac-rest-api">
-      <con:endpoint authProfile="NOVA CLOUD" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-mobile-test.cmiccloud.com/cmictest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-mobile-test.cmiccloud.com/cmictest</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-crm-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-mobile-test.cmiccloud.com/cmictest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-mobile-test.cmiccloud.com/cmictest</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-jc-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-mobile-test.cmiccloud.com/cmictest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-mobile-test.cmiccloud.com/cmictest</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-lem-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-mobile-test.cmiccloud.com/cmictest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-mobile-test.cmiccloud.com/cmictest</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-cf-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-mobile-test.cmiccloud.com/cmictest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://nova-mobile-test.cmiccloud.com/cmictest</con:endpoint>
     </con:service>
     <con:property>
       <con:name>TestCaseID</con:name>
@@ -453,19 +453,19 @@
   </con:environment>
   <con:environment id="7f04ef6b-0932-4c01-a1b5-687ac3090b4f" name="ATLAS PROD" index="6">
     <con:service type="REST" name="cmic-uac-rest-api">
-      <con:endpoint authProfile="ATLAS CLOUD" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api.cmiccloud.com/cmicprod</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api.cmiccloud.com/cmicprod</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-crm-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api.cmiccloud.com/cmicprod</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api.cmiccloud.com/cmicprod</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-jc-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api.cmiccloud.com/cmicprod</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api.cmiccloud.com/cmicprod</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-lem-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api.cmiccloud.com/cmicprod</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api.cmiccloud.com/cmicprod</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-cf-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api.cmiccloud.com/cmicprod</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api.cmiccloud.com/cmicprod</con:endpoint>
     </con:service>
     <con:property>
       <con:name>TestCaseID</con:name>
@@ -516,19 +516,19 @@
   </con:environment>
   <con:environment id="dc8e31ee-1f6a-4251-a524-b3c213e112b3" name="ATLAS TEST" index="7">
     <con:service type="REST" name="cmic-uac-rest-api">
-      <con:endpoint authProfile="ATLAS CLOUD" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api-test.cmiccloud.com/cmictest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api-test.cmiccloud.com/cmictest</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-crm-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api-test.cmiccloud.com/cmictest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api-test.cmiccloud.com/cmictest</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-jc-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api-test.cmiccloud.com/cmictest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api-test.cmiccloud.com/cmictest</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-lem-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api-test.cmiccloud.com/cmictest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api-test.cmiccloud.com/cmictest</con:endpoint>
     </con:service>
     <con:service type="REST" name="cmic-cf-rest-api">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api-test.cmiccloud.com/cmictest</con:endpoint>
+      <con:endpoint authProfile="Inherit From Parent" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://atlas-api-test.cmiccloud.com/cmictest</con:endpoint>
     </con:service>
     <con:property>
       <con:name>TestCaseID</con:name>
@@ -615,22 +615,22 @@
       <con:authProfile>raman</con:authProfile>
     </con:entry>
     <con:entry environmentId="29115ffe-145f-44e6-a1f7-45b26f33e93e">
-      <con:authProfile>raman</con:authProfile>
+      <con:authProfile>QALATEST (Raman)</con:authProfile>
     </con:entry>
     <con:entry environmentId="b5ec2841-29b5-46fd-b5ce-4131d9626d74">
-      <con:authProfile>No Authorization</con:authProfile>
+      <con:authProfile>raman</con:authProfile>
     </con:entry>
     <con:entry environmentId="c6f15ecf-b67c-4a3e-b574-685e816480d9">
       <con:authProfile>NOVA CLOUD</con:authProfile>
     </con:entry>
     <con:entry environmentId="3ac2367f-7c3a-4624-9907-a6de4d8e254c">
-      <con:authProfile>No Authorization</con:authProfile>
+      <con:authProfile>NOVA CLOUD</con:authProfile>
     </con:entry>
     <con:entry environmentId="7f04ef6b-0932-4c01-a1b5-687ac3090b4f">
-      <con:authProfile>No Authorization</con:authProfile>
+      <con:authProfile>ATLAS CLOUD</con:authProfile>
     </con:entry>
     <con:entry environmentId="dc8e31ee-1f6a-4251-a524-b3c213e112b3">
-      <con:authProfile>No Authorization</con:authProfile>
+      <con:authProfile>ATLAS CLOUD</con:authProfile>
     </con:entry>
   </con:environmentSpec>
   <con:tags/>
