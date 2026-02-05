@@ -18,11 +18,6 @@
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="ce1407d5-2f34-4657-ae7c-b30cde85a394" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -52,11 +47,6 @@
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="1d8a49bd-9818-4df8-bd5d-c81332601254" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
           </con:configuration>
         </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="26a0c701-b9ab-47d2-a72d-caa7dba777b9" name="Smart Assertion">
@@ -121,11 +111,6 @@
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="c6b4d155-8716-4f72-9d56-15aa98bb642f" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
           </con:configuration>
         </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="eee96908-fcf9-476b-8bb1-50d3095ad7c9" name="Smart Assertion">
@@ -2163,11 +2148,6 @@
             <codes>400</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="c6b4d155-8716-4f72-9d56-15aa98bb642f" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="d86021ee-7554-4746-ab49-f168b3e549b1" name="Smart Assertion">
           <con:configuration xsi:type="con:DataAndMetadataAssertion">
             <con:mode>Received Data</con:mode>
@@ -2211,11 +2191,6 @@
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="c6b4d155-8716-4f72-9d56-15aa98bb642f" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
           </con:configuration>
         </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="eee96908-fcf9-476b-8bb1-50d3095ad7c9" name="Smart Assertion">
