@@ -18,11 +18,6 @@
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="4490e217-1547-430b-ab6c-e2f2a2e5f6ca" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="afc8b98f-546b-47f9-bc10-3a0b2a1fee1a" name="Smart Assertion">
           <con:configuration xsi:type="con:DataAndMetadataAssertion">
             <con:mode>Received Data</con:mode>
@@ -526,11 +521,6 @@ log.info "Extracted ID: " + id</script>
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="62d6d692-9c5c-4279-bf8d-2bb4376eb2ba" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="7da1b45d-29dc-4056-a31d-5943962ce486" name="Smart Assertion">
           <con:configuration xsi:type="con:DataAndMetadataAssertion">
             <con:mode>Received Data</con:mode>
@@ -613,11 +603,6 @@ log.info "Extracted ID: " + id</script>
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="4490e217-1547-430b-ab6c-e2f2a2e5f6ca" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
           </con:configuration>
         </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="afc8b98f-546b-47f9-bc10-3a0b2a1fee1a" name="Smart Assertion">
@@ -1113,11 +1098,6 @@ log.info "Extracted ID: " + id</script>
             <codes>400</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="4490e217-1547-430b-ab6c-e2f2a2e5f6ca" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="e222b16a-d197-454c-84f5-03a9641eeed2" name="Smart Assertion">
           <con:configuration xsi:type="con:DataAndMetadataAssertion">
             <con:mode>Received Data</con:mode>
@@ -1161,11 +1141,6 @@ log.info "Extracted ID: " + id</script>
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="4490e217-1547-430b-ab6c-e2f2a2e5f6ca" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
           </con:configuration>
         </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="afc8b98f-546b-47f9-bc10-3a0b2a1fee1a" name="Smart Assertion">
@@ -1729,7 +1704,7 @@ postTestResultToTestRail()</con:tearDownScript>
   <con:properties>
     <con:property>
       <con:name>UniqueId</con:name>
-      <con:value>00020000000331303100000006414E4E494531</con:value>
+      <con:value>000200000003313131000000064D4153544552</con:value>
     </con:property>
     <con:property>
       <con:name>TestCaseID</con:name>

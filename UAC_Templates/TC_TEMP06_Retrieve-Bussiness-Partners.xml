@@ -18,11 +18,6 @@
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="1fb9bbb3-7e1a-456b-b50f-f0a5ba2eef47" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="f1ee26b2-003a-4107-bb6e-a4abd2dd951b" name="Smart Assertion">
           <con:configuration xsi:type="con:DataAndMetadataAssertion">
             <con:mode>Received Data</con:mode>
@@ -440,11 +435,6 @@
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="f64313d7-5283-4c29-9e67-56116b4eadec" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="3b93667d-12a0-4ce0-81b6-084e5b5fb2fa" name="Smart Assertion">
           <con:configuration xsi:type="con:DataAndMetadataAssertion">
             <con:mode>Received Data</con:mode>
@@ -507,11 +497,6 @@
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="1fb9bbb3-7e1a-456b-b50f-f0a5ba2eef47" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
           </con:configuration>
         </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="f1ee26b2-003a-4107-bb6e-a4abd2dd951b" name="Smart Assertion">
@@ -938,11 +923,6 @@
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="1fb9bbb3-7e1a-456b-b50f-f0a5ba2eef47" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
           </con:configuration>
         </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="f1ee26b2-003a-4107-bb6e-a4abd2dd951b" name="Smart Assertion">
@@ -1378,11 +1358,6 @@
           <con:settings/>
           <con:configuration>
             <codes>400</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="1fb9bbb3-7e1a-456b-b50f-f0a5ba2eef47" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
           </con:configuration>
         </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="2175312c-dfb4-44a2-b433-fe239d2ddc45" name="Smart Assertion">

@@ -18,11 +18,6 @@
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="e16c46af-1c2f-4f99-b791-f42b97807e14" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
-          </con:configuration>
-        </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="2c06f79f-6652-47d7-97e8-bd379d0be68e" name="Smart Assertion">
           <con:configuration xsi:type="con:DataAndMetadataAssertion">
             <con:mode>Received Data</con:mode>
@@ -707,11 +702,6 @@ Attempted to process 0 pending webhooks - 0 were sent out successfully and 0 fai
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="600117eb-191c-4bc5-94e7-5af5a8967460" name="Response SLA">
-          <con:configuration>
-            <SLA>1000</SLA>
           </con:configuration>
         </con:assertion>
         <con:assertion type="DataAndMetadataAssertion" id="c1a538b8-0f28-4a46-8393-d9b43ab081dc" name="Smart Assertion">
